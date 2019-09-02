@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+    database:
+        build: db/
+        image: ingressonet_mysql:5.7
+        ports:
+            - "3306:3036"
+        environment:
+            MYSQL_ROOT_PASSWORD: TP1-2019-2
+            MYSQL_DATABASE: ingressoNetDB
+            MYSQL_USER: ingressoNetAdmin
+            MYSQL_PASSWORD: TP1-2019-2
+        volumes:
+            - ./db_data/:/var/lib/mysql
+volumes:
+    db-volume:
