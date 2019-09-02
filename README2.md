@@ -83,6 +83,29 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 
+#### Docker compose
+
+Para instalar o docker compose em uma distribuição arch, utilize o comando abaixo.
+```
+sudo pacman -Sy docker-compose
+```
+
+Caso utilize Ubuntu, siga os passos abaixo
+
+Faça download do binário do docker compose na pasta /usr/local/bin
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+Quando o download for concluído, altere as permissões do arquivo para executá-lo
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+Teste a instalação utilizando o comando versão
+```
+docker-compose --version
+```
 
 
 ### Instalando
@@ -143,8 +166,9 @@ Usamos [SemVer](http://semver.org/) para versionamento. Para versões disponíve
 
 ## Autores
 
-* **Billie Thompson** - *Trabalho Inicial* - [PurpleBooth](https://github.com/PurpleBooth)
-* **Mateus Berardo** - *Tradução para português* - [MatTerra](https://github.com/MatTerra)
+* **Mateus Berardo** - *Autor* - [MatTerra](https://github.com/MatTerra)
+* **Thiago Pais** - *Autor* - [ThiagoPais](https://github.com/ThiagoPais)
+* **Bruno Murta** - *Autor* - [bruno-bmc](https://github.com/bruno-bmc)
 Veja também a lista de [contribuidores](https://github.com/your/project/contributors) que participaram nesse projeto.
 
 ## Licença
@@ -153,6 +177,6 @@ Esse projeto está licenciado sob uma licença do MIT - veja o arquivo [LICENSE.
 
 ## Agradecimentos
 
-* Menção a todos que contribuíram para o repo
-* Inspirações
-* etc
+* Thanks to **Billie Thompson** aka [PurpleBooth](https://github.com/PurpleBooth) who created the template of this README
+
+
