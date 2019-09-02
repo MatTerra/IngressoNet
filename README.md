@@ -19,6 +19,6 @@ Sistema para venda de ingressos de jogos de futebol desenvolvido em C++ utilizan
 
 
 ## Autores
- - @MatTerra
- - Thiago Cardoso
+- @MatTerra
+- @ThiagoPais
  - Bruno Murta
