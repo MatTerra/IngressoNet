@@ -152,13 +152,11 @@ Adicione notas para deploy para produção
 
 ## Ferramentas de build
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Qt 5](https://qt.io/) - O framework de desenvolvimento utilizado
 
 ## Contribuindo
 
-Por favor leia [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) para detalhes do nosso código de conduta e do processo de submissão de PR's para nós.
+Por favor leia [CONTRIBUTING.md]() para detalhes do nosso código de conduta e do processo de submissão de PR's para nós.
 
 ## Versionamento
 
