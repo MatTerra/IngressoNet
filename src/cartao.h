@@ -1,39 +1,57 @@
 #ifndef CARTAO_H
 #define CARTAO_H
 
+#include "QString"
+
 
 class Cartao
 {
     public:
         /** Default constructor */
-        Cartao(unsigned int, unsigned int);
+        Cartao(unsigned long long, unsigned int);
+
         /** Default destructor */
         virtual ~Cartao();
 
         /** Access _Numero
          * \return The current value of _Numero
          */
-        unsigned int Getnumero() const { return _Numero; }
+        unsigned long long getNumero() const { return numero; }
+
         /** Set _Numero
          * \param val New value to set
          */
-        void Setnumero(unsigned int val) { _Numero = val; }
+        void setNumero(unsigned long long val) { numero = val; }
+
         /** Access _NumSeguranca
          * \return The current value of _NumSeguranca
          */
-        unsigned int GetnumSeguranca() const { return _NumSeguranca; }
+        unsigned int getNumSeguranca() const { return numSeguranca; }
+
         /** Set _NumSeguranca
          * \param val New value to set
          */
-        void SetnumSeguranca(unsigned int val) { _NumSeguranca = val; }
+        void setNumSeguranca(unsigned int val) { numSeguranca = val; }
 
-    protected:
+        /** Check if card number is valid
+         * \param number Card number to check
+         * \return true if valid number, false otherwise
+         */
+        static bool isValidNumber(unsigned long long);
+
+        /** Charge card for value
+         * \param valor Value to charge
+         * \param numSeguranca Security number received to check
+         * \return true if charged sucessfully, false otherwise
+         */
+        bool cobrar(float, unsigned int);
+
+
 
     private:
-        unsigned int _Numero; //!< Member variable "_Numero"
-        unsigned int _NumSeguranca; //!< Member variable "_NumSeguranca"
-    public:
-        static bool _isValidNumber(int);
+        unsigned long long numero; //!< Member variable "_Numero"
+        unsigned int numSeguranca; //!< Member variable "_NumSeguranca"
+
 };
 
 #endif // CARTAO_H

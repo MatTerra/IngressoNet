@@ -107,10 +107,17 @@ Teste a instalação utilizando o comando versão
 docker-compose --version
 ```
 
+### Ferramentas Adicionais e versões utilizadas
+
+Foram utilizadas as seguintes ferramentas para a elaboração da documentação do projeto:
+- Diagramas UML: Astah UML 8.1.0/3ac74f
+- Modelo do Banco de Dados: MySQL Workbench 8.0.17
+- Documentação do código: Doxygen 
+
 
 ### Instalando
 
-Uma série de exemplos passo a passo que ensinam a configurar um ambiente de desenvolvimento.
+Uma série de exemplos passo a passo que ensinam a configurar um ambiente de desenvolvimento irão aqui.
 
 Diga o que será o passo
 
@@ -128,11 +135,11 @@ Termine com um exemplo de um teste rápido do sistema
 
 ## Rodando os testes
 
-Explique como rodar os testes automatizados para este sistema
+Explicaremos como rodar os testes automatizados para este sistema
 
 ### Quebre em teste de ponta a ponta
 
-Explique o que é testado e porque
+Explicaremos o que é testado e porque
 
 ```
 Dê um exemplo
@@ -140,7 +147,7 @@ Dê um exemplo
 
 ### E testes de estilo de código
 
-Explique o que é testado e porque
+Explicaremos o que é testado e porque
 
 ```
 Dê um exemplo
@@ -148,7 +155,7 @@ Dê um exemplo
 
 ## Deploy
 
-Adicione notas para deploy para produção
+Adicionaremos notas para deploy para produção
 
 ## Ferramentas de build
 
