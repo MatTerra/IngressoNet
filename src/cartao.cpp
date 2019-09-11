@@ -12,7 +12,11 @@ Cartao::~Cartao(){
 }
 
 bool Cartao::isValidNumber(unsigned long long number){
+  if(number<1000000000000000){
     return false;
+  } else {
+    return true;
+  }
 }
 
 bool Cartao::cobrar(float value, unsigned int numSeguranca){
