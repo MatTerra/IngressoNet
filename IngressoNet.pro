@@ -26,11 +26,10 @@ CONFIG += c++11
 
 SOURCES += \
         src/*.cpp \
-        src/teste.cpp
+        test/Cartao/cartaoteste.cpp
 
 HEADERS += \
-        src/*.h \
-        src/teste.h
+        src/*.h
 
 FORMS += \
         src/*.ui

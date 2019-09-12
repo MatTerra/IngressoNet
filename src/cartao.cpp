@@ -1,6 +1,6 @@
 #include "cartao.h"
 
-Cartao::Cartao(unsigned long long numero, unsigned int numSeguranca){
+Cartao::Cartao(unsigned long numero, unsigned int numSeguranca){
   //ctor
   this->numero = numero;
   this->numSeguranca = numSeguranca;
@@ -11,8 +11,8 @@ Cartao::~Cartao(){
 
 }
 
-bool Cartao::isValidNumber(unsigned long long number){
-  if(number<1000000000000000){
+bool Cartao::isValidNumber(unsigned long number){
+  if(number<10000000000000){
     return false;
   } else {
     return true;

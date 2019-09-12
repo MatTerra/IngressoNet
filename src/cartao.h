@@ -8,7 +8,7 @@ class Cartao
 {
     public:
         /** Default constructor */
-        Cartao(unsigned long long, unsigned int);
+        Cartao(unsigned long, unsigned int);
 
         /** Default destructor */
         virtual ~Cartao();
@@ -16,12 +16,12 @@ class Cartao
         /** Access _Numero
          * \return The current value of _Numero
          */
-        unsigned long long getNumero() const { return numero; }
+        unsigned long getNumero() const { return numero; }
 
         /** Set _Numero
          * \param val New value to set
          */
-        void setNumero(unsigned long long val) { numero = val; }
+        void setNumero(unsigned long val) { numero = val; }
 
         /** Access _NumSeguranca
          * \return The current value of _NumSeguranca
@@ -37,7 +37,7 @@ class Cartao
          * \param number Card number to check
          * \return true if valid number, false otherwise
          */
-        static bool isValidNumber(unsigned long long);
+        static bool isValidNumber(unsigned long);
 
         /** Charge card for value
          * \param valor Value to charge
@@ -46,10 +46,8 @@ class Cartao
          */
         bool cobrar(float, unsigned int);
 
-
-
     private:
-        unsigned long long numero; //!< Member variable "_Numero"
+        unsigned long numero; //!< Member variable "_Numero"
         unsigned int numSeguranca; //!< Member variable "_NumSeguranca"
 
 };
