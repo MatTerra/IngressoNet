@@ -1,26 +1,25 @@
 #include <QObject>
 #include <QtTest/QtTest>
-#include "../../src/cartao.h"
+#include "../src/cartao.h"
 
-
-class CartaoTeste : public QObject{
+class TestesUnitarios : public QObject{
   Q_OBJECT
 private slots:
-    void validarNumero();
-    void validarNumero_data();
+    void validarNumeroCartao();
+    void validarNumeroCartao_data();
 };
 
-QTEST_MAIN(CartaoTeste)
-#include "cartaoteste.moc"
+QTEST_MAIN(TestesUnitarios)
+#include "testesunitarios.moc"
 
 
-void CartaoTeste::validarNumero(){
+void TestesUnitarios::validarNumeroCartao(){
   QFETCH(long, number);
   QFETCH(bool, result);
-  QCOMPARE(Cartao::isValidNumber(number),result);
+  QCOMPARE(Cartao::isValidNumber(static_cast<unsigned long>(number)),result);
 }
 
-void CartaoTeste::validarNumero_data(){
+void TestesUnitarios::validarNumeroCartao_data(){
   QTest::addColumn<long>("number");
   QTest::addColumn<bool>("result");
   QTest::newRow("number too short") << 1234567891234 << false;
