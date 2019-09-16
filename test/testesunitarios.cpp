@@ -45,7 +45,7 @@ void TestesUnitarios::validarNumeroCPF(){
 void TestesUnitarios::validarNumeroCPF_data(){
   QTest::addColumn<QString>("cpf");
   QTest::addColumn<bool>("result");
-  QTest::newRow("Valid CPF") << QString("326.688.371-38") << true;
-  QTest::newRow("Invalid CPF; last digit wrong") << QString("326.688.371-39") << false;
-  QTest::newRow("Invalid CPF; 10th digit wrong") << QString("326.688.371-48") << false;
+  QTest::newRow("Valid CPF") << "326.688.371-38" << true;
+  QTest::newRow("Invalid CPF; last digit wrong") << "326.688.371-39" << false;
+  QTest::newRow("Invalid CPF; 10th digit wrong") << "326.688.371-48" << false;
 }
