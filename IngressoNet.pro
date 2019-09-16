@@ -26,8 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
         src/*.cpp \
-        test/Cartao/testesunitarios.cpp \
-        test/testesunitarios.cpp
+        test/*.cpp
 
 HEADERS += \
         src/*.h
