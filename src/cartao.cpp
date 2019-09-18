@@ -11,7 +11,6 @@ Cartao::~Cartao(){
 }
 
 bool Cartao::isValidNumber(unsigned long number){
-    qDebug("\n number is %lu", number);
     int numbers[16] = {0};
     int cont=0;
     int soma = 0;
@@ -20,7 +19,6 @@ bool Cartao::isValidNumber(unsigned long number){
         number /= 10;
         cont++;
     }
-    qDebug("\n%d is cont", cont);
     if(cont<14){
         return false;
     }

@@ -40,7 +40,7 @@ class Usuario
          * \param cpf Number to test
          * \return true if cpf is valid, false otherwise
          */
-        static bool isValidCPF(std::string){return true;}
+        static bool isValidCPF(std::string);
 
     protected:
 
