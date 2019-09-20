@@ -1,6 +1,5 @@
 #include "cidade.h"
 
-Cidade::Cidade()
-{
-
+Cidade::~Cidade(){
+    //dtor
 }

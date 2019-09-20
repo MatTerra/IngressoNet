@@ -33,8 +33,8 @@ public:
   void setEstado(std::string val) { estado = val; }
 
 private:
-  std::string nome;
-  std::string estado;
+  std::string nome; //!< Member variable "nome"
+  std::string estado; //!< Member variable "estado"
 };
 
 #endif // CIDADE_H

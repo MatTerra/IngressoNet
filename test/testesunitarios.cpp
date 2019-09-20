@@ -2,6 +2,7 @@
 #include <QtTest/QtTest>
 #include "../src/cartao.h"
 #include "../src/usuario.h"
+#include "../src/cidade.h"
 
 class TestesUnitarios : public QObject{
   Q_OBJECT
@@ -10,7 +11,10 @@ private slots:
     void validarNumeroCartao_data();
     void validarNumeroCPF();
     void validarNumeroCPF_data();
-
+    void nameAccessCidade();
+    void nameEditCidade();
+    void estadoAccessCidade();
+    void estadoEditCidade();
 };
 
 QTEST_MAIN(TestesUnitarios)
@@ -49,3 +53,26 @@ void TestesUnitarios::validarNumeroCPF_data(){
   QTest::newRow("Invalid CPF; last digit wrong") << "326.688.371-39" << false;
   QTest::newRow("Invalid CPF; 10th digit wrong") << "326.688.371-48" << false;
 }
+
+void TestesUnitarios::nameAccessCidade(){
+  Cidade cidade("Brasília", "DF");
+  QCOMPARE(cidade.getNome(), "Brasília");
+}
+
+void TestesUnitarios::nameEditCidade(){
+  Cidade cidade("Brasília", "DF");
+  cidade.setNome("Patos");
+  QCOMPARE(cidade.getNome(), "Patos");
+}
+
+void TestesUnitarios::estadoAccessCidade(){
+  Cidade cidade("Brasília", "DF");
+  QCOMPARE(cidade.getEstado(), "DF");
+}
+
+void TestesUnitarios::estadoEditCidade(){
+  Cidade cidade("Brasília", "DF");
+  cidade.setEstado("MG");
+  QCOMPARE(cidade.getEstado(), "MG");
+}
+
