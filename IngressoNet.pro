@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        cidade.cpp \
         src/*.cpp \
         test/*.cpp
 
 HEADERS += \
+        cidade.h \
         src/*.h
 
 FORMS += \
