@@ -26,7 +26,8 @@ CONFIG += c++11
 
 SOURCES += \
         src/*.cpp \
-        src/teste.cpp
+        src/teste.cpp \
+    src/jogo.cpp
 
 HEADERS += \
         src/*.h \
