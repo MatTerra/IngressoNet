@@ -184,15 +184,45 @@ Dê um exemplo
 
 ## Deploy
 
-Adicionaremos notas para deploy para produção
+Adicionaremos notas para deploy para produção conforme o trabalho for desenvolvido.
+
+### Banco de Dados
+
+Nosso banco de dados será executado em uma imagem do Docker no servidor local. O arquivo _docker-compose.yml_, junto com o _db/Dockerfile_ descrevem nosso container e contém todas as configurações necessárias. Caso queira alterar informações como usuário ou senha, edite a seção `environment` do arquivo docker-compose.yml como descrito abaixo:
+
+```yaml
+...
+    environment:
+        MYSQL_ROOT_PASSWORD: <sua-nova-senha-root>
+        MYSQL_DATABASE: <seu-banco-de-dados>
+        MYSQL_USER: <seu-novo-usuario>
+        MYSQL_PASSWORD: <sua-nova-senha>
+    volumes:
+...
+```
+
+É possível alterar outras configurações como nome da imagem do container, local do Dockerfile, porta de conexão aberta para o banco e volume onde salvará as informações do banco.
 
 ## Ferramentas de build
 
-* [Qt 5](https://qt.io/) - O framework de desenvolvimento utilizado
+* qmake - Disponibilizado pelo Qt
+* make
+* docker - Compila nosso Dockerfile
 
 ## Contribuindo
 
-Por favor leia [CONTRIBUTING.md]() para detalhes do nosso código de conduta e do processo de submissão de PR's para nós.
+Para contribuir, siga os passos abaixo:
+
+    1. Navega até a aba de [issues](https://github.com/MatTerra/IngressoNet/issues) do github e verifique se já existe alguma entrada relativa à funcionalidade ou correção que você desenvolverá.
+    1. Caso exista, adicione um comentário para avisar que você está trabalhando neste issue e, se possível, se adicione como responsável.
+    1. Crie uma nova branch com um nome que remeta ao issue alvo utilizando o comando a seguir no diretório local do repositório `git checkout -b <nome>`
+    1. Após terminar o desenvolvimento da funcionalidade e dos testes unitários, crie um [pull request](https://github.com/MatTerra/IngressoNet/pulls) e adicione na descrição dele um comentário sobre o que está sendo implementado e a seguinte frase: "_Closes #n_", onde n é o número do issue que você soluciona. Caso resolva mais de um issue, adicione um por linha com a mesma frase.
+    1. Adicione ao menos dois membros do repositório que não trabalharam no pull request como revisores.
+
+### Regras para aprovação do PR
+
+    1. Desenvolva inicialmente os testes unitários, caso alguma funcionalidade tenha sido implementada. Visamos 100% de cobertura de testes.
+    1. Siga nosso estilo de código, como descrito [aqui](https://github.com/twitter/commons/blob/master/src/java/com/twitter/common/styleguide.md)(O estilo utilizado é o estilo java).
 
 ## Versionamento
 
