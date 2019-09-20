@@ -112,7 +112,7 @@ docker-compose --version
 Foram utilizadas as seguintes ferramentas para a elaboração da documentação do projeto:
 - Diagramas UML: Astah UML 8.1.0/3ac74f
 - Modelo do Banco de Dados: MySQL Workbench 8.0.17
-- Documentação do código: Doxygen 
+- Documentação do código: Doxygen 1.8.16
 
 
 ### Instalando
@@ -135,7 +135,8 @@ Termine com um exemplo de um teste rápido do sistema
 
 ## Rodando os testes
 
-Explicaremos como rodar os testes automatizados para este sistema
+Explicaremos como rodar os testes automatizados para este sistema. Vamos criar uma configuração de build & run para o Qt Creator.
+Para configurar, vá em
 
 ### Quebre em teste de ponta a ponta
 
