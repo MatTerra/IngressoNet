@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,11 +26,11 @@ CONFIG += c++11
 
 SOURCES += \
         src/*.cpp \
-        src/teste.cpp
+        test/Cartao/testesunitarios.cpp \
+        test/testesunitarios.cpp
 
 HEADERS += \
-        src/*.h \
-        src/teste.h
+        src/*.h
 
 FORMS += \
         src/*.ui
@@ -39,4 +39,7 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+SUBDIRS += \
+    test/test.pro
 
