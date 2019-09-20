@@ -136,7 +136,23 @@ Termine com um exemplo de um teste rápido do sistema
 ## Rodando os testes
 
 Explicaremos como rodar os testes automatizados para este sistema. Vamos criar uma configuração de build & run para o Qt Creator.
-Para configurar, vá em
+Para configurar, vá na aba projects, identificada pela chave.
+
+No topo das configurações, clique em `clone` para duplicar a configuração de build atual. Nomeie a nova configuração como `Test` ou outro nome que indique a utilidade.
+
+Vamos mudar o build directory para `%PROJECT_DIR%/test`.
+
+Vamos excluir a etapa de qmake clicando no *X* próximo à detalhes e adicionaremos uma nova etapa _Custom Process Step_.
+
+A configuração desse passo custom será como abaixo. Para ter acesso a elas, clique em detalhes do passo.
+
+ *  *Command:* qmake
+ *  *Working directory:* %{buildDir}
+
+O _Custom Step_ deverá ser colocado antes da etapa _*Make*_. Caso eles estejam invertidos, vá ao final da linha do make e clique na seta para baixo próximo ao botão de detalhes.
+
+Pronto. Nossa configuração de build está pronta. Vamos configurar a execução agora.
+
 
 ### Quebre em teste de ponta a ponta
 
