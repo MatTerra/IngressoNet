@@ -9,37 +9,45 @@ class Usuario
 {
     public:
         /** Default constructor */
-        Usuario(std::string cpf, std::string senha, Cartao& cartao): _CPF(cpf), _Senha(senha), _Cartao(cartao){};
+        Usuario(std::string cpf, std::string senha, Cartao& cartao): cpf(cpf), senha(senha), cartao(cartao){};
+
         /** Default destructor */
         virtual ~Usuario();
 
         /** Access CPF
          * \return The current value of CPF
          */
-        std::string GetCPF() const { return _CPF; }
+        std::string getCPF() const { return cpf; }
+
         /** Set CPF
          * \param val New value to set
          */
-        void SetCPF(std::string val) { _CPF = val; }
+        void setCPF(std::string val) { cpf = val; }
         /** Access senha
          * \return The current value of senha
          */
-        std::string Getsenha() const { return _Senha; }
+        std::string getSenha() const { return senha; }
         /** Set senha
          * \param val New value to set
          */
-        void Setsenha(std::string val) { _Senha = val; }
+        void setSenha(std::string val) { senha = val; }
         /** Access cartao
          * \return The current value of cartao
          */
-        Cartao Getcartao() const { return _Cartao; }
+        Cartao getCartao() const { return cartao; }
+
+        /** Check if CPF is valid
+         * \param cpf Number to test
+         * \return true if cpf is valid, false otherwise
+         */
+        static bool isValidCPF(std::string);
 
     protected:
 
     private:
-        std::string _CPF; //!< Member variable "CPF"
-        std::string _Senha; //!< Member variable "senha"
-        Cartao _Cartao; //!< Member variable "cartao"
+        std::string cpf; //!< Member variable "CPF"
+        std::string senha; //!< Member variable "senha"
+        Cartao cartao; //!< Member variable "cartao"
 };
 
 #endif // USUARIO_H
