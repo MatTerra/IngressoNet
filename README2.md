@@ -86,24 +86,24 @@ newgrp docker
 #### Docker compose
 
 Para instalar o docker compose em uma distribuição arch, utilize o comando abaixo.
-```
+```bash
 sudo pacman -Sy docker-compose
 ```
 
 Caso utilize Ubuntu, siga os passos abaixo
 
 Faça download do binário do docker compose na pasta /usr/local/bin
-```
+```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
 Quando o download for concluído, altere as permissões do arquivo para executá-lo
-```
+```bash
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 Teste a instalação utilizando o comando versão
-```
+```bash
 docker-compose --version
 ```
 
@@ -140,7 +140,7 @@ Para configurar, vá na aba projects, identificada pela chave inglesa.
 
 No topo das configurações, clique em `clone` (Pode estar como uma opção do menu "_Add_" para duplicar a configuração de build atual. Nomeie a nova configuração como `Test` ou outro nome que indique a utilidade dela.
 
-Vamos mudar o build directory para `<PROJECT_DIR>/test`. -> PROJECT_DIR é o path absoluto do projeto em sua máquina
+Vamos mudar o build directory para `<PROJECT_DIR>/test`. -> *PROJECT_DIR* é o path absoluto do projeto em sua máquina
 
 Vamos excluir a etapa de qmake clicando no *X* próximo a detalhes e adicionaremos uma nova etapa _Custom Process Step_.
 
@@ -164,9 +164,11 @@ Pronto. Abra o menu de configurações de Build & Deploy (identificado pelo pequ
 Para testar a configuração, clique no grande *PLAY* abaixo do computador na lateral inferior esquerda.
 
 
-### Quebre em teste de ponta a ponta
+### Escrevendo Testes Unitários
 
-Explicaremos o que é testado e porque
+Utilizamos o framework QTest do Qt para automatizar os testes unitários utilizando testes dirigidos por dados. Para criar testes, adicione os testes como _slots_ na classe `TestesUnitarios` localizada no arquivo `test/testesunitarios.cpp`.
+
+Para mais informações sobre como criar testes unitários dirigidos por dados, confira os tutoriais disponíveis em [QTest, criando testes unitários](https://doc.qt.io/qt-5/qttestlib-tutorial1-example.html) e [QTest, testes dirigidos por dados](https://doc.qt.io/qt-5/qttestlib-tutorial2-example.html#)
 
 ```
 Dê um exemplo
