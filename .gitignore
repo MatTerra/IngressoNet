@@ -1,5 +1,7 @@
 bin/
 obj/
+build/
+
 
 IngressoNet.pro.user
 db_data/
