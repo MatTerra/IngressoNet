@@ -8,4 +8,7 @@ doc/TP1-TRABALHO-1-2019.pdf
 *.stash
 *.lock
 */Makefile
-
+moc_*
+*.o
+ui_*
+*.moc

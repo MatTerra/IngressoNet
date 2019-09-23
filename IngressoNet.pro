@@ -26,7 +26,8 @@ CONFIG += c++11
 
 SOURCES += \
         src/*.cpp \
-        test/*.cpp
+        test/*.cpp \
+        README2.md
 
 HEADERS += \
         src/*.h
