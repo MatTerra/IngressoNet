@@ -28,7 +28,8 @@ SOURCES += \
         *.cpp \
 
 HEADERS += \
-        *.h
+        *.h \
+        genericdao.h
 
 FORMS += \
         *.ui

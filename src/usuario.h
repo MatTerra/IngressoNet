@@ -42,9 +42,15 @@ class Usuario
          */
         static bool isValidCPF(std::string);
 
+        /** Removes '.' and '-' from CPF
+         * \param cpf to clean
+         * \return cpf with numbers only
+         */
+        static std::string getCPFNumbers(std::string);
+
     protected:
 
-    private:
+    private:        
         std::string cpf; //!< Member variable "CPF"
         std::string senha; //!< Member variable "senha"
         Cartao cartao; //!< Member variable "cartao"
