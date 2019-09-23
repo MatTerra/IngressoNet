@@ -135,44 +135,35 @@ Termine com um exemplo de um teste rápido do sistema
 
 ## Rodando os testes
 
-Explicaremos como rodar os testes automatizados para este sistema. Vamos criar uma configuração de build & run para o Qt Creator.
-Para configurar, vá na aba projects, identificada pela chave inglesa.
+Para rodar os testes unitários, na barra inferior do QtCreator, abaixo dos logs, procure a opção "_8 Test Results_" e a selecione. Em seguida, clique no play verde para executar todos os testes.
 
-No topo das configurações, clique em `clone` (Pode estar como uma opção do menu "_Add_" para duplicar a configuração de build atual. Nomeie a nova configuração como `Test` ou outro nome que indique a utilidade dela.
-
-Vamos mudar o build directory para `<PROJECT_DIR>/test`. -> *PROJECT_DIR* é o path absoluto do projeto em sua máquina
-
-Vamos excluir a etapa de qmake clicando no *X* próximo a detalhes e adicionaremos uma nova etapa _Custom Process Step_.
-
-A configuração desse passo custom será como abaixo. Para ter acesso a elas, clique em detalhes do passo.
-
- *  *Command:* qmake
- *  *Working directory:* %{buildDir}
-
-O _Custom Step_ deverá ser colocado antes da etapa _*Make*_. Caso eles estejam invertidos, vá ao final da linha do make e clique na seta para baixo próximo ao botão de detalhes.
-
-Pronto. Nossa configuração de build está pronta. Vamos configurar a execução agora.
-
-Na lateral esquerda, temos os kits e uma seção identificada como Build & Run. Provavelmente no kit Desktop a opção _build_ está selecionada. Selecione a opção _Run_.
-
-Adicione uma configuração de execução customizada e renomeie-a para `Test`. (Cuidado para não tentar adicionar uma configuração de Deployment, Run está localizado no meio da página).
-
-Altere o executável para <PROJECT_DIR>/test/test e marque a opção de Run in Terminal.
-
-Pronto. Abra o menu de configurações de Build & Deploy (identificado pelo pequeno computador na lateral inferior esquerda e verifique que as configurações selecionadas foram as que criamos.
-
-Para testar a configuração, clique no grande *PLAY* abaixo do computador na lateral inferior esquerda.
-
+Você deve ver em seguida o resultado da execução dos testes.
 
 ### Escrevendo Testes Unitários
 
-Utilizamos o framework QTest do Qt para automatizar os testes unitários utilizando testes dirigidos por dados. Para criar testes, adicione os testes como _slots_ na classe `TestesUnitarios` localizada no arquivo `test/testesunitarios.cpp`.
+Utilizamos o framework QTest do Qt para automatizar os testes unitários utilizando testes dirigidos por dados. Para criar testes, adicione os testes como _slots_ na classe `Testes<CLASSE>` em que <CLASSE> deve ser substituído pela classe/funcionalidade a ser testada. O nome do arquivo que contém esta classe deverá ser idêntico ao dela, porém escrito com todas as letras minúsculas.
+Essa classe deve estar em uma pasta com o nome <CLASSE> dentro da pasta test do projeto. Para o nome da pasta <CLASSE> deve ter a primeira letra maiúscula.
+
+Além da classe de teste, devemos incluir um arquivo <CLASSE>.pro com o seguinte conteúdo(Todas as ocorrências de <CLASSE> são com letras minúsculas):
+
+```
+CONFIG += testcase
+TARGET = teste<CLASSE>
+QT = core testlib
+SOURCES = \
+     teste<CLASSE>.cpp \
+     ../../src/<arquivos-a-serem-testados>.cpp
+INCLUDEPATH += ../../src
+```
+
+Em seguida, abra o arquivo test/test.pro e adicione a seguinte linha logo abaixo do último _subdir_:
+
+```
+      <CLASSE> \
+```
 
 Para mais informações sobre como criar testes unitários dirigidos por dados, confira os tutoriais disponíveis em [QTest, criando testes unitários](https://doc.qt.io/qt-5/qttestlib-tutorial1-example.html) e [QTest, testes dirigidos por dados](https://doc.qt.io/qt-5/qttestlib-tutorial2-example.html#)
 
-```
-Dê um exemplo
-```
 
 ### E testes de estilo de código
 
@@ -201,7 +192,7 @@ Nosso banco de dados será executado em uma imagem do Docker no servidor local. 
 ...
 ```
 
-É possível alterar outras configurações como nome da imagem do container, local do Dockerfile, porta de conexão aberta para o banco e volume onde salvará as informações do banco.
+É possível alterar outras configurações como nome da imagem do container, local do Dockerfile, porta de conexão aberta para o banco e volume onde serão salvas as informações do banco.
 
 ## Ferramentas de build
 
@@ -213,16 +204,16 @@ Nosso banco de dados será executado em uma imagem do Docker no servidor local. 
 
 Para contribuir, siga os passos abaixo:
 
-    1. Navega até a aba de [issues](https://github.com/MatTerra/IngressoNet/issues) do github e verifique se já existe alguma entrada relativa à funcionalidade ou correção que você desenvolverá.
-    1. Caso exista, adicione um comentário para avisar que você está trabalhando neste issue e, se possível, se adicione como responsável.
-    1. Crie uma nova branch com um nome que remeta ao issue alvo utilizando o comando a seguir no diretório local do repositório `git checkout -b <nome>`
-    1. Após terminar o desenvolvimento da funcionalidade e dos testes unitários, crie um [pull request](https://github.com/MatTerra/IngressoNet/pulls) e adicione na descrição dele um comentário sobre o que está sendo implementado e a seguinte frase: "_Closes #n_", onde n é o número do issue que você soluciona. Caso resolva mais de um issue, adicione um por linha com a mesma frase.
-    1. Adicione ao menos dois membros do repositório que não trabalharam no pull request como revisores.
+  1. Navegue até a aba de [issues](https://github.com/MatTerra/IngressoNet/issues) do github e verifique se já existe alguma entrada relativa à funcionalidade ou correção que você desenvolverá.
+  1. Caso exista, adicione um comentário para avisar que você está trabalhando neste issue e, se possível, se adicione como responsável.
+  1. Crie uma nova branch com um nome que remeta ao issue alvo utilizando o comando a seguir no diretório local do repositório `git checkout -b <nome>`
+  1. Após terminar o desenvolvimento da funcionalidade e dos testes unitários, crie um [pull request](https://github.com/MatTerra/IngressoNet/pulls) e adicione na descrição dele um comentário sobre o que está sendo implementado e a seguinte frase: "_Closes #n_", onde n é o número do issue que você soluciona. Caso resolva mais de um issue, adicione um por linha com a mesma frase.
+  1. Adicione ao menos dois membros do repositório que não trabalharam no pull request como revisores.
 
 ### Regras para aprovação do PR
 
-    1. Desenvolva inicialmente os testes unitários, caso alguma funcionalidade tenha sido implementada. Visamos 100% de cobertura de testes.
-    1. Siga nosso estilo de código, como descrito [aqui](https://github.com/twitter/commons/blob/master/src/java/com/twitter/common/styleguide.md)(O estilo utilizado é o estilo java).
+  1. Desenvolva inicialmente os testes unitários, caso alguma funcionalidade tenha sido implementada. Visamos 100% de cobertura de testes.
+  1. Siga nosso estilo de código, como descrito [aqui](https://github.com/twitter/commons/blob/master/src/java/com/twitter/common/styleguide.md)(O estilo utilizado é o estilo java).
 
 ## Versionamento
 
