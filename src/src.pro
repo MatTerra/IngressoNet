@@ -29,7 +29,8 @@ SOURCES += \
 
 HEADERS += \
         *.h \
-        genericdao.h
+        genericdao.h \
+        persistancehelper.h
 
 FORMS += \
         *.ui
