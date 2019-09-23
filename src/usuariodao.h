@@ -3,6 +3,7 @@
 
 #include <genericdao.h>
 #include <usuario.h>
+#include <cartao.h>
 
 class UsuarioDAO : public GenericDAO<Usuario>
 {
