@@ -3,12 +3,11 @@
 
 #include <string>
 
-template <class T>
+template <typename T>
 class PersistanceHelper{
 public:
-  virtual T query(std::string);
-  virtual void connect();
-  virtual ~PersistanceHelper();
+  virtual T* query(std::string){return nullptr;}
+  virtual void connect(){}
 };
 
 #endif // PERSISTANCEHELPER_H
