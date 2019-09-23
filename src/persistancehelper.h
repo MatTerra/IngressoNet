@@ -3,9 +3,10 @@
 
 #include <string>
 
+template <class T>
 class PersistanceHelper{
 public:
-  virtual void query(std::string);
+  virtual T query(std::string);
   virtual void connect();
   virtual ~PersistanceHelper();
 };
