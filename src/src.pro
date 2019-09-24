@@ -25,11 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        *.cpp \
+        *.cpp \ \
+    usuariodao.cpp
 
 HEADERS += \
         *.h \
-    exceptions/*.h
+        exceptions/*.h \
 
 FORMS += \
         *.ui
