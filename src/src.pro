@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT += core gui testlib
+QT += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -30,11 +30,12 @@ SOURCES += \
 
 HEADERS += \
         *.h \
-        genericdao.h \
-        usuariodao.h
+        exceptions/*.h \
 
 FORMS += \
         *.ui
+
+LIBS +=-lmariadb
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
