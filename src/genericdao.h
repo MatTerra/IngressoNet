@@ -8,11 +8,11 @@ template <class T>
 class GenericDAO
 {
 public:
-  virtual T get(std::string);
-  virtual std::vector<T> getAll();
-  virtual void save(T);
-  virtual void update(T, std::string[]);
-  virtual void remove(T);
+  virtual T get(std::string)=0;
+  virtual std::vector<T> getAll()=0;
+  virtual void save(T){}
+  virtual void update(T, std::string[]){}
+  virtual void remove(T){}
 };
 
 #endif // GENERICDAO_H
