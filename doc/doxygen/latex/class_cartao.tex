@@ -1,0 +1,203 @@
+\hypertarget{class_cartao}{}\doxysection{Referência da Classe Cartao}
+\label{class_cartao}\index{Cartao@{Cartao}}
+
+
+{\ttfamily \#include $<$cartao.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cartao_a33db08f12f4bfb178f5593e563bcbfed}{Cartao}} (unsigned long, unsigned int)
+\item 
+virtual \mbox{\hyperlink{class_cartao_af3df5fe82f18f21d981522468772eaef}{$\sim$\+Cartao}} ()
+\item 
+unsigned long \mbox{\hyperlink{class_cartao_ab491b37488f8c01fa9ae7591e5dbfed9}{get\+Numero}} () const
+\item 
+void \mbox{\hyperlink{class_cartao_a09b9ab03e4456679f5ee0a4f7f009f0a}{set\+Numero}} (unsigned long val)
+\item 
+unsigned int \mbox{\hyperlink{class_cartao_a4734504fba17d2c199707ce68e9f179e}{get\+Num\+Seguranca}} () const
+\item 
+void \mbox{\hyperlink{class_cartao_ad638f0f974f4499f85e1643cf61c1a11}{set\+Num\+Seguranca}} (unsigned int val)
+\item 
+bool \mbox{\hyperlink{class_cartao_a7d791df7aa95af90b39c0bfe00be4194}{cobrar}} (float, unsigned int)
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_cartao_aadea668cb3ff3279deb05d42b4e70256}{is\+Valid\+Number}} (unsigned long)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_cartao_a33db08f12f4bfb178f5593e563bcbfed}\label{class_cartao_a33db08f12f4bfb178f5593e563bcbfed}} 
+\index{Cartao@{Cartao}!Cartao@{Cartao}}
+\index{Cartao@{Cartao}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{Cartao()}{Cartao()}}
+{\footnotesize\ttfamily Cartao\+::\+Cartao (\begin{DoxyParamCaption}\item[{unsigned long}]{numero,  }\item[{unsigned int}]{num\+Seguranca }\end{DoxyParamCaption})}
+
+Default constructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                                                              \{}
+\DoxyCodeLine{4   \textcolor{comment}{//ctor}}
+\DoxyCodeLine{5   this-\/>numero = numero;}
+\DoxyCodeLine{6   this-\/>numSeguranca = numSeguranca;}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_af3df5fe82f18f21d981522468772eaef}\label{class_cartao_af3df5fe82f18f21d981522468772eaef}} 
+\index{Cartao@{Cartao}!````~Cartao@{$\sim$Cartao}}
+\index{````~Cartao@{$\sim$Cartao}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cartao()}{~Cartao()}}
+{\footnotesize\ttfamily Cartao\+::$\sim$\+Cartao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                \{}
+\DoxyCodeLine{10     \textcolor{comment}{//dtor}}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_cartao_a7d791df7aa95af90b39c0bfe00be4194}\label{class_cartao_a7d791df7aa95af90b39c0bfe00be4194}} 
+\index{Cartao@{Cartao}!cobrar@{cobrar}}
+\index{cobrar@{cobrar}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{cobrar()}{cobrar()}}
+{\footnotesize\ttfamily bool Cartao\+::cobrar (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{unsigned int}]{num\+Seguranca }\end{DoxyParamCaption})}
+
+Charge card for value 
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & Value to charge \\
+\hline
+{\em num\+Seguranca} & Security number received to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true if charged sucessfully, false otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                                                          \{}
+\DoxyCodeLine{42     qDebug(\textcolor{stringliteral}{"Charging \%f reais"}, static\_cast<double>(value));}
+\DoxyCodeLine{43     \textcolor{keywordflow}{if} (this-\/>numSeguranca == numSeguranca)\{}
+\DoxyCodeLine{44       qDebug(\textcolor{stringliteral}{"Charged successfuly"});}
+\DoxyCodeLine{45       \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{46     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{47       qDebug(\textcolor{stringliteral}{"Couldn't charge"});}
+\DoxyCodeLine{48       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_ab491b37488f8c01fa9ae7591e5dbfed9}\label{class_cartao_ab491b37488f8c01fa9ae7591e5dbfed9}} 
+\index{Cartao@{Cartao}!getNumero@{getNumero}}
+\index{getNumero@{getNumero}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{getNumero()}{getNumero()}}
+{\footnotesize\ttfamily unsigned long Cartao\+::get\+Numero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Access \+\_\+\+Numero \begin{DoxyReturn}{Retorna}
+The current value of \+\_\+\+Numero 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19 \{ \textcolor{keywordflow}{return} numero; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_a4734504fba17d2c199707ce68e9f179e}\label{class_cartao_a4734504fba17d2c199707ce68e9f179e}} 
+\index{Cartao@{Cartao}!getNumSeguranca@{getNumSeguranca}}
+\index{getNumSeguranca@{getNumSeguranca}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{getNumSeguranca()}{getNumSeguranca()}}
+{\footnotesize\ttfamily unsigned int Cartao\+::get\+Num\+Seguranca (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Access \+\_\+\+Num\+Seguranca \begin{DoxyReturn}{Retorna}
+The current value of \+\_\+\+Num\+Seguranca 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{ \textcolor{keywordflow}{return} numSeguranca; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_aadea668cb3ff3279deb05d42b4e70256}\label{class_cartao_aadea668cb3ff3279deb05d42b4e70256}} 
+\index{Cartao@{Cartao}!isValidNumber@{isValidNumber}}
+\index{isValidNumber@{isValidNumber}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{isValidNumber()}{isValidNumber()}}
+{\footnotesize\ttfamily bool Cartao\+::is\+Valid\+Number (\begin{DoxyParamCaption}\item[{unsigned long}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check if card number is valid 
+\begin{DoxyParams}{Parâmetros}
+{\em number} & Card number to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+true if valid number, false otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13                                               \{}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} numbers[16] = \{0\};}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} cont=0;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} soma = 0;}
+\DoxyCodeLine{17     \textcolor{keywordflow}{while}(number>1)\{}
+\DoxyCodeLine{18         numbers[cont] = number\%10;}
+\DoxyCodeLine{19         number /= 10;}
+\DoxyCodeLine{20         cont++;}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if}(cont<14)\{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{26           \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < cont; i++)\{}
+\DoxyCodeLine{27               \textcolor{keywordflow}{if}(i\%2==0)\{}
+\DoxyCodeLine{28                   soma+=numbers[i];}
+\DoxyCodeLine{29               \}}
+\DoxyCodeLine{30               \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{31                   \textcolor{keywordflow}{if}(numbers[i]>4.5)\{}
+\DoxyCodeLine{32                       soma-\/=9;}
+\DoxyCodeLine{33                   \}}
+\DoxyCodeLine{34                   soma+=numbers[i]*2;}
+\DoxyCodeLine{35               \}}
+\DoxyCodeLine{36           \}}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{return} soma\%10==0;}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_a09b9ab03e4456679f5ee0a4f7f009f0a}\label{class_cartao_a09b9ab03e4456679f5ee0a4f7f009f0a}} 
+\index{Cartao@{Cartao}!setNumero@{setNumero}}
+\index{setNumero@{setNumero}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{setNumero()}{setNumero()}}
+{\footnotesize\ttfamily void Cartao\+::set\+Numero (\begin{DoxyParamCaption}\item[{unsigned long}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set \+\_\+\+Numero 
+\begin{DoxyParams}{Parâmetros}
+{\em val} & New value to set \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24 \{ numero = val; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cartao_ad638f0f974f4499f85e1643cf61c1a11}\label{class_cartao_ad638f0f974f4499f85e1643cf61c1a11}} 
+\index{Cartao@{Cartao}!setNumSeguranca@{setNumSeguranca}}
+\index{setNumSeguranca@{setNumSeguranca}!Cartao@{Cartao}}
+\doxysubsubsection{\texorpdfstring{setNumSeguranca()}{setNumSeguranca()}}
+{\footnotesize\ttfamily void Cartao\+::set\+Num\+Seguranca (\begin{DoxyParamCaption}\item[{unsigned int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set \+\_\+\+Num\+Seguranca 
+\begin{DoxyParams}{Parâmetros}
+{\em val} & New value to set \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34 \{ numSeguranca = val; \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+/home/mateusberardo/\+Documents/\+T\+P1/\+Trabalho\+Mesmo/\+Ingresso\+Net/src/\mbox{\hyperlink{cartao_8h}{cartao.\+h}}\item 
+/home/mateusberardo/\+Documents/\+T\+P1/\+Trabalho\+Mesmo/\+Ingresso\+Net/src/\mbox{\hyperlink{cartao_8cpp}{cartao.\+cpp}}\end{DoxyCompactItemize}

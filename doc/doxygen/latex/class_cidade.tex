@@ -1,0 +1,117 @@
+\hypertarget{class_cidade}{}\doxysection{Referência da Classe Cidade}
+\label{class_cidade}\index{Cidade@{Cidade}}
+
+
+{\ttfamily \#include $<$cidade.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cidade_a532937c36be57ecb3501ba68a8be13ee}{Cidade}} (std\+::string nome, std\+::string estado)
+\item 
+virtual \mbox{\hyperlink{class_cidade_acaa458442d0ef19722ab1277d90dc2ff}{$\sim$\+Cidade}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_cidade_a7907f4410c349bd0e43521a1669ae6bc}{get\+Nome}} () const
+\item 
+void \mbox{\hyperlink{class_cidade_a8a84b8ea4eba9087261e8108a1b21214}{set\+Nome}} (std\+::string val)
+\item 
+std\+::string \mbox{\hyperlink{class_cidade_a0c9284032fe22c4c6a25746a7135d11f}{get\+Estado}} () const
+\item 
+void \mbox{\hyperlink{class_cidade_aef5a5575f73f1663faa910c74e5ccee7}{set\+Estado}} (std\+::string val)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_cidade_a532937c36be57ecb3501ba68a8be13ee}\label{class_cidade_a532937c36be57ecb3501ba68a8be13ee}} 
+\index{Cidade@{Cidade}!Cidade@{Cidade}}
+\index{Cidade@{Cidade}!Cidade@{Cidade}}
+\doxysubsubsection{\texorpdfstring{Cidade()}{Cidade()}}
+{\footnotesize\ttfamily Cidade\+::\+Cidade (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{std\+::string}]{estado }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 :nome(nome), estado(estado)\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cidade_acaa458442d0ef19722ab1277d90dc2ff}\label{class_cidade_acaa458442d0ef19722ab1277d90dc2ff}} 
+\index{Cidade@{Cidade}!````~Cidade@{$\sim$Cidade}}
+\index{````~Cidade@{$\sim$Cidade}!Cidade@{Cidade}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cidade()}{~Cidade()}}
+{\footnotesize\ttfamily Cidade\+::$\sim$\+Cidade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Default destructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                \{}
+\DoxyCodeLine{4     \textcolor{comment}{//dtor}}
+\DoxyCodeLine{5 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_cidade_a0c9284032fe22c4c6a25746a7135d11f}\label{class_cidade_a0c9284032fe22c4c6a25746a7135d11f}} 
+\index{Cidade@{Cidade}!getEstado@{getEstado}}
+\index{getEstado@{getEstado}!Cidade@{Cidade}}
+\doxysubsubsection{\texorpdfstring{getEstado()}{getEstado()}}
+{\footnotesize\ttfamily std\+::string Cidade\+::get\+Estado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Access estado \begin{DoxyReturn}{Retorna}
+The current value of estado 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28 \{ \textcolor{keywordflow}{return} estado; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cidade_a7907f4410c349bd0e43521a1669ae6bc}\label{class_cidade_a7907f4410c349bd0e43521a1669ae6bc}} 
+\index{Cidade@{Cidade}!getNome@{getNome}}
+\index{getNome@{getNome}!Cidade@{Cidade}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily std\+::string Cidade\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Access nome \begin{DoxyReturn}{Retorna}
+The current value of nome 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 \{ \textcolor{keywordflow}{return} nome; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cidade_aef5a5575f73f1663faa910c74e5ccee7}\label{class_cidade_aef5a5575f73f1663faa910c74e5ccee7}} 
+\index{Cidade@{Cidade}!setEstado@{setEstado}}
+\index{setEstado@{setEstado}!Cidade@{Cidade}}
+\doxysubsubsection{\texorpdfstring{setEstado()}{setEstado()}}
+{\footnotesize\ttfamily void Cidade\+::set\+Estado (\begin{DoxyParamCaption}\item[{std\+::string}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set estado 
+\begin{DoxyParams}{Parâmetros}
+{\em val} & New value to set \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{ estado = val; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cidade_a8a84b8ea4eba9087261e8108a1b21214}\label{class_cidade_a8a84b8ea4eba9087261e8108a1b21214}} 
+\index{Cidade@{Cidade}!setNome@{setNome}}
+\index{setNome@{setNome}!Cidade@{Cidade}}
+\doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
+{\footnotesize\ttfamily void Cidade\+::set\+Nome (\begin{DoxyParamCaption}\item[{std\+::string}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set nome 
+\begin{DoxyParams}{Parâmetros}
+{\em val} & New value to set \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23 \{ nome = val; \}}
+
+\end{DoxyCode}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+/home/mateusberardo/\+Documents/\+T\+P1/\+Trabalho\+Mesmo/\+Ingresso\+Net/src/\mbox{\hyperlink{cidade_8h}{cidade.\+h}}\item 
+/home/mateusberardo/\+Documents/\+T\+P1/\+Trabalho\+Mesmo/\+Ingresso\+Net/src/\mbox{\hyperlink{cidade_8cpp}{cidade.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/cidade.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cidade.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="cidade_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CIDADE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CIDADE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_cidade.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cidade.html">Cidade</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_cidade.html#a532937c36be57ecb3501ba68a8be13ee">   10</a></span>&#160;  <a class="code" href="class_cidade.html#a532937c36be57ecb3501ba68a8be13ee">Cidade</a>(std::string nome, std::string estado):nome(nome), estado(estado){}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="class_cidade.html#acaa458442d0ef19722ab1277d90dc2ff">~Cidade</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_cidade.html#a7907f4410c349bd0e43521a1669ae6bc">   18</a></span>&#160;  std::string <a class="code" href="class_cidade.html#a7907f4410c349bd0e43521a1669ae6bc">getNome</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> nome; }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_cidade.html#a8a84b8ea4eba9087261e8108a1b21214">   23</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_cidade.html#a8a84b8ea4eba9087261e8108a1b21214">setNome</a> (std::string val) { nome = val; }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_cidade.html#a0c9284032fe22c4c6a25746a7135d11f">   28</a></span>&#160;  std::string <a class="code" href="class_cidade.html#a0c9284032fe22c4c6a25746a7135d11f">getEstado</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> estado; }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_cidade.html#aef5a5575f73f1663faa910c74e5ccee7">   33</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_cidade.html#aef5a5575f73f1663faa910c74e5ccee7">setEstado</a>(std::string val) { estado = val; }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  std::string nome; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  std::string estado; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // CIDADE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_cidade_html_a532937c36be57ecb3501ba68a8be13ee"><div class="ttname"><a href="class_cidade.html#a532937c36be57ecb3501ba68a8be13ee">Cidade::Cidade</a></div><div class="ttdeci">Cidade(std::string nome, std::string estado)</div><div class="ttdef"><b>Definition:</b> cidade.h:10</div></div>
+<div class="ttc" id="aclass_cidade_html_a8a84b8ea4eba9087261e8108a1b21214"><div class="ttname"><a href="class_cidade.html#a8a84b8ea4eba9087261e8108a1b21214">Cidade::setNome</a></div><div class="ttdeci">void setNome(std::string val)</div><div class="ttdef"><b>Definition:</b> cidade.h:23</div></div>
+<div class="ttc" id="aclass_cidade_html"><div class="ttname"><a href="class_cidade.html">Cidade</a></div><div class="ttdef"><b>Definition:</b> cidade.h:6</div></div>
+<div class="ttc" id="aclass_cidade_html_acaa458442d0ef19722ab1277d90dc2ff"><div class="ttname"><a href="class_cidade.html#acaa458442d0ef19722ab1277d90dc2ff">Cidade::~Cidade</a></div><div class="ttdeci">virtual ~Cidade()</div><div class="ttdef"><b>Definition:</b> cidade.cpp:3</div></div>
+<div class="ttc" id="aclass_cidade_html_a7907f4410c349bd0e43521a1669ae6bc"><div class="ttname"><a href="class_cidade.html#a7907f4410c349bd0e43521a1669ae6bc">Cidade::getNome</a></div><div class="ttdeci">std::string getNome() const</div><div class="ttdef"><b>Definition:</b> cidade.h:18</div></div>
+<div class="ttc" id="aclass_cidade_html_a0c9284032fe22c4c6a25746a7135d11f"><div class="ttname"><a href="class_cidade.html#a0c9284032fe22c4c6a25746a7135d11f">Cidade::getEstado</a></div><div class="ttdeci">std::string getEstado() const</div><div class="ttdef"><b>Definition:</b> cidade.h:28</div></div>
+<div class="ttc" id="aclass_cidade_html_aef5a5575f73f1663faa910c74e5ccee7"><div class="ttname"><a href="class_cidade.html#aef5a5575f73f1663faa910c74e5ccee7">Cidade::setEstado</a></div><div class="ttdeci">void setEstado(std::string val)</div><div class="ttdef"><b>Definition:</b> cidade.h:33</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>
