@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT += core gui testlib
+QT += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,15 +25,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        *.cpp \
+        *.cpp \ \
+    usuariodao.cpp
 
 HEADERS += \
         *.h \
-        genericdao.h \
-        persistancehelper.h
+        exceptions/*.h \
 
 FORMS += \
         *.ui
+
+LIBS +=-lmariadb
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
