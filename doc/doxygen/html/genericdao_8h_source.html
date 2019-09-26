@@ -77,25 +77,30 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_generic_d_a_o.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_generic_d_a_o.html">GenericDAO</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">virtual</span> T <a class="code" href="class_generic_d_a_o.html#aeb53ae6b7068ae2dd94bbbfb507d887d">get</a>(std::string)=0;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">virtual</span> std::vector&lt;T&gt; <a class="code" href="class_generic_d_a_o.html#a9b2932c1763d2fa25ee7ce5838b46b70">getAll</a>()=0;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_generic_d_a_o.html#afd0fa95e82db30049b706eec959647bf">   13</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_d_a_o.html#afd0fa95e82db30049b706eec959647bf">save</a>(T){}</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_generic_d_a_o.html#ab9902f58eb402e094f710acb1f605881">   14</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_d_a_o.html#ab9902f58eb402e094f710acb1f605881">update</a>(T, std::string[]){}</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_generic_d_a_o.html#adde736eb66cc9cd6a6fa739e6ee078f8">   15</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_d_a_o.html#adde736eb66cc9cd6a6fa739e6ee078f8">remove</a>(T){}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_generic_d_a_o.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_generic_d_a_o.html">GenericDAO</a>{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> T <a class="code" href="class_generic_d_a_o.html#aeb53ae6b7068ae2dd94bbbfb507d887d">get</a>(std::string)=0;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif // GENERICDAO_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;T&gt; <a class="code" href="class_generic_d_a_o.html#a9b2932c1763d2fa25ee7ce5838b46b70">getAll</a>()=0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_d_a_o.html#a3e704dca4b0ec0683b6fc945a1db431b">save</a>(T)=0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_d_a_o.html#ab4c4821330bd6b8e42c012d65c8f6df9">update</a>(T, std::string, std::string)=0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_generic_d_a_o.html#ac9a9b2a6650dab4c4ad4cdbe980ea718">remove</a>(T)=0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // GENERICDAO_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_generic_d_a_o_html_afd0fa95e82db30049b706eec959647bf"><div class="ttname"><a href="class_generic_d_a_o.html#afd0fa95e82db30049b706eec959647bf">GenericDAO::save</a></div><div class="ttdeci">virtual void save(T)</div><div class="ttdef"><b>Definition:</b> genericdao.h:13</div></div>
+<div class="ttc" id="aclass_generic_d_a_o_html_ac9a9b2a6650dab4c4ad4cdbe980ea718"><div class="ttname"><a href="class_generic_d_a_o.html#ac9a9b2a6650dab4c4ad4cdbe980ea718">GenericDAO::remove</a></div><div class="ttdeci">virtual void remove(T)=0</div></div>
+<div class="ttc" id="aclass_generic_d_a_o_html_ab4c4821330bd6b8e42c012d65c8f6df9"><div class="ttname"><a href="class_generic_d_a_o.html#ab4c4821330bd6b8e42c012d65c8f6df9">GenericDAO::update</a></div><div class="ttdeci">virtual void update(T, std::string, std::string)=0</div></div>
 <div class="ttc" id="aclass_generic_d_a_o_html_aeb53ae6b7068ae2dd94bbbfb507d887d"><div class="ttname"><a href="class_generic_d_a_o.html#aeb53ae6b7068ae2dd94bbbfb507d887d">GenericDAO::get</a></div><div class="ttdeci">virtual T get(std::string)=0</div></div>
 <div class="ttc" id="aclass_generic_d_a_o_html_a9b2932c1763d2fa25ee7ce5838b46b70"><div class="ttname"><a href="class_generic_d_a_o.html#a9b2932c1763d2fa25ee7ce5838b46b70">GenericDAO::getAll</a></div><div class="ttdeci">virtual std::vector&lt; T &gt; getAll()=0</div></div>
-<div class="ttc" id="aclass_generic_d_a_o_html_ab9902f58eb402e094f710acb1f605881"><div class="ttname"><a href="class_generic_d_a_o.html#ab9902f58eb402e094f710acb1f605881">GenericDAO::update</a></div><div class="ttdeci">virtual void update(T, std::string[])</div><div class="ttdef"><b>Definition:</b> genericdao.h:14</div></div>
-<div class="ttc" id="aclass_generic_d_a_o_html"><div class="ttname"><a href="class_generic_d_a_o.html">GenericDAO</a></div><div class="ttdef"><b>Definition:</b> genericdao.h:8</div></div>
-<div class="ttc" id="aclass_generic_d_a_o_html_adde736eb66cc9cd6a6fa739e6ee078f8"><div class="ttname"><a href="class_generic_d_a_o.html#adde736eb66cc9cd6a6fa739e6ee078f8">GenericDAO::remove</a></div><div class="ttdeci">virtual void remove(T)</div><div class="ttdef"><b>Definition:</b> genericdao.h:15</div></div>
+<div class="ttc" id="aclass_generic_d_a_o_html_a3e704dca4b0ec0683b6fc945a1db431b"><div class="ttname"><a href="class_generic_d_a_o.html#a3e704dca4b0ec0683b6fc945a1db431b">GenericDAO::save</a></div><div class="ttdeci">virtual void save(T)=0</div></div>
+<div class="ttc" id="aclass_generic_d_a_o_html"><div class="ttname"><a href="class_generic_d_a_o.html">GenericDAO</a></div><div class="ttdef"><b>Definition:</b> genericdao.h:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">

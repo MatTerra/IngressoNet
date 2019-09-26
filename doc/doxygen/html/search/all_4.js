@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['main_26',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp_27',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mainwindow_28',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()']]],
-  ['mainwindow_2ecpp_29',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
-  ['mainwindow_2eh_30',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
-  ['mysqlhelper_31',['MySQLHelper',['../class_my_s_q_l_helper.html',1,'MySQLHelper'],['../class_my_s_q_l_helper.html#a1597352e863b8a40b3e4c80d74069ddb',1,'MySQLHelper::MySQLHelper()']]],
-  ['mysqlhelper_2ecpp_32',['mysqlhelper.cpp',['../mysqlhelper_8cpp.html',1,'']]],
-  ['mysqlhelper_2eh_33',['mysqlhelper.h',['../mysqlhelper_8h.html',1,'']]]
+  ['instance_26',['instance',['../class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda',1,'MySQLHelper::instance()'],['../class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b',1,'UsuarioDAO::instance()']]],
+  ['ip_27',['IP',['../mysqlhelper_8h.html#af00e4b63d736381e1c527ac5ef2c8f3c',1,'mysqlhelper.h']]],
+  ['isvalidcpf_28',['isValidCPF',['../class_usuario.html#a8ce15fb85288ebe93f9bb73857b22b88',1,'Usuario']]],
+  ['isvalidnumber_29',['isValidNumber',['../class_cartao.html#aadea668cb3ff3279deb05d42b4e70256',1,'Cartao']]]
 ];

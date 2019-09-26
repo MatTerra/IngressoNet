@@ -76,18 +76,21 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_persistance_helper.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_persistance_helper.html">PersistanceHelper</a>{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_persistance_helper.html#a9c65ce0c14c95c3abcb868ea22a72d51">    9</a></span>&#160;  <span class="keyword">virtual</span> T* <a class="code" href="class_persistance_helper.html#a9c65ce0c14c95c3abcb868ea22a72d51">query</a>(std::string){<span class="keywordflow">return</span> <span class="keyword">nullptr</span>;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_persistance_helper.html#a2860c2d48d4c7e973635662bf069b847">   10</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_persistance_helper.html#a2860c2d48d4c7e973635662bf069b847">connect</a>(){}</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif // PERSISTANCEHELPER_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_persistance_helper.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_persistance_helper.html">PersistanceHelper</a>{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> T* <a class="code" href="class_persistance_helper.html#a705b3036e01b99886164951e3d26a689">query</a>(std::string)=0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_persistance_helper.html#a7102114e9d68f20da60da9374ec7b227">connect</a>()=0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif // PERSISTANCEHELPER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_persistance_helper_html"><div class="ttname"><a href="class_persistance_helper.html">PersistanceHelper</a></div><div class="ttdef"><b>Definition:</b> persistancehelper.h:7</div></div>
-<div class="ttc" id="aclass_persistance_helper_html_a9c65ce0c14c95c3abcb868ea22a72d51"><div class="ttname"><a href="class_persistance_helper.html#a9c65ce0c14c95c3abcb868ea22a72d51">PersistanceHelper::query</a></div><div class="ttdeci">virtual T * query(std::string)</div><div class="ttdef"><b>Definition:</b> persistancehelper.h:9</div></div>
-<div class="ttc" id="aclass_persistance_helper_html_a2860c2d48d4c7e973635662bf069b847"><div class="ttname"><a href="class_persistance_helper.html#a2860c2d48d4c7e973635662bf069b847">PersistanceHelper::connect</a></div><div class="ttdeci">virtual void connect()</div><div class="ttdef"><b>Definition:</b> persistancehelper.h:10</div></div>
+<div class="ttc" id="aclass_persistance_helper_html"><div class="ttname"><a href="class_persistance_helper.html">PersistanceHelper</a></div><div class="ttdef"><b>Definition:</b> persistancehelper.h:8</div></div>
+<div class="ttc" id="aclass_persistance_helper_html_a7102114e9d68f20da60da9374ec7b227"><div class="ttname"><a href="class_persistance_helper.html#a7102114e9d68f20da60da9374ec7b227">PersistanceHelper::connect</a></div><div class="ttdeci">virtual void connect()=0</div></div>
+<div class="ttc" id="aclass_persistance_helper_html_a705b3036e01b99886164951e3d26a689"><div class="ttname"><a href="class_persistance_helper.html#a705b3036e01b99886164951e3d26a689">PersistanceHelper::query</a></div><div class="ttdeci">virtual T * query(std::string)=0</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">

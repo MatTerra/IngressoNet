@@ -66,6 +66,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Membros Públicos</a> &#124;
 <a href="#pub-static-methods">Membros Públicos Estáticos</a> &#124;
+<a href="#pri-static-attribs">Atributos Privados Estáticos</a> &#124;
 <a href="class_usuario_d_a_o-members.html">Lista de todos os Membros</a>  </div>
   <div class="headertitle">
 <div class="title">Referência da Classe UsuarioDAO</div>  </div>
@@ -93,8 +94,8 @@ Membros Públicos</h2></td></tr>
 <tr class="separator:a7f2913deec72b3c1c102f032592cf520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab22491952d7f7606bcb3c4361207bdec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_usuario_d_a_o.html#ab22491952d7f7606bcb3c4361207bdec">save</a> (<a class="el" href="class_usuario.html">Usuario</a>) override</td></tr>
 <tr class="separator:ab22491952d7f7606bcb3c4361207bdec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad6d80f3d9868197a019878e69c39376"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_usuario_d_a_o.html#aad6d80f3d9868197a019878e69c39376">update</a> (<a class="el" href="class_usuario.html">Usuario</a>, std::string[]) override</td></tr>
-<tr class="separator:aad6d80f3d9868197a019878e69c39376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8bad221c090c0da5517397572c3976"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_usuario_d_a_o.html#aef8bad221c090c0da5517397572c3976">update</a> (<a class="el" href="class_usuario.html">Usuario</a>, std::string, std::string) override</td></tr>
+<tr class="separator:aef8bad221c090c0da5517397572c3976"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af929fbadb5e4bc01ba61e61594d848fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_usuario_d_a_o.html#af929fbadb5e4bc01ba61e61594d848fe">remove</a> (<a class="el" href="class_usuario.html">Usuario</a>) override</td></tr>
 <tr class="separator:af929fbadb5e4bc01ba61e61594d848fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -102,6 +103,15 @@ Membros Públicos</h2></td></tr>
 Membros Públicos Estáticos</h2></td></tr>
 <tr class="memitem:abc620ee830afa8c0c91a4b725bb3fefd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_usuario_d_a_o.html">UsuarioDAO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_usuario_d_a_o.html#abc620ee830afa8c0c91a4b725bb3fefd">getInstance</a> ()</td></tr>
 <tr class="separator:abc620ee830afa8c0c91a4b725bb3fefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos Privados Estáticos</h2></td></tr>
+<tr class="memitem:a26eaeb15ec2091eb1797853ffafd9c7b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_usuario_d_a_o.html">UsuarioDAO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">instance</a> = nullptr</td></tr>
+<tr class="memdesc:a26eaeb15ec2091eb1797853ffafd9c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atributo de classe "instance". Representa a instância da classe.  <a href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">Mais...</a><br /></td></tr>
+<tr class="separator:a26eaeb15ec2091eb1797853ffafd9c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f1dbafb99b96d1add8b8672f042258"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_my_s_q_l_helper.html">MySQLHelper</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a> = nullptr</td></tr>
+<tr class="memdesc:a94f1dbafb99b96d1add8b8672f042258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atributo de classe "mysqlHelper". Representa o executor de operações no banco de dados MySQL.  <a href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">Mais...</a><br /></td></tr>
+<tr class="separator:a94f1dbafb99b96d1add8b8672f042258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="ae964b5a8a67e1e794a3562503cdabf52"></a>
@@ -157,25 +167,25 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get an user instance from database </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p>Busca um registro da classe Usuário no banco de dados MySQL. </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cpf</td><td>to look for in db </td></tr>
+    <tr><td class="paramname">cpf</td><td>CPF do Usuário a buscar </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>user with cpf </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Usuário encontrado com o CPF ou Usuário com CPF 000.000.000-00 caso não seja encontrado nenhum registro </dd></dl>
 
 <p>Implementa <a class="el" href="class_generic_d_a_o.html#aeb53ae6b7068ae2dd94bbbfb507d887d">GenericDAO&lt; Usuario &gt;</a>.</p>
 <div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                    {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::string query = <span class="stringliteral">&quot;SELECT a.senha, b.numero, b.codigoDeSeguranca FROM usuario_t a, cartao_t b WHERE a.cpf = b.cpf AND a.cpf = &#39;&quot;</span>+cpf+<span class="stringliteral">&quot;&#39;;&quot;</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    MYSQL_RES* res = mysqlHelper-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    MYSQL_RES* res = <a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a>-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    MYSQL_ROW row;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span>((row= mysql_fetch_row(res))) {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      std::string senha = row[0];</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> numeroCartao = strtoul(row[1], <span class="keyword">nullptr</span>, 10);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numSeguranca = atoi(row[2]);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numSeguranca = static_cast&lt;unsigned int&gt;(atoi(row[2]));</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <a class="code" href="class_cartao.html">Cartao</a> card(numeroCartao, numSeguranca);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <a class="code" href="class_usuario.html">Usuario</a> user(cpf, senha, card);</div>
@@ -217,21 +227,21 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get all users in database </p><dl class="section return"><dt>Retorna</dt><dd>usuarios vector of users in database </dd></dl>
+<p>Busca todos os registros de Usuários no banco de dados MySQL. </p><dl class="section return"><dt>Retorna</dt><dd>Vetor de Usuários do banco de dados MySQL </dd></dl>
 
 <p>Implementa <a class="el" href="class_generic_d_a_o.html#a9b2932c1763d2fa25ee7ce5838b46b70">GenericDAO&lt; Usuario &gt;</a>.</p>
 <div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                     {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  std::vector&lt;Usuario&gt; usuarios;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::string query = <span class="stringliteral">&quot;SELECT a.cpf, a.senha, b.numero, b.codigoDeSeguranca FROM usuario_t a, cartao_t b WHERE a.cpf = b.cpf;&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    MYSQL_RES* res = mysqlHelper-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    MYSQL_RES* res = <a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a>-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    MYSQL_ROW row = mysql_fetch_row(res);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">do</span>{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::string cpf = row[0];</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::string senha = row[1];</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> numeroCartao = strtoul(row[2], <span class="keyword">nullptr</span>, 10);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numSeguranca = atoi(row[3]);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numSeguranca = static_cast&lt;unsigned int&gt;(atoi(row[3]));</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="class_cartao.html">Cartao</a> card(numeroCartao, numSeguranca);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_usuario.html">Usuario</a> user(cpf, senha, card);</div>
@@ -269,18 +279,19 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                   {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span>(UsuarioDAO::instance == <span class="keyword">nullptr</span>){</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      UsuarioDAO::instance = <span class="keyword">new</span> <a class="code" href="class_usuario_d_a_o.html">UsuarioDAO</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        UsuarioDAO::mysqlHelper = <a class="code" href="class_my_s_q_l_helper.html#abc52e99f4fa975cbecdd8fb9375acce2">MySQLHelper::getInstance</a>();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      } <span class="keywordflow">catch</span> (<a class="code" href="class_not_able_to_connect_exception.html">NotAbleToConnectException</a>&amp; e) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        UsuarioDAO::instance = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">throw</span> e;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">return</span> UsuarioDAO::instance;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<p>Retorna a instância da classe <a class="el" href="class_usuario_d_a_o.html">UsuarioDAO(Singleton)</a> ou, caso necessário, cria a instância. </p><dl class="section return"><dt>Retorna</dt><dd>Instância válida atual </dd></dl>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                   {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">UsuarioDAO::instance</a> == <span class="keyword">nullptr</span>){</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <a class="code" href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">UsuarioDAO::instance</a> = <span class="keyword">new</span> <a class="code" href="class_usuario_d_a_o.html">UsuarioDAO</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">UsuarioDAO::mysqlHelper</a> = <a class="code" href="class_my_s_q_l_helper.html#abc52e99f4fa975cbecdd8fb9375acce2">MySQLHelper::getInstance</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      } <span class="keywordflow">catch</span> (<a class="code" href="class_not_able_to_connect_exception.html">NotAbleToConnectException</a>&amp; e) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">UsuarioDAO::instance</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">throw</span> e;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">UsuarioDAO::instance</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -297,7 +308,7 @@ Membros Públicos Estáticos</h2></td></tr>
           <td class="memname">void UsuarioDAO::remove </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_usuario.html">Usuario</a>&#160;</td>
-          <td class="paramname"><em>u</em></td><td>)</td>
+          <td class="paramname"><em>usuario</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -307,14 +318,20 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Remove a instância do Usuário do banco de dados MySQL. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usuario</td><td>Instância a ser removida do banco de dados MySQL </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplementa <a class="el" href="class_generic_d_a_o.html#adde736eb66cc9cd6a6fa739e6ee078f8">GenericDAO&lt; Usuario &gt;</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  std::string query = <span class="stringliteral">&quot;DELETE FROM cartao_t WHERE (cpf = &#39;&quot;</span>+u.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;);&quot;</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  mysql_free_result(mysqlHelper-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query));</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  query = <span class="stringliteral">&quot;DELETE FROM usuario_t WHERE (cpf = &#39;&quot;</span>+u.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;);&quot;</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  mysql_free_result(mysqlHelper-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<p>Implementa <a class="el" href="class_generic_d_a_o.html#ac9a9b2a6650dab4c4ad4cdbe980ea718">GenericDAO&lt; Usuario &gt;</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                      {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  std::string query = <span class="stringliteral">&quot;DELETE FROM cartao_t WHERE (cpf = &#39;&quot;</span>+usuario.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;);&quot;</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  mysql_free_result(<a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a>-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  query = <span class="stringliteral">&quot;DELETE FROM usuario_t WHERE (cpf = &#39;&quot;</span>+usuario.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;);&quot;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  mysql_free_result(<a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a>-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -331,7 +348,7 @@ Membros Públicos Estáticos</h2></td></tr>
           <td class="memname">void UsuarioDAO::save </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_usuario.html">Usuario</a>&#160;</td>
-          <td class="paramname"><em>u</em></td><td>)</td>
+          <td class="paramname"><em>usuario</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -341,19 +358,26 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Salva a instância do Usuário no banco de dados MySQL. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usuario</td><td>Instância a ser salva no banco de dados MySQL </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplementa <a class="el" href="class_generic_d_a_o.html#afd0fa95e82db30049b706eec959647bf">GenericDAO&lt; Usuario &gt;</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                              {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  std::string query = <span class="stringliteral">&quot;INSERT INTO usuario_t (cpf, senha) VALUES (&#39;&quot;</span>+u.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;, &#39;&quot;</span>+u.<a class="code" href="class_usuario.html#a44527899a5f049f8072800b19435d106">getSenha</a>()+<span class="stringliteral">&quot;&#39;);&quot;</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::string query2 = <span class="stringliteral">&quot;INSERT INTO cartao_t (numero, cpf, codigoDeSeguranca) VALUES (&quot;</span>+std::to_string(u.<a class="code" href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">getCartao</a>().<a class="code" href="class_cartao.html#ab491b37488f8c01fa9ae7591e5dbfed9">getNumero</a>())+<span class="stringliteral">&quot;, &#39;&quot;</span>+u.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;, &quot;</span>+std::to_string(u.<a class="code" href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">getCartao</a>().<a class="code" href="class_cartao.html#a4734504fba17d2c199707ce68e9f179e">getNumSeguranca</a>())+<span class="stringliteral">&quot;);&quot;</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  mysql_free_result(mysqlHelper-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  mysql_free_result(mysqlHelper-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query2));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<p>Implementa <a class="el" href="class_generic_d_a_o.html#a3e704dca4b0ec0683b6fc945a1db431b">GenericDAO&lt; Usuario &gt;</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::string query = <span class="stringliteral">&quot;INSERT INTO usuario_t (cpf, senha) VALUES (&#39;&quot;</span>+usuario.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;, &#39;&quot;</span>+usuario.<a class="code" href="class_usuario.html#a44527899a5f049f8072800b19435d106">getSenha</a>()+<span class="stringliteral">&quot;&#39;);&quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  std::string query2 = <span class="stringliteral">&quot;INSERT INTO cartao_t (numero, cpf, codigoDeSeguranca) VALUES (&quot;</span>+std::to_string(usuario.<a class="code" href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">getCartao</a>().<a class="code" href="class_cartao.html#ab491b37488f8c01fa9ae7591e5dbfed9">getNumero</a>())+<span class="stringliteral">&quot;, &#39;&quot;</span>+usuario.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;, &quot;</span>+std::to_string(usuario.<a class="code" href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">getCartao</a>().<a class="code" href="class_cartao.html#a4734504fba17d2c199707ce68e9f179e">getNumSeguranca</a>())+<span class="stringliteral">&quot;);&quot;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  mysql_free_result(<a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a>-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  mysql_free_result(<a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a>-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query2));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aad6d80f3d9868197a019878e69c39376"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad6d80f3d9868197a019878e69c39376">&#9670;&nbsp;</a></span>update()</h2>
+<a id="aef8bad221c090c0da5517397572c3976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8bad221c090c0da5517397572c3976">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,13 +389,19 @@ Membros Públicos Estáticos</h2></td></tr>
           <td class="memname">void UsuarioDAO::update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_usuario.html">Usuario</a>&#160;</td>
-          <td class="paramname"><em>u</em>, </td>
+          <td class="paramname"><em>usuario</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>params</em>[]&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -385,19 +415,76 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Atualiza a instância do Usuário no banco de dados MySQL de acordo com o campo e valor fornecidos. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usuario</td><td>Instância a ser atualizada no banco de dados MySQL </td></tr>
+    <tr><td class="paramname">field</td><td>Campo a ser atualizado no banco de dados MySQL </td></tr>
+    <tr><td class="paramname">value</td><td>Novo valor do campo a ser atualizado no banco de dados MySQL </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplementa <a class="el" href="class_generic_d_a_o.html#ab9902f58eb402e094f710acb1f605881">GenericDAO&lt; Usuario &gt;</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                    {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  std::string query;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span>(params[0].compare(<span class="stringliteral">&quot;senha&quot;</span>)==0){</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    query = <span class="stringliteral">&quot;UPDATE usuario_t SET senha = &#39;&quot;</span>+params[1]+<span class="stringliteral">&quot;&#39; WHERE (cpf = &#39;&quot;</span>+u.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;);&quot;</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  } <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// TODO erro propriedade não encontrada</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    qDebug(<span class="stringliteral">&quot;propriedade não encontrada&quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  mysql_free_result(mysqlHelper-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query));</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<p>Implementa <a class="el" href="class_generic_d_a_o.html#ab4c4821330bd6b8e42c012d65c8f6df9">GenericDAO&lt; Usuario &gt;</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  std::string query;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">if</span>(field.compare(<span class="stringliteral">&quot;senha&quot;</span>)==0){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    query = <span class="stringliteral">&quot;UPDATE usuario_t SET senha = &#39;&quot;</span>+value+<span class="stringliteral">&quot;&#39; WHERE (cpf = &#39;&quot;</span>+usuario.<a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()+<span class="stringliteral">&quot;&#39;);&quot;</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  } <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// TODO erro propriedade não encontrada</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    qDebug(<span class="stringliteral">&quot;propriedade não encontrada&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  mysql_free_result(<a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a>-&gt;<a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>(query));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Atributos</h2>
+<a id="a26eaeb15ec2091eb1797853ffafd9c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26eaeb15ec2091eb1797853ffafd9c7b">&#9670;&nbsp;</a></span>instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_usuario_d_a_o.html">UsuarioDAO</a> * UsuarioDAO::instance = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atributo de classe "instance". Representa a instância da classe. </p>
+
+</div>
+</div>
+<a id="a94f1dbafb99b96d1add8b8672f042258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f1dbafb99b96d1add8b8672f042258">&#9670;&nbsp;</a></span>mysqlHelper</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_s_q_l_helper.html">MySQLHelper</a> * UsuarioDAO::mysqlHelper = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atributo de classe "mysqlHelper". Representa o executor de operações no banco de dados MySQL. </p>
+
 </div>
 </div>
 <hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
@@ -408,13 +495,15 @@ Membros Públicos Estáticos</h2></td></tr>
 <div class="ttc" id="aclass_cartao_html"><div class="ttname"><a href="class_cartao.html">Cartao</a></div><div class="ttdef"><b>Definition:</b> cartao.h:7</div></div>
 <div class="ttc" id="aclass_my_s_q_l_helper_html_a08a4372347d7c5dda23c4d24e17c2474"><div class="ttname"><a href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">MySQLHelper::query</a></div><div class="ttdeci">MYSQL_RES * query(std::string) override</div><div class="ttdef"><b>Definition:</b> mysqlhelper.cpp:10</div></div>
 <div class="ttc" id="aclass_usuario_html_a71708f2f52370f6adfda35fdbed52a64"><div class="ttname"><a href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">Usuario::getCPF</a></div><div class="ttdeci">std::string getCPF() const</div><div class="ttdef"><b>Definition:</b> usuario.h:20</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_a26eaeb15ec2091eb1797853ffafd9c7b"><div class="ttname"><a href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">UsuarioDAO::instance</a></div><div class="ttdeci">static UsuarioDAO * instance</div><div class="ttdoc">Atributo de classe &quot;instance&quot;. Representa a instância da classe.</div><div class="ttdef"><b>Definition:</b> usuariodao.h:54</div></div>
 <div class="ttc" id="aclass_cartao_html_a4734504fba17d2c199707ce68e9f179e"><div class="ttname"><a href="class_cartao.html#a4734504fba17d2c199707ce68e9f179e">Cartao::getNumSeguranca</a></div><div class="ttdeci">unsigned int getNumSeguranca() const</div><div class="ttdef"><b>Definition:</b> cartao.h:29</div></div>
-<div class="ttc" id="aclass_not_able_to_connect_exception_html"><div class="ttname"><a href="class_not_able_to_connect_exception.html">NotAbleToConnectException</a></div><div class="ttdef"><b>Definition:</b> notabletoconnectexception.h:6</div></div>
-<div class="ttc" id="aclass_usuario_html_acb47fcc6f8bf29e476977374f8415af3"><div class="ttname"><a href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">Usuario::getCartao</a></div><div class="ttdeci">Cartao getCartao() const</div><div class="ttdef"><b>Definition:</b> usuario.h:37</div></div>
+<div class="ttc" id="aclass_not_able_to_connect_exception_html"><div class="ttname"><a href="class_not_able_to_connect_exception.html">NotAbleToConnectException</a></div><div class="ttdef"><b>Definition:</b> notabletoconnectexception.h:7</div></div>
+<div class="ttc" id="aclass_usuario_html_acb47fcc6f8bf29e476977374f8415af3"><div class="ttname"><a href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">Usuario::getCartao</a></div><div class="ttdeci">Cartao getCartao() const</div><div class="ttdef"><b>Definition:</b> usuario.h:35</div></div>
 <div class="ttc" id="aclass_cartao_html_ab491b37488f8c01fa9ae7591e5dbfed9"><div class="ttname"><a href="class_cartao.html#ab491b37488f8c01fa9ae7591e5dbfed9">Cartao::getNumero</a></div><div class="ttdeci">unsigned long getNumero() const</div><div class="ttdef"><b>Definition:</b> cartao.h:19</div></div>
 <div class="ttc" id="aclass_my_s_q_l_helper_html_abc52e99f4fa975cbecdd8fb9375acce2"><div class="ttname"><a href="class_my_s_q_l_helper.html#abc52e99f4fa975cbecdd8fb9375acce2">MySQLHelper::getInstance</a></div><div class="ttdeci">static MySQLHelper * getInstance()</div><div class="ttdef"><b>Definition:</b> mysqlhelper.cpp:42</div></div>
 <div class="ttc" id="aclass_usuario_d_a_o_html"><div class="ttname"><a href="class_usuario_d_a_o.html">UsuarioDAO</a></div><div class="ttdef"><b>Definition:</b> usuariodao.h:12</div></div>
-<div class="ttc" id="aclass_usuario_html_a44527899a5f049f8072800b19435d106"><div class="ttname"><a href="class_usuario.html#a44527899a5f049f8072800b19435d106">Usuario::getSenha</a></div><div class="ttdeci">std::string getSenha() const</div><div class="ttdef"><b>Definition:</b> usuario.h:29</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_a94f1dbafb99b96d1add8b8672f042258"><div class="ttname"><a href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">UsuarioDAO::mysqlHelper</a></div><div class="ttdeci">static MySQLHelper * mysqlHelper</div><div class="ttdoc">Atributo de classe &quot;mysqlHelper&quot;. Representa o executor de operações no banco de dados MySQL.</div><div class="ttdef"><b>Definition:</b> usuariodao.h:55</div></div>
+<div class="ttc" id="aclass_usuario_html_a44527899a5f049f8072800b19435d106"><div class="ttname"><a href="class_usuario.html#a44527899a5f049f8072800b19435d106">Usuario::getSenha</a></div><div class="ttdeci">std::string getSenha() const</div><div class="ttdef"><b>Definition:</b> usuario.h:25</div></div>
 <div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> usuario.h:8</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

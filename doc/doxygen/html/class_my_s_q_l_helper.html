@@ -66,6 +66,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Membros Públicos</a> &#124;
 <a href="#pub-static-methods">Membros Públicos Estáticos</a> &#124;
+<a href="#pri-methods">Membros Privados</a> &#124;
+<a href="#pri-static-attribs">Atributos Privados Estáticos</a> &#124;
 <a href="class_my_s_q_l_helper-members.html">Lista de todos os Membros</a>  </div>
   <div class="headertitle">
 <div class="title">Referência da Classe MySQLHelper</div>  </div>
@@ -100,6 +102,20 @@ Membros Públicos</h2></td></tr>
 Membros Públicos Estáticos</h2></td></tr>
 <tr class="memitem:abc52e99f4fa975cbecdd8fb9375acce2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_my_s_q_l_helper.html">MySQLHelper</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_s_q_l_helper.html#abc52e99f4fa975cbecdd8fb9375acce2">getInstance</a> ()</td></tr>
 <tr class="separator:abc52e99f4fa975cbecdd8fb9375acce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Membros Privados</h2></td></tr>
+<tr class="memitem:a7b3c5d725f1182ab1a3d4742b15ff890"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_s_q_l_helper.html#a7b3c5d725f1182ab1a3d4742b15ff890">MySQLHelper</a> ()</td></tr>
+<tr class="separator:a7b3c5d725f1182ab1a3d4742b15ff890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos Privados Estáticos</h2></td></tr>
+<tr class="memitem:a82ebb255a2c57cdac5dd1d743bbb4bda"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_my_s_q_l_helper.html">MySQLHelper</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda">instance</a> =nullptr</td></tr>
+<tr class="memdesc:a82ebb255a2c57cdac5dd1d743bbb4bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atributo de classe "instance". Representa a instância da classe.  <a href="class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda">Mais...</a><br /></td></tr>
+<tr class="separator:a82ebb255a2c57cdac5dd1d743bbb4bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a8720ef79f851e6b66310b7b193a284"><td class="memItemLeft" align="right" valign="top">static MYSQL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">dbconn</a> = nullptr</td></tr>
+<tr class="memdesc:a7a8720ef79f851e6b66310b7b193a284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atributo de classe "dbconn". Representa a conexão com o banco de dados.  <a href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">Mais...</a><br /></td></tr>
+<tr class="separator:a7a8720ef79f851e6b66310b7b193a284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="a343d45202502b17fa3f278ea33cc50d8"></a>
@@ -124,7 +140,7 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Default destructor </p>
+<p>Destrutor padrão </p>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                         {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
@@ -132,7 +148,7 @@ Membros Públicos Estáticos</h2></td></tr>
 </div>
 </div>
 <a id="a1597352e863b8a40b3e4c80d74069ddb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1597352e863b8a40b3e4c80d74069ddb">&#9670;&nbsp;</a></span>MySQLHelper()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1597352e863b8a40b3e4c80d74069ddb">&#9670;&nbsp;</a></span>MySQLHelper() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,6 +171,33 @@ Membros Públicos Estáticos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="a7b3c5d725f1182ab1a3d4742b15ff890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b3c5d725f1182ab1a3d4742b15ff890">&#9670;&nbsp;</a></span>MySQLHelper() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MySQLHelper::MySQLHelper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construtor privado para garantir a arquitetura Singleton da classe. </p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Funções membros</h2>
@@ -180,14 +223,14 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Connect to remote(or local) database </p>
+<p>Conecta a um banco de dados SQL remoto. </p>
 
-<p>Reimplementa <a class="el" href="class_persistance_helper.html#a2860c2d48d4c7e973635662bf069b847">PersistanceHelper&lt; MYSQL_RES &gt;</a>.</p>
+<p>Implementa <a class="el" href="class_persistance_helper.html#a7102114e9d68f20da60da9374ec7b227">PersistanceHelper&lt; MYSQL_RES &gt;</a>.</p>
 <div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                         {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span>(!MySQLHelper::dbconn){</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      MySQLHelper::dbconn = mysql_init(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      MySQLHelper::dbconn = mysql_real_connect(MySQLHelper::dbconn, <a class="code" href="mysqlhelper_8h.html#af00e4b63d736381e1c527ac5ef2c8f3c">IP</a>, <a class="code" href="mysqlhelper_8h.html#a8bfbbf31b7d3c07215440d18a064b7f4">USER</a>, <a class="code" href="mysqlhelper_8h.html#a9e8538fad4eee548302ad9f60e6d47ca">PASSWORD</a>, <a class="code" href="mysqlhelper_8h.html#aa1f0559f8030e9c4a7434d677c854527">DB</a>, 0, <span class="keyword">nullptr</span>, 0);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordflow">if</span> (MySQLHelper::dbconn) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span>(!<a class="code" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a>){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <a class="code" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a> = mysql_init(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <a class="code" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a> = mysql_real_connect(<a class="code" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a>, <a class="code" href="mysqlhelper_8h.html#af00e4b63d736381e1c527ac5ef2c8f3c">IP</a>, <a class="code" href="mysqlhelper_8h.html#a8bfbbf31b7d3c07215440d18a064b7f4">USER</a>, <a class="code" href="mysqlhelper_8h.html#a9e8538fad4eee548302ad9f60e6d47ca">PASSWORD</a>, <a class="code" href="mysqlhelper_8h.html#aa1f0559f8030e9c4a7434d677c854527">DB</a>, 0, <span class="keyword">nullptr</span>, 0);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a>) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">throw</span> <a class="code" href="class_not_able_to_connect_exception.html">NotAbleToConnectException</a>();</div>
@@ -220,18 +263,18 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get instance if available or create new if necessary </p><dl class="section return"><dt>Retorna</dt><dd>valid current instance </dd></dl>
+<p>Retorna a instância da classe <a class="el" href="class_my_s_q_l_helper.html">MySQLHelper(Singleton)</a> ou, caso necessário, cria a instância. </p><dl class="section return"><dt>Retorna</dt><dd>Instância válida atual </dd></dl>
 <div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                     {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">if</span>(MySQLHelper::instance == <span class="keyword">nullptr</span>){</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      MySQLHelper::instance = <span class="keyword">new</span> <a class="code" href="class_my_s_q_l_helper.html">MySQLHelper</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda">MySQLHelper::instance</a> == <span class="keyword">nullptr</span>){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda">MySQLHelper::instance</a> = <span class="keyword">new</span> <a class="code" href="class_my_s_q_l_helper.html#a7b3c5d725f1182ab1a3d4742b15ff890">MySQLHelper</a>();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        MySQLHelper::instance-&gt;<a class="code" href="class_my_s_q_l_helper.html#aa7485fe6c7904d27d3efb66b20886588">connect</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda">MySQLHelper::instance</a>-&gt;<a class="code" href="class_my_s_q_l_helper.html#aa7485fe6c7904d27d3efb66b20886588">connect</a>();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      } <span class="keywordflow">catch</span> (<a class="code" href="class_not_able_to_connect_exception.html">NotAbleToConnectException</a>&amp; e) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        MySQLHelper::instance = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda">MySQLHelper::instance</a> = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">throw</span> e;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> MySQLHelper::instance;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda">MySQLHelper::instance</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -285,20 +328,21 @@ Membros Públicos Estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Execute query on database and return result </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p>Executa uma operação no banco MySQL e retorna o resutado. </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">query</td><td>query to be executed </td></tr>
+    <tr><td class="paramname">query</td><td>Operação a ser executada </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Retorna</dt><dd>Resultado da operação </dd></dl>
 
-<p>Reimplementa <a class="el" href="class_persistance_helper.html#a9c65ce0c14c95c3abcb868ea22a72d51">PersistanceHelper&lt; MYSQL_RES &gt;</a>.</p>
+<p>Implementa <a class="el" href="class_persistance_helper.html#a705b3036e01b99886164951e3d26a689">PersistanceHelper&lt; MYSQL_RES &gt;</a>.</p>
 <div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                            {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  MYSQL_RES* res;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">if</span>(MySQLHelper::dbconn){</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <span class="keywordtype">int</span> qstate = mysql_query(MySQLHelper::dbconn, <a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>.c_str());</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a>){</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <span class="keywordtype">int</span> qstate = mysql_query(<a class="code" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a>, <a class="code" href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">query</a>.c_str());</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      <span class="keywordflow">if</span>(!qstate){</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;          res = mysql_store_result(MySQLHelper::dbconn);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;          res = mysql_store_result(<a class="code" href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a>);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;          <span class="comment">// TODO add exception for failed query</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;          <span class="comment">// Some error on query</span></div>
@@ -314,6 +358,55 @@ Membros Públicos Estáticos</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<h2 class="groupheader">Atributos</h2>
+<a id="a7a8720ef79f851e6b66310b7b193a284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a8720ef79f851e6b66310b7b193a284">&#9670;&nbsp;</a></span>dbconn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MYSQL * MySQLHelper::dbconn = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atributo de classe "dbconn". Representa a conexão com o banco de dados. </p>
+
+</div>
+</div>
+<a id="a82ebb255a2c57cdac5dd1d743bbb4bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82ebb255a2c57cdac5dd1d743bbb4bda">&#9670;&nbsp;</a></span>instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_s_q_l_helper.html">MySQLHelper</a> * MySQLHelper::instance =nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atributo de classe "instance". Representa a instância da classe. </p>
+
+</div>
+</div>
 <hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
 <li>/home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/<a class="el" href="mysqlhelper_8h_source.html">mysqlhelper.h</a></li>
 <li>/home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/<a class="el" href="mysqlhelper_8cpp.html">mysqlhelper.cpp</a></li>
@@ -323,10 +416,12 @@ Membros Públicos Estáticos</h2></td></tr>
 <div class="ttc" id="amysqlhelper_8h_html_af00e4b63d736381e1c527ac5ef2c8f3c"><div class="ttname"><a href="mysqlhelper_8h.html#af00e4b63d736381e1c527ac5ef2c8f3c">IP</a></div><div class="ttdeci">#define IP</div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:10</div></div>
 <div class="ttc" id="aclass_my_s_q_l_helper_html_a08a4372347d7c5dda23c4d24e17c2474"><div class="ttname"><a href="class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474">MySQLHelper::query</a></div><div class="ttdeci">MYSQL_RES * query(std::string) override</div><div class="ttdef"><b>Definition:</b> mysqlhelper.cpp:10</div></div>
 <div class="ttc" id="aclass_my_s_q_l_helper_html_aa7485fe6c7904d27d3efb66b20886588"><div class="ttname"><a href="class_my_s_q_l_helper.html#aa7485fe6c7904d27d3efb66b20886588">MySQLHelper::connect</a></div><div class="ttdeci">void connect() override</div><div class="ttdef"><b>Definition:</b> mysqlhelper.cpp:29</div></div>
-<div class="ttc" id="aclass_my_s_q_l_helper_html"><div class="ttname"><a href="class_my_s_q_l_helper.html">MySQLHelper</a></div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:17</div></div>
-<div class="ttc" id="aclass_not_able_to_connect_exception_html"><div class="ttname"><a href="class_not_able_to_connect_exception.html">NotAbleToConnectException</a></div><div class="ttdef"><b>Definition:</b> notabletoconnectexception.h:6</div></div>
+<div class="ttc" id="aclass_my_s_q_l_helper_html_a82ebb255a2c57cdac5dd1d743bbb4bda"><div class="ttname"><a href="class_my_s_q_l_helper.html#a82ebb255a2c57cdac5dd1d743bbb4bda">MySQLHelper::instance</a></div><div class="ttdeci">static MySQLHelper * instance</div><div class="ttdoc">Atributo de classe &quot;instance&quot;. Representa a instância da classe.</div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:46</div></div>
+<div class="ttc" id="aclass_my_s_q_l_helper_html_a7b3c5d725f1182ab1a3d4742b15ff890"><div class="ttname"><a href="class_my_s_q_l_helper.html#a7b3c5d725f1182ab1a3d4742b15ff890">MySQLHelper::MySQLHelper</a></div><div class="ttdeci">MySQLHelper()</div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:44</div></div>
+<div class="ttc" id="aclass_not_able_to_connect_exception_html"><div class="ttname"><a href="class_not_able_to_connect_exception.html">NotAbleToConnectException</a></div><div class="ttdef"><b>Definition:</b> notabletoconnectexception.h:7</div></div>
 <div class="ttc" id="amysqlhelper_8h_html_a9e8538fad4eee548302ad9f60e6d47ca"><div class="ttname"><a href="mysqlhelper_8h.html#a9e8538fad4eee548302ad9f60e6d47ca">PASSWORD</a></div><div class="ttdeci">#define PASSWORD</div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:12</div></div>
 <div class="ttc" id="amysqlhelper_8h_html_a8bfbbf31b7d3c07215440d18a064b7f4"><div class="ttname"><a href="mysqlhelper_8h.html#a8bfbbf31b7d3c07215440d18a064b7f4">USER</a></div><div class="ttdeci">#define USER</div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:11</div></div>
+<div class="ttc" id="aclass_my_s_q_l_helper_html_a7a8720ef79f851e6b66310b7b193a284"><div class="ttname"><a href="class_my_s_q_l_helper.html#a7a8720ef79f851e6b66310b7b193a284">MySQLHelper::dbconn</a></div><div class="ttdeci">static MYSQL * dbconn</div><div class="ttdoc">Atributo de classe &quot;dbconn&quot;. Representa a conexão com o banco de dados.</div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:47</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Gerado por &#160;<a href="http://www.doxygen.org/index.html">

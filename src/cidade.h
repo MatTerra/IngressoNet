@@ -3,38 +3,40 @@
 
 #include <string>
 
-class Cidade
-{
-public:
-  /** Default constructor */
-  Cidade(std::string nome, std::string estado):nome(nome), estado(estado){}
 
-  /** Default destructor */
-  virtual ~Cidade();
+class Cidade{
 
-  /** Access nome
-   * \return The current value of nome
-   */
-  std::string getNome() const { return nome; }
+  public:
+    /** Construtor Padrão */
+    Cidade(std::string nome, std::string estado):nome(nome), estado(estado){}
 
-  /** Set nome
-   * \param val New value to set
-   */
-  void setNome (std::string val) { nome = val; }
+    /** Destrutor Padrão */
+    virtual ~Cidade();
 
-  /** Access estado
-   * \return The current value of estado
-   */
-  std::string getEstado() const { return estado; }
+    /** Método de acesso a nome.
+     * \return O valor atual de nome
+     */
+    std::string getNome() const { return nome; }
 
-  /** Set estado
-   * \param val New value to set
-   */
-  void setEstado(std::string val) { estado = val; }
+    /** Método de alteração de nome.
+     * \param nome Novo nome da cidade
+     */
+    void setNome (std::string nome) { this->nome = nome; }
 
-private:
-  std::string nome; //!< Member variable "nome"
-  std::string estado; //!< Member variable "estado"
+    /** Método de acesso a estado.
+     * \return O valor atual de estado
+     */
+    std::string getEstado() const { return estado; }
+
+    /** Método de alteração de estado.
+     * \param estado O novo valor de estado
+     */
+    void setEstado(std::string estado) { this->estado = estado; }
+
+
+  private:
+    std::string nome; //!< Atributo de instância "nome". Representa o nome da cidade.
+    std::string estado; //!< Atributo de instância "estado". Representa o estado da cidade.
 };
 
 #endif // CIDADE_H

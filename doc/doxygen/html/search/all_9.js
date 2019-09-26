@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove_42',['remove',['../class_generic_d_a_o.html#adde736eb66cc9cd6a6fa739e6ee078f8',1,'GenericDAO::remove()'],['../class_usuario_d_a_o.html#af929fbadb5e4bc01ba61e61594d848fe',1,'UsuarioDAO::remove()']]]
+  ['query_48',['query',['../class_my_s_q_l_helper.html#a08a4372347d7c5dda23c4d24e17c2474',1,'MySQLHelper::query()'],['../class_persistance_helper.html#a705b3036e01b99886164951e3d26a689',1,'PersistanceHelper::query()']]]
 ];

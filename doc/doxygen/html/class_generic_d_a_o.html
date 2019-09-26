@@ -79,12 +79,12 @@ Membros Públicos</h2></td></tr>
 <tr class="separator:aeb53ae6b7068ae2dd94bbbfb507d887d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b2932c1763d2fa25ee7ce5838b46b70"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_d_a_o.html#a9b2932c1763d2fa25ee7ce5838b46b70">getAll</a> ()=0</td></tr>
 <tr class="separator:a9b2932c1763d2fa25ee7ce5838b46b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd0fa95e82db30049b706eec959647bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_d_a_o.html#afd0fa95e82db30049b706eec959647bf">save</a> (T)</td></tr>
-<tr class="separator:afd0fa95e82db30049b706eec959647bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9902f58eb402e094f710acb1f605881"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_d_a_o.html#ab9902f58eb402e094f710acb1f605881">update</a> (T, std::string[])</td></tr>
-<tr class="separator:ab9902f58eb402e094f710acb1f605881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adde736eb66cc9cd6a6fa739e6ee078f8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_d_a_o.html#adde736eb66cc9cd6a6fa739e6ee078f8">remove</a> (T)</td></tr>
-<tr class="separator:adde736eb66cc9cd6a6fa739e6ee078f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e704dca4b0ec0683b6fc945a1db431b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_d_a_o.html#a3e704dca4b0ec0683b6fc945a1db431b">save</a> (T)=0</td></tr>
+<tr class="separator:a3e704dca4b0ec0683b6fc945a1db431b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4c4821330bd6b8e42c012d65c8f6df9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_d_a_o.html#ab4c4821330bd6b8e42c012d65c8f6df9">update</a> (T, std::string, std::string)=0</td></tr>
+<tr class="separator:ab4c4821330bd6b8e42c012d65c8f6df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a9b2a6650dab4c4ad4cdbe980ea718"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_d_a_o.html#ac9a9b2a6650dab4c4ad4cdbe980ea718">remove</a> (T)=0</td></tr>
+<tr class="separator:ac9a9b2a6650dab4c4ad4cdbe980ea718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Funções membros</h2>
 <a id="aeb53ae6b7068ae2dd94bbbfb507d887d"></a>
@@ -112,6 +112,13 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Método abstrato para busca de um registro da classe T específico no banco de dados. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador do registro </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Instância do objeto buscado </dd></dl>
 
 <p>Implementado por <a class="el" href="class_usuario_d_a_o.html#afdc11cb9ab3a6b516ac0e0a499755f5f">UsuarioDAO</a>.</p>
 
@@ -141,13 +148,14 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Método abstrato para busca de todos os registros da classe T no banco de dados. </p><dl class="section return"><dt>Retorna</dt><dd>Vetor de T com todos os objetos do banco </dd></dl>
 
 <p>Implementado por <a class="el" href="class_usuario_d_a_o.html#a7f2913deec72b3c1c102f032592cf520">UsuarioDAO</a>.</p>
 
 </div>
 </div>
-<a id="adde736eb66cc9cd6a6fa739e6ee078f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adde736eb66cc9cd6a6fa739e6ee078f8">&#9670;&nbsp;</a></span>remove()</h2>
+<a id="ac9a9b2a6650dab4c4ad4cdbe980ea718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a9b2a6650dab4c4ad4cdbe980ea718">&#9670;&nbsp;</a></span>remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,18 +175,23 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Método abstrato para remover uma instância da classe T no banco de dados. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>Instância de T </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplementado por <a class="el" href="class_usuario_d_a_o.html#af929fbadb5e4bc01ba61e61594d848fe">UsuarioDAO</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{}</div>
-</div><!-- fragment -->
+<p>Implementado por <a class="el" href="class_usuario_d_a_o.html#af929fbadb5e4bc01ba61e61594d848fe">UsuarioDAO</a>.</p>
+
 </div>
 </div>
-<a id="afd0fa95e82db30049b706eec959647bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd0fa95e82db30049b706eec959647bf">&#9670;&nbsp;</a></span>save()</h2>
+<a id="a3e704dca4b0ec0683b6fc945a1db431b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e704dca4b0ec0683b6fc945a1db431b">&#9670;&nbsp;</a></span>save()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,18 +211,23 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Método abstrato para salvar uma instância da classe T no banco de dados. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>Instância de T </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplementado por <a class="el" href="class_usuario_d_a_o.html#ab22491952d7f7606bcb3c4361207bdec">UsuarioDAO</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{}</div>
-</div><!-- fragment -->
+<p>Implementado por <a class="el" href="class_usuario_d_a_o.html#ab22491952d7f7606bcb3c4361207bdec">UsuarioDAO</a>.</p>
+
 </div>
 </div>
-<a id="ab9902f58eb402e094f710acb1f605881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9902f58eb402e094f710acb1f605881">&#9670;&nbsp;</a></span>update()</h2>
+<a id="ab4c4821330bd6b8e42c012d65c8f6df9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4c4821330bd6b8e42c012d65c8f6df9">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +247,13 @@ template&lt;class T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname">[]&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -239,14 +263,21 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Método abstrato para atualizar uma instância da classe T no banco de dados. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instance</td><td>Instância de T </td></tr>
+    <tr><td class="paramname">field</td><td>Identificador do campo a ser atualizado </td></tr>
+    <tr><td class="paramname">value</td><td>Novo valor de field </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplementado por <a class="el" href="class_usuario_d_a_o.html#aad6d80f3d9868197a019878e69c39376">UsuarioDAO</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{}</div>
-</div><!-- fragment -->
+<p>Implementado por <a class="el" href="class_usuario_d_a_o.html#aef8bad221c090c0da5517397572c3976">UsuarioDAO</a>.</p>
+
 </div>
 </div>
 <hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>

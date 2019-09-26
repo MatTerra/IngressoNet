@@ -88,12 +88,9 @@ void TesteUsuarioDAO::testeUpdateUser(){
   UsuarioDAO* udao = UsuarioDAO::getInstance();
   Cartao c(36490102462661, 1234);
   Usuario u("081.556.680-88", "1234", c);
-  std::string params[] = {"senha", "123456"};
-  udao->update(u, params);
+  udao->update(u, "senha", "123456");
   Usuario a = udao->get(u.getCPF());
-  QCOMPARE(a.getSenha().compare(params[1]), 0);
-  params[1]="1234";
-  udao->update(u, params);
+  QCOMPARE(a.getSenha(), "123456");
 }
 
 void TesteUsuarioDAO::testeRemoveUser(){

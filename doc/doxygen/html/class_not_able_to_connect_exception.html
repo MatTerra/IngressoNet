@@ -81,12 +81,12 @@ Diagrama de hierarquia para NotAbleToConnectException:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:aaa233fc1ad76fc41d9fe51e2437f730a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_able_to_connect_exception.html#aaa233fc1ad76fc41d9fe51e2437f730a">what</a> () const  throw ()</td></tr>
-<tr class="separator:aaa233fc1ad76fc41d9fe51e2437f730a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee190eba5f0691f02b55251ccaaebcac"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_able_to_connect_exception.html#aee190eba5f0691f02b55251ccaaebcac">what</a> () const noexcept</td></tr>
+<tr class="separator:aee190eba5f0691f02b55251ccaaebcac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Funções membros</h2>
-<a id="aaa233fc1ad76fc41d9fe51e2437f730a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa233fc1ad76fc41d9fe51e2437f730a">&#9670;&nbsp;</a></span>what()</h2>
+<a id="aee190eba5f0691f02b55251ccaaebcac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee190eba5f0691f02b55251ccaaebcac">&#9670;&nbsp;</a></span>what()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -100,22 +100,17 @@ Membros Públicos</h2></td></tr>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
-        <tr>
-          <td align="right">throw </td><td>(</td><td colspan="2"></td>
-        </tr>
-        <tr>
-          <td align="right"></td><td>)</td><td></td><td></td>
-        </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                      {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;It wasn&#39;t possible to establish a connection!&quot;</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;     }</div>
+<p>Exceção personalizada para detecção de problemas de conexão Método para retorno de rastro da exceção e mensagem personalizada. </p><dl class="section return"><dt>Retorna</dt><dd>Mensagem personalizada descritiva do erro </dd></dl>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;          <span class="keywordflow">return</span> <span class="stringliteral">&quot;It wasn&#39;t possible to establish a connection!&quot;</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

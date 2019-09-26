@@ -16,7 +16,7 @@ Usuario UsuarioDAO::get(std::string cpf){
     if((row= mysql_fetch_row(res))) {
       std::string senha = row[0];
       unsigned long numeroCartao = strtoul(row[1], nullptr, 10);
-      unsigned int numSeguranca = atoi(row[2]);
+      unsigned int numSeguranca = static_cast<unsigned int>(atoi(row[2]));
 
       Cartao card(numeroCartao, numSeguranca);
       Usuario user(cpf, senha, card);
@@ -45,7 +45,7 @@ std::vector<Usuario> UsuarioDAO::getAll(){
         std::string cpf = row[0];
         std::string senha = row[1];
         unsigned long numeroCartao = strtoul(row[2], nullptr, 10);
-        unsigned int numSeguranca = atoi(row[3]);
+        unsigned int numSeguranca = static_cast<unsigned int>(atoi(row[3]));
 
         Cartao card(numeroCartao, numSeguranca);
         Usuario user(cpf, senha, card);
@@ -58,26 +58,29 @@ std::vector<Usuario> UsuarioDAO::getAll(){
     throw e;
   }
 }
-void UsuarioDAO::save(Usuario u){
-  std::string query = "INSERT INTO usuario_t (cpf, senha) VALUES ('"+u.getCPF()+"', '"+u.getSenha()+"');";
-  std::string query2 = "INSERT INTO cartao_t (numero, cpf, codigoDeSeguranca) VALUES ("+std::to_string(u.getCartao().getNumero())+", '"+u.getCPF()+"', "+std::to_string(u.getCartao().getNumSeguranca())+");";
+
+void UsuarioDAO::save(Usuario usuario){
+  std::string query = "INSERT INTO usuario_t (cpf, senha) VALUES ('"+usuario.getCPF()+"', '"+usuario.getSenha()+"');";
+  std::string query2 = "INSERT INTO cartao_t (numero, cpf, codigoDeSeguranca) VALUES ("+std::to_string(usuario.getCartao().getNumero())+", '"+usuario.getCPF()+"', "+std::to_string(usuario.getCartao().getNumSeguranca())+");";
+
   mysql_free_result(mysqlHelper->query(query));
   mysql_free_result(mysqlHelper->query(query2));
 }
-void UsuarioDAO::update(Usuario u, std::string params[]){
+
+void UsuarioDAO::update(Usuario usuario, std::string field, std::string value){
   std::string query;
-  if(params[0].compare("senha")==0){
-    query = "UPDATE usuario_t SET senha = '"+params[1]+"' WHERE (cpf = '"+u.getCPF()+"');";
+  if(field.compare("senha")==0){
+    query = "UPDATE usuario_t SET senha = '"+value+"' WHERE (cpf = '"+usuario.getCPF()+"');";
   } else{
     // TODO erro propriedade não encontrada
     qDebug("propriedade não encontrada");
   }
   mysql_free_result(mysqlHelper->query(query));
 }
-void UsuarioDAO::remove(Usuario u){
-  std::string query = "DELETE FROM cartao_t WHERE (cpf = '"+u.getCPF()+"');";
+void UsuarioDAO::remove(Usuario usuario){
+  std::string query = "DELETE FROM cartao_t WHERE (cpf = '"+usuario.getCPF()+"');";
   mysql_free_result(mysqlHelper->query(query));
-  query = "DELETE FROM usuario_t WHERE (cpf = '"+u.getCPF()+"');";
+  query = "DELETE FROM usuario_t WHERE (cpf = '"+usuario.getCPF()+"');";
   mysql_free_result(mysqlHelper->query(query));
 }
 

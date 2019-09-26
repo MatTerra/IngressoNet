@@ -7,45 +7,43 @@
 \doxysubsection*{Membros Públicos}
 \begin{DoxyCompactItemize}
 \item 
-virtual T $\ast$ \mbox{\hyperlink{class_persistance_helper_a9c65ce0c14c95c3abcb868ea22a72d51}{query}} (std\+::string)
+virtual T $\ast$ \mbox{\hyperlink{class_persistance_helper_a705b3036e01b99886164951e3d26a689}{query}} (std\+::string)=0
 \item 
-virtual void \mbox{\hyperlink{class_persistance_helper_a2860c2d48d4c7e973635662bf069b847}{connect}} ()
+virtual void \mbox{\hyperlink{class_persistance_helper_a7102114e9d68f20da60da9374ec7b227}{connect}} ()=0
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Funções membros}
-\mbox{\Hypertarget{class_persistance_helper_a2860c2d48d4c7e973635662bf069b847}\label{class_persistance_helper_a2860c2d48d4c7e973635662bf069b847}} 
+\mbox{\Hypertarget{class_persistance_helper_a7102114e9d68f20da60da9374ec7b227}\label{class_persistance_helper_a7102114e9d68f20da60da9374ec7b227}} 
 \index{PersistanceHelper$<$ T $>$@{PersistanceHelper$<$ T $>$}!connect@{connect}}
 \index{connect@{connect}!PersistanceHelper$<$ T $>$@{PersistanceHelper$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{connect()}{connect()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-virtual void \mbox{\hyperlink{class_persistance_helper}{Persistance\+Helper}}$<$ T $>$\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+virtual void \mbox{\hyperlink{class_persistance_helper}{Persistance\+Helper}}$<$ T $>$\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+Conecta a um banco de dados remoto. 
 
+Implementado por \mbox{\hyperlink{class_my_s_q_l_helper_aa7485fe6c7904d27d3efb66b20886588}{My\+S\+Q\+L\+Helper}}.
 
-Reimplementado por \mbox{\hyperlink{class_my_s_q_l_helper_aa7485fe6c7904d27d3efb66b20886588}{My\+S\+Q\+L\+Helper}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{10 \{\}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_persistance_helper_a9c65ce0c14c95c3abcb868ea22a72d51}\label{class_persistance_helper_a9c65ce0c14c95c3abcb868ea22a72d51}} 
+\mbox{\Hypertarget{class_persistance_helper_a705b3036e01b99886164951e3d26a689}\label{class_persistance_helper_a705b3036e01b99886164951e3d26a689}} 
 \index{PersistanceHelper$<$ T $>$@{PersistanceHelper$<$ T $>$}!query@{query}}
 \index{query@{query}!PersistanceHelper$<$ T $>$@{PersistanceHelper$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{query()}{query()}}
 {\footnotesize\ttfamily template$<$typename T$>$ \\
-virtual T$\ast$ \mbox{\hyperlink{class_persistance_helper}{Persistance\+Helper}}$<$ T $>$\+::query (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+virtual T$\ast$ \mbox{\hyperlink{class_persistance_helper}{Persistance\+Helper}}$<$ T $>$\+::query (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Executa uma operação no banco de dados e retorna o resutado. 
+\begin{DoxyParams}{Parâmetros}
+{\em query} & Operação a ser executada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Resultado da operação 
+\end{DoxyReturn}
 
 
+Implementado por \mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{My\+S\+Q\+L\+Helper}}.
 
-Reimplementado por \mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{My\+S\+Q\+L\+Helper}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{9 \{\textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};\}}
-
-\end{DoxyCode}
 
 
 A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}

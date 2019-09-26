@@ -6,33 +6,53 @@
 #include "usuario.h"
 #include "cartao.h"
 #include "notabletoconnectexception.h"
-
 #include <mysql/mysql.h>
+
 
 class UsuarioDAO : public GenericDAO<Usuario>{
 
-public:
-  /** Default destructor */
-  virtual ~UsuarioDAO();
+  public:
+    /** Default destructor */
+    virtual ~UsuarioDAO();
 
-  /** Get an user instance from database
-   *  \param cpf to look for in db
-   *  \return user with cpf
-   */
-  Usuario get(std::string) override;
+    /** Busca um registro da classe Usuário no banco de dados MySQL.
+     *  \param cpf CPF do Usuário a buscar
+     *  \return Usuário encontrado com o CPF ou Usuário com CPF 000.000.000-00 caso não seja encontrado nenhum registro
+     */
+    Usuario get(std::string) override;
 
-  /** Get all users in database
-   * \return usuarios vector of users in database
-   */
-  std::vector<Usuario> getAll() override;
+    /** Busca todos os registros de Usuários no banco de dados MySQL.
+     * \return Vetor de Usuários do banco de dados MySQL
+     */
+    std::vector<Usuario> getAll() override;
 
-  void save(Usuario) override;
-  void update(Usuario, std::string[]) override;
-  void remove(Usuario) override;
-  static UsuarioDAO* getInstance();
-private:
-  static UsuarioDAO* instance;
-  static MySQLHelper* mysqlHelper;
+    /** Salva a instância do Usuário no banco de dados MySQL.
+     * \param usuario Instância a ser salva no banco de dados MySQL
+     */
+    void save(Usuario) override;
+
+    /** Atualiza a instância do Usuário no banco de dados MySQL de acordo com o campo e valor fornecidos.
+     * \param usuario Instância a ser atualizada no banco de dados MySQL
+     * \param field Campo a ser atualizado no banco de dados MySQL
+     * \param value Novo valor do campo a ser atualizado no banco de dados MySQL
+     */
+    void update(Usuario, std::string, std::string) override;
+
+    /** Remove a instância do Usuário do banco de dados MySQL.
+     * \param usuario Instância a ser removida do banco de dados MySQL
+     */
+    void remove(Usuario) override;
+
+    /** Retorna a instância da classe UsuarioDAO(Singleton) ou, caso necessário, cria a instância.
+     *  \return Instância válida atual
+     */
+    static UsuarioDAO* getInstance();
+
+
+  private:
+
+    static UsuarioDAO* instance; //!< Atributo de classe "instance". Representa a instância da classe.
+    static MySQLHelper* mysqlHelper; //!< Atributo de classe "mysqlHelper". Representa o executor de operações no banco de dados MySQL.
 };
 
 #endif // USUARIODAO_H

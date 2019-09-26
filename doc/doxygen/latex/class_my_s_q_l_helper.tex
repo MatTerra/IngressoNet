@@ -28,6 +28,18 @@ void \mbox{\hyperlink{class_my_s_q_l_helper_a06e5bb12f4d001ba4adacb9368d5fd07}{o
 \item 
 static \mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper}} $\ast$ \mbox{\hyperlink{class_my_s_q_l_helper_abc52e99f4fa975cbecdd8fb9375acce2}{get\+Instance}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_my_s_q_l_helper_a7b3c5d725f1182ab1a3d4742b15ff890}{My\+S\+Q\+L\+Helper}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper}} $\ast$ \mbox{\hyperlink{class_my_s_q_l_helper_a82ebb255a2c57cdac5dd1d743bbb4bda}{instance}} =nullptr
+\begin{DoxyCompactList}\small\item\em Atributo de classe \char`\"{}instance\char`\"{}. Representa a instância da classe. \end{DoxyCompactList}\item 
+static M\+Y\+S\+QL $\ast$ \mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{dbconn}} = nullptr
+\begin{DoxyCompactList}\small\item\em Atributo de classe \char`\"{}dbconn\char`\"{}. Representa a conexão com o banco de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Construtores e Destrutores}
@@ -37,7 +49,7 @@ static \mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper}} $\ast$ \mbo
 \doxysubsubsection{\texorpdfstring{$\sim$MySQLHelper()}{~MySQLHelper()}}
 {\footnotesize\ttfamily My\+S\+Q\+L\+Helper\+::$\sim$\+My\+S\+Q\+L\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Default destructor 
+Destrutor padrão 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{6                          \{}
 \DoxyCodeLine{7 }
@@ -47,9 +59,20 @@ Default destructor
 \mbox{\Hypertarget{class_my_s_q_l_helper_a1597352e863b8a40b3e4c80d74069ddb}\label{class_my_s_q_l_helper_a1597352e863b8a40b3e4c80d74069ddb}} 
 \index{MySQLHelper@{MySQLHelper}!MySQLHelper@{MySQLHelper}}
 \index{MySQLHelper@{MySQLHelper}!MySQLHelper@{MySQLHelper}}
-\doxysubsubsection{\texorpdfstring{MySQLHelper()}{MySQLHelper()}}
+\doxysubsubsection{\texorpdfstring{MySQLHelper()}{MySQLHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily My\+S\+Q\+L\+Helper\+::\+My\+S\+Q\+L\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
+\mbox{\Hypertarget{class_my_s_q_l_helper_a7b3c5d725f1182ab1a3d4742b15ff890}\label{class_my_s_q_l_helper_a7b3c5d725f1182ab1a3d4742b15ff890}} 
+\index{MySQLHelper@{MySQLHelper}!MySQLHelper@{MySQLHelper}}
+\index{MySQLHelper@{MySQLHelper}!MySQLHelper@{MySQLHelper}}
+\doxysubsubsection{\texorpdfstring{MySQLHelper()}{MySQLHelper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily My\+S\+Q\+L\+Helper\+::\+My\+S\+Q\+L\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Construtor privado para garantir a arquitetura Singleton da classe. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \{\}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Funções membros}
@@ -59,17 +82,17 @@ Default destructor
 \doxysubsubsection{\texorpdfstring{connect()}{connect()}}
 {\footnotesize\ttfamily void My\+S\+Q\+L\+Helper\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Connect to remote(or local) database 
+Conecta a um banco de dados S\+QL remoto. 
 
-Reimplementa \mbox{\hyperlink{class_persistance_helper_a2860c2d48d4c7e973635662bf069b847}{Persistance\+Helper$<$ M\+Y\+S\+Q\+L\+\_\+\+R\+E\+S $>$}}.
+Implementa \mbox{\hyperlink{class_persistance_helper_a7102114e9d68f20da60da9374ec7b227}{Persistance\+Helper$<$ M\+Y\+S\+Q\+L\+\_\+\+R\+E\+S $>$}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{29                          \{}
-\DoxyCodeLine{30   \textcolor{keywordflow}{if}(!MySQLHelper::dbconn)\{}
-\DoxyCodeLine{31       MySQLHelper::dbconn = mysql\_init(\textcolor{keyword}{nullptr});}
-\DoxyCodeLine{32       MySQLHelper::dbconn = mysql\_real\_connect(MySQLHelper::dbconn, \mbox{\hyperlink{mysqlhelper_8h_af00e4b63d736381e1c527ac5ef2c8f3c}{IP}}, \mbox{\hyperlink{mysqlhelper_8h_a8bfbbf31b7d3c07215440d18a064b7f4}{USER}}, \mbox{\hyperlink{mysqlhelper_8h_a9e8538fad4eee548302ad9f60e6d47ca}{PASSWORD}}, \mbox{\hyperlink{mysqlhelper_8h_aa1f0559f8030e9c4a7434d677c854527}{DB}}, 0, \textcolor{keyword}{nullptr}, 0);}
-\DoxyCodeLine{33       \textcolor{keywordflow}{if} (MySQLHelper::dbconn) \{}
+\DoxyCodeLine{30   \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{MySQLHelper::dbconn}})\{}
+\DoxyCodeLine{31       \mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{MySQLHelper::dbconn}} = mysql\_init(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{32       \mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{MySQLHelper::dbconn}} = mysql\_real\_connect(\mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{MySQLHelper::dbconn}}, \mbox{\hyperlink{mysqlhelper_8h_af00e4b63d736381e1c527ac5ef2c8f3c}{IP}}, \mbox{\hyperlink{mysqlhelper_8h_a8bfbbf31b7d3c07215440d18a064b7f4}{USER}}, \mbox{\hyperlink{mysqlhelper_8h_a9e8538fad4eee548302ad9f60e6d47ca}{PASSWORD}}, \mbox{\hyperlink{mysqlhelper_8h_aa1f0559f8030e9c4a7434d677c854527}{DB}}, 0, \textcolor{keyword}{nullptr}, 0);}
+\DoxyCodeLine{33       \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{MySQLHelper::dbconn}}) \{}
 \DoxyCodeLine{34           \textcolor{keywordflow}{return};}
 \DoxyCodeLine{35       \}}
 \DoxyCodeLine{36       \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_not_able_to_connect_exception}{NotAbleToConnectException}}();}
@@ -85,22 +108,22 @@ Reimplementa \mbox{\hyperlink{class_persistance_helper_a2860c2d48d4c7e973635662b
 \doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper}} $\ast$ My\+S\+Q\+L\+Helper\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Get instance if available or create new if necessary \begin{DoxyReturn}{Retorna}
-valid current instance 
+Retorna a instância da classe \mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper(\+Singleton)}} ou, caso necessário, cria a instância. \begin{DoxyReturn}{Retorna}
+Instância válida atual 
 \end{DoxyReturn}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{42                                      \{}
-\DoxyCodeLine{43   \textcolor{keywordflow}{if}(MySQLHelper::instance == \textcolor{keyword}{nullptr})\{}
-\DoxyCodeLine{44       MySQLHelper::instance = \textcolor{keyword}{new} \mbox{\hyperlink{class_my_s_q_l_helper}{MySQLHelper}}();}
+\DoxyCodeLine{43   \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_my_s_q_l_helper_a82ebb255a2c57cdac5dd1d743bbb4bda}{MySQLHelper::instance}} == \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{44       \mbox{\hyperlink{class_my_s_q_l_helper_a82ebb255a2c57cdac5dd1d743bbb4bda}{MySQLHelper::instance}} = \textcolor{keyword}{new} \mbox{\hyperlink{class_my_s_q_l_helper_a7b3c5d725f1182ab1a3d4742b15ff890}{MySQLHelper}}();}
 \DoxyCodeLine{45       \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{46         MySQLHelper::instance-\/>\mbox{\hyperlink{class_my_s_q_l_helper_aa7485fe6c7904d27d3efb66b20886588}{connect}}();}
+\DoxyCodeLine{46         \mbox{\hyperlink{class_my_s_q_l_helper_a82ebb255a2c57cdac5dd1d743bbb4bda}{MySQLHelper::instance}}-\/>\mbox{\hyperlink{class_my_s_q_l_helper_aa7485fe6c7904d27d3efb66b20886588}{connect}}();}
 \DoxyCodeLine{47       \} \textcolor{keywordflow}{catch} (\mbox{\hyperlink{class_not_able_to_connect_exception}{NotAbleToConnectException}}\& e) \{}
-\DoxyCodeLine{48         MySQLHelper::instance = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{48         \mbox{\hyperlink{class_my_s_q_l_helper_a82ebb255a2c57cdac5dd1d743bbb4bda}{MySQLHelper::instance}} = \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{49         \textcolor{keywordflow}{throw} e;}
 \DoxyCodeLine{50       \}}
 \DoxyCodeLine{51   \}}
-\DoxyCodeLine{52   \textcolor{keywordflow}{return} MySQLHelper::instance;}
+\DoxyCodeLine{52   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_my_s_q_l_helper_a82ebb255a2c57cdac5dd1d743bbb4bda}{MySQLHelper::instance}};}
 \DoxyCodeLine{53 \}}
 
 \end{DoxyCode}
@@ -116,23 +139,26 @@ valid current instance
 \doxysubsubsection{\texorpdfstring{query()}{query()}}
 {\footnotesize\ttfamily M\+Y\+S\+Q\+L\+\_\+\+R\+ES $\ast$ My\+S\+Q\+L\+Helper\+::query (\begin{DoxyParamCaption}\item[{std\+::string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Execute query on database and return result 
+Executa uma operação no banco My\+S\+QL e retorna o resutado. 
 \begin{DoxyParams}{Parâmetros}
-{\em query} & query to be executed \\
+{\em query} & Operação a ser executada \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Resultado da operação 
+\end{DoxyReturn}
 
 
-Reimplementa \mbox{\hyperlink{class_persistance_helper_a9c65ce0c14c95c3abcb868ea22a72d51}{Persistance\+Helper$<$ M\+Y\+S\+Q\+L\+\_\+\+R\+E\+S $>$}}.
+Implementa \mbox{\hyperlink{class_persistance_helper_a705b3036e01b99886164951e3d26a689}{Persistance\+Helper$<$ M\+Y\+S\+Q\+L\+\_\+\+R\+E\+S $>$}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{10                                             \{}
 \DoxyCodeLine{11   MYSQL\_RES* res;}
-\DoxyCodeLine{12   \textcolor{keywordflow}{if}(MySQLHelper::dbconn)\{}
-\DoxyCodeLine{13       \textcolor{keywordtype}{int} qstate = mysql\_query(MySQLHelper::dbconn, \mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}.c\_str());}
+\DoxyCodeLine{12   \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{MySQLHelper::dbconn}})\{}
+\DoxyCodeLine{13       \textcolor{keywordtype}{int} qstate = mysql\_query(\mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{MySQLHelper::dbconn}}, \mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}.c\_str());}
 \DoxyCodeLine{14       \textcolor{keywordflow}{if}(!qstate)\{}
-\DoxyCodeLine{15           res = mysql\_store\_result(MySQLHelper::dbconn);}
+\DoxyCodeLine{15           res = mysql\_store\_result(\mbox{\hyperlink{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}{MySQLHelper::dbconn}});}
 \DoxyCodeLine{16         \} \textcolor{keywordflow}{else} \{}
 \DoxyCodeLine{17           \textcolor{comment}{// TODO add exception for failed query}}
 \DoxyCodeLine{18           \textcolor{comment}{// Some error on query}}
@@ -147,6 +173,29 @@ Reimplementa \mbox{\hyperlink{class_persistance_helper_a9c65ce0c14c95c3abcb868ea
 \DoxyCodeLine{27 \}}
 
 \end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}\label{class_my_s_q_l_helper_a7a8720ef79f851e6b66310b7b193a284}} 
+\index{MySQLHelper@{MySQLHelper}!dbconn@{dbconn}}
+\index{dbconn@{dbconn}!MySQLHelper@{MySQLHelper}}
+\doxysubsubsection{\texorpdfstring{dbconn}{dbconn}}
+{\footnotesize\ttfamily M\+Y\+S\+QL $\ast$ My\+S\+Q\+L\+Helper\+::dbconn = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Atributo de classe \char`\"{}dbconn\char`\"{}. Representa a conexão com o banco de dados. 
+
+\mbox{\Hypertarget{class_my_s_q_l_helper_a82ebb255a2c57cdac5dd1d743bbb4bda}\label{class_my_s_q_l_helper_a82ebb255a2c57cdac5dd1d743bbb4bda}} 
+\index{MySQLHelper@{MySQLHelper}!instance@{instance}}
+\index{instance@{instance}!MySQLHelper@{MySQLHelper}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper}} $\ast$ My\+S\+Q\+L\+Helper\+::instance =nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Atributo de classe \char`\"{}instance\char`\"{}. Representa a instância da classe. 
+
 
 
 A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}

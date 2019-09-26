@@ -21,7 +21,7 @@ std\+::vector$<$ \mbox{\hyperlink{class_usuario}{Usuario}} $>$ \mbox{\hyperlink{
 \item 
 void \mbox{\hyperlink{class_usuario_d_a_o_ab22491952d7f7606bcb3c4361207bdec}{save}} (\mbox{\hyperlink{class_usuario}{Usuario}}) override
 \item 
-void \mbox{\hyperlink{class_usuario_d_a_o_aad6d80f3d9868197a019878e69c39376}{update}} (\mbox{\hyperlink{class_usuario}{Usuario}}, std\+::string\mbox{[}$\,$\mbox{]}) override
+void \mbox{\hyperlink{class_usuario_d_a_o_aef8bad221c090c0da5517397572c3976}{update}} (\mbox{\hyperlink{class_usuario}{Usuario}}, std\+::string, std\+::string) override
 \item 
 void \mbox{\hyperlink{class_usuario_d_a_o_af929fbadb5e4bc01ba61e61594d848fe}{remove}} (\mbox{\hyperlink{class_usuario}{Usuario}}) override
 \end{DoxyCompactItemize}
@@ -30,6 +30,13 @@ void \mbox{\hyperlink{class_usuario_d_a_o_af929fbadb5e4bc01ba61e61594d848fe}{rem
 \item 
 static \mbox{\hyperlink{class_usuario_d_a_o}{Usuario\+D\+AO}} $\ast$ \mbox{\hyperlink{class_usuario_d_a_o_abc620ee830afa8c0c91a4b725bb3fefd}{get\+Instance}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_usuario_d_a_o}{Usuario\+D\+AO}} $\ast$ \mbox{\hyperlink{class_usuario_d_a_o_a26eaeb15ec2091eb1797853ffafd9c7b}{instance}} = nullptr
+\begin{DoxyCompactList}\small\item\em Atributo de classe \char`\"{}instance\char`\"{}. Representa a instância da classe. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper}} $\ast$ \mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{mysql\+Helper}} = nullptr
+\begin{DoxyCompactList}\small\item\em Atributo de classe \char`\"{}mysql\+Helper\char`\"{}. Representa o executor de operações no banco de dados My\+S\+QL. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Construtores e Destrutores}
@@ -55,13 +62,13 @@ Default destructor
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_usuario}{Usuario}} Usuario\+D\+A\+O\+::get (\begin{DoxyParamCaption}\item[{std\+::string}]{cpf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Get an user instance from database 
+Busca um registro da classe Usuário no banco de dados My\+S\+QL. 
 \begin{DoxyParams}{Parâmetros}
-{\em cpf} & to look for in db \\
+{\em cpf} & C\+PF do Usuário a buscar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-user with cpf 
+Usuário encontrado com o C\+PF ou Usuário com C\+PF 000.\+000.\+000-\/00 caso não seja encontrado nenhum registro 
 \end{DoxyReturn}
 
 
@@ -72,13 +79,13 @@ Implementa \mbox{\hyperlink{class_generic_d_a_o_aeb53ae6b7068ae2dd94bbbfb507d887
 \DoxyCodeLine{10                                     \{}
 \DoxyCodeLine{11   \textcolor{keywordflow}{try} \{}
 \DoxyCodeLine{12     std::string query = \textcolor{stringliteral}{"SELECT a.senha, b.numero, b.codigoDeSeguranca FROM usuario\_t a, cartao\_t b WHERE a.cpf = b.cpf AND a.cpf = '"}+cpf+\textcolor{stringliteral}{"';"};}
-\DoxyCodeLine{13     MYSQL\_RES* res = mysqlHelper-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query);}
+\DoxyCodeLine{13     MYSQL\_RES* res = \mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{mysqlHelper}}-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query);}
 \DoxyCodeLine{14 }
 \DoxyCodeLine{15     MYSQL\_ROW row;}
 \DoxyCodeLine{16     \textcolor{keywordflow}{if}((row= mysql\_fetch\_row(res))) \{}
 \DoxyCodeLine{17       std::string senha = row[0];}
 \DoxyCodeLine{18       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} numeroCartao = strtoul(row[1], \textcolor{keyword}{nullptr}, 10);}
-\DoxyCodeLine{19       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numSeguranca = atoi(row[2]);}
+\DoxyCodeLine{19       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numSeguranca = static\_cast<unsigned int>(atoi(row[2]));}
 \DoxyCodeLine{20 }
 \DoxyCodeLine{21       \mbox{\hyperlink{class_cartao}{Cartao}} card(numeroCartao, numSeguranca);}
 \DoxyCodeLine{22       \mbox{\hyperlink{class_usuario}{Usuario}} user(cpf, senha, card);}
@@ -103,8 +110,8 @@ Implementa \mbox{\hyperlink{class_generic_d_a_o_aeb53ae6b7068ae2dd94bbbfb507d887
 \doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
 {\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_usuario}{Usuario}} $>$ Usuario\+D\+A\+O\+::get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Get all users in database \begin{DoxyReturn}{Retorna}
-usuarios vector of users in database 
+Busca todos os registros de Usuários no banco de dados My\+S\+QL. \begin{DoxyReturn}{Retorna}
+Vetor de Usuários do banco de dados My\+S\+QL 
 \end{DoxyReturn}
 
 
@@ -116,14 +123,14 @@ Implementa \mbox{\hyperlink{class_generic_d_a_o_a9b2932c1763d2fa25ee7ce5838b46b7
 \DoxyCodeLine{38   std::vector<Usuario> usuarios;}
 \DoxyCodeLine{39   \textcolor{keywordflow}{try} \{}
 \DoxyCodeLine{40     std::string query = \textcolor{stringliteral}{"SELECT a.cpf, a.senha, b.numero, b.codigoDeSeguranca FROM usuario\_t a, cartao\_t b WHERE a.cpf = b.cpf;"};}
-\DoxyCodeLine{41     MYSQL\_RES* res = mysqlHelper-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query);}
+\DoxyCodeLine{41     MYSQL\_RES* res = \mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{mysqlHelper}}-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query);}
 \DoxyCodeLine{42     MYSQL\_ROW row = mysql\_fetch\_row(res);}
 \DoxyCodeLine{43 }
 \DoxyCodeLine{44     \textcolor{keywordflow}{do}\{}
 \DoxyCodeLine{45         std::string cpf = row[0];}
 \DoxyCodeLine{46         std::string senha = row[1];}
 \DoxyCodeLine{47         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} numeroCartao = strtoul(row[2], \textcolor{keyword}{nullptr}, 10);}
-\DoxyCodeLine{48         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numSeguranca = atoi(row[3]);}
+\DoxyCodeLine{48         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} numSeguranca = static\_cast<unsigned int>(atoi(row[3]));}
 \DoxyCodeLine{49 }
 \DoxyCodeLine{50         \mbox{\hyperlink{class_cartao}{Cartao}} card(numeroCartao, numSeguranca);}
 \DoxyCodeLine{51         \mbox{\hyperlink{class_usuario}{Usuario}} user(cpf, senha, card);}
@@ -144,86 +151,132 @@ Implementa \mbox{\hyperlink{class_generic_d_a_o_a9b2932c1763d2fa25ee7ce5838b46b7
 \doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_usuario_d_a_o}{Usuario\+D\+AO}} $\ast$ Usuario\+D\+A\+O\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Retorna a instância da classe \mbox{\hyperlink{class_usuario_d_a_o}{Usuario\+D\+A\+O(\+Singleton)}} ou, caso necessário, cria a instância. \begin{DoxyReturn}{Retorna}
+Instância válida atual 
+\end{DoxyReturn}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{84                                    \{}
-\DoxyCodeLine{85   \textcolor{keywordflow}{if}(UsuarioDAO::instance == \textcolor{keyword}{nullptr})\{}
-\DoxyCodeLine{86       UsuarioDAO::instance = \textcolor{keyword}{new} \mbox{\hyperlink{class_usuario_d_a_o}{UsuarioDAO}}();}
-\DoxyCodeLine{87       \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{88         UsuarioDAO::mysqlHelper = \mbox{\hyperlink{class_my_s_q_l_helper_abc52e99f4fa975cbecdd8fb9375acce2}{MySQLHelper::getInstance}}();}
-\DoxyCodeLine{89       \} \textcolor{keywordflow}{catch} (\mbox{\hyperlink{class_not_able_to_connect_exception}{NotAbleToConnectException}}\& e) \{}
-\DoxyCodeLine{90         UsuarioDAO::instance = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{91         \textcolor{keywordflow}{throw} e;}
-\DoxyCodeLine{92       \}}
-\DoxyCodeLine{93   \}}
-\DoxyCodeLine{94   \textcolor{keywordflow}{return} UsuarioDAO::instance;}
-\DoxyCodeLine{95 \}}
+\DoxyCodeLine{87                                    \{}
+\DoxyCodeLine{88   \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_usuario_d_a_o_a26eaeb15ec2091eb1797853ffafd9c7b}{UsuarioDAO::instance}} == \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{89       \mbox{\hyperlink{class_usuario_d_a_o_a26eaeb15ec2091eb1797853ffafd9c7b}{UsuarioDAO::instance}} = \textcolor{keyword}{new} \mbox{\hyperlink{class_usuario_d_a_o}{UsuarioDAO}}();}
+\DoxyCodeLine{90       \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{91         \mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{UsuarioDAO::mysqlHelper}} = \mbox{\hyperlink{class_my_s_q_l_helper_abc52e99f4fa975cbecdd8fb9375acce2}{MySQLHelper::getInstance}}();}
+\DoxyCodeLine{92       \} \textcolor{keywordflow}{catch} (\mbox{\hyperlink{class_not_able_to_connect_exception}{NotAbleToConnectException}}\& e) \{}
+\DoxyCodeLine{93         \mbox{\hyperlink{class_usuario_d_a_o_a26eaeb15ec2091eb1797853ffafd9c7b}{UsuarioDAO::instance}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{94         \textcolor{keywordflow}{throw} e;}
+\DoxyCodeLine{95       \}}
+\DoxyCodeLine{96   \}}
+\DoxyCodeLine{97   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_usuario_d_a_o_a26eaeb15ec2091eb1797853ffafd9c7b}{UsuarioDAO::instance}};}
+\DoxyCodeLine{98 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_usuario_d_a_o_af929fbadb5e4bc01ba61e61594d848fe}\label{class_usuario_d_a_o_af929fbadb5e4bc01ba61e61594d848fe}} 
 \index{UsuarioDAO@{UsuarioDAO}!remove@{remove}}
 \index{remove@{remove}!UsuarioDAO@{UsuarioDAO}}
 \doxysubsubsection{\texorpdfstring{remove()}{remove()}}
-{\footnotesize\ttfamily void Usuario\+D\+A\+O\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_usuario}{Usuario}}}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Usuario\+D\+A\+O\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_usuario}{Usuario}}}]{usuario }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Remove a instância do Usuário do banco de dados My\+S\+QL. 
+\begin{DoxyParams}{Parâmetros}
+{\em usuario} & Instância a ser removida do banco de dados My\+S\+QL \\
+\hline
+\end{DoxyParams}
 
 
-
-Reimplementa \mbox{\hyperlink{class_generic_d_a_o_adde736eb66cc9cd6a6fa739e6ee078f8}{Generic\+D\+A\+O$<$ Usuario $>$}}.
+Implementa \mbox{\hyperlink{class_generic_d_a_o_ac9a9b2a6650dab4c4ad4cdbe980ea718}{Generic\+D\+A\+O$<$ Usuario $>$}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{77                                 \{}
-\DoxyCodeLine{78   std::string query = \textcolor{stringliteral}{"DELETE FROM cartao\_t WHERE (cpf = '"}+u.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"');"};}
-\DoxyCodeLine{79   mysql\_free\_result(mysqlHelper-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query));}
-\DoxyCodeLine{80   query = \textcolor{stringliteral}{"DELETE FROM usuario\_t WHERE (cpf = '"}+u.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"');"};}
-\DoxyCodeLine{81   mysql\_free\_result(mysqlHelper-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query));}
-\DoxyCodeLine{82 \}}
+\DoxyCodeLine{80                                       \{}
+\DoxyCodeLine{81   std::string query = \textcolor{stringliteral}{"DELETE FROM cartao\_t WHERE (cpf = '"}+usuario.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"');"};}
+\DoxyCodeLine{82   mysql\_free\_result(\mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{mysqlHelper}}-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query));}
+\DoxyCodeLine{83   query = \textcolor{stringliteral}{"DELETE FROM usuario\_t WHERE (cpf = '"}+usuario.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"');"};}
+\DoxyCodeLine{84   mysql\_free\_result(\mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{mysqlHelper}}-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query));}
+\DoxyCodeLine{85 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_usuario_d_a_o_ab22491952d7f7606bcb3c4361207bdec}\label{class_usuario_d_a_o_ab22491952d7f7606bcb3c4361207bdec}} 
 \index{UsuarioDAO@{UsuarioDAO}!save@{save}}
 \index{save@{save}!UsuarioDAO@{UsuarioDAO}}
 \doxysubsubsection{\texorpdfstring{save()}{save()}}
-{\footnotesize\ttfamily void Usuario\+D\+A\+O\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_usuario}{Usuario}}}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Usuario\+D\+A\+O\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_usuario}{Usuario}}}]{usuario }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Salva a instância do Usuário no banco de dados My\+S\+QL. 
+\begin{DoxyParams}{Parâmetros}
+{\em usuario} & Instância a ser salva no banco de dados My\+S\+QL \\
+\hline
+\end{DoxyParams}
 
 
-
-Reimplementa \mbox{\hyperlink{class_generic_d_a_o_afd0fa95e82db30049b706eec959647bf}{Generic\+D\+A\+O$<$ Usuario $>$}}.
+Implementa \mbox{\hyperlink{class_generic_d_a_o_a3e704dca4b0ec0683b6fc945a1db431b}{Generic\+D\+A\+O$<$ Usuario $>$}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{61                               \{}
-\DoxyCodeLine{62   std::string query = \textcolor{stringliteral}{"INSERT INTO usuario\_t (cpf, senha) VALUES ('"}+u.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"', '"}+u.\mbox{\hyperlink{class_usuario_a44527899a5f049f8072800b19435d106}{getSenha}}()+\textcolor{stringliteral}{"');"};}
-\DoxyCodeLine{63   std::string query2 = \textcolor{stringliteral}{"INSERT INTO cartao\_t (numero, cpf, codigoDeSeguranca) VALUES ("}+std::to\_string(u.\mbox{\hyperlink{class_usuario_acb47fcc6f8bf29e476977374f8415af3}{getCartao}}().\mbox{\hyperlink{class_cartao_ab491b37488f8c01fa9ae7591e5dbfed9}{getNumero}}())+\textcolor{stringliteral}{", '"}+u.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"', "}+std::to\_string(u.\mbox{\hyperlink{class_usuario_acb47fcc6f8bf29e476977374f8415af3}{getCartao}}().\mbox{\hyperlink{class_cartao_a4734504fba17d2c199707ce68e9f179e}{getNumSeguranca}}())+\textcolor{stringliteral}{");"};}
-\DoxyCodeLine{64   mysql\_free\_result(mysqlHelper-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query));}
-\DoxyCodeLine{65   mysql\_free\_result(mysqlHelper-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query2));}
-\DoxyCodeLine{66 \}}
+\DoxyCodeLine{62                                     \{}
+\DoxyCodeLine{63   std::string query = \textcolor{stringliteral}{"INSERT INTO usuario\_t (cpf, senha) VALUES ('"}+usuario.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"', '"}+usuario.\mbox{\hyperlink{class_usuario_a44527899a5f049f8072800b19435d106}{getSenha}}()+\textcolor{stringliteral}{"');"};}
+\DoxyCodeLine{64   std::string query2 = \textcolor{stringliteral}{"INSERT INTO cartao\_t (numero, cpf, codigoDeSeguranca) VALUES ("}+std::to\_string(usuario.\mbox{\hyperlink{class_usuario_acb47fcc6f8bf29e476977374f8415af3}{getCartao}}().\mbox{\hyperlink{class_cartao_ab491b37488f8c01fa9ae7591e5dbfed9}{getNumero}}())+\textcolor{stringliteral}{", '"}+usuario.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"', "}+std::to\_string(usuario.\mbox{\hyperlink{class_usuario_acb47fcc6f8bf29e476977374f8415af3}{getCartao}}().\mbox{\hyperlink{class_cartao_a4734504fba17d2c199707ce68e9f179e}{getNumSeguranca}}())+\textcolor{stringliteral}{");"};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   mysql\_free\_result(\mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{mysqlHelper}}-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query));}
+\DoxyCodeLine{67   mysql\_free\_result(\mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{mysqlHelper}}-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query2));}
+\DoxyCodeLine{68 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_usuario_d_a_o_aad6d80f3d9868197a019878e69c39376}\label{class_usuario_d_a_o_aad6d80f3d9868197a019878e69c39376}} 
+\mbox{\Hypertarget{class_usuario_d_a_o_aef8bad221c090c0da5517397572c3976}\label{class_usuario_d_a_o_aef8bad221c090c0da5517397572c3976}} 
 \index{UsuarioDAO@{UsuarioDAO}!update@{update}}
 \index{update@{update}!UsuarioDAO@{UsuarioDAO}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily void Usuario\+D\+A\+O\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_usuario}{Usuario}}}]{u,  }\item[{std\+::string}]{params\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Usuario\+D\+A\+O\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_usuario}{Usuario}}}]{usuario,  }\item[{std\+::string}]{field,  }\item[{std\+::string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Atualiza a instância do Usuário no banco de dados My\+S\+QL de acordo com o campo e valor fornecidos. 
+\begin{DoxyParams}{Parâmetros}
+{\em usuario} & Instância a ser atualizada no banco de dados My\+S\+QL \\
+\hline
+{\em field} & Campo a ser atualizado no banco de dados My\+S\+QL \\
+\hline
+{\em value} & Novo valor do campo a ser atualizado no banco de dados My\+S\+QL \\
+\hline
+\end{DoxyParams}
 
 
-
-Reimplementa \mbox{\hyperlink{class_generic_d_a_o_ab9902f58eb402e094f710acb1f605881}{Generic\+D\+A\+O$<$ Usuario $>$}}.
+Implementa \mbox{\hyperlink{class_generic_d_a_o_ab4c4821330bd6b8e42c012d65c8f6df9}{Generic\+D\+A\+O$<$ Usuario $>$}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{67                                                     \{}
-\DoxyCodeLine{68   std::string query;}
-\DoxyCodeLine{69   \textcolor{keywordflow}{if}(params[0].compare(\textcolor{stringliteral}{"senha"})==0)\{}
-\DoxyCodeLine{70     query = \textcolor{stringliteral}{"UPDATE usuario\_t SET senha = '"}+params[1]+\textcolor{stringliteral}{"' WHERE (cpf = '"}+u.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"');"};}
-\DoxyCodeLine{71   \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{72     \textcolor{comment}{// TODO erro propriedade não encontrada}}
-\DoxyCodeLine{73     qDebug(\textcolor{stringliteral}{"propriedade não encontrada"});}
-\DoxyCodeLine{74   \}}
-\DoxyCodeLine{75   mysql\_free\_result(mysqlHelper-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query));}
-\DoxyCodeLine{76 \}}
+\DoxyCodeLine{70                                                                         \{}
+\DoxyCodeLine{71   std::string query;}
+\DoxyCodeLine{72   \textcolor{keywordflow}{if}(field.compare(\textcolor{stringliteral}{"senha"})==0)\{}
+\DoxyCodeLine{73     query = \textcolor{stringliteral}{"UPDATE usuario\_t SET senha = '"}+value+\textcolor{stringliteral}{"' WHERE (cpf = '"}+usuario.\mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{getCPF}}()+\textcolor{stringliteral}{"');"};}
+\DoxyCodeLine{74   \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{75     \textcolor{comment}{// TODO erro propriedade não encontrada}}
+\DoxyCodeLine{76     qDebug(\textcolor{stringliteral}{"propriedade não encontrada"});}
+\DoxyCodeLine{77   \}}
+\DoxyCodeLine{78   mysql\_free\_result(\mbox{\hyperlink{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}{mysqlHelper}}-\/>\mbox{\hyperlink{class_my_s_q_l_helper_a08a4372347d7c5dda23c4d24e17c2474}{query}}(query));}
+\DoxyCodeLine{79 \}}
 
 \end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_usuario_d_a_o_a26eaeb15ec2091eb1797853ffafd9c7b}\label{class_usuario_d_a_o_a26eaeb15ec2091eb1797853ffafd9c7b}} 
+\index{UsuarioDAO@{UsuarioDAO}!instance@{instance}}
+\index{instance@{instance}!UsuarioDAO@{UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_usuario_d_a_o}{Usuario\+D\+AO}} $\ast$ Usuario\+D\+A\+O\+::instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Atributo de classe \char`\"{}instance\char`\"{}. Representa a instância da classe. 
+
+\mbox{\Hypertarget{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}\label{class_usuario_d_a_o_a94f1dbafb99b96d1add8b8672f042258}} 
+\index{UsuarioDAO@{UsuarioDAO}!mysqlHelper@{mysqlHelper}}
+\index{mysqlHelper@{mysqlHelper}!UsuarioDAO@{UsuarioDAO}}
+\doxysubsubsection{\texorpdfstring{mysqlHelper}{mysqlHelper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_my_s_q_l_helper}{My\+S\+Q\+L\+Helper}} $\ast$ Usuario\+D\+A\+O\+::mysql\+Helper = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Atributo de classe \char`\"{}mysql\+Helper\char`\"{}. Representa o executor de operações no banco de dados My\+S\+QL. 
+
 
 
 A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
