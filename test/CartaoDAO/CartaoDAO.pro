@@ -1,11 +1,10 @@
 CONFIG += testcase
-TARGET = testeusuariodao
+TARGET = testecartaodao
 QT = core testlib
 SOURCES +=  \
-    testeusuariodao.cpp \
-    ../../src/usuariodao.cpp \
-    ../../src/usuario.cpp \
+    testecartaodao.cpp \
     ../../src/cartao.cpp \
+    ../../src/cartaodao.cpp \
     ../../src/mysqlhelper.cpp
 LIBS +=-lmariadb
 INCLUDEPATH += ../../src
