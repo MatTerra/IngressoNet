@@ -5,55 +5,57 @@
 #include <string>
 
 
-class Usuario
-{
-    public:
-        /** Default constructor */
-        Usuario(std::string cpf, std::string senha, Cartao& cartao): cpf(cpf), senha(senha), cartao(cartao){};
+class Usuario{
 
-        /** Default destructor */
-        virtual ~Usuario();
+  public:
+    /** Construtor padrão */
+    Usuario(std::string cpf, std::string senha, Cartao& cartao): cpf(cpf), senha(senha), cartao(cartao){};
 
-        /** Access CPF
-         * \return The current value of CPF
-         */
-        std::string getCPF() const { return cpf; }
+    /** Destrutor padrão */
+    virtual ~Usuario();
 
-        /** Set CPF
-         * \param val New value to set
-         */
-        void setCPF(std::string val) { cpf = val; }
-        /** Access senha
-         * \return The current value of senha
-         */
-        std::string getSenha() const { return senha; }
-        /** Set senha
-         * \param val New value to set
-         */
-        void setSenha(std::string val) { senha = val; }
-        /** Access cartao
-         * \return The current value of cartao
-         */
-        Cartao getCartao() const { return cartao; }
+    /** Método de acesso a cpf.
+    * \return O valor atual de cpf
+    */
+    std::string getCPF() const { return cpf; }
 
-        /** Check if CPF is valid
-         * \param cpf Number to test
-         * \return true if cpf is valid, false otherwise
-         */
-        static bool isValidCPF(std::string);
+    /** Método de acesso a senha.
+    * \return O valor atual de senha
+    */
+    std::string getSenha() const { return senha; }
 
-        /** Removes '.' and '-' from CPF
-         * \param cpf to clean
-         * \return cpf with numbers only
-         */
-        static std::string getCPFNumbers(std::string);
+    /** Método de alteração de senha.
+    * \param senha Novo valor de senha
+    */
+    void setSenha(std::string senha) { this->senha = senha; }
 
-    protected:
+    /** Método de acesso a cartao.
+    * \return A instância atual de cartao
+    */
+    Cartao getCartao() const { return cartao; }
 
-    private:        
-        std::string cpf; //!< Member variable "CPF"
-        std::string senha; //!< Member variable "senha"
-        Cartao cartao; //!< Member variable "cartao"
+    /** Método de alteração de cartao.
+    * \param cartao Nova instância de cartao
+    */
+    void setCartao(Cartao& cartao){this->cartao = cartao;}
+
+    /** Verifica se o cpf é válido.
+    * \param cpf Número a ser validado
+    * \return Verdadeiro(true) se o cpf é válido e falso(false) caso contrário.
+    */
+    static bool isValidCPF(std::string);
+
+    /** Remove '.' e '-' do CPF retornando apenas os números.
+    * \param cpf CPF a ser higienizado
+    * \return CPF apenas com os números
+    */
+    static std::string getCPFNumbers(std::string);
+
+
+  private:
+    std::string cpf; //!< Atributo de instância "cpf". Representa o cpf do Usuário
+    std::string senha; //!< Atributo de instância "senha". Representa a senha do Usuário
+    Cartao cartao; //!< Atributo de instância "cartao". Representa a instância do cartão do Usuário
 };
 
 #endif // USUARIO_H

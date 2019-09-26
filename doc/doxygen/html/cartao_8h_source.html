@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/cartao.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cartao.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="cartao_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CARTAO_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CARTAO_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;QString&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_cartao.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cartao.html">Cartao</a>{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_cartao.html#a33db08f12f4bfb178f5593e563bcbfed">Cartao</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_cartao.html#af3df5fe82f18f21d981522468772eaef">~Cartao</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_cartao.html#ab491b37488f8c01fa9ae7591e5dbfed9">   19</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_cartao.html#ab491b37488f8c01fa9ae7591e5dbfed9">getNumero</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_cartao.html#a7667969c09037fff003a3ec3b42bca8b">numero</a>; }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_cartao.html#a7d7a044f4d6445e529302ea2925a0ab6">   24</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_cartao.html#a7d7a044f4d6445e529302ea2925a0ab6">setNumero</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_cartao.html#a7667969c09037fff003a3ec3b42bca8b">numero</a>) { this-&gt;numero = <a class="code" href="class_cartao.html#a7667969c09037fff003a3ec3b42bca8b">numero</a>; }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_cartao.html#a4734504fba17d2c199707ce68e9f179e">   29</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_cartao.html#a4734504fba17d2c199707ce68e9f179e">getNumSeguranca</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_cartao.html#a27bef10da5a2e343b24929de1e301bd3">numSeguranca</a>; }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_cartao.html#a47567746d55beaf3959ce07a65b7ea8f">   34</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_cartao.html#a47567746d55beaf3959ce07a65b7ea8f">setNumSeguranca</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_cartao.html#a27bef10da5a2e343b24929de1e301bd3">numSeguranca</a>) { this-&gt;numSeguranca = <a class="code" href="class_cartao.html#a27bef10da5a2e343b24929de1e301bd3">numSeguranca</a>; }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_cartao.html#aadea668cb3ff3279deb05d42b4e70256">isValidNumber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_cartao.html#a7d791df7aa95af90b39c0bfe00be4194">cobrar</a>(<span class="keywordtype">float</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_cartao.html#a7667969c09037fff003a3ec3b42bca8b">   51</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="class_cartao.html#a7667969c09037fff003a3ec3b42bca8b">numero</a>; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_cartao.html#a27bef10da5a2e343b24929de1e301bd3">   52</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_cartao.html#a27bef10da5a2e343b24929de1e301bd3">numSeguranca</a>; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // CARTAO_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_cartao_html_af3df5fe82f18f21d981522468772eaef"><div class="ttname"><a href="class_cartao.html#af3df5fe82f18f21d981522468772eaef">Cartao::~Cartao</a></div><div class="ttdeci">virtual ~Cartao()</div><div class="ttdef"><b>Definition:</b> cartao.cpp:9</div></div>
+<div class="ttc" id="aclass_cartao_html"><div class="ttname"><a href="class_cartao.html">Cartao</a></div><div class="ttdef"><b>Definition:</b> cartao.h:7</div></div>
+<div class="ttc" id="aclass_cartao_html_a27bef10da5a2e343b24929de1e301bd3"><div class="ttname"><a href="class_cartao.html#a27bef10da5a2e343b24929de1e301bd3">Cartao::numSeguranca</a></div><div class="ttdeci">unsigned int numSeguranca</div><div class="ttdoc">Atributo de instância &quot;numSeguranca&quot;. Representa o código de Segurança do cartão.</div><div class="ttdef"><b>Definition:</b> cartao.h:52</div></div>
+<div class="ttc" id="aclass_cartao_html_a7d7a044f4d6445e529302ea2925a0ab6"><div class="ttname"><a href="class_cartao.html#a7d7a044f4d6445e529302ea2925a0ab6">Cartao::setNumero</a></div><div class="ttdeci">void setNumero(unsigned long numero)</div><div class="ttdef"><b>Definition:</b> cartao.h:24</div></div>
+<div class="ttc" id="aclass_cartao_html_aadea668cb3ff3279deb05d42b4e70256"><div class="ttname"><a href="class_cartao.html#aadea668cb3ff3279deb05d42b4e70256">Cartao::isValidNumber</a></div><div class="ttdeci">static bool isValidNumber(unsigned long)</div><div class="ttdef"><b>Definition:</b> cartao.cpp:13</div></div>
+<div class="ttc" id="aclass_cartao_html_a7667969c09037fff003a3ec3b42bca8b"><div class="ttname"><a href="class_cartao.html#a7667969c09037fff003a3ec3b42bca8b">Cartao::numero</a></div><div class="ttdeci">unsigned long numero</div><div class="ttdoc">Atributo de instância &quot;numero&quot;. Representa o numero do cartão.</div><div class="ttdef"><b>Definition:</b> cartao.h:51</div></div>
+<div class="ttc" id="aclass_cartao_html_a4734504fba17d2c199707ce68e9f179e"><div class="ttname"><a href="class_cartao.html#a4734504fba17d2c199707ce68e9f179e">Cartao::getNumSeguranca</a></div><div class="ttdeci">unsigned int getNumSeguranca() const</div><div class="ttdef"><b>Definition:</b> cartao.h:29</div></div>
+<div class="ttc" id="aclass_cartao_html_ab491b37488f8c01fa9ae7591e5dbfed9"><div class="ttname"><a href="class_cartao.html#ab491b37488f8c01fa9ae7591e5dbfed9">Cartao::getNumero</a></div><div class="ttdeci">unsigned long getNumero() const</div><div class="ttdef"><b>Definition:</b> cartao.h:19</div></div>
+<div class="ttc" id="aclass_cartao_html_a7d791df7aa95af90b39c0bfe00be4194"><div class="ttname"><a href="class_cartao.html#a7d791df7aa95af90b39c0bfe00be4194">Cartao::cobrar</a></div><div class="ttdeci">bool cobrar(float, unsigned int)</div><div class="ttdef"><b>Definition:</b> cartao.cpp:41</div></div>
+<div class="ttc" id="aclass_cartao_html_a47567746d55beaf3959ce07a65b7ea8f"><div class="ttname"><a href="class_cartao.html#a47567746d55beaf3959ce07a65b7ea8f">Cartao::setNumSeguranca</a></div><div class="ttdeci">void setNumSeguranca(unsigned int numSeguranca)</div><div class="ttdef"><b>Definition:</b> cartao.h:34</div></div>
+<div class="ttc" id="aclass_cartao_html_a33db08f12f4bfb178f5593e563bcbfed"><div class="ttname"><a href="class_cartao.html#a33db08f12f4bfb178f5593e563bcbfed">Cartao::Cartao</a></div><div class="ttdeci">Cartao(unsigned long, unsigned int)</div><div class="ttdef"><b>Definition:</b> cartao.cpp:3</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

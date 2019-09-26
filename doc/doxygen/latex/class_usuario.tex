@@ -1,0 +1,256 @@
+\hypertarget{class_usuario}{}\doxysection{Referência da Classe Usuario}
+\label{class_usuario}\index{Usuario@{Usuario}}
+
+
+{\ttfamily \#include $<$usuario.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_usuario_a97bc457a3408db493d562438047859f4}{Usuario}} (std\+::string \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}, std\+::string \mbox{\hyperlink{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}{senha}}, \mbox{\hyperlink{class_cartao}{Cartao}} \&\mbox{\hyperlink{class_usuario_a478626e0565127b6cd6acad3938b8771}{cartao}})
+\item 
+virtual \mbox{\hyperlink{class_usuario_ab4096b0b8300ecb47b10c555fb09c997}{$\sim$\+Usuario}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_usuario_a71708f2f52370f6adfda35fdbed52a64}{get\+C\+PF}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_usuario_a44527899a5f049f8072800b19435d106}{get\+Senha}} () const
+\item 
+void \mbox{\hyperlink{class_usuario_a28efaec1398906b6f43b12877bf59db7}{set\+Senha}} (std\+::string \mbox{\hyperlink{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}{senha}})
+\item 
+\mbox{\hyperlink{class_cartao}{Cartao}} \mbox{\hyperlink{class_usuario_acb47fcc6f8bf29e476977374f8415af3}{get\+Cartao}} () const
+\item 
+void \mbox{\hyperlink{class_usuario_a6f2ed1f4f96cc6b5fa31eaeb9f7e540f}{set\+Cartao}} (\mbox{\hyperlink{class_cartao}{Cartao}} \&\mbox{\hyperlink{class_usuario_a478626e0565127b6cd6acad3938b8771}{cartao}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros Públicos Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_usuario_a8ce15fb85288ebe93f9bb73857b22b88}{is\+Valid\+C\+PF}} (std\+::string)
+\item 
+static std\+::string \mbox{\hyperlink{class_usuario_a8dbccc0c4c8f29fbac37a5bc0657ae50}{get\+C\+P\+F\+Numbers}} (std\+::string)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}
+\begin{DoxyCompactList}\small\item\em Atributo de instância \char`\"{}cpf\char`\"{}. Representa o cpf do Usuário. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}{senha}}
+\begin{DoxyCompactList}\small\item\em Atributo de instância \char`\"{}senha\char`\"{}. Representa a senha do Usuário. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cartao}{Cartao}} \mbox{\hyperlink{class_usuario_a478626e0565127b6cd6acad3938b8771}{cartao}}
+\begin{DoxyCompactList}\small\item\em Atributo de instância \char`\"{}cartao\char`\"{}. Representa a instância do cartão do Usuário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{class_usuario_a97bc457a3408db493d562438047859f4}\label{class_usuario_a97bc457a3408db493d562438047859f4}} 
+\index{Usuario@{Usuario}!Usuario@{Usuario}}
+\index{Usuario@{Usuario}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{Usuario()}{Usuario()}}
+{\footnotesize\ttfamily Usuario\+::\+Usuario (\begin{DoxyParamCaption}\item[{std\+::string}]{cpf,  }\item[{std\+::string}]{senha,  }\item[{\mbox{\hyperlink{class_cartao}{Cartao}} \&}]{cartao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construtor padrão 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 : \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}(\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}), \mbox{\hyperlink{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}{senha}}(\mbox{\hyperlink{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}{senha}}), \mbox{\hyperlink{class_usuario_a478626e0565127b6cd6acad3938b8771}{cartao}}(\mbox{\hyperlink{class_usuario_a478626e0565127b6cd6acad3938b8771}{cartao}})\{\};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_ab4096b0b8300ecb47b10c555fb09c997}\label{class_usuario_ab4096b0b8300ecb47b10c555fb09c997}} 
+\index{Usuario@{Usuario}!````~Usuario@{$\sim$Usuario}}
+\index{````~Usuario@{$\sim$Usuario}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{$\sim$Usuario()}{~Usuario()}}
+{\footnotesize\ttfamily Usuario\+::$\sim$\+Usuario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destrutor padrão 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{comment}{//dtor}}
+\DoxyCodeLine{6 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_usuario_acb47fcc6f8bf29e476977374f8415af3}\label{class_usuario_acb47fcc6f8bf29e476977374f8415af3}} 
+\index{Usuario@{Usuario}!getCartao@{getCartao}}
+\index{getCartao@{getCartao}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{getCartao()}{getCartao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cartao}{Cartao}} Usuario\+::get\+Cartao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Método de acesso a cartao. \begin{DoxyReturn}{Retorna}
+A instância atual de cartao 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_usuario_a478626e0565127b6cd6acad3938b8771}{cartao}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a71708f2f52370f6adfda35fdbed52a64}\label{class_usuario_a71708f2f52370f6adfda35fdbed52a64}} 
+\index{Usuario@{Usuario}!getCPF@{getCPF}}
+\index{getCPF@{getCPF}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{getCPF()}{getCPF()}}
+{\footnotesize\ttfamily std\+::string Usuario\+::get\+C\+PF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Método de acesso a cpf. \begin{DoxyReturn}{Retorna}
+O valor atual de cpf 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a8dbccc0c4c8f29fbac37a5bc0657ae50}\label{class_usuario_a8dbccc0c4c8f29fbac37a5bc0657ae50}} 
+\index{Usuario@{Usuario}!getCPFNumbers@{getCPFNumbers}}
+\index{getCPFNumbers@{getCPFNumbers}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{getCPFNumbers()}{getCPFNumbers()}}
+{\footnotesize\ttfamily std\+::string Usuario\+::get\+C\+P\+F\+Numbers (\begin{DoxyParamCaption}\item[{std\+::string}]{cpf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Remove \textquotesingle{}.\textquotesingle{} e \textquotesingle{}-\/\textquotesingle{} do C\+PF retornando apenas os números. 
+\begin{DoxyParams}{Parâmetros}
+{\em cpf} & C\+PF a ser higienizado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+C\+PF apenas com os números 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42                                              \{}
+\DoxyCodeLine{43   \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.erase(std::remove(\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.begin(), \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.end(), \textcolor{charliteral}{'.'}), \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.end());}
+\DoxyCodeLine{44   \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.erase(std::remove(\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.begin(), \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.end(), \textcolor{charliteral}{'-\/'}), \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.end());}
+\DoxyCodeLine{45   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}};}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a44527899a5f049f8072800b19435d106}\label{class_usuario_a44527899a5f049f8072800b19435d106}} 
+\index{Usuario@{Usuario}!getSenha@{getSenha}}
+\index{getSenha@{getSenha}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{getSenha()}{getSenha()}}
+{\footnotesize\ttfamily std\+::string Usuario\+::get\+Senha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Método de acesso a senha. \begin{DoxyReturn}{Retorna}
+O valor atual de senha 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}{senha}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a8ce15fb85288ebe93f9bb73857b22b88}\label{class_usuario_a8ce15fb85288ebe93f9bb73857b22b88}} 
+\index{Usuario@{Usuario}!isValidCPF@{isValidCPF}}
+\index{isValidCPF@{isValidCPF}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{isValidCPF()}{isValidCPF()}}
+{\footnotesize\ttfamily bool Usuario\+::is\+Valid\+C\+PF (\begin{DoxyParamCaption}\item[{std\+::string}]{cpf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Verifica se o cpf é válido. 
+\begin{DoxyParams}{Parâmetros}
+{\em cpf} & Número a ser validado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Verdadeiro(true) se o cpf é válido e falso(false) caso contrário. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                                      \{}
+\DoxyCodeLine{9   \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.length()!=14)\{}
+\DoxyCodeLine{10       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{11   \}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13   \mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}} = \mbox{\hyperlink{class_usuario_a8dbccc0c4c8f29fbac37a5bc0657ae50}{Usuario::getCPFNumbers}}(\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}});}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15   \textcolor{keywordtype}{int} soma = 0;}
+\DoxyCodeLine{16   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} cont = 0; cont < 9; cont++)\{}
+\DoxyCodeLine{17     soma += (\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.at(cont)-\/\textcolor{charliteral}{'0'})*(10-\/cont);}
+\DoxyCodeLine{18   \}}
+\DoxyCodeLine{19   \textcolor{keywordtype}{int} resultado = (11-\/(soma\%11));}
+\DoxyCodeLine{20   \textcolor{keywordflow}{if}(resultado == 10 || resultado == 11)\{}
+\DoxyCodeLine{21     resultado = 0;}
+\DoxyCodeLine{22   \}}
+\DoxyCodeLine{23   \textcolor{keywordflow}{if}(resultado != (\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.at(9)-\/\textcolor{charliteral}{'0'}))\{}
+\DoxyCodeLine{24       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{25   \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   soma = 0;}
+\DoxyCodeLine{28   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} cont = 0; cont < 10; cont++)\{}
+\DoxyCodeLine{29     soma += (\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.at(cont)-\/\textcolor{charliteral}{'0'})*(11-\/cont);}
+\DoxyCodeLine{30   \}}
+\DoxyCodeLine{31   resultado = (11-\/(soma\%11));}
+\DoxyCodeLine{32   \textcolor{keywordflow}{if}(resultado == 10 || resultado == 11)\{}
+\DoxyCodeLine{33     resultado = 0;}
+\DoxyCodeLine{34   \}}
+\DoxyCodeLine{35   \textcolor{keywordflow}{if}(resultado != (\mbox{\hyperlink{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}{cpf}}.at(10)-\/\textcolor{charliteral}{'0'}))\{}
+\DoxyCodeLine{36       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{37   \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a6f2ed1f4f96cc6b5fa31eaeb9f7e540f}\label{class_usuario_a6f2ed1f4f96cc6b5fa31eaeb9f7e540f}} 
+\index{Usuario@{Usuario}!setCartao@{setCartao}}
+\index{setCartao@{setCartao}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{setCartao()}{setCartao()}}
+{\footnotesize\ttfamily void Usuario\+::set\+Cartao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cartao}{Cartao}} \&}]{cartao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Método de alteração de cartao. 
+\begin{DoxyParams}{Parâmetros}
+{\em cartao} & Nova instância de cartao \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{this-\/>cartao = \mbox{\hyperlink{class_usuario_a478626e0565127b6cd6acad3938b8771}{cartao}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_usuario_a28efaec1398906b6f43b12877bf59db7}\label{class_usuario_a28efaec1398906b6f43b12877bf59db7}} 
+\index{Usuario@{Usuario}!setSenha@{setSenha}}
+\index{setSenha@{setSenha}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{setSenha()}{setSenha()}}
+{\footnotesize\ttfamily void Usuario\+::set\+Senha (\begin{DoxyParamCaption}\item[{std\+::string}]{senha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Método de alteração de senha. 
+\begin{DoxyParams}{Parâmetros}
+{\em senha} & Novo valor de senha \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{ this-\/>\mbox{\hyperlink{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}{senha}} = \mbox{\hyperlink{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}{senha}}; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Atributos}
+\mbox{\Hypertarget{class_usuario_a478626e0565127b6cd6acad3938b8771}\label{class_usuario_a478626e0565127b6cd6acad3938b8771}} 
+\index{Usuario@{Usuario}!cartao@{cartao}}
+\index{cartao@{cartao}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{cartao}{cartao}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cartao}{Cartao}} Usuario\+::cartao\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Atributo de instância \char`\"{}cartao\char`\"{}. Representa a instância do cartão do Usuário. 
+
+\mbox{\Hypertarget{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}\label{class_usuario_ab9fcb5fd00d1c863af41759f6f0ff69d}} 
+\index{Usuario@{Usuario}!cpf@{cpf}}
+\index{cpf@{cpf}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{cpf}{cpf}}
+{\footnotesize\ttfamily std\+::string Usuario\+::cpf\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Atributo de instância \char`\"{}cpf\char`\"{}. Representa o cpf do Usuário. 
+
+\mbox{\Hypertarget{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}\label{class_usuario_a5f324af32e988e55160d5f3651b5d2b1}} 
+\index{Usuario@{Usuario}!senha@{senha}}
+\index{senha@{senha}!Usuario@{Usuario}}
+\doxysubsubsection{\texorpdfstring{senha}{senha}}
+{\footnotesize\ttfamily std\+::string Usuario\+::senha\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Atributo de instância \char`\"{}senha\char`\"{}. Representa a senha do Usuário. 
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+/home/mateusberardo/\+Documents/\+T\+P1/\+Trabalho\+Mesmo/\+Ingresso\+Net/src/\mbox{\hyperlink{usuario_8h}{usuario.\+h}}\item 
+/home/mateusberardo/\+Documents/\+T\+P1/\+Trabalho\+Mesmo/\+Ingresso\+Net/src/\mbox{\hyperlink{usuario_8cpp}{usuario.\+cpp}}\end{DoxyCompactItemize}

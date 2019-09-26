@@ -13,33 +13,38 @@
 #define DB "ingressoNetDB"
 
 
-
 class MySQLHelper : public PersistanceHelper<MYSQL_RES>{
-public:
 
-  /** Default destructor */
-  virtual ~MySQLHelper();
+  public:
+    /** Destrutor padrão */
+    virtual ~MySQLHelper();
 
-  /** Execute query on database and return result
-   * \param query query to be executed
-   */
-  MYSQL_RES* query(std::string) override;
+    /** Executa uma operação no banco MySQL e retorna o resutado.
+     * \param query Operação a ser executada
+     * \return Resultado da operação
+     */
+    MYSQL_RES* query(std::string) override;
 
-  /** Connect to remote(or local) database
-   */
-  void connect() override;
+    /** Conecta a um banco de dados SQL remoto.
+     */
+    void connect() override;
 
-  /** Get instance if available or create new if necessary
-   *  \return valid current instance
-   */
-  static MySQLHelper* getInstance();
+    /** Retorna a instância da classe MySQLHelper(Singleton) ou, caso necessário, cria a instância.
+     *  \return Instância válida atual
+     */
+    static MySQLHelper* getInstance();
 
-  MySQLHelper(MySQLHelper const&) = delete;
-  void operator=(MySQLHelper const&) = delete;
-private:
-  MySQLHelper(){}
-  static MySQLHelper* instance; //!< Member variable "instance"
-  static MYSQL* dbconn; //!< Member variable "dbconn"
+    MySQLHelper(MySQLHelper const&) = delete;
+    void operator=(MySQLHelper const&) = delete;
+
+
+  private:
+    /** Construtor privado para garantir a arquitetura Singleton da classe.
+     */
+    MySQLHelper(){}
+
+    static MySQLHelper* instance; //!< Atributo de classe "instance". Representa a instância da classe.
+    static MYSQL* dbconn; //!< Atributo de classe "dbconn". Representa a conexão com o banco de dados.
 };
 
 #endif // MYSQLHELPER_H

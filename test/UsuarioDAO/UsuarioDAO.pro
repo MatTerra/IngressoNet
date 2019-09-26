@@ -1,6 +1,6 @@
 CONFIG += testcase
 TARGET = testeusuariodao
-QT = core testlib sql
+QT = core testlib
 SOURCES +=  \
     testeusuariodao.cpp \
     ../../src/usuariodao.cpp \

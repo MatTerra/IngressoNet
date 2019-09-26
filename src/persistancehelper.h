@@ -3,11 +3,20 @@
 
 #include <string>
 
+
 template <typename T>
 class PersistanceHelper{
-public:
-  virtual T* query(std::string){return nullptr;}
-  virtual void connect(){}
+
+  public:
+    /** Executa uma operação no banco de dados e retorna o resutado.
+     * \param query Operação a ser executada
+     * \return Resultado da operação
+     */
+    virtual T* query(std::string)=0;
+
+    /** Conecta a um banco de dados remoto.
+     */
+    virtual void connect()=0;
 };
 
 #endif // PERSISTANCEHELPER_H
