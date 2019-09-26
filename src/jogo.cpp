@@ -36,12 +36,8 @@ Jogo::~Jogo(){
 
 }
 
-bool IsValidCodigo(){
-    bool valido = true;
-    if(codigo.length != 3){
-        valido = false;
-    }
-    return valido;
+bool IsValidDatas(){
+
 }
 
 bool IsValidEstado(){
@@ -52,14 +48,4 @@ bool IsValidCidade(){
 
 }
 
-bool IsValidTipo(){
-    bool valido = true;
-    if(tipo < 1 || tipo > 4){
-        valido = false;
-    }
-    return valido;
-}
 
-bool IsValidNome(){
-
-}
