@@ -1,5 +1,8 @@
 #include "cartaodao.h"
 
+CartaoDAO* CartaoDAO::instance = nullptr;
+MySQLHelper* CartaoDAO::mysqlHelper = nullptr;
+
 Cartao CartaoDAO::get(std::string numero){
   try {
     std::string query = "SELECT codigoDeSeguranca FROM cartao_t WHERE numero="+numero+";";
