@@ -16,6 +16,7 @@ MYSQL_RES* MySQLHelper::query(std::string query){
         } else {
           // TODO add exception for failed query
           // Some error on query
+          qDebug("Deu erro na query");
           return nullptr;
         }
       return res;
@@ -30,7 +31,6 @@ void MySQLHelper::connect(){
       MySQLHelper::dbconn = mysql_init(nullptr);
       MySQLHelper::dbconn = mysql_real_connect(MySQLHelper::dbconn, IP, USER, PASSWORD, DB, 0, nullptr, 0);
       if (MySQLHelper::dbconn) {
-          qDebug("Connected");
           return;
       }
       throw NotAbleToConnectException();
@@ -45,8 +45,8 @@ MySQLHelper* MySQLHelper::getInstance(){
       try {
         MySQLHelper::instance->connect();
       } catch (NotAbleToConnectException& e) {
-        qDebug(e.what());
         MySQLHelper::instance = nullptr;
+        throw e;
       }
   }
   return MySQLHelper::instance;

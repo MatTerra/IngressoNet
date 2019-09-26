@@ -2,9 +2,9 @@
 #define MYSQLHELPER_H
 
 #include "persistancehelper.h"
-#include <mysql/mysql.h>
+#include "notabletoconnectexception.h"
 #include <QDebug>
-#include "exceptions/notabletoconnectexception.h"
+#include <mysql/mysql.h>
 
 
 #define IP "172.18.0.2"
@@ -29,10 +29,6 @@ public:
    */
   void connect() override;
 
-  /** Creates the instance of the singleton
-
-  void initHelper();
-  */
   /** Get instance if available or create new if necessary
    *  \return valid current instance
    */
