@@ -1,6 +1,6 @@
 #include <QtTest>
 
-#include <partida.h>s
+#include <partida.h>
 
 class TestePartida : public QObject
 {
@@ -11,7 +11,7 @@ public:
   ~TestePartida();
 
 private slots:
-  void testVenderIngresso();
+  void testeVenderIngresso();
 
 };
 

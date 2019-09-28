@@ -2,9 +2,9 @@ TEMPLATE = subdirs
 
 SUBDIRS += Cartao \
            CartaoDAO \
-    CidadeDAO \
-    Partida \
+           CidadeDAO \
            Usuario \
            Cidade \
            MySQLHelper \
            UsuarioDAO \
+           Partida \
