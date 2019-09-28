@@ -20,20 +20,10 @@ public:
 
     **/
 
-    bool IsValidDatas();
-
-    bool IsValidEstado();
-
-    bool IsValidCidade();
-
 private:
     int codigo;
-    int tipo;
-    int datai;
-    int dataf;
-    std::string estado;
-    std::string cidade;
     std::string nome_do_jogo;
+    tipo Tipo;
 
 };
 
