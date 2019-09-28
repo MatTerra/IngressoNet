@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['senha_170',['senha',['../class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1',1,'Usuario']]]
+  ['partida_237',['partida',['../class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82',1,'Ingresso']]],
+  ['preco_238',['preco',['../class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be',1,'Partida']]]
 ];

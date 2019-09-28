@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ui_171',['ui',['../class_main_window.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow']]]
+  ['responsavel_239',['responsavel',['../class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24',1,'Partida']]]
 ];
