@@ -50,7 +50,6 @@ class UsuarioDAO : public GenericDAO<Usuario>{
 
 
   private:
-
     static UsuarioDAO* instance; //!< Atributo de classe "instance". Representa a instância da classe.
     static MySQLHelper* mysqlHelper; //!< Atributo de classe "mysqlHelper". Representa o executor de operações no banco de dados MySQL.
 };
