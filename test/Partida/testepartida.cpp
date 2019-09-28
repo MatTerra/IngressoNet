@@ -2,21 +2,20 @@
 
 #include <partida.h>
 
-class TestePartida : public QObject
-{
+class TestePartida : public QObject{
   Q_OBJECT
 
-public:
-  TestePartida();
-  ~TestePartida();
-
 private slots:
+  void initTestCase();
   void testeVenderIngresso();
 
 };
 
-void TestePartida::testeVenderIngresso()
-{
+void TestePartida::initTestCase(){
+  QSKIP("Not implemented yet");
+}
+
+void TestePartida::testeVenderIngresso(){
 
 }
 
