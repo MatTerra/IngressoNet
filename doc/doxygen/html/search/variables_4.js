@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mysqlhelper_146',['mysqlHelper',['../class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258',1,'UsuarioDAO']]]
+  ['jogo_273',['jogo',['../class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3',1,'Partida']]]
 ];

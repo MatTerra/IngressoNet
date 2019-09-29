@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['_7ecartao_68',['~Cartao',['../class_cartao.html#af3df5fe82f18f21d981522468772eaef',1,'Cartao']]],
-  ['_7ecidade_69',['~Cidade',['../class_cidade.html#acaa458442d0ef19722ab1277d90dc2ff',1,'Cidade']]],
-  ['_7emainwindow_70',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
-  ['_7emysqlhelper_71',['~MySQLHelper',['../class_my_s_q_l_helper.html#a343d45202502b17fa3f278ea33cc50d8',1,'MySQLHelper']]],
-  ['_7eusuario_72',['~Usuario',['../class_usuario.html#ab4096b0b8300ecb47b10c555fb09c997',1,'Usuario']]],
-  ['_7eusuariodao_73',['~UsuarioDAO',['../class_usuario_d_a_o.html#ae964b5a8a67e1e794a3562503cdabf52',1,'UsuarioDAO']]]
+  ['tipo_116',['tipo',['../class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428',1,'Jogo::tipo()'],['../class_jogo.html#a390ebf66be326d1ebc32ed854bf7131b',1,'Jogo::Tipo()']]]
 ];

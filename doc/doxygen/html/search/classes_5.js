@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['usuario_83',['Usuario',['../class_usuario.html',1,'']]],
-  ['usuariodao_84',['UsuarioDAO',['../class_usuario_d_a_o.html',1,'']]]
+  ['notabletoconnectexception_156',['NotAbleToConnectException',['../class_not_able_to_connect_exception.html',1,'']]]
 ];

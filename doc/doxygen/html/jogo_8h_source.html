@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/jogo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">jogo.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="jogo_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef JOGO_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define JOGO_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_jogo.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_jogo.html">Jogo</a>{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131b">   10</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131b">Tipo</a> {<a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131ba94d784c0043a1197f43948d233819e65">Local</a>=0, <a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131ba3401080e682e5b4a83c9e004334f6c1a">Estadual</a>=1, <a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131ba46dabb5e49e7eae9405adec9cacc5958">Nacional</a>=2, <a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131baac983abddf5d524f7b81422986a4e37f">Internacional</a>=3};</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_jogo.html#aa25b2d7132f254c05d7a8756352ae5b9">   13</a></span>&#160;    <a class="code" href="class_jogo.html#aa25b2d7132f254c05d7a8756352ae5b9">Jogo</a>(<span class="keywordtype">int</span> <a class="code" href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">codigo</a>, std::string <a class="code" href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">nome</a>, <span class="keyword">enum</span> <a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131b">Tipo</a> <a class="code" href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">tipo</a>) : <a class="code" href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">codigo</a>(<a class="code" href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">codigo</a>), <a class="code" href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">nome</a>(<a class="code" href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">nome</a>), <a class="code" href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">tipo</a>(<a class="code" href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">tipo</a>){}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_jogo.html#adad565eb146deba4368bcb9eeb365f71">   18</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jogo.html#adad565eb146deba4368bcb9eeb365f71">setCodigo</a>(<span class="keywordtype">int</span> <a class="code" href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">codigo</a>){ this-&gt;codigo = <a class="code" href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">codigo</a>; }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_jogo.html#a41118bd8187ca7881023f1191c3efb7a">   23</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jogo.html#a41118bd8187ca7881023f1191c3efb7a">getCodigo</a>(){ <span class="keywordflow">return</span> <a class="code" href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">codigo</a>; }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_jogo.html#a80e3b5a7c9b1b7f78614a2523bfef417">   28</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jogo.html#a80e3b5a7c9b1b7f78614a2523bfef417">setNome</a>(std::string <a class="code" href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">nome</a>){ this-&gt;nome = <a class="code" href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">nome</a>; }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_jogo.html#ab04f3eed35d4cf4711025e99050372df">   33</a></span>&#160;    std::string <a class="code" href="class_jogo.html#ab04f3eed35d4cf4711025e99050372df">getNome</a>() { <span class="keywordflow">return</span> <a class="code" href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">nome</a>; }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_jogo.html#a4910696e2d20d526969b7d6759546abd">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_jogo.html#a4910696e2d20d526969b7d6759546abd">setTipo</a>(<span class="keyword">enum</span> <a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131b">Tipo</a> <a class="code" href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">tipo</a>) { this-&gt;tipo = <a class="code" href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">tipo</a>; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_jogo.html#a3dd61c8a82c8aa12299593f1c200899c">   43</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131b">Tipo</a> <a class="code" href="class_jogo.html#a3dd61c8a82c8aa12299593f1c200899c">getTipo</a>() { <span class="keywordflow">return</span> <a class="code" href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">tipo</a>; }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">   47</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">codigo</a>; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">   48</a></span>&#160;    std::string <a class="code" href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">nome</a>; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">   49</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131b">Tipo</a> <a class="code" href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">tipo</a>; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif // JOGO_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_jogo_html_adad565eb146deba4368bcb9eeb365f71"><div class="ttname"><a href="class_jogo.html#adad565eb146deba4368bcb9eeb365f71">Jogo::setCodigo</a></div><div class="ttdeci">void setCodigo(int codigo)</div><div class="ttdef"><b>Definition:</b> jogo.h:18</div></div>
+<div class="ttc" id="aclass_jogo_html_a41118bd8187ca7881023f1191c3efb7a"><div class="ttname"><a href="class_jogo.html#a41118bd8187ca7881023f1191c3efb7a">Jogo::getCodigo</a></div><div class="ttdeci">int getCodigo()</div><div class="ttdef"><b>Definition:</b> jogo.h:23</div></div>
+<div class="ttc" id="aclass_jogo_html_ad4a093893d15c085007b81f9e4d1c3b3"><div class="ttname"><a href="class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3">Jogo::codigo</a></div><div class="ttdeci">int codigo</div><div class="ttdoc">Atributo de instância &quot;codigo&quot;. Representa o código do jogo.</div><div class="ttdef"><b>Definition:</b> jogo.h:47</div></div>
+<div class="ttc" id="aclass_jogo_html_a390ebf66be326d1ebc32ed854bf7131ba46dabb5e49e7eae9405adec9cacc5958"><div class="ttname"><a href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131ba46dabb5e49e7eae9405adec9cacc5958">Jogo::Nacional</a></div><div class="ttdef"><b>Definition:</b> jogo.h:10</div></div>
+<div class="ttc" id="aclass_jogo_html_aa25b2d7132f254c05d7a8756352ae5b9"><div class="ttname"><a href="class_jogo.html#aa25b2d7132f254c05d7a8756352ae5b9">Jogo::Jogo</a></div><div class="ttdeci">Jogo(int codigo, std::string nome, enum Tipo tipo)</div><div class="ttdef"><b>Definition:</b> jogo.h:13</div></div>
+<div class="ttc" id="aclass_jogo_html_ab04f3eed35d4cf4711025e99050372df"><div class="ttname"><a href="class_jogo.html#ab04f3eed35d4cf4711025e99050372df">Jogo::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdef"><b>Definition:</b> jogo.h:33</div></div>
+<div class="ttc" id="aclass_jogo_html_a390ebf66be326d1ebc32ed854bf7131baac983abddf5d524f7b81422986a4e37f"><div class="ttname"><a href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131baac983abddf5d524f7b81422986a4e37f">Jogo::Internacional</a></div><div class="ttdef"><b>Definition:</b> jogo.h:10</div></div>
+<div class="ttc" id="aclass_jogo_html_a390ebf66be326d1ebc32ed854bf7131b"><div class="ttname"><a href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131b">Jogo::Tipo</a></div><div class="ttdeci">Tipo</div><div class="ttdef"><b>Definition:</b> jogo.h:10</div></div>
+<div class="ttc" id="aclass_jogo_html"><div class="ttname"><a href="class_jogo.html">Jogo</a></div><div class="ttdef"><b>Definition:</b> jogo.h:5</div></div>
+<div class="ttc" id="aclass_jogo_html_a3dd61c8a82c8aa12299593f1c200899c"><div class="ttname"><a href="class_jogo.html#a3dd61c8a82c8aa12299593f1c200899c">Jogo::getTipo</a></div><div class="ttdeci">enum Tipo getTipo()</div><div class="ttdef"><b>Definition:</b> jogo.h:43</div></div>
+<div class="ttc" id="aclass_jogo_html_a4910696e2d20d526969b7d6759546abd"><div class="ttname"><a href="class_jogo.html#a4910696e2d20d526969b7d6759546abd">Jogo::setTipo</a></div><div class="ttdeci">void setTipo(enum Tipo tipo)</div><div class="ttdef"><b>Definition:</b> jogo.h:38</div></div>
+<div class="ttc" id="aclass_jogo_html_a390ebf66be326d1ebc32ed854bf7131ba3401080e682e5b4a83c9e004334f6c1a"><div class="ttname"><a href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131ba3401080e682e5b4a83c9e004334f6c1a">Jogo::Estadual</a></div><div class="ttdef"><b>Definition:</b> jogo.h:10</div></div>
+<div class="ttc" id="aclass_jogo_html_a80e3b5a7c9b1b7f78614a2523bfef417"><div class="ttname"><a href="class_jogo.html#a80e3b5a7c9b1b7f78614a2523bfef417">Jogo::setNome</a></div><div class="ttdeci">void setNome(std::string nome)</div><div class="ttdef"><b>Definition:</b> jogo.h:28</div></div>
+<div class="ttc" id="aclass_jogo_html_a390ebf66be326d1ebc32ed854bf7131ba94d784c0043a1197f43948d233819e65"><div class="ttname"><a href="class_jogo.html#a390ebf66be326d1ebc32ed854bf7131ba94d784c0043a1197f43948d233819e65">Jogo::Local</a></div><div class="ttdef"><b>Definition:</b> jogo.h:10</div></div>
+<div class="ttc" id="aclass_jogo_html_a975db1f1564a62e09c5ba59b9bb07428"><div class="ttname"><a href="class_jogo.html#a975db1f1564a62e09c5ba59b9bb07428">Jogo::tipo</a></div><div class="ttdeci">enum Tipo tipo</div><div class="ttdoc">Atributo de instância &quot;tipo&quot;. Representa o tipo do jogo.</div><div class="ttdef"><b>Definition:</b> jogo.h:49</div></div>
+<div class="ttc" id="aclass_jogo_html_a55261b29da1c988b7ee654f862ef2566"><div class="ttname"><a href="class_jogo.html#a55261b29da1c988b7ee654f862ef2566">Jogo::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdoc">Atributo de instância &quot;nome&quot;. Representa o nome do jogo.</div><div class="ttdef"><b>Definition:</b> jogo.h:48</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

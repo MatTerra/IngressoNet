@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remove_124',['remove',['../class_generic_d_a_o.html#ac9a9b2a6650dab4c4ad4cdbe980ea718',1,'GenericDAO::remove()'],['../class_usuario_d_a_o.html#af929fbadb5e4bc01ba61e61594d848fe',1,'UsuarioDAO::remove()']]]
+  ['partida_229',['Partida',['../class_partida.html#a43cfc06b3db5707abcb80f4c31fca52e',1,'Partida']]]
 ];

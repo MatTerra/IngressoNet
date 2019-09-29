@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['notabletoconnectexception_80',['NotAbleToConnectException',['../class_not_able_to_connect_exception.html',1,'']]]
+  ['jogo_152',['Jogo',['../class_jogo.html',1,'']]],
+  ['jogodao_153',['JogoDAO',['../class_jogo_d_a_o.html',1,'']]]
 ];

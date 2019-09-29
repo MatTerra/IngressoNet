@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/ingresso.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ingresso.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ingresso_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INGRESSO_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INGRESSO_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="usuario_8h.html">usuario.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="partida_8h.html">partida.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_ingresso.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ingresso.html">Ingresso</a>{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_ingresso.html#a945739a83d50b0eee7fdba57e6068f88">   12</a></span>&#160;    <a class="code" href="class_ingresso.html#a945739a83d50b0eee7fdba57e6068f88">Ingresso</a>(<span class="keywordtype">int</span> <a class="code" href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">codigo</a>, <a class="code" href="class_partida.html">Partida</a> <a class="code" href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">partida</a>, <a class="code" href="class_usuario.html">Usuario</a> <a class="code" href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">usuario</a>) : <a class="code" href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">codigo</a>(<a class="code" href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">codigo</a>), <a class="code" href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">partida</a>(<a class="code" href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">partida</a>), <a class="code" href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">usuario</a>(<a class="code" href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">usuario</a>){};</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_ingresso.html#aec66a7bdad844f8e3d282ecca88417e9">   17</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_ingresso.html#aec66a7bdad844f8e3d282ecca88417e9">getCodigo</a>(){ <span class="keywordflow">return</span> <a class="code" href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">codigo</a>; }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_ingresso.html#a5ec017c764ea0bdb4fba2b3567579dbb">   22</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ingresso.html#a5ec017c764ea0bdb4fba2b3567579dbb">setCodigo</a>(<span class="keywordtype">int</span> <a class="code" href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">codigo</a>){ this-&gt;codigo = <a class="code" href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">codigo</a>; }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_ingresso.html#a1fcfdaaabe5f835967e6e526426a1637">   27</a></span>&#160;    <a class="code" href="class_partida.html">Partida</a> <a class="code" href="class_ingresso.html#a1fcfdaaabe5f835967e6e526426a1637">getPartida</a>(){ <span class="keywordflow">return</span> <a class="code" href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">partida</a>; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_ingresso.html#ae49b5df52447c0548f2676a72b7b9b68">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ingresso.html#ae49b5df52447c0548f2676a72b7b9b68">setPartida</a>(<a class="code" href="class_partida.html">Partida</a> <a class="code" href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">partida</a>) { this-&gt;partida = <a class="code" href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">partida</a>; }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_ingresso.html#a14b2b2e7d422e70a98e372aa5cf7c666">   37</a></span>&#160;    <a class="code" href="class_usuario.html">Usuario</a> <a class="code" href="class_ingresso.html#a14b2b2e7d422e70a98e372aa5cf7c666">getUsuario</a>() { <span class="keywordflow">return</span> <a class="code" href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">usuario</a>; }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_ingresso.html#a7ce16d4bc2131375b31add8bc66f429f">   42</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ingresso.html#a7ce16d4bc2131375b31add8bc66f429f">setUsuario</a>(<a class="code" href="class_usuario.html">Usuario</a> <a class="code" href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">usuario</a>){ this-&gt;usuario = <a class="code" href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">usuario</a>; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">   46</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">codigo</a>; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">   47</a></span>&#160;    <a class="code" href="class_partida.html">Partida</a> <a class="code" href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">partida</a>; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">   48</a></span>&#160;    <a class="code" href="class_usuario.html">Usuario</a> <a class="code" href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">usuario</a>; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif // INGRESSO_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_ingresso_html_a945739a83d50b0eee7fdba57e6068f88"><div class="ttname"><a href="class_ingresso.html#a945739a83d50b0eee7fdba57e6068f88">Ingresso::Ingresso</a></div><div class="ttdeci">Ingresso(int codigo, Partida partida, Usuario usuario)</div><div class="ttdef"><b>Definition:</b> ingresso.h:12</div></div>
+<div class="ttc" id="aclass_ingresso_html_a7ce16d4bc2131375b31add8bc66f429f"><div class="ttname"><a href="class_ingresso.html#a7ce16d4bc2131375b31add8bc66f429f">Ingresso::setUsuario</a></div><div class="ttdeci">void setUsuario(Usuario usuario)</div><div class="ttdef"><b>Definition:</b> ingresso.h:42</div></div>
+<div class="ttc" id="aclass_ingresso_html_a2410665056cef4193ef4e460a85e5326"><div class="ttname"><a href="class_ingresso.html#a2410665056cef4193ef4e460a85e5326">Ingresso::usuario</a></div><div class="ttdeci">Usuario usuario</div><div class="ttdoc">Atributo de instância &quot;usuario&quot;. Representa o usuário dono do ingresso.</div><div class="ttdef"><b>Definition:</b> ingresso.h:48</div></div>
+<div class="ttc" id="aclass_ingresso_html_afb8c498ba77667631fef5337a7f5ea66"><div class="ttname"><a href="class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66">Ingresso::codigo</a></div><div class="ttdeci">int codigo</div><div class="ttdoc">Atributo de instância &quot;codigo&quot;. Representa o código do ingresso.</div><div class="ttdef"><b>Definition:</b> ingresso.h:46</div></div>
+<div class="ttc" id="aclass_ingresso_html_aec66a7bdad844f8e3d282ecca88417e9"><div class="ttname"><a href="class_ingresso.html#aec66a7bdad844f8e3d282ecca88417e9">Ingresso::getCodigo</a></div><div class="ttdeci">int getCodigo()</div><div class="ttdef"><b>Definition:</b> ingresso.h:17</div></div>
+<div class="ttc" id="apartida_8h_html"><div class="ttname"><a href="partida_8h.html">partida.h</a></div></div>
+<div class="ttc" id="aclass_ingresso_html_ae49b5df52447c0548f2676a72b7b9b68"><div class="ttname"><a href="class_ingresso.html#ae49b5df52447c0548f2676a72b7b9b68">Ingresso::setPartida</a></div><div class="ttdeci">void setPartida(Partida partida)</div><div class="ttdef"><b>Definition:</b> ingresso.h:32</div></div>
+<div class="ttc" id="ausuario_8h_html"><div class="ttname"><a href="usuario_8h.html">usuario.h</a></div></div>
+<div class="ttc" id="aclass_ingresso_html_ac4a3fa5b86e1874900b7415eca785a82"><div class="ttname"><a href="class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82">Ingresso::partida</a></div><div class="ttdeci">Partida partida</div><div class="ttdoc">Atributo de instância &quot;Partida&quot;. Representa a partida para qual é o ingresso.</div><div class="ttdef"><b>Definition:</b> ingresso.h:47</div></div>
+<div class="ttc" id="aclass_ingresso_html"><div class="ttname"><a href="class_ingresso.html">Ingresso</a></div><div class="ttdef"><b>Definition:</b> ingresso.h:8</div></div>
+<div class="ttc" id="aclass_ingresso_html_a5ec017c764ea0bdb4fba2b3567579dbb"><div class="ttname"><a href="class_ingresso.html#a5ec017c764ea0bdb4fba2b3567579dbb">Ingresso::setCodigo</a></div><div class="ttdeci">void setCodigo(int codigo)</div><div class="ttdef"><b>Definition:</b> ingresso.h:22</div></div>
+<div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> usuario.h:8</div></div>
+<div class="ttc" id="aclass_partida_html"><div class="ttname"><a href="class_partida.html">Partida</a></div><div class="ttdef"><b>Definition:</b> partida.h:10</div></div>
+<div class="ttc" id="aclass_ingresso_html_a1fcfdaaabe5f835967e6e526426a1637"><div class="ttname"><a href="class_ingresso.html#a1fcfdaaabe5f835967e6e526426a1637">Ingresso::getPartida</a></div><div class="ttdeci">Partida getPartida()</div><div class="ttdef"><b>Definition:</b> ingresso.h:27</div></div>
+<div class="ttc" id="aclass_ingresso_html_a14b2b2e7d422e70a98e372aa5cf7c666"><div class="ttname"><a href="class_ingresso.html#a14b2b2e7d422e70a98e372aa5cf7c666">Ingresso::getUsuario</a></div><div class="ttdeci">Usuario getUsuario()</div><div class="ttdef"><b>Definition:</b> ingresso.h:37</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

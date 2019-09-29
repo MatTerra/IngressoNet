@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ui_151',['ui',['../class_main_window.html#a35466a70ed47252a0191168126a352a5',1,'MainWindow']]]
+  ['partida_278',['partida',['../class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82',1,'Ingresso']]],
+  ['preco_279',['preco',['../class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be',1,'Partida']]]
 ];
