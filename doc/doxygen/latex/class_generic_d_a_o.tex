@@ -1,0 +1,112 @@
+\hypertarget{class_generic_d_a_o}{}\doxysection{Referência do $<$em$>$Template$<$/em$>$ da Classe Generic\+D\+AO$<$ T $>$}
+\label{class_generic_d_a_o}\index{GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}}
+
+
+{\ttfamily \#include $<$genericdao.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual T \mbox{\hyperlink{class_generic_d_a_o_aeb53ae6b7068ae2dd94bbbfb507d887d}{get}} (std\+::string)=0
+\item 
+virtual std\+::vector$<$ T $>$ \mbox{\hyperlink{class_generic_d_a_o_a9b2932c1763d2fa25ee7ce5838b46b70}{get\+All}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_generic_d_a_o_a3e704dca4b0ec0683b6fc945a1db431b}{save}} (T)=0
+\item 
+virtual void \mbox{\hyperlink{class_generic_d_a_o_ab4c4821330bd6b8e42c012d65c8f6df9}{update}} (T, std\+::string, std\+::string)=0
+\item 
+virtual void \mbox{\hyperlink{class_generic_d_a_o_ac9a9b2a6650dab4c4ad4cdbe980ea718}{remove}} (T)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Funções membros}
+\mbox{\Hypertarget{class_generic_d_a_o_aeb53ae6b7068ae2dd94bbbfb507d887d}\label{class_generic_d_a_o_aeb53ae6b7068ae2dd94bbbfb507d887d}} 
+\index{GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}!get@{get}}
+\index{get@{get}!GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+virtual T \mbox{\hyperlink{class_generic_d_a_o}{Generic\+D\+AO}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Método abstrato para busca de um registro da classe T específico no banco de dados. 
+\begin{DoxyParams}{Parâmetros}
+{\em id} & Identificador do registro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Instância do objeto buscado 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_usuario_d_a_o_afdc11cb9ab3a6b516ac0e0a499755f5f}{Usuario\+D\+AO}}.
+
+\mbox{\Hypertarget{class_generic_d_a_o_a9b2932c1763d2fa25ee7ce5838b46b70}\label{class_generic_d_a_o_a9b2932c1763d2fa25ee7ce5838b46b70}} 
+\index{GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}!getAll@{getAll}}
+\index{getAll@{getAll}!GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+virtual std\+::vector$<$T$>$ \mbox{\hyperlink{class_generic_d_a_o}{Generic\+D\+AO}}$<$ T $>$\+::get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Método abstrato para busca de todos os registros da classe T no banco de dados. \begin{DoxyReturn}{Retorna}
+Vetor de T com todos os objetos do banco 
+\end{DoxyReturn}
+
+
+Implementado por \mbox{\hyperlink{class_usuario_d_a_o_a7f2913deec72b3c1c102f032592cf520}{Usuario\+D\+AO}}.
+
+\mbox{\Hypertarget{class_generic_d_a_o_ac9a9b2a6650dab4c4ad4cdbe980ea718}\label{class_generic_d_a_o_ac9a9b2a6650dab4c4ad4cdbe980ea718}} 
+\index{GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+virtual void \mbox{\hyperlink{class_generic_d_a_o}{Generic\+D\+AO}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Método abstrato para remover uma instância da classe T no banco de dados. 
+\begin{DoxyParams}{Parâmetros}
+{\em instance} & Instância de T \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_usuario_d_a_o_af929fbadb5e4bc01ba61e61594d848fe}{Usuario\+D\+AO}}.
+
+\mbox{\Hypertarget{class_generic_d_a_o_a3e704dca4b0ec0683b6fc945a1db431b}\label{class_generic_d_a_o_a3e704dca4b0ec0683b6fc945a1db431b}} 
+\index{GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}!save@{save}}
+\index{save@{save}!GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+virtual void \mbox{\hyperlink{class_generic_d_a_o}{Generic\+D\+AO}}$<$ T $>$\+::save (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Método abstrato para salvar uma instância da classe T no banco de dados. 
+\begin{DoxyParams}{Parâmetros}
+{\em instance} & Instância de T \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_usuario_d_a_o_ab22491952d7f7606bcb3c4361207bdec}{Usuario\+D\+AO}}.
+
+\mbox{\Hypertarget{class_generic_d_a_o_ab4c4821330bd6b8e42c012d65c8f6df9}\label{class_generic_d_a_o_ab4c4821330bd6b8e42c012d65c8f6df9}} 
+\index{GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}!update@{update}}
+\index{update@{update}!GenericDAO$<$ T $>$@{GenericDAO$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+virtual void \mbox{\hyperlink{class_generic_d_a_o}{Generic\+D\+AO}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{T}]{,  }\item[{std\+::string}]{,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Método abstrato para atualizar uma instância da classe T no banco de dados. 
+\begin{DoxyParams}{Parâmetros}
+{\em instance} & Instância de T \\
+\hline
+{\em field} & Identificador do campo a ser atualizado \\
+\hline
+{\em value} & Novo valor de field \\
+\hline
+\end{DoxyParams}
+
+
+Implementado por \mbox{\hyperlink{class_usuario_d_a_o_aef8bad221c090c0da5517397572c3976}{Usuario\+D\+AO}}.
+
+
+
+A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\item 
+/home/mateusberardo/\+Documents/\+T\+P1/\+Trabalho\+Mesmo/\+Ingresso\+Net/src/\mbox{\hyperlink{genericdao_8h}{genericdao.\+h}}\end{DoxyCompactItemize}

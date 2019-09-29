@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/usuariodao.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">usuariodao.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="usuariodao_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef USUARIODAO_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define USUARIODAO_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mysqlhelper_8h.html">mysqlhelper.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="genericdao_8h.html">genericdao.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="usuario_8h.html">usuario.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cartao_8h.html">cartao.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="notabletoconnectexception_8h.html">notabletoconnectexception.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;mysql/mysql.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_usuario_d_a_o.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_usuario_d_a_o.html">UsuarioDAO</a> : <span class="keyword">public</span> <a class="code" href="class_generic_d_a_o.html">GenericDAO</a>&lt;Usuario&gt;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_usuario_d_a_o.html#ae964b5a8a67e1e794a3562503cdabf52">~UsuarioDAO</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_usuario.html">Usuario</a> <a class="code" href="class_usuario_d_a_o.html#afdc11cb9ab3a6b516ac0e0a499755f5f">get</a>(std::string) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;Usuario&gt; <a class="code" href="class_usuario_d_a_o.html#a7f2913deec72b3c1c102f032592cf520">getAll</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_usuario_d_a_o.html#ab22491952d7f7606bcb3c4361207bdec">save</a>(<a class="code" href="class_usuario.html">Usuario</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_usuario_d_a_o.html#aef8bad221c090c0da5517397572c3976">update</a>(<a class="code" href="class_usuario.html">Usuario</a>, std::string, std::string) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_usuario_d_a_o.html#af929fbadb5e4bc01ba61e61594d848fe">remove</a>(<a class="code" href="class_usuario.html">Usuario</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_usuario_d_a_o.html">UsuarioDAO</a>* <a class="code" href="class_usuario_d_a_o.html#abc620ee830afa8c0c91a4b725bb3fefd">getInstance</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">   54</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_usuario_d_a_o.html">UsuarioDAO</a>* <a class="code" href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">instance</a>; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">   55</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_my_s_q_l_helper.html">MySQLHelper</a>* <a class="code" href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">mysqlHelper</a>; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif // USUARIODAO_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="amysqlhelper_8h_html"><div class="ttname"><a href="mysqlhelper_8h.html">mysqlhelper.h</a></div></div>
+<div class="ttc" id="acartao_8h_html"><div class="ttname"><a href="cartao_8h.html">cartao.h</a></div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_a26eaeb15ec2091eb1797853ffafd9c7b"><div class="ttname"><a href="class_usuario_d_a_o.html#a26eaeb15ec2091eb1797853ffafd9c7b">UsuarioDAO::instance</a></div><div class="ttdeci">static UsuarioDAO * instance</div><div class="ttdoc">Atributo de classe &quot;instance&quot;. Representa a instância da classe.</div><div class="ttdef"><b>Definition:</b> usuariodao.h:54</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_af929fbadb5e4bc01ba61e61594d848fe"><div class="ttname"><a href="class_usuario_d_a_o.html#af929fbadb5e4bc01ba61e61594d848fe">UsuarioDAO::remove</a></div><div class="ttdeci">void remove(Usuario) override</div><div class="ttdef"><b>Definition:</b> usuariodao.cpp:80</div></div>
+<div class="ttc" id="agenericdao_8h_html"><div class="ttname"><a href="genericdao_8h.html">genericdao.h</a></div></div>
+<div class="ttc" id="ausuario_8h_html"><div class="ttname"><a href="usuario_8h.html">usuario.h</a></div></div>
+<div class="ttc" id="aclass_my_s_q_l_helper_html"><div class="ttname"><a href="class_my_s_q_l_helper.html">MySQLHelper</a></div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:16</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_afdc11cb9ab3a6b516ac0e0a499755f5f"><div class="ttname"><a href="class_usuario_d_a_o.html#afdc11cb9ab3a6b516ac0e0a499755f5f">UsuarioDAO::get</a></div><div class="ttdeci">Usuario get(std::string) override</div><div class="ttdef"><b>Definition:</b> usuariodao.cpp:10</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_aef8bad221c090c0da5517397572c3976"><div class="ttname"><a href="class_usuario_d_a_o.html#aef8bad221c090c0da5517397572c3976">UsuarioDAO::update</a></div><div class="ttdeci">void update(Usuario, std::string, std::string) override</div><div class="ttdef"><b>Definition:</b> usuariodao.cpp:70</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html"><div class="ttname"><a href="class_usuario_d_a_o.html">UsuarioDAO</a></div><div class="ttdef"><b>Definition:</b> usuariodao.h:12</div></div>
+<div class="ttc" id="anotabletoconnectexception_8h_html"><div class="ttname"><a href="notabletoconnectexception_8h.html">notabletoconnectexception.h</a></div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_a94f1dbafb99b96d1add8b8672f042258"><div class="ttname"><a href="class_usuario_d_a_o.html#a94f1dbafb99b96d1add8b8672f042258">UsuarioDAO::mysqlHelper</a></div><div class="ttdeci">static MySQLHelper * mysqlHelper</div><div class="ttdoc">Atributo de classe &quot;mysqlHelper&quot;. Representa o executor de operações no banco de dados MySQL.</div><div class="ttdef"><b>Definition:</b> usuariodao.h:55</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_ab22491952d7f7606bcb3c4361207bdec"><div class="ttname"><a href="class_usuario_d_a_o.html#ab22491952d7f7606bcb3c4361207bdec">UsuarioDAO::save</a></div><div class="ttdeci">void save(Usuario) override</div><div class="ttdef"><b>Definition:</b> usuariodao.cpp:62</div></div>
+<div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> usuario.h:8</div></div>
+<div class="ttc" id="aclass_generic_d_a_o_html"><div class="ttname"><a href="class_generic_d_a_o.html">GenericDAO</a></div><div class="ttdef"><b>Definition:</b> genericdao.h:9</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_ae964b5a8a67e1e794a3562503cdabf52"><div class="ttname"><a href="class_usuario_d_a_o.html#ae964b5a8a67e1e794a3562503cdabf52">UsuarioDAO::~UsuarioDAO</a></div><div class="ttdeci">virtual ~UsuarioDAO()</div><div class="ttdef"><b>Definition:</b> usuariodao.cpp:6</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_abc620ee830afa8c0c91a4b725bb3fefd"><div class="ttname"><a href="class_usuario_d_a_o.html#abc620ee830afa8c0c91a4b725bb3fefd">UsuarioDAO::getInstance</a></div><div class="ttdeci">static UsuarioDAO * getInstance()</div><div class="ttdef"><b>Definition:</b> usuariodao.cpp:87</div></div>
+<div class="ttc" id="aclass_usuario_d_a_o_html_a7f2913deec72b3c1c102f032592cf520"><div class="ttname"><a href="class_usuario_d_a_o.html#a7f2913deec72b3c1c102f032592cf520">UsuarioDAO::getAll</a></div><div class="ttdeci">std::vector&lt; Usuario &gt; getAll() override</div><div class="ttdef"><b>Definition:</b> usuariodao.cpp:37</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/usuario.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">usuario.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="usuario_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef USUARIO_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define USUARIO_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cartao_8h.html">cartao.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_usuario.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_usuario.html">Usuario</a>{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_usuario.html#a97bc457a3408db493d562438047859f4">   12</a></span>&#160;    <a class="code" href="class_usuario.html#a97bc457a3408db493d562438047859f4">Usuario</a>(std::string <a class="code" href="class_usuario.html#ab9fcb5fd00d1c863af41759f6f0ff69d">cpf</a>, std::string <a class="code" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">senha</a>, <a class="code" href="class_cartao.html">Cartao</a>&amp; <a class="code" href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">cartao</a>): <a class="code" href="class_usuario.html#ab9fcb5fd00d1c863af41759f6f0ff69d">cpf</a>(<a class="code" href="class_usuario.html#ab9fcb5fd00d1c863af41759f6f0ff69d">cpf</a>), <a class="code" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">senha</a>(<a class="code" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">senha</a>), <a class="code" href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">cartao</a>(<a class="code" href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">cartao</a>){};</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_usuario.html#ab4096b0b8300ecb47b10c555fb09c997">~Usuario</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">   20</a></span>&#160;    std::string <a class="code" href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">getCPF</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_usuario.html#ab9fcb5fd00d1c863af41759f6f0ff69d">cpf</a>; }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_usuario.html#a44527899a5f049f8072800b19435d106">   25</a></span>&#160;    std::string <a class="code" href="class_usuario.html#a44527899a5f049f8072800b19435d106">getSenha</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">senha</a>; }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">   30</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">setSenha</a>(std::string <a class="code" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">senha</a>) { this-&gt;senha = <a class="code" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">senha</a>; }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">   35</a></span>&#160;    <a class="code" href="class_cartao.html">Cartao</a> <a class="code" href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">getCartao</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">cartao</a>; }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_usuario.html#a6f2ed1f4f96cc6b5fa31eaeb9f7e540f">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_usuario.html#a6f2ed1f4f96cc6b5fa31eaeb9f7e540f">setCartao</a>(<a class="code" href="class_cartao.html">Cartao</a>&amp; <a class="code" href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">cartao</a>){this-&gt;cartao = <a class="code" href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">cartao</a>;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_usuario.html#a8ce15fb85288ebe93f9bb73857b22b88">isValidCPF</a>(std::string);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="class_usuario.html#a8dbccc0c4c8f29fbac37a5bc0657ae50">getCPFNumbers</a>(std::string);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_usuario.html#ab9fcb5fd00d1c863af41759f6f0ff69d">   56</a></span>&#160;    std::string <a class="code" href="class_usuario.html#ab9fcb5fd00d1c863af41759f6f0ff69d">cpf</a>; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">   57</a></span>&#160;    std::string <a class="code" href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">senha</a>; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">   58</a></span>&#160;    <a class="code" href="class_cartao.html">Cartao</a> <a class="code" href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">cartao</a>; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif // USUARIO_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_cartao_html"><div class="ttname"><a href="class_cartao.html">Cartao</a></div><div class="ttdef"><b>Definition:</b> cartao.h:7</div></div>
+<div class="ttc" id="acartao_8h_html"><div class="ttname"><a href="cartao_8h.html">cartao.h</a></div></div>
+<div class="ttc" id="aclass_usuario_html_ab9fcb5fd00d1c863af41759f6f0ff69d"><div class="ttname"><a href="class_usuario.html#ab9fcb5fd00d1c863af41759f6f0ff69d">Usuario::cpf</a></div><div class="ttdeci">std::string cpf</div><div class="ttdoc">Atributo de instância &quot;cpf&quot;. Representa o cpf do Usuário.</div><div class="ttdef"><b>Definition:</b> usuario.h:56</div></div>
+<div class="ttc" id="aclass_usuario_html_a478626e0565127b6cd6acad3938b8771"><div class="ttname"><a href="class_usuario.html#a478626e0565127b6cd6acad3938b8771">Usuario::cartao</a></div><div class="ttdeci">Cartao cartao</div><div class="ttdoc">Atributo de instância &quot;cartao&quot;. Representa a instância do cartão do Usuário.</div><div class="ttdef"><b>Definition:</b> usuario.h:58</div></div>
+<div class="ttc" id="aclass_usuario_html_a71708f2f52370f6adfda35fdbed52a64"><div class="ttname"><a href="class_usuario.html#a71708f2f52370f6adfda35fdbed52a64">Usuario::getCPF</a></div><div class="ttdeci">std::string getCPF() const</div><div class="ttdef"><b>Definition:</b> usuario.h:20</div></div>
+<div class="ttc" id="aclass_usuario_html_a6f2ed1f4f96cc6b5fa31eaeb9f7e540f"><div class="ttname"><a href="class_usuario.html#a6f2ed1f4f96cc6b5fa31eaeb9f7e540f">Usuario::setCartao</a></div><div class="ttdeci">void setCartao(Cartao &amp;cartao)</div><div class="ttdef"><b>Definition:</b> usuario.h:40</div></div>
+<div class="ttc" id="aclass_usuario_html_a8ce15fb85288ebe93f9bb73857b22b88"><div class="ttname"><a href="class_usuario.html#a8ce15fb85288ebe93f9bb73857b22b88">Usuario::isValidCPF</a></div><div class="ttdeci">static bool isValidCPF(std::string)</div><div class="ttdef"><b>Definition:</b> usuario.cpp:8</div></div>
+<div class="ttc" id="aclass_usuario_html_a97bc457a3408db493d562438047859f4"><div class="ttname"><a href="class_usuario.html#a97bc457a3408db493d562438047859f4">Usuario::Usuario</a></div><div class="ttdeci">Usuario(std::string cpf, std::string senha, Cartao &amp;cartao)</div><div class="ttdef"><b>Definition:</b> usuario.h:12</div></div>
+<div class="ttc" id="aclass_usuario_html_acb47fcc6f8bf29e476977374f8415af3"><div class="ttname"><a href="class_usuario.html#acb47fcc6f8bf29e476977374f8415af3">Usuario::getCartao</a></div><div class="ttdeci">Cartao getCartao() const</div><div class="ttdef"><b>Definition:</b> usuario.h:35</div></div>
+<div class="ttc" id="aclass_usuario_html_a5f324af32e988e55160d5f3651b5d2b1"><div class="ttname"><a href="class_usuario.html#a5f324af32e988e55160d5f3651b5d2b1">Usuario::senha</a></div><div class="ttdeci">std::string senha</div><div class="ttdoc">Atributo de instância &quot;senha&quot;. Representa a senha do Usuário.</div><div class="ttdef"><b>Definition:</b> usuario.h:57</div></div>
+<div class="ttc" id="aclass_usuario_html_a44527899a5f049f8072800b19435d106"><div class="ttname"><a href="class_usuario.html#a44527899a5f049f8072800b19435d106">Usuario::getSenha</a></div><div class="ttdeci">std::string getSenha() const</div><div class="ttdef"><b>Definition:</b> usuario.h:25</div></div>
+<div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> usuario.h:8</div></div>
+<div class="ttc" id="aclass_usuario_html_ab4096b0b8300ecb47b10c555fb09c997"><div class="ttname"><a href="class_usuario.html#ab4096b0b8300ecb47b10c555fb09c997">Usuario::~Usuario</a></div><div class="ttdeci">virtual ~Usuario()</div><div class="ttdef"><b>Definition:</b> usuario.cpp:3</div></div>
+<div class="ttc" id="aclass_usuario_html_a28efaec1398906b6f43b12877bf59db7"><div class="ttname"><a href="class_usuario.html#a28efaec1398906b6f43b12877bf59db7">Usuario::setSenha</a></div><div class="ttdeci">void setSenha(std::string senha)</div><div class="ttdef"><b>Definition:</b> usuario.h:30</div></div>
+<div class="ttc" id="aclass_usuario_html_a8dbccc0c4c8f29fbac37a5bc0657ae50"><div class="ttname"><a href="class_usuario.html#a8dbccc0c4c8f29fbac37a5bc0657ae50">Usuario::getCPFNumbers</a></div><div class="ttdeci">static std::string getCPFNumbers(std::string)</div><div class="ttdef"><b>Definition:</b> usuario.cpp:42</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>
