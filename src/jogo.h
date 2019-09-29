@@ -10,7 +10,7 @@ class Jogo{
     enum Tipo {Local=0, Estadual=1, Nacional=2, Internacional=3};
 
     /** Construtor padrão */
-    Jogo(int, std::string, enum Tipo);
+    Jogo(int codigo, std::string nome, enum Tipo tipo) : codigo(codigo), nome(nome), tipo(tipo){}
 
     /** Método de alteração de codigo
      * \param codigo Novo valor de codigo
@@ -44,9 +44,9 @@ class Jogo{
 
 
   private:
-    int codigo;
-    std::string nome;
-    enum Tipo tipo;
+    int codigo; //!< Atributo de instância "codigo". Representa o código do jogo.
+    std::string nome; //!< Atributo de instância "nome". Representa o nome do jogo.
+    enum Tipo tipo; //!< Atributo de instância "tipo". Representa o tipo do jogo.
 };
 
 #endif // JOGO_H
