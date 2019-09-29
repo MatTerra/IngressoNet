@@ -47,9 +47,9 @@ class CartaoDAO : public GenericDAO<Cartao>{
     static CartaoDAO* getInstance();
 
 
-private:
-  static CartaoDAO* instance; //!< Atributo de classe "instance". Representa a instância da classe.
-  static MySQLHelper* mysqlHelper; //!< Atributo de classe "mysqlHelper". Representa o executor de operações no banco de dados MySQL.
+  private:
+    static CartaoDAO* instance; //!< Atributo de classe "instance". Representa a instância da classe.
+    static MySQLHelper* mysqlHelper; //!< Atributo de classe "mysqlHelper". Representa o executor de operações no banco de dados MySQL.
 };
 
 #endif // CARTAODAO_H
