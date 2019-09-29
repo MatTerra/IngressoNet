@@ -139,6 +139,30 @@ Para rodar os testes unitários, na barra inferior do QtCreator, abaixo dos logs
 
 Você deve ver em seguida o resultado da execução dos testes.
 
+Caso deseje executar os testes unitários sem instalar o QtCreator, será necessário ter o Qt e o qmake instalados. Depois de instalá-los seguindo os passos na seção inicial desse README, siga os passos abaixo:
+
+Primeiro, crie um diretório na raiz do projeto para a build e entre no diretório
+```bash
+mkdir build && cd build
+```
+
+Em seguida, rode a ferramenta de qmake para criar os makefiles
+```bash
+qmake ../test/test.pro
+```
+
+Depois do qmake terminar, rode make para compilar. No parâmetro j, ajuste o valor para o dobro de núcleos do seu processador.
+```bash
+make -j8 && make clean -j8
+```
+
+Em seguida, você pode acessar as pastas de cada teste e executar o teste como o seguinte exemplo para Cartao:
+```bash
+cd Cartao && ./testecartao
+```
+
+Pronto, você verá a saída dos testes no terminal.
+
 ### Escrevendo Testes Unitários
 
 Utilizamos o framework QTest do Qt para automatizar os testes unitários utilizando testes dirigidos por dados. Para criar testes, adicione os testes como _slots_ na classe `Testes<CLASSE>` em que <CLASSE> deve ser substituído pela classe/funcionalidade a ser testada. O nome do arquivo que contém esta classe deverá ser idêntico ao dela, porém escrito com todas as letras minúsculas.
