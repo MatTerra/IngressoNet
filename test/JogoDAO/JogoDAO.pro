@@ -1,5 +1,5 @@
 CONFIG += testcase
-TARGET = testecidadedao
+TARGET = testejogodao
 QT = core testlib
 SOURCES +=  \
     testejogodao.cpp \
