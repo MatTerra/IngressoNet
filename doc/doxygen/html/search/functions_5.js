@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['partida_193',['Partida',['../class_partida.html#a9e835e189ebd18a649ce5599d44f1505',1,'Partida']]]
+  ['operator_3d_228',['operator=',['../class_my_s_q_l_helper.html#a06e5bb12f4d001ba4adacb9368d5fd07',1,'MySQLHelper']]]
 ];

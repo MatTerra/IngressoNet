@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/ingressodao.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ingressodao.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ingressodao_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INGRESSODAO_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INGRESSODAO_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mysqlhelper_8h.html">mysqlhelper.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="genericdao_8h.html">genericdao.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ingresso_8h.html">ingresso.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="notabletoconnectexception_8h.html">notabletoconnectexception.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_ingresso_d_a_o.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ingresso_d_a_o.html">IngressoDAO</a> : <span class="keyword">public</span> <a class="code" href="class_generic_d_a_o.html">GenericDAO</a>&lt;Ingresso&gt;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_ingresso_d_a_o.html#ae5d760a8eb1603f737c603ef4fa84870">~IngressoDAO</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_ingresso.html">Ingresso</a> <a class="code" href="class_ingresso_d_a_o.html#a3dd87f017d3401384db1f466eb60f5ee">get</a>(std::string) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt;Ingresso&gt; <a class="code" href="class_ingresso_d_a_o.html#a6b4cbd5fc8fb93b39d02ea5c9126da3b">getAll</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ingresso_d_a_o.html#a9ad6dbc96c2b069b4f119d9c741662d1">save</a>(<a class="code" href="class_ingresso.html">Ingresso</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ingresso_d_a_o.html#aa63b4936278c54fd0a240e14981ffa71">update</a>(<a class="code" href="class_ingresso.html">Ingresso</a>, std::string, std::string) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ingresso_d_a_o.html#ac598523b261baf03fa7b178a828046c7">remove</a>(<a class="code" href="class_ingresso.html">Ingresso</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_ingresso_d_a_o.html">IngressoDAO</a>* <a class="code" href="class_ingresso_d_a_o.html#a2bf8b837d74f2854ff2a8d468d7d82a8">getInstance</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_ingresso_d_a_o.html#aa3ca481406823cfb51f22e93a8bd9f7f">   51</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_ingresso_d_a_o.html">IngressoDAO</a>* <a class="code" href="class_ingresso_d_a_o.html#aa3ca481406823cfb51f22e93a8bd9f7f">instance</a>; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_ingresso_d_a_o.html#afa2812e8179602c3f4ad49f2b28be713">   52</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_my_s_q_l_helper.html">MySQLHelper</a>* <a class="code" href="class_ingresso_d_a_o.html#afa2812e8179602c3f4ad49f2b28be713">mysqlHelper</a>; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // INGRESSODAO_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_ingresso_d_a_o_html_a6b4cbd5fc8fb93b39d02ea5c9126da3b"><div class="ttname"><a href="class_ingresso_d_a_o.html#a6b4cbd5fc8fb93b39d02ea5c9126da3b">IngressoDAO::getAll</a></div><div class="ttdeci">std::vector&lt; Ingresso &gt; getAll() override</div></div>
+<div class="ttc" id="amysqlhelper_8h_html"><div class="ttname"><a href="mysqlhelper_8h.html">mysqlhelper.h</a></div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html_a3dd87f017d3401384db1f466eb60f5ee"><div class="ttname"><a href="class_ingresso_d_a_o.html#a3dd87f017d3401384db1f466eb60f5ee">IngressoDAO::get</a></div><div class="ttdeci">Ingresso get(std::string) override</div><div class="ttdef"><b>Definition:</b> ingressodao.cpp:6</div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html_aa3ca481406823cfb51f22e93a8bd9f7f"><div class="ttname"><a href="class_ingresso_d_a_o.html#aa3ca481406823cfb51f22e93a8bd9f7f">IngressoDAO::instance</a></div><div class="ttdeci">static IngressoDAO * instance</div><div class="ttdoc">Atributo de classe &quot;instance&quot;. Representa a instância da classe.</div><div class="ttdef"><b>Definition:</b> ingressodao.h:51</div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html_a9ad6dbc96c2b069b4f119d9c741662d1"><div class="ttname"><a href="class_ingresso_d_a_o.html#a9ad6dbc96c2b069b4f119d9c741662d1">IngressoDAO::save</a></div><div class="ttdeci">void save(Ingresso) override</div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html_afa2812e8179602c3f4ad49f2b28be713"><div class="ttname"><a href="class_ingresso_d_a_o.html#afa2812e8179602c3f4ad49f2b28be713">IngressoDAO::mysqlHelper</a></div><div class="ttdeci">static MySQLHelper * mysqlHelper</div><div class="ttdoc">Atributo de classe &quot;mysqlHelper&quot;. Representa o executor de operações no banco de dados MySQL.</div><div class="ttdef"><b>Definition:</b> ingressodao.h:52</div></div>
+<div class="ttc" id="agenericdao_8h_html"><div class="ttname"><a href="genericdao_8h.html">genericdao.h</a></div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html"><div class="ttname"><a href="class_ingresso_d_a_o.html">IngressoDAO</a></div><div class="ttdef"><b>Definition:</b> ingressodao.h:10</div></div>
+<div class="ttc" id="aclass_my_s_q_l_helper_html"><div class="ttname"><a href="class_my_s_q_l_helper.html">MySQLHelper</a></div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:16</div></div>
+<div class="ttc" id="aclass_ingresso_html"><div class="ttname"><a href="class_ingresso.html">Ingresso</a></div><div class="ttdef"><b>Definition:</b> ingresso.h:8</div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html_ac598523b261baf03fa7b178a828046c7"><div class="ttname"><a href="class_ingresso_d_a_o.html#ac598523b261baf03fa7b178a828046c7">IngressoDAO::remove</a></div><div class="ttdeci">void remove(Ingresso) override</div></div>
+<div class="ttc" id="anotabletoconnectexception_8h_html"><div class="ttname"><a href="notabletoconnectexception_8h.html">notabletoconnectexception.h</a></div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html_a2bf8b837d74f2854ff2a8d468d7d82a8"><div class="ttname"><a href="class_ingresso_d_a_o.html#a2bf8b837d74f2854ff2a8d468d7d82a8">IngressoDAO::getInstance</a></div><div class="ttdeci">static IngressoDAO * getInstance()</div></div>
+<div class="ttc" id="aingresso_8h_html"><div class="ttname"><a href="ingresso_8h.html">ingresso.h</a></div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html_ae5d760a8eb1603f737c603ef4fa84870"><div class="ttname"><a href="class_ingresso_d_a_o.html#ae5d760a8eb1603f737c603ef4fa84870">IngressoDAO::~IngressoDAO</a></div><div class="ttdeci">virtual ~IngressoDAO()</div></div>
+<div class="ttc" id="aclass_ingresso_d_a_o_html_aa63b4936278c54fd0a240e14981ffa71"><div class="ttname"><a href="class_ingresso_d_a_o.html#aa63b4936278c54fd0a240e14981ffa71">IngressoDAO::update</a></div><div class="ttdeci">void update(Ingresso, std::string, std::string) override</div></div>
+<div class="ttc" id="aclass_generic_d_a_o_html"><div class="ttname"><a href="class_generic_d_a_o.html">GenericDAO</a></div><div class="ttdef"><b>Definition:</b> genericdao.h:9</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

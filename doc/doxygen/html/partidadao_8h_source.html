@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/partidadao.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">partidadao.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="partidadao_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PARTIDADAO_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PARTIDADAO_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="genericdao_8h.html">genericdao.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="partida_8h.html">partida.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mysqlhelper_8h.html">mysqlhelper.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_partida_d_a_o.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_partida_d_a_o.html">PartidaDAO</a> : <span class="keyword">public</span> <a class="code" href="class_generic_d_a_o.html">GenericDAO</a>&lt;Partida&gt;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_partida_d_a_o.html#afb931f5050d8d5d2718f4bbb9e47339a">~PartidaDAO</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_partida.html">Partida</a> <a class="code" href="class_partida_d_a_o.html#aff829ffe6ec9e24ff861c8208c424e92">get</a>(std::string) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::vector&lt;Partida&gt; <a class="code" href="class_partida_d_a_o.html#ac3a15f791f2c5888f9187b4957f49f88">getAll</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida_d_a_o.html#a4f05a1bb53a5e9c8acb87952f34dc19e">save</a>(<a class="code" href="class_partida.html">Partida</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida_d_a_o.html#a4227c58922e64d98ea8a6fe0909695ec">update</a>(<a class="code" href="class_partida.html">Partida</a>, std::string, std::string) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida_d_a_o.html#a884a521e042cd60df7eb5454dcdf290c">remove</a>(<a class="code" href="class_partida.html">Partida</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_partida_d_a_o.html">PartidaDAO</a>* <a class="code" href="class_partida_d_a_o.html#ae4a024974898afeb3ad41b80475b93da">getInstance</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_partida_d_a_o.html#aeb2311d7e1bc3978be61f07578a4a8a3">   50</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_partida_d_a_o.html">PartidaDAO</a>* <a class="code" href="class_partida_d_a_o.html#aeb2311d7e1bc3978be61f07578a4a8a3">instance</a>; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_partida_d_a_o.html#a65391c7c4990448866e51283a2b80343">   51</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_my_s_q_l_helper.html">MySQLHelper</a>* <a class="code" href="class_partida_d_a_o.html#a65391c7c4990448866e51283a2b80343">mysqlHelper</a>; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif // PARTIDADAO_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_partida_d_a_o_html_ae4a024974898afeb3ad41b80475b93da"><div class="ttname"><a href="class_partida_d_a_o.html#ae4a024974898afeb3ad41b80475b93da">PartidaDAO::getInstance</a></div><div class="ttdeci">static PartidaDAO * getInstance()</div></div>
+<div class="ttc" id="amysqlhelper_8h_html"><div class="ttname"><a href="mysqlhelper_8h.html">mysqlhelper.h</a></div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html_ac3a15f791f2c5888f9187b4957f49f88"><div class="ttname"><a href="class_partida_d_a_o.html#ac3a15f791f2c5888f9187b4957f49f88">PartidaDAO::getAll</a></div><div class="ttdeci">std::vector&lt; Partida &gt; getAll() override</div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html_aeb2311d7e1bc3978be61f07578a4a8a3"><div class="ttname"><a href="class_partida_d_a_o.html#aeb2311d7e1bc3978be61f07578a4a8a3">PartidaDAO::instance</a></div><div class="ttdeci">static PartidaDAO * instance</div><div class="ttdoc">Atributo de classe &quot;instance&quot;. Representa a instância da classe.</div><div class="ttdef"><b>Definition:</b> partidadao.h:50</div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html_a4227c58922e64d98ea8a6fe0909695ec"><div class="ttname"><a href="class_partida_d_a_o.html#a4227c58922e64d98ea8a6fe0909695ec">PartidaDAO::update</a></div><div class="ttdeci">void update(Partida, std::string, std::string) override</div></div>
+<div class="ttc" id="apartida_8h_html"><div class="ttname"><a href="partida_8h.html">partida.h</a></div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html"><div class="ttname"><a href="class_partida_d_a_o.html">PartidaDAO</a></div><div class="ttdef"><b>Definition:</b> partidadao.h:9</div></div>
+<div class="ttc" id="agenericdao_8h_html"><div class="ttname"><a href="genericdao_8h.html">genericdao.h</a></div></div>
+<div class="ttc" id="aclass_my_s_q_l_helper_html"><div class="ttname"><a href="class_my_s_q_l_helper.html">MySQLHelper</a></div><div class="ttdef"><b>Definition:</b> mysqlhelper.h:16</div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html_a884a521e042cd60df7eb5454dcdf290c"><div class="ttname"><a href="class_partida_d_a_o.html#a884a521e042cd60df7eb5454dcdf290c">PartidaDAO::remove</a></div><div class="ttdeci">void remove(Partida) override</div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html_a65391c7c4990448866e51283a2b80343"><div class="ttname"><a href="class_partida_d_a_o.html#a65391c7c4990448866e51283a2b80343">PartidaDAO::mysqlHelper</a></div><div class="ttdeci">static MySQLHelper * mysqlHelper</div><div class="ttdoc">Atributo de classe &quot;mysqlHelper&quot;. Representa o executor de operações no banco de dados MySQL.</div><div class="ttdef"><b>Definition:</b> partidadao.h:51</div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html_afb931f5050d8d5d2718f4bbb9e47339a"><div class="ttname"><a href="class_partida_d_a_o.html#afb931f5050d8d5d2718f4bbb9e47339a">PartidaDAO::~PartidaDAO</a></div><div class="ttdeci">virtual ~PartidaDAO()</div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html_aff829ffe6ec9e24ff861c8208c424e92"><div class="ttname"><a href="class_partida_d_a_o.html#aff829ffe6ec9e24ff861c8208c424e92">PartidaDAO::get</a></div><div class="ttdeci">Partida get(std::string) override</div></div>
+<div class="ttc" id="aclass_partida_html"><div class="ttname"><a href="class_partida.html">Partida</a></div><div class="ttdef"><b>Definition:</b> partida.h:10</div></div>
+<div class="ttc" id="aclass_generic_d_a_o_html"><div class="ttname"><a href="class_generic_d_a_o.html">GenericDAO</a></div><div class="ttdef"><b>Definition:</b> genericdao.h:9</div></div>
+<div class="ttc" id="aclass_partida_d_a_o_html_a4f05a1bb53a5e9c8acb87952f34dc19e"><div class="ttname"><a href="class_partida_d_a_o.html#a4f05a1bb53a5e9c8acb87952f34dc19e">PartidaDAO::save</a></div><div class="ttdeci">void save(Partida) override</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['notabletoconnectexception_129',['NotAbleToConnectException',['../class_not_able_to_connect_exception.html',1,'']]]
+  ['mainwindow_154',['MainWindow',['../class_main_window.html',1,'']]],
+  ['mysqlhelper_155',['MySQLHelper',['../class_my_s_q_l_helper.html',1,'']]]
 ];

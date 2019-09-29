@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['responsavel_239',['responsavel',['../class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24',1,'Partida']]]
+  ['partida_278',['partida',['../class_ingresso.html#ac4a3fa5b86e1874900b7415eca785a82',1,'Ingresso']]],
+  ['preco_279',['preco',['../class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be',1,'Partida']]]
 ];

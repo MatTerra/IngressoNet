@@ -13,7 +13,7 @@ var searchData=
   ['cidadedao_2ecpp_10',['cidadedao.cpp',['../cidadedao_8cpp.html',1,'']]],
   ['cidadedao_2eh_11',['cidadedao.h',['../cidadedao_8h.html',1,'']]],
   ['cobrar_12',['cobrar',['../class_cartao.html#a7d791df7aa95af90b39c0bfe00be4194',1,'Cartao']]],
-  ['codigo_13',['codigo',['../class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66',1,'Ingresso::codigo()'],['../class_partida.html#a9dd6856ceaff56481c4698f580e5186c',1,'Partida::codigo()']]],
+  ['codigo_13',['codigo',['../class_ingresso.html#afb8c498ba77667631fef5337a7f5ea66',1,'Ingresso::codigo()'],['../class_jogo.html#ad4a093893d15c085007b81f9e4d1c3b3',1,'Jogo::codigo()'],['../class_partida.html#a9dd6856ceaff56481c4698f580e5186c',1,'Partida::codigo()']]],
   ['connect_14',['connect',['../class_my_s_q_l_helper.html#aa7485fe6c7904d27d3efb66b20886588',1,'MySQLHelper::connect()'],['../class_persistance_helper.html#a7102114e9d68f20da60da9374ec7b227',1,'PersistanceHelper::connect()']]],
   ['cpf_15',['cpf',['../class_usuario.html#ab9fcb5fd00d1c863af41759f6f0ff69d',1,'Usuario']]]
 ];

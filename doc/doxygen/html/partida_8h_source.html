@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IngressoNet: Código-Fonte de /home/mateusberardo/Documents/TP1/TrabalhoMesmo/IngressoNet/src/partida.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">IngressoNet
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+   <div id="projectbrief">IngressoNet é um modelo de sistema de venda de ingressos. O projeto está em desenvolvimento para a matéria Técnicas de Programação 1 do CIC/UnB. O sistema deve funcionar com uma arquitetura em camadas para vender ingressos para partidas locais, regionais, estaduais, nacionais e internacionais. OS usuários podem criar e administrar até 5 partidas simultaneamente e podem se descadastrar quando necessário, exceto enquanto administram alguma partida.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">partida.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="partida_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PARTIDA_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PARTIDA_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="jogo_8h.html">jogo.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cidade_8h.html">cidade.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="usuario_8h.html">usuario.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_partida.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_partida.html">Partida</a>{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_partida.html#a43cfc06b3db5707abcb80f4c31fca52e">   14</a></span>&#160;    <a class="code" href="class_partida.html#a43cfc06b3db5707abcb80f4c31fca52e">Partida</a>(<a class="code" href="class_cidade.html">Cidade</a>&amp; <a class="code" href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">cidade</a>, <span class="keywordtype">float</span> <a class="code" href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">preco</a>, <span class="keywordtype">int</span> <a class="code" href="class_partida.html#ad594f74058148820a087ae62c386d42b">disponibilidade</a>, <a class="code" href="class_usuario.html">Usuario</a>&amp; <a class="code" href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">responsavel</a>, time_t <a class="code" href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">data</a>, <a class="code" href="class_jogo.html">Jogo</a> <a class="code" href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">jogo</a>):</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">cidade</a>(<a class="code" href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">cidade</a>), <a class="code" href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">preco</a>(<a class="code" href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">preco</a>), <a class="code" href="class_partida.html#ad594f74058148820a087ae62c386d42b">disponibilidade</a>(<a class="code" href="class_partida.html#ad594f74058148820a087ae62c386d42b">disponibilidade</a>), <a class="code" href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">responsavel</a>(<a class="code" href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">responsavel</a>), <a class="code" href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">data</a>(<a class="code" href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">data</a>), <a class="code" href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">jogo</a>(<a class="code" href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">jogo</a>){}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_partida.html#a706637121e3db36edfa67e59ad4d83e7">venderIngresso</a>(<a class="code" href="class_usuario.html">Usuario</a>&amp; usuario);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_partida.html#a6cb945124e60f10ce78944f4397f3f95">   26</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_partida.html#a6cb945124e60f10ce78944f4397f3f95">getCodigo</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_partida.html#a9dd6856ceaff56481c4698f580e5186c">codigo</a>; }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_partida.html#adda11ae8165fc0595d2e29d49a1b9713">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida.html#adda11ae8165fc0595d2e29d49a1b9713">setCodigo</a>(<span class="keywordtype">int</span> <a class="code" href="class_partida.html#a9dd6856ceaff56481c4698f580e5186c">codigo</a>) { this-&gt;codigo = <a class="code" href="class_partida.html#a9dd6856ceaff56481c4698f580e5186c">codigo</a>; }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_partida.html#af0fb7e03ae1159a7ccd02c9566bcf41d">   36</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_partida.html#af0fb7e03ae1159a7ccd02c9566bcf41d">getPreco</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">preco</a>; }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_partida.html#a2e1e9e2f306d9ecba0e05e7627aa95dd">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida.html#a2e1e9e2f306d9ecba0e05e7627aa95dd">setPreco</a>(<span class="keywordtype">float</span> <a class="code" href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">preco</a>) { this-&gt;preco = <a class="code" href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">preco</a>; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_partida.html#a3f1af9c889d8e1c7f72cd21735e90e42">   46</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_partida.html#a3f1af9c889d8e1c7f72cd21735e90e42">getDisponibilidade</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_partida.html#ad594f74058148820a087ae62c386d42b">disponibilidade</a>; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_partida.html#ab6fe99949f9b7ba6a17ae2ed803c55a5">   51</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida.html#ab6fe99949f9b7ba6a17ae2ed803c55a5">setDisponibilidade</a>(<span class="keywordtype">int</span> <a class="code" href="class_partida.html#ad594f74058148820a087ae62c386d42b">disponibilidade</a>) { this-&gt;disponibilidade = <a class="code" href="class_partida.html#ad594f74058148820a087ae62c386d42b">disponibilidade</a>; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_partida.html#ab636ae3a063801b9398ee0fa7186975c">   56</a></span>&#160;    <a class="code" href="class_cidade.html">Cidade</a> <a class="code" href="class_partida.html#ab636ae3a063801b9398ee0fa7186975c">getCidade</a>(){ <span class="keywordflow">return</span> <a class="code" href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">cidade</a>; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_partida.html#a9ffb4f650cea9a38bf532eb23144b751">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida.html#a9ffb4f650cea9a38bf532eb23144b751">setCidade</a>(<a class="code" href="class_cidade.html">Cidade</a> <a class="code" href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">cidade</a>){ this-&gt;cidade = <a class="code" href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">cidade</a>; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_partida.html#a8368e733e3e4e9d896b7188bdeec4fe9">   66</a></span>&#160;    <a class="code" href="class_usuario.html">Usuario</a> <a class="code" href="class_partida.html#a8368e733e3e4e9d896b7188bdeec4fe9">getResponsavel</a>() { <span class="keywordflow">return</span> <a class="code" href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">responsavel</a>; }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_partida.html#aba8966a51bf4a465c0d19641e96d9681">   71</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida.html#aba8966a51bf4a465c0d19641e96d9681">setResponsavel</a>(<a class="code" href="class_usuario.html">Usuario</a> <a class="code" href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">responsavel</a>) { this-&gt;responsavel = <a class="code" href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">responsavel</a>; }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_partida.html#ad7c0ff67bae91f449acb6087f3b2bea5">   76</a></span>&#160;    time_t <a class="code" href="class_partida.html#ad7c0ff67bae91f449acb6087f3b2bea5">getData</a>(){ <span class="keywordflow">return</span> <a class="code" href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">data</a>; }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_partida.html#ad28590459f2f568213ffb2a53fb65e00">   81</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida.html#ad28590459f2f568213ffb2a53fb65e00">setData</a>(time_t <a class="code" href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">data</a>) { this-&gt;data = <a class="code" href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">data</a>; }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_partida.html#a0ff2b48b810ace06805b5ebc76a7781f">   86</a></span>&#160;    <a class="code" href="class_jogo.html">Jogo</a> <a class="code" href="class_partida.html#a0ff2b48b810ace06805b5ebc76a7781f">getJogo</a>() { <span class="keywordflow">return</span> <a class="code" href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">jogo</a>; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_partida.html#aef919ad93c33d4270fd087ad5515b7d9">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_partida.html#aef919ad93c33d4270fd087ad5515b7d9">setJogo</a>(<a class="code" href="class_jogo.html">Jogo</a> <a class="code" href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">jogo</a>) { this-&gt;jogo = <a class="code" href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">jogo</a>; }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_partida.html#a9dd6856ceaff56481c4698f580e5186c">   95</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_partida.html#a9dd6856ceaff56481c4698f580e5186c">codigo</a>; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">   96</a></span>&#160;    <a class="code" href="class_cidade.html">Cidade</a> <a class="code" href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">cidade</a>; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">   97</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">preco</a>; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_partida.html#ad594f74058148820a087ae62c386d42b">   98</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_partida.html#ad594f74058148820a087ae62c386d42b">disponibilidade</a>; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">   99</a></span>&#160;    <a class="code" href="class_usuario.html">Usuario</a> <a class="code" href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">responsavel</a>; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">  100</a></span>&#160;    time_t <a class="code" href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">data</a>; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">  101</a></span>&#160;    <a class="code" href="class_jogo.html">Jogo</a> <a class="code" href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">jogo</a>; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_partida_html_a2ffbfde052b6d0668fab8daa10c54db3"><div class="ttname"><a href="class_partida.html#a2ffbfde052b6d0668fab8daa10c54db3">Partida::jogo</a></div><div class="ttdeci">Jogo jogo</div><div class="ttdoc">Atributo de instância &quot;jogo&quot;. Representa o jogo desta partida.</div><div class="ttdef"><b>Definition:</b> partida.h:101</div></div>
+<div class="ttc" id="aclass_partida_html_aba8966a51bf4a465c0d19641e96d9681"><div class="ttname"><a href="class_partida.html#aba8966a51bf4a465c0d19641e96d9681">Partida::setResponsavel</a></div><div class="ttdeci">void setResponsavel(Usuario responsavel)</div><div class="ttdef"><b>Definition:</b> partida.h:71</div></div>
+<div class="ttc" id="aclass_partida_html_a9c8e331fb6747e2794f592bc30f5a0be"><div class="ttname"><a href="class_partida.html#a9c8e331fb6747e2794f592bc30f5a0be">Partida::preco</a></div><div class="ttdeci">float preco</div><div class="ttdoc">Atributo de instância &quot;preco&quot;. Representa o preco da partida.</div><div class="ttdef"><b>Definition:</b> partida.h:97</div></div>
+<div class="ttc" id="aclass_cidade_html"><div class="ttname"><a href="class_cidade.html">Cidade</a></div><div class="ttdef"><b>Definition:</b> cidade.h:7</div></div>
+<div class="ttc" id="aclass_partida_html_a6cb945124e60f10ce78944f4397f3f95"><div class="ttname"><a href="class_partida.html#a6cb945124e60f10ce78944f4397f3f95">Partida::getCodigo</a></div><div class="ttdeci">int getCodigo() const</div><div class="ttdef"><b>Definition:</b> partida.h:26</div></div>
+<div class="ttc" id="aclass_partida_html_ad28590459f2f568213ffb2a53fb65e00"><div class="ttname"><a href="class_partida.html#ad28590459f2f568213ffb2a53fb65e00">Partida::setData</a></div><div class="ttdeci">void setData(time_t data)</div><div class="ttdef"><b>Definition:</b> partida.h:81</div></div>
+<div class="ttc" id="aclass_partida_html_ab636ae3a063801b9398ee0fa7186975c"><div class="ttname"><a href="class_partida.html#ab636ae3a063801b9398ee0fa7186975c">Partida::getCidade</a></div><div class="ttdeci">Cidade getCidade()</div><div class="ttdef"><b>Definition:</b> partida.h:56</div></div>
+<div class="ttc" id="acidade_8h_html"><div class="ttname"><a href="cidade_8h.html">cidade.h</a></div></div>
+<div class="ttc" id="aclass_partida_html_a9dd6856ceaff56481c4698f580e5186c"><div class="ttname"><a href="class_partida.html#a9dd6856ceaff56481c4698f580e5186c">Partida::codigo</a></div><div class="ttdeci">int codigo</div><div class="ttdoc">Atributo de instância &quot;codigo&quot;. Representa o codigo da partida.</div><div class="ttdef"><b>Definition:</b> partida.h:95</div></div>
+<div class="ttc" id="ajogo_8h_html"><div class="ttname"><a href="jogo_8h.html">jogo.h</a></div></div>
+<div class="ttc" id="aclass_partida_html_abc60e4776aecbfb5ed6b0e351415bb24"><div class="ttname"><a href="class_partida.html#abc60e4776aecbfb5ed6b0e351415bb24">Partida::responsavel</a></div><div class="ttdeci">Usuario responsavel</div><div class="ttdoc">Atributo de instância &quot;responsavel&quot;. Representa o Usuário responsável pela partida.</div><div class="ttdef"><b>Definition:</b> partida.h:99</div></div>
+<div class="ttc" id="aclass_partida_html_ad594f74058148820a087ae62c386d42b"><div class="ttname"><a href="class_partida.html#ad594f74058148820a087ae62c386d42b">Partida::disponibilidade</a></div><div class="ttdeci">int disponibilidade</div><div class="ttdoc">Atributo de instância &quot;disponibilidade&quot;. Representa a disponibilidade de ingressos da partida.</div><div class="ttdef"><b>Definition:</b> partida.h:98</div></div>
+<div class="ttc" id="aclass_partida_html_a5e33cdfd8c41270f8aaed20cee1d7359"><div class="ttname"><a href="class_partida.html#a5e33cdfd8c41270f8aaed20cee1d7359">Partida::cidade</a></div><div class="ttdeci">Cidade cidade</div><div class="ttdoc">Atributo de instância &quot;cidade&quot;. Representa a cidade da partida.</div><div class="ttdef"><b>Definition:</b> partida.h:96</div></div>
+<div class="ttc" id="aclass_partida_html_a51771ecb0f67346b16b8d3f04dd40287"><div class="ttname"><a href="class_partida.html#a51771ecb0f67346b16b8d3f04dd40287">Partida::data</a></div><div class="ttdeci">time_t data</div><div class="ttdoc">Atributo de instância &quot;data&quot;. Representa a data de realização da partida.</div><div class="ttdef"><b>Definition:</b> partida.h:100</div></div>
+<div class="ttc" id="ausuario_8h_html"><div class="ttname"><a href="usuario_8h.html">usuario.h</a></div></div>
+<div class="ttc" id="aclass_partida_html_a0ff2b48b810ace06805b5ebc76a7781f"><div class="ttname"><a href="class_partida.html#a0ff2b48b810ace06805b5ebc76a7781f">Partida::getJogo</a></div><div class="ttdeci">Jogo getJogo()</div><div class="ttdef"><b>Definition:</b> partida.h:86</div></div>
+<div class="ttc" id="aclass_jogo_html"><div class="ttname"><a href="class_jogo.html">Jogo</a></div><div class="ttdef"><b>Definition:</b> jogo.h:5</div></div>
+<div class="ttc" id="aclass_partida_html_ad7c0ff67bae91f449acb6087f3b2bea5"><div class="ttname"><a href="class_partida.html#ad7c0ff67bae91f449acb6087f3b2bea5">Partida::getData</a></div><div class="ttdeci">time_t getData()</div><div class="ttdef"><b>Definition:</b> partida.h:76</div></div>
+<div class="ttc" id="aclass_partida_html_a706637121e3db36edfa67e59ad4d83e7"><div class="ttname"><a href="class_partida.html#a706637121e3db36edfa67e59ad4d83e7">Partida::venderIngresso</a></div><div class="ttdeci">bool venderIngresso(Usuario &amp;usuario)</div></div>
+<div class="ttc" id="aclass_partida_html_a2e1e9e2f306d9ecba0e05e7627aa95dd"><div class="ttname"><a href="class_partida.html#a2e1e9e2f306d9ecba0e05e7627aa95dd">Partida::setPreco</a></div><div class="ttdeci">void setPreco(float preco)</div><div class="ttdef"><b>Definition:</b> partida.h:41</div></div>
+<div class="ttc" id="aclass_partida_html_af0fb7e03ae1159a7ccd02c9566bcf41d"><div class="ttname"><a href="class_partida.html#af0fb7e03ae1159a7ccd02c9566bcf41d">Partida::getPreco</a></div><div class="ttdeci">float getPreco() const</div><div class="ttdef"><b>Definition:</b> partida.h:36</div></div>
+<div class="ttc" id="aclass_partida_html_a9ffb4f650cea9a38bf532eb23144b751"><div class="ttname"><a href="class_partida.html#a9ffb4f650cea9a38bf532eb23144b751">Partida::setCidade</a></div><div class="ttdeci">void setCidade(Cidade cidade)</div><div class="ttdef"><b>Definition:</b> partida.h:61</div></div>
+<div class="ttc" id="aclass_partida_html_aef919ad93c33d4270fd087ad5515b7d9"><div class="ttname"><a href="class_partida.html#aef919ad93c33d4270fd087ad5515b7d9">Partida::setJogo</a></div><div class="ttdeci">void setJogo(Jogo jogo)</div><div class="ttdef"><b>Definition:</b> partida.h:91</div></div>
+<div class="ttc" id="aclass_partida_html_a8368e733e3e4e9d896b7188bdeec4fe9"><div class="ttname"><a href="class_partida.html#a8368e733e3e4e9d896b7188bdeec4fe9">Partida::getResponsavel</a></div><div class="ttdeci">Usuario getResponsavel()</div><div class="ttdef"><b>Definition:</b> partida.h:66</div></div>
+<div class="ttc" id="aclass_partida_html_a3f1af9c889d8e1c7f72cd21735e90e42"><div class="ttname"><a href="class_partida.html#a3f1af9c889d8e1c7f72cd21735e90e42">Partida::getDisponibilidade</a></div><div class="ttdeci">int getDisponibilidade() const</div><div class="ttdef"><b>Definition:</b> partida.h:46</div></div>
+<div class="ttc" id="aclass_partida_html_adda11ae8165fc0595d2e29d49a1b9713"><div class="ttname"><a href="class_partida.html#adda11ae8165fc0595d2e29d49a1b9713">Partida::setCodigo</a></div><div class="ttdeci">void setCodigo(int codigo)</div><div class="ttdef"><b>Definition:</b> partida.h:31</div></div>
+<div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> usuario.h:8</div></div>
+<div class="ttc" id="aclass_partida_html_ab6fe99949f9b7ba6a17ae2ed803c55a5"><div class="ttname"><a href="class_partida.html#ab6fe99949f9b7ba6a17ae2ed803c55a5">Partida::setDisponibilidade</a></div><div class="ttdeci">void setDisponibilidade(int disponibilidade)</div><div class="ttdef"><b>Definition:</b> partida.h:51</div></div>
+<div class="ttc" id="aclass_partida_html"><div class="ttname"><a href="class_partida.html">Partida</a></div><div class="ttdef"><b>Definition:</b> partida.h:10</div></div>
+<div class="ttc" id="aclass_partida_html_a43cfc06b3db5707abcb80f4c31fca52e"><div class="ttname"><a href="class_partida.html#a43cfc06b3db5707abcb80f4c31fca52e">Partida::Partida</a></div><div class="ttdeci">Partida(Cidade &amp;cidade, float preco, int disponibilidade, Usuario &amp;responsavel, time_t data, Jogo jogo)</div><div class="ttdef"><b>Definition:</b> partida.h:14</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main_189',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainwindow_190',['MainWindow',['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]],
-  ['mysqlhelper_191',['MySQLHelper',['../class_my_s_q_l_helper.html#a1597352e863b8a40b3e4c80d74069ddb',1,'MySQLHelper::MySQLHelper(MySQLHelper const &amp;)=delete'],['../class_my_s_q_l_helper.html#a7b3c5d725f1182ab1a3d4742b15ff890',1,'MySQLHelper::MySQLHelper()']]]
+  ['jogo_224',['Jogo',['../class_jogo.html#aa25b2d7132f254c05d7a8756352ae5b9',1,'Jogo']]]
 ];
