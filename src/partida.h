@@ -1,7 +1,7 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 
-//#include "jogo.h"
+#include "jogo.h"
 #include "cidade.h"
 #include "usuario.h"
 #include <time.h>
@@ -11,8 +11,8 @@ class Partida{
 
   public:
     /** Construtor padrão */
-    Partida(Cidade& cidade, float preco, int disponibilidade, Usuario& responsavel, time_t data/*, Jogo jogo*/):
-    cidade(cidade), preco(preco), disponibilidade(disponibilidade), responsavel(responsavel), data(data)/*, jogo(jogo)*/{}
+    Partida(Cidade& cidade, float preco, int disponibilidade, Usuario& responsavel, time_t data, Jogo jogo):
+    cidade(cidade), preco(preco), disponibilidade(disponibilidade), responsavel(responsavel), data(data), jogo(jogo){}
 
     /** Vende um ingresso da partida a um usuário.
      * \param usuario Usuario que esta comprando ingresso
@@ -79,18 +79,18 @@ class Partida{
      * \param data Novo valor de data
      */
     void setData(time_t data) { this->data = data; }
-    /*
+
     /** Método de acesso a jogo
      * \return Valor atual de jogo
-     * /
+     */
     Jogo getJogo() { return jogo; }
 
     /** Método de alteração de jogo
      * \param jogo Novo valor de jogo
-     * /
+     */
     void setJogo(Jogo jogo) { this->jogo = jogo; }
 
-      */
+
   private:
     int codigo; //!< Atributo de instância "codigo". Representa o codigo da partida
     Cidade cidade; //!< Atributo de instância "cidade". Representa a cidade da partida
@@ -98,7 +98,7 @@ class Partida{
     int disponibilidade; //!< Atributo de instância "disponibilidade". Representa a disponibilidade de ingressos da partida
     Usuario responsavel; //!< Atributo de instância "responsavel". Representa o Usuário responsável pela partida
     time_t data; //!< Atributo de instância "data". Representa a data de realização da partida
-//	Jogo jogo; //!< Atributo de instância "jogo". Representa o jogo desta partida
+    Jogo jogo; //!< Atributo de instância "jogo". Representa o jogo desta partida
 };
 
 #endif
