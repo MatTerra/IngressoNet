@@ -4,6 +4,7 @@ SUBDIRS += Cartao \
            CartaoDAO \
            CidadeDAO \
     IngressoDAO \
+    JogoDAO \
     PartidaDAO \
            Usuario \
            Cidade \
