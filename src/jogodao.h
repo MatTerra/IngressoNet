@@ -7,7 +7,6 @@
 #include "notabletoconnectexception.h"
 
 
-
 class JogoDAO : public GenericDAO<Jogo>{
 
   public:
@@ -15,8 +14,8 @@ class JogoDAO : public GenericDAO<Jogo>{
     virtual ~JogoDAO();
 
     /** Busca um registro da classe Jogo no banco de dados MySQL.
-     *  \param numero Código do Jogo a buscar
-     *  \return ~~~~~~ (nome e tipo?)
+     *  \param codigo Código do Jogo a buscar
+     *  \return Instância do jogo buscado ou jogo com código 0, caso não encontrado
      */
     Jogo get(std::string) override;
 
@@ -26,19 +25,19 @@ class JogoDAO : public GenericDAO<Jogo>{
     std::vector<Jogo> getAll() override;
 
     /** Salva a instância do Jogo no banco de dados MySQL.
-     * \param Jogo Instância a ser salva no banco de dados MySQL
+     * \param jogo Instância a ser salva no banco de dados MySQL
      */
     void save(Jogo) override;
 
     /** Atualiza a instância do Jogo no banco de dados MySQL de acordo com o campo e valor fornecidos.
-     * \param Jogo Instância a ser atualizada no banco de dados MySQL
+     * \param jogo Instância a ser atualizada no banco de dados MySQL
      * \param field Campo a ser atualizado no banco de dados MySQL
      * \param value Novo valor do campo a ser atualizado no banco de dados MySQL
      */
     void update(Jogo, std::string, std::string) override;
 
-    /** Remove a instância do Cartão do banco de dados MySQL.
-     * \param Jogo Instância a ser removida do banco de dados MySQL
+    /** Remove a instância do Jogo do banco de dados MySQL.
+     * \param jogo Instância a ser removida do banco de dados MySQL
      */
     void remove(Jogo) override;
 
@@ -48,9 +47,9 @@ class JogoDAO : public GenericDAO<Jogo>{
     static JogoDAO* getInstance();
 
 
-private:
-  static JogoDAO* instance; //!< Atributo de classe "instance". Representa a instância da classe.
-  static MySQLHelper* mysqlHelper; //!< Atributo de classe "mysqlHelper". Representa o executor de operações no banco de dados MySQL.
+  private:
+    static JogoDAO* instance; //!< Atributo de classe "instance". Representa a instância da classe.
+    static MySQLHelper* mysqlHelper; //!< Atributo de classe "mysqlHelper". Representa o executor de operações no banco de dados MySQL.
 };
 
 #endif // JOGODAO_H
