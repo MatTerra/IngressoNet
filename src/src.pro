@@ -42,3 +42,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DESTDIR = $$PWD/../build
 
+RESOURCES += \
+    resource.qrc
+

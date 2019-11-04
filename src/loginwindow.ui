@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>404</width>
-    <height>300</height>
+    <width>515</width>
+    <height>392</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,13 +36,13 @@
       <property name="font">
        <font>
         <family>Nimbus Sans</family>
-        <pointsize>15</pointsize>
+        <pointsize>25</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Sistema de Gerenciamento de Ingressos</string>
+       <string>Ingresso Net</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -79,13 +79,26 @@
       </item>
       <item>
        <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="text">
          <string>Login:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineLogin"/>
+       <widget class="QLineEdit" name="lineLogin">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+       </widget>
       </item>
       <item>
        <spacer name="horizontalSpacer_2">
@@ -119,6 +132,13 @@
       </item>
       <item>
        <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="text">
          <string>Senha:</string>
         </property>
@@ -126,6 +146,11 @@
       </item>
       <item>
        <widget class="QLineEdit" name="lineSenha">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
         </property>
@@ -166,6 +191,11 @@
       </item>
       <item>
        <widget class="QPushButton" name="btnEntrar">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Entrar</string>
         </property>
