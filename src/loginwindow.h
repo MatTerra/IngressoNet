@@ -1,28 +1,27 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef LOGINWINDOW_H
+#define LOGINWINDOW_H
 
+#include <QWidget>
 #include <QMainWindow>
+#include "signupwindow.h"
 
 namespace Ui {
-class LoginWindow;
+  class LoginWindow;
 }
 
-class LoginWindow : public QMainWindow
+class LoginWindow : public QWidget
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit LoginWindow(QWidget *parent = nullptr);
-    ~LoginWindow();
+  explicit LoginWindow(QWidget *parent = nullptr);
+  ~LoginWindow();
 
 private slots:
-  void on_btnEntrar_clicked();
-
-signals:
-  void loginSolicitado(QString, QString);
+  void on_pushButton_clicked();
 
 private:
-    Ui::LoginWindow *ui;
+  Ui::LoginWindow *ui;
 };
 
-#endif // MAINWINDOW_H
+#endif // LOGINWINDOW_H

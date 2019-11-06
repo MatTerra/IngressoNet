@@ -2,20 +2,20 @@
 #include "ui_loginwindow.h"
 
 LoginWindow::LoginWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::LoginWindow){
-    ui->setupUi(this);
-    QString style="QMainWindow{border-image: url(:/res/bkg.jpg) 0 0 0 0 stretch stretch;}\nQLabel, QLineEdit{color:white;}";
-    this->setStyleSheet(style);
-
+  QWidget(parent),
+  ui(new Ui::LoginWindow)
+{
+  ui->setupUi(this);
 }
 
 LoginWindow::~LoginWindow()
 {
-    delete ui;
+  delete ui;
 }
 
-void LoginWindow::on_btnEntrar_clicked()
+void LoginWindow::on_pushButton_clicked()
 {
-    emit loginSolicitado("Q", "t");
+    QMainWindow* mw = dynamic_cast<QMainWindow *>(parent());
+    mw->setCentralWidget(new SignupWindow(mw));
+    this->destroy();
 }
