@@ -32,6 +32,9 @@ void TesteUsuario::validarNumeroCPF_data(){
   QTest::newRow("Valid CPF") << "326.688.371-38" << true;
   QTest::newRow("Invalid CPF; last digit wrong") << "326.688.371-39" << false;
   QTest::newRow("Invalid CPF; 10th digit wrong") << "326.688.371-48" << false;
+  QTest::newRow("Valid CPF") << "32668837138" << true;
+  QTest::newRow("Invalid CPF; last digit wrong") << "32668837139" << false;
+  QTest::newRow("Invalid CPF; 10th digit wrong") << "32668837148" << false;
 }
 
 void TesteUsuario::limparNumeroCPF(){

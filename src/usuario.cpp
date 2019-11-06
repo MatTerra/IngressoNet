@@ -6,7 +6,7 @@ Usuario::~Usuario()
 }
 
 bool Usuario::isValidCPF(std::string cpf){
-  if(cpf.length()!=14){
+  if(cpf.length()!=14 && cpf.length()!=11){
       return false;
   }
 
