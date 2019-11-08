@@ -10,6 +10,7 @@ SignupWindow::SignupWindow(QWidget *parent) :
   senhaEdit = this->findChild<QLineEdit *>("senhaEdit");
   rSenhaEdit = this->findChild<QLineEdit *>("rSenhaEdit");
   numSecEdit = this->findChild<QLineEdit *>("numSecEdit");
+  connect(this,&SignupWindow::validationNeeded, this, &SignupWindow::validateData);
 }
 
 SignupWindow::~SignupWindow(){

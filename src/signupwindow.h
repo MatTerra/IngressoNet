@@ -25,7 +25,7 @@ signals:
 private slots:
   void validateData(Usuario&, Cartao&, QString);
 
-  void verifyExistingUser(Usuario&, Cartao&);
+//  void verifyExistingUser(Usuario&, Cartao&);
 
   void on_pushButton_clicked();
 
