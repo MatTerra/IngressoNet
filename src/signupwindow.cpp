@@ -10,6 +10,9 @@ SignupWindow::SignupWindow(QWidget *parent) :
   senhaEdit = this->findChild<QLineEdit *>("senhaEdit");
   rSenhaEdit = this->findChild<QLineEdit *>("rSenhaEdit");
   numSecEdit = this->findChild<QLineEdit *>("numSecEdit");
+  QRegExp re("^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$");
+  QRegExpValidator *validator = new QRegExpValidator(re, this);
+  cpfEdit->setValidator(validator);
   connect(this,&SignupWindow::validationNeeded, this, &SignupWindow::validateData);
 }
 
@@ -79,36 +82,36 @@ void SignupWindow::validateData(Usuario& usuario, Cartao& cartao, QString rSenha
 
 void SignupWindow::on_cardEdit_textEdited(const QString &arg1){
   qDebug("%s", arg1.toStdString().c_str());
-  QLineEdit* cardEdit = this->findChild<QLineEdit *>("cardEdit");
   cardEdit->setStyleSheet("color:white; font:regular;");
   cardEdit->setPlaceholderText("(Somente números)");
 }
 
 void SignupWindow::on_cpfEdit_textEdited(const QString &arg1){
   qDebug("%s", arg1.toStdString().c_str());
-  QLineEdit* cpfEdit = this->findChild<QLineEdit *>("cpfEdit");
-  cpfEdit->setStyleSheet("color:white; font:regular;");
-  cpfEdit->setPlaceholderText("");
-
+  QString text = arg1;
+  int pos;
+  if(cpfEdit->validator()->validate(text, pos)!=QValidator::Acceptable){
+      cpfEdit->setStyleSheet("color:red;");
+    } else{
+      cpfEdit->setStyleSheet("color:white; font:regular;");
+      cpfEdit->setPlaceholderText("xxx.xxx.xxx-xx");
+    }
 }
 
 void SignupWindow::on_rSenhaEdit_textEdited(const QString &arg1){
   qDebug("%s", arg1.toStdString().c_str());
-  QLineEdit* rSenhaEdit = this->findChild<QLineEdit *>("rSenhaEdit");
   rSenhaEdit->setStyleSheet("color:white; font:regular;");
   rSenhaEdit->setPlaceholderText("");
 }
 
 void SignupWindow::on_senhaEdit_textEdited(const QString &arg1){
   qDebug("%s", arg1.toStdString().c_str());
-  QLineEdit* senhaEdit = this->findChild<QLineEdit *>("senhaEdit");
   senhaEdit->setStyleSheet("color:white; font:regular;");
   senhaEdit->setPlaceholderText("");
 }
 
 void SignupWindow::on_numSecEdit_textEdited(const QString &arg1){
   qDebug("%s", arg1.toStdString().c_str());
-  QLineEdit* numSecEdit = this->findChild<QLineEdit *>("numSecEdit");
   numSecEdit->setStyleSheet("color:white; font:regular;");
   numSecEdit->setPlaceholderText("");
 }

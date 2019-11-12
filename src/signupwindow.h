@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QLineEdit>
+#include <QRegExp>
+#include <QRegExpValidator>
 
 #include "cartao.h"
 #include "usuario.h"
