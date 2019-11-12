@@ -5,6 +5,7 @@
 #include "genericdao.h"
 #include "jogo.h"
 #include "notabletoconnectexception.h"
+#include "propertynotfoundexception.h"
 
 
 class JogoDAO : public GenericDAO<Jogo>{

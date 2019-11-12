@@ -5,5 +5,4 @@ MySQLHelper* IngressoDAO::mysqlHelper = nullptr;
 
 Ingresso IngressoDAO::get(std::string codigo){
 	
-
 }
