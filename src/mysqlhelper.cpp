@@ -21,9 +21,7 @@ MYSQL_RES* MySQLHelper::query(std::string query){
         }
       return res;
   }
-  // Not connected
-  // TODO add exception for connection failed
-  return nullptr;
+  throw NotAbleToConnectException();
 }
 
 void MySQLHelper::connect(){
@@ -35,8 +33,13 @@ void MySQLHelper::connect(){
       }
       throw NotAbleToConnectException();
     } else{
-      //TODO connection already set
+      return;
     }
+}
+
+void MySQLHelper::close(){
+  mysql_close(MySQLHelper::dbconn);
+  MySQLHelper::instance->~MySQLHelper();
 }
 
 MySQLHelper* MySQLHelper::getInstance(){

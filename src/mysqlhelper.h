@@ -29,6 +29,10 @@ class MySQLHelper : public PersistanceHelper<MYSQL_RES>{
      */
     void connect() override;
 
+    /** Encerra a conexão com um banco de dados SQL remoto.
+     */
+    void close() override;
+
     /** Retorna a instância da classe MySQLHelper(Singleton) ou, caso necessário, cria a instância.
      *  \return Instância válida atual
      */
