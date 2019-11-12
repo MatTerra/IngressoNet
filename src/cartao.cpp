@@ -48,3 +48,13 @@ bool Cartao::cobrar(float value, unsigned int numSeguranca){
       return false;
     }
 }
+
+bool Cartao::compararCartoes(Cartao a, Cartao b){
+  if(a.getNumero() != b.getNumero()){
+      return false;
+  }
+  if(a.getNumSeguranca() != b.getNumSeguranca()){
+      return false;
+  }
+  return true;
+}

@@ -46,6 +46,11 @@ class Cartao{
      */
     bool cobrar(float, unsigned int);
 
+    /** Compara dois cartões para determinar a igualdade
+     * \return Verdadeiro(true) se os cartões são iguais e falso(false) caso contrário.
+     */
+    static bool compararCartoes(Cartao, Cartao);
+
 
   private:
     unsigned long numero; //!< Atributo de instância "numero". Representa o numero do cartão.
