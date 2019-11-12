@@ -5,6 +5,7 @@
 #include "genericdao.h"
 #include "mysqlhelper.h"
 #include "notabletoconnectexception.h"
+#include "propertynotfoundexception.h"
 
 
 class CidadeDAO : public GenericDAO<Cidade>{
