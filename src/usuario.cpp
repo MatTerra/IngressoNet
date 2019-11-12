@@ -44,3 +44,14 @@ std::string Usuario::getCPFNumbers(std::string cpf){
   cpf.erase(std::remove(cpf.begin(), cpf.end(), '-'), cpf.end());
   return cpf;
 }
+
+
+bool Usuario::compararUsuarios(Usuario a, Usuario b){
+  if(a.getCPF().compare(b.getCPF()) != 0){
+      return false;
+  }
+  if(a.getSenha().compare(b.getSenha()) != 0){
+      return false;
+  }
+  return Cartao::compararCartoes(a.getCartao(), b.getCartao());
+}

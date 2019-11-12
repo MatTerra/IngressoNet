@@ -51,6 +51,11 @@ class Usuario{
     */
     static std::string getCPFNumbers(std::string);
 
+    /** Compara dois usuários para determinar a igualdade
+     * \return Verdadeiro(true) se os usuários são iguais e falso(false) caso contrário.
+     */
+    bool compararUsuarios(Usuario, Usuario);
+
 
   private:
     std::string cpf; //!< Atributo de instância "cpf". Representa o cpf do Usuário
