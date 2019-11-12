@@ -228,7 +228,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="signupButton">
        <property name="font">
         <font>
          <pointsize>12</pointsize>

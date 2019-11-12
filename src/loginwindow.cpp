@@ -13,7 +13,7 @@ LoginWindow::~LoginWindow()
   delete ui;
 }
 
-void LoginWindow::on_pushButton_clicked()
+void LoginWindow::on_signupButton_clicked()
 {
     QMainWindow* mw = dynamic_cast<QMainWindow *>(parent());
     mw->setCentralWidget(new SignupWindow(mw));
