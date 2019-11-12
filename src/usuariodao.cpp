@@ -66,9 +66,6 @@ void UsuarioDAO::save(Usuario usuario){
   CartaoDAO* cdao = CartaoDAO::getInstance();
   cdao->save(usuario.getCartao());
   cdao->update(usuario.getCartao(), "cpf", usuario.getCPF());
-
-//  std::string query2 = "INSERT INTO cartao_t (numero, cpf, codigoDeSeguranca) VALUES ("+std::to_string(usuario.getCartao().getNumero())+", '"+usuario.getCPF()+"', "+std::to_string(usuario.getCartao().getNumSeguranca())+");";
-//  mysql_free_result(mysqlHelper->query(query2));
 }
 
 void UsuarioDAO::update(Usuario usuario, std::string field, std::string value){
@@ -82,9 +79,10 @@ void UsuarioDAO::update(Usuario usuario, std::string field, std::string value){
   mysql_free_result(mysqlHelper->query(query));
 }
 void UsuarioDAO::remove(Usuario usuario){
-  std::string query = "DELETE FROM cartao_t WHERE (cpf = '"+usuario.getCPF()+"');";
-  mysql_free_result(mysqlHelper->query(query));
-  query = "DELETE FROM usuario_t WHERE (cpf = '"+usuario.getCPF()+"');";
+  CartaoDAO* cdao = CartaoDAO::getInstance();
+  cdao->remove(usuario.getCartao());
+
+  std::string query = "DELETE FROM usuario_t WHERE (cpf = '"+usuario.getCPF()+"');";
   mysql_free_result(mysqlHelper->query(query));
 }
 
