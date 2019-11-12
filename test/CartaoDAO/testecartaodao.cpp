@@ -3,32 +3,74 @@
 
 #include <cartao.h>
 #include <cartaodao.h>
+#include <usuariodao.h>
 
 class TesteCartaoDAO : public QObject
 {
   Q_OBJECT
 
+
 private slots:
   void initTestCase();
   void cleanupTestCase();
-  void test_case1();
+  void testeGetCartao();
+  void testeGetCartao_data();
+  void testeSaveCartao();
+  void testeUpdateCartao();
+  void testeRemoveCartao();
 
 };
 
-void TesteCartaoDAO::initTestCase()
-{
-  QSKIP("Não implementado ainda");
+void TesteCartaoDAO::initTestCase(){
+  MYSQL* dbconn = mysql_init(nullptr);
+  dbconn = mysql_real_connect(dbconn, IP, USER, PASSWORD, DB, 0, nullptr, 0);
+  if (!dbconn) {
+    QSKIP("No database running");
+  }
+  mysql_close(dbconn);
 }
 
-void TesteCartaoDAO::cleanupTestCase()
-{
+void TesteCartaoDAO::testeGetCartao(){
+  CartaoDAO* cdao = CartaoDAO::getInstance();
+  QFETCH(long, numeroCartao);
+  QFETCH(int, codigoSeguranca);
+  Cartao c(static_cast<unsigned long>(numeroCartao), static_cast<unsigned int>(codigoSeguranca));
+  QCOMPARE(Cartao::compararCartoes(cdao->get(std::to_string(static_cast<unsigned long>(numeroCartao))), c), true);
+}
+
+void TesteCartaoDAO::testeGetCartao_data(){
+  QTest::addColumn<long>("numeroCartao");
+  QTest::addColumn<int>("codigoSeguranca");
+  QTest::newRow("testCard") << 5555666677778884 << 1234;
+}
+
+void TesteCartaoDAO::testeSaveCartao(){
+  Cartao c(36490102462661, 1234);
+  CartaoDAO* cdao = CartaoDAO::getInstance();
+  cdao->save(c);
+  QCOMPARE(Cartao::compararCartoes(cdao->get(std::to_string(c.getNumero())), c), true);
+}
+
+void TesteCartaoDAO::testeUpdateCartao(){
+  Cartao c(36490102462661, 1234);
+  CartaoDAO* cdao = CartaoDAO::getInstance();
+  UsuarioDAO* udao = UsuarioDAO::getInstance();
+  cdao->update(c, "cpf", "000.000.000-01");
+  QCOMPARE(Cartao::compararCartoes(udao->get("000.000.000-01").getCartao(), c), true);
+}
+
+void TesteCartaoDAO::testeRemoveCartao(){
+  Cartao c(36490102462661, 1234);
+  CartaoDAO* cdao = CartaoDAO::getInstance();
+  cdao->remove(c);
+  QCOMPARE(cdao->get(std::to_string(c.getNumero())).getNumero(), 0);
+}
+
+void TesteCartaoDAO::cleanupTestCase(){
 
 }
 
-void TesteCartaoDAO::test_case1()
-{
 
-}
 
 QTEST_APPLESS_MAIN(TesteCartaoDAO)
 

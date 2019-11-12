@@ -5,6 +5,7 @@
 #include "genericdao.h"
 #include "cartao.h"
 #include "notabletoconnectexception.h"
+#include "propertynotfoundexception.h"
 
 
 class CartaoDAO : public GenericDAO<Cartao>{
