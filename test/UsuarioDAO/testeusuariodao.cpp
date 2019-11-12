@@ -11,7 +11,6 @@ Q_OBJECT
 
 private:
   bool compararUsuarios(Usuario, Usuario);
-  bool compararCartoes(Cartao, Cartao);
 
 private slots:
   void initTestCase();
@@ -33,6 +32,7 @@ void TesteUsuarioDAO::initTestCase(){
   if (!dbconn) {
     QSKIP("No database running");
   }
+  mysql_close(dbconn);
 }
 
 bool TesteUsuarioDAO::compararUsuarios(Usuario a, Usuario b){
@@ -42,17 +42,7 @@ bool TesteUsuarioDAO::compararUsuarios(Usuario a, Usuario b){
   if(a.getSenha().compare(b.getSenha()) != 0){
       return false;
   }
-  return this->compararCartoes(a.getCartao(), b.getCartao());
-}
-
-bool TesteUsuarioDAO::compararCartoes(Cartao a, Cartao b){
-  if(a.getNumero() != b.getNumero()){
-      return false;
-  }
-  if(a.getNumSeguranca() != b.getNumSeguranca()){
-      return false;
-  }
-  return true;
+  return Cartao::compararCartoes(a.getCartao(), b.getCartao());
 }
 
 void TesteUsuarioDAO::testeGetUser(){
@@ -77,9 +67,9 @@ void TesteUsuarioDAO::testeGetUser_data(){
 }
 
 void TesteUsuarioDAO::testeSaveUser(){
-  UsuarioDAO* udao = UsuarioDAO::getInstance();
   Cartao c(36490102462661, 1234);
   Usuario u("081.556.680-88", "1234", c);
+  UsuarioDAO* udao = UsuarioDAO::getInstance();
   udao->save(u);
   QCOMPARE(compararUsuarios(udao->get(u.getCPF()), u), true);
 }
