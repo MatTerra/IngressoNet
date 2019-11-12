@@ -43,7 +43,7 @@ void TesteCartao::testCompararCartoes(){
   QFETCH(long, number2);
   QFETCH(int, numSec2);
   QFETCH(bool, result);
-  QCOMPARE(Cartao::compararCartoes(Cartao(number, numSec), Cartao(number2, numSec2)),result);
+  QCOMPARE(Cartao::compararCartoes(Cartao(static_cast<unsigned long>(number), static_cast<unsigned int>(numSec)), Cartao(static_cast<unsigned long>(number2), static_cast<unsigned int>(numSec2))),result);
 }
 
 void TesteCartao::testCompararCartoes_data(){
