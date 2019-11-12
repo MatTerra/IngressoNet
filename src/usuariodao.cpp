@@ -61,10 +61,14 @@ std::vector<Usuario> UsuarioDAO::getAll(){
 
 void UsuarioDAO::save(Usuario usuario){
   std::string query = "INSERT INTO usuario_t (cpf, senha) VALUES ('"+usuario.getCPF()+"', '"+usuario.getSenha()+"');";
-  std::string query2 = "INSERT INTO cartao_t (numero, cpf, codigoDeSeguranca) VALUES ("+std::to_string(usuario.getCartao().getNumero())+", '"+usuario.getCPF()+"', "+std::to_string(usuario.getCartao().getNumSeguranca())+");";
-
   mysql_free_result(mysqlHelper->query(query));
-  mysql_free_result(mysqlHelper->query(query2));
+
+  CartaoDAO* cdao = CartaoDAO::getInstance();
+  cdao->save(usuario.getCartao());
+  cdao->update(usuario.getCartao(), "cpf", usuario.getCPF());
+
+//  std::string query2 = "INSERT INTO cartao_t (numero, cpf, codigoDeSeguranca) VALUES ("+std::to_string(usuario.getCartao().getNumero())+", '"+usuario.getCPF()+"', "+std::to_string(usuario.getCartao().getNumSeguranca())+");";
+//  mysql_free_result(mysqlHelper->query(query2));
 }
 
 void UsuarioDAO::update(Usuario usuario, std::string field, std::string value){

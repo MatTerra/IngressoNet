@@ -6,6 +6,7 @@ SOURCES +=  \
     ../../src/usuariodao.cpp \
     ../../src/usuario.cpp \
     ../../src/cartao.cpp \
+    ../../src/cartaodao.cpp \
     ../../src/mysqlhelper.cpp
 LIBS +=-lmariadb
 INCLUDEPATH += ../../src

@@ -5,6 +5,7 @@
 #include "genericdao.h"
 #include "usuario.h"
 #include "cartao.h"
+#include "cartaodao.h"
 #include "notabletoconnectexception.h"
 #include <mysql/mysql.h>
 
