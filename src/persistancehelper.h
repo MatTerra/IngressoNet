@@ -17,6 +17,10 @@ class PersistanceHelper{
     /** Conecta a um banco de dados remoto.
      */
     virtual void connect()=0;
+
+    /** Encerra a conexão com um banco de dados remoto.
+     */
+    virtual void close()=0;
 };
 
 #endif // PERSISTANCEHELPER_H
