@@ -10,7 +10,6 @@ class TesteUsuarioDAO : public QObject{
 Q_OBJECT
 
 private:
-  bool compararUsuarios(Usuario, Usuario);
 
 private slots:
   void initTestCase();
@@ -33,16 +32,6 @@ void TesteUsuarioDAO::initTestCase(){
     QSKIP("No database running");
   }
   mysql_close(dbconn);
-}
-
-bool TesteUsuarioDAO::compararUsuarios(Usuario a, Usuario b){
-  if(a.getCPF().compare(b.getCPF()) != 0){
-      return false;
-  }
-  if(a.getSenha().compare(b.getSenha()) != 0){
-      return false;
-  }
-  return Cartao::compararCartoes(a.getCartao(), b.getCartao());
 }
 
 void TesteUsuarioDAO::testeGetUser(){
