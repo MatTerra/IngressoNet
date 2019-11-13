@@ -8,6 +8,7 @@
 
 #include "cartao.h"
 #include "usuario.h"
+#include "signupprocessor.h"
 
 namespace Ui {
   class SignupWindow;
@@ -21,13 +22,11 @@ public:
   explicit SignupWindow(QWidget *parent = nullptr);
   ~SignupWindow();
 signals:
-  void validationNeeded(Usuario&, Cartao&, QString);
-  void validSignupData(Usuario&, Cartao&);
+  void validationNeeded(Usuario&, QString);
+  void validSignupData(Usuario&);
 
 private slots:
-  void validateData(Usuario&, Cartao&, QString);
-
-//  void verifyExistingUser(Usuario&, Cartao&);
+  void validateData(Usuario&, QString);
 
   void on_pushButton_clicked();
 
@@ -48,6 +47,7 @@ private:
   QLineEdit* senhaEdit;
   QLineEdit* rSenhaEdit;
   QLineEdit* numSecEdit;
+  SignupProcessor* processor;
 
 };
 

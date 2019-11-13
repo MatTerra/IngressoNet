@@ -10,10 +10,14 @@ SignupWindow::SignupWindow(QWidget *parent) :
   senhaEdit = this->findChild<QLineEdit *>("senhaEdit");
   rSenhaEdit = this->findChild<QLineEdit *>("rSenhaEdit");
   numSecEdit = this->findChild<QLineEdit *>("numSecEdit");
+  processor = new SignupProcessor(nullptr);
+
   QRegExp re("^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$");
   QRegExpValidator *validator = new QRegExpValidator(re, this);
   cpfEdit->setValidator(validator);
-  connect(this,&SignupWindow::validationNeeded, this, &SignupWindow::validateData);
+
+  connect(this, SIGNAL(validSignupData()), processor, SLOT(verifyExistingUser()));
+  connect(this,SIGNAL(validationNeeded()), this, SLOT(validateData()));
 }
 
 SignupWindow::~SignupWindow(){
@@ -31,10 +35,10 @@ void SignupWindow::on_pushButton_clicked(){
   Cartao cartao(cardNumber.toULong(), numSec.toUInt());
   Usuario user(cpf.toStdString(),senha.toStdString(),cartao);
 
-  emit validationNeeded(user, cartao, rSenha);
+  emit validationNeeded(user, rSenha);
 }
 
-void SignupWindow::validateData(Usuario& usuario, Cartao& cartao, QString rSenha){
+void SignupWindow::validateData(Usuario& usuario, QString rSenha){
   bool validData=true;
   if(usuario.getSenha() != rSenha.toStdString()){
       rSenhaEdit->setText("");
@@ -60,7 +64,7 @@ void SignupWindow::validateData(Usuario& usuario, Cartao& cartao, QString rSenha
   }
 
   qDebug("passwords match");
-  if(!Cartao::isValidNumber(cartao.getNumero())){
+  if(!Cartao::isValidNumber(usuario.getCartao().getNumero())){
     cardEdit->setText("");
     cardEdit->setPlaceholderText("Cartão Inválido!");
     cardEdit->setStyleSheet("color:red; font:bold;");
@@ -68,7 +72,7 @@ void SignupWindow::validateData(Usuario& usuario, Cartao& cartao, QString rSenha
     validData=false;
   }
   qDebug("Valid Number");
-  if(cartao.getNumSeguranca()<100){
+  if(usuario.getCartao().getNumSeguranca()<100){
       numSecEdit->setText("");
       numSecEdit->setPlaceholderText("Número de Segurança Inválido!");
       numSecEdit->setStyleSheet("color:red; font:bold;");
@@ -76,7 +80,7 @@ void SignupWindow::validateData(Usuario& usuario, Cartao& cartao, QString rSenha
       validData=false;
   }
   if(validData){
-    emit validSignupData(usuario, cartao);
+    emit validSignupData(usuario);
   }
 }
 
