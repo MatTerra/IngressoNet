@@ -18,11 +18,58 @@ SignupWindow::SignupWindow(QWidget *parent) :
 
   connect(this, SIGNAL(validSignupData(Usuario&)), processor, SLOT(verifyExistingUser(Usuario&)));
   connect(processor, SIGNAL(userExist()), this, SLOT(existingUser()));
+  connect(processor, SIGNAL(registrationError()), this, SLOT(failedToRegister()));
   connect(this,SIGNAL(validationNeeded(Usuario&, QString)), this, SLOT(validateData(Usuario&, QString)));
 }
 
 SignupWindow::~SignupWindow(){
   delete ui;
+  delete processor;
+}
+
+void SignupWindow::validateData(Usuario& usuario, QString rSenha){
+  bool validData=true;
+  if(usuario.getSenha() != rSenha.toStdString()){
+    rSenhaEdit->setText("");
+    rSenhaEdit->setPlaceholderText("As senhas não são iguais!");
+    rSenhaEdit->setStyleSheet("color:red;font:bold;");
+    validData=false;
+  }
+  if(!Usuario::isValidCPF(usuario.getCPF())){
+    cpfEdit->setText("");
+    cpfEdit->setPlaceholderText("CPF Inválido!");
+    cpfEdit->setStyleSheet("color:red;font:bold;");
+    validData=false;
+  }
+  if(usuario.getSenha().length()<6){
+    senhaEdit->setText("");
+    senhaEdit->setPlaceholderText("A senha deve ter ao menos 6 dígitos!");
+    senhaEdit->setStyleSheet("color:red;font:bold;");
+    validData=false;
+  }
+  if(!Cartao::isValidNumber(usuario.getCartao().getNumero())){
+    cardEdit->setText("");
+    cardEdit->setPlaceholderText("Cartão Inválido!");
+    cardEdit->setStyleSheet("color:red; font:bold;");
+    validData=false;
+  }
+  if(usuario.getCartao().getNumSeguranca()<100){
+    numSecEdit->setText("");
+    numSecEdit->setPlaceholderText("Número de Segurança Inválido!");
+    numSecEdit->setStyleSheet("color:red; font:bold;");
+    validData=false;
+  }
+  if(validData){
+    emit validSignupData(usuario);
+  }
+}
+
+void SignupWindow::existingUser(){
+  // TODO Mostrar dialog "Usuário existe"
+}
+
+void SignupWindow::failedToRegister(){
+  // TODO Mostrar dialog "Erro ao registrar"
 }
 
 void SignupWindow::on_pushButton_clicked(){
@@ -37,54 +84,6 @@ void SignupWindow::on_pushButton_clicked(){
   Usuario user(cpf.toStdString(),senha.toStdString(),cartao);
   qDebug("Asking validation");
   emit validationNeeded(user, rSenha);
-}
-
-void SignupWindow::validateData(Usuario& usuario, QString rSenha){
-  bool validData=true;
-  qDebug("Validating data");
-  if(usuario.getSenha() != rSenha.toStdString()){
-    rSenhaEdit->setText("");
-    rSenhaEdit->setPlaceholderText("As senhas não são iguais!");
-    rSenhaEdit->setStyleSheet("color:red;font:bold;");
-    qDebug("passwords don't match");
-    validData=false;
-  }
-  if(!Usuario::isValidCPF(usuario.getCPF())){
-    cpfEdit->setText("");
-    cpfEdit->setPlaceholderText("CPF Inválido!");
-    cpfEdit->setStyleSheet("color:red;font:bold;");
-    qDebug("Invalid CPF");
-    validData=false;
-  }
-  qDebug("Valid CPF");
-  if(usuario.getSenha().length()<6){
-    senhaEdit->setText("");
-    senhaEdit->setPlaceholderText("A senha deve ter ao menos 6 dígitos!");
-    senhaEdit->setStyleSheet("color:red;font:bold;");
-    qDebug("password to short");
-    validData=false;
-  }
-
-  qDebug("passwords match");
-  if(!Cartao::isValidNumber(usuario.getCartao().getNumero())){
-    cardEdit->setText("");
-    cardEdit->setPlaceholderText("Cartão Inválido!");
-    cardEdit->setStyleSheet("color:red; font:bold;");
-    qDebug("Invalid Number");
-    validData=false;
-  }
-  qDebug("Valid Number");
-  if(usuario.getCartao().getNumSeguranca()<100){
-    numSecEdit->setText("");
-    numSecEdit->setPlaceholderText("Número de Segurança Inválido!");
-    numSecEdit->setStyleSheet("color:red; font:bold;");
-    qDebug("Invalid Security Number");
-    validData=false;
-  }
-  if(validData){
-    qDebug("Valid Data");
-    emit validSignupData(usuario);
-  }
 }
 
 void SignupWindow::on_cardEdit_textEdited(const QString &arg1){
