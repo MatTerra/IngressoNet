@@ -28,6 +28,8 @@ signals:
 private slots:
   void validateData(Usuario&, QString);
 
+  void existingUser();
+
   void on_pushButton_clicked();
 
   void on_cardEdit_textEdited(const QString &arg1);
