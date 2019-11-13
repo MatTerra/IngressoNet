@@ -38,7 +38,12 @@ class MySQLHelper : public PersistanceHelper<MYSQL_RES>{
      */
     static MySQLHelper* getInstance();
 
+    /** Deleta o construtor para garantir a arquitetura singleton da classe.
+     */
     MySQLHelper(MySQLHelper const&) = delete;
+
+    /** Deleta o operador = para garantir a arquitetura singleton da classe.
+     */
     void operator=(MySQLHelper const&) = delete;
 
 

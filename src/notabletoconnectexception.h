@@ -8,6 +8,7 @@ class NotAbleToConnectException : public std::exception{
   /** Exceção personalizada para detecção de problemas de conexão
     */
 
+
   public:
     /** Método para retorno de rastro da exceção e mensagem personalizada.
      * \return Mensagem personalizada descritiva do erro

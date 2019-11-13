@@ -13,15 +13,23 @@ class LoginWindow : public QWidget
 {
   Q_OBJECT
 
-public:
-  explicit LoginWindow(QWidget *parent = nullptr);
-  ~LoginWindow();
 
-private slots:
-  void on_signupButton_clicked();
+  public:
+    /** Construtor padrão */
+    explicit LoginWindow(QWidget *parent = nullptr);
 
-private:
-  Ui::LoginWindow *ui;
+    /** Destrutor padrão */
+    ~LoginWindow();
+
+
+  private slots:
+    /** Slot de reação ao clique no botão de cadastro.
+     */
+    void on_signupButton_clicked();
+
+
+  private:
+    Ui::LoginWindow *ui; //!< Atributo de instância "ui". Representa a interface gráfica da tela de login.
 };
 
 #endif // LOGINWINDOW_H

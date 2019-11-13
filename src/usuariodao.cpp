@@ -60,30 +60,42 @@ std::vector<Usuario> UsuarioDAO::getAll(){
 }
 
 void UsuarioDAO::save(Usuario usuario){
-  std::string query = "INSERT INTO usuario_t (cpf, senha) VALUES ('"+usuario.getCPF()+"', '"+usuario.getSenha()+"');";
-  mysql_free_result(mysqlHelper->query(query));
+  try {
+    std::string query = "INSERT INTO usuario_t (cpf, senha) VALUES ('"+usuario.getCPF()+"', '"+usuario.getSenha()+"');";
+    mysql_free_result(mysqlHelper->query(query));
 
-  CartaoDAO* cdao = CartaoDAO::getInstance();
-  cdao->save(usuario.getCartao());
-  cdao->update(usuario.getCartao(), "cpf", usuario.getCPF());
+//    CartaoDAO* cdao = CartaoDAO::getInstance();
+//    cdao->save(usuario.getCartao());
+//    cdao->update(usuario.getCartao(), "cpf", usuario.getCPF());
+  }  catch (NotAbleToConnectException& e) {
+    throw e;
+  }
 }
 
 void UsuarioDAO::update(Usuario usuario, std::string field, std::string value){
-  std::string query;
-  if(field.compare("senha")==0){
-    query = "UPDATE usuario_t SET senha = '"+value+"' WHERE (cpf = '"+usuario.getCPF()+"');";
-  } else{
-    // TODO erro propriedade não encontrada
-    qDebug("propriedade não encontrada");
+  try {
+    std::string query;
+    if(field.compare("senha")==0){
+      query = "UPDATE usuario_t SET senha = '"+value+"' WHERE (cpf = '"+usuario.getCPF()+"');";
+    } else{
+      // TODO erro propriedade não encontrada
+      qDebug("propriedade não encontrada");
+    }
+    mysql_free_result(mysqlHelper->query(query));
+  }  catch (NotAbleToConnectException& e) {
+    throw e;
   }
-  mysql_free_result(mysqlHelper->query(query));
 }
 void UsuarioDAO::remove(Usuario usuario){
-  CartaoDAO* cdao = CartaoDAO::getInstance();
-  cdao->remove(usuario.getCartao());
+  try {
+    CartaoDAO* cdao = CartaoDAO::getInstance();
+    cdao->remove(usuario.getCartao());
 
-  std::string query = "DELETE FROM usuario_t WHERE (cpf = '"+usuario.getCPF()+"');";
-  mysql_free_result(mysqlHelper->query(query));
+    std::string query = "DELETE FROM usuario_t WHERE (cpf = '"+usuario.getCPF()+"');";
+    mysql_free_result(mysqlHelper->query(query));
+  }  catch (NotAbleToConnectException& e) {
+    throw e;
+  }
 }
 
 UsuarioDAO* UsuarioDAO::getInstance(){

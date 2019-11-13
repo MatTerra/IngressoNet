@@ -6,8 +6,16 @@
 
 class Session : public QObject{
   Q_OBJECT
+
+
   private slots:
-  bool authenticate(QString, QString){return true;}
+    /**
+     * @brief authenticate
+     * @return
+     */
+    bool authenticate(QString, QString){return true;}
+
+
   private:
     /** Construtor privado para garantir a arquitetura Singleton da classe
      */

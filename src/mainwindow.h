@@ -12,12 +12,17 @@ class MainWindow : public QMainWindow
 {
   Q_OBJECT
 
-public:
-  explicit MainWindow(QWidget *parent = nullptr);
-  ~MainWindow();
 
-private:
-  Ui::MainWindow *ui;
+  public:
+    /** Construtor padrão */
+    explicit MainWindow(QWidget *parent = nullptr);
+
+    /** Destrutor padrão */
+    ~MainWindow();
+
+
+  private:
+    Ui::MainWindow *ui; //!< Atributo de instância "ui". Representa a interface gráfica da tela.
 };
 
 #endif // MAINWINDOW_H

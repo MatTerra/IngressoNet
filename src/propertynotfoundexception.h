@@ -8,6 +8,7 @@ class PropertyNotFoundException : public std::exception{
   /** Exceção personalizada para detecção de problemas de campos do banco
     */
 
+
   public:
     /** Método para retorno de rastro da exceção e mensagem personalizada.
      * \return Mensagem personalizada descritiva do erro
