@@ -54,7 +54,7 @@ class Usuario{
     /** Compara dois usuários para determinar a igualdade
      * \return Verdadeiro(true) se os usuários são iguais e falso(false) caso contrário.
      */
-    bool compararUsuarios(Usuario, Usuario);
+    static bool compararUsuarios(Usuario, Usuario);
 
 
   private:

@@ -16,8 +16,9 @@ SignupWindow::SignupWindow(QWidget *parent) :
   QRegExpValidator *validator = new QRegExpValidator(re, this);
   cpfEdit->setValidator(validator);
 
-  connect(this, SIGNAL(validSignupData()), processor, SLOT(verifyExistingUser()));
-  connect(this,SIGNAL(validationNeeded()), this, SLOT(validateData()));
+  connect(this, SIGNAL(validSignupData(Usuario&)), processor, SLOT(verifyExistingUser(Usuario&)));
+  connect(processor, SIGNAL(userExist()), this, SLOT(existingUser()));
+  connect(this,SIGNAL(validationNeeded(Usuario&, QString)), this, SLOT(validateData(Usuario&, QString)));
 }
 
 SignupWindow::~SignupWindow(){
@@ -34,18 +35,19 @@ void SignupWindow::on_pushButton_clicked(){
 
   Cartao cartao(cardNumber.toULong(), numSec.toUInt());
   Usuario user(cpf.toStdString(),senha.toStdString(),cartao);
-
+  qDebug("Asking validation");
   emit validationNeeded(user, rSenha);
 }
 
 void SignupWindow::validateData(Usuario& usuario, QString rSenha){
   bool validData=true;
+  qDebug("Validating data");
   if(usuario.getSenha() != rSenha.toStdString()){
-      rSenhaEdit->setText("");
-      rSenhaEdit->setPlaceholderText("As senhas não são iguais!");
-      rSenhaEdit->setStyleSheet("color:red;font:bold;");
-      qDebug("passwords don't match");
-      validData=false;
+    rSenhaEdit->setText("");
+    rSenhaEdit->setPlaceholderText("As senhas não são iguais!");
+    rSenhaEdit->setStyleSheet("color:red;font:bold;");
+    qDebug("passwords don't match");
+    validData=false;
   }
   if(!Usuario::isValidCPF(usuario.getCPF())){
     cpfEdit->setText("");
@@ -56,11 +58,11 @@ void SignupWindow::validateData(Usuario& usuario, QString rSenha){
   }
   qDebug("Valid CPF");
   if(usuario.getSenha().length()<6){
-      senhaEdit->setText("");
-      senhaEdit->setPlaceholderText("A senha deve ter ao menos 6 dígitos!");
-      senhaEdit->setStyleSheet("color:red;font:bold;");
-      qDebug("password to short");
-      validData=false;
+    senhaEdit->setText("");
+    senhaEdit->setPlaceholderText("A senha deve ter ao menos 6 dígitos!");
+    senhaEdit->setStyleSheet("color:red;font:bold;");
+    qDebug("password to short");
+    validData=false;
   }
 
   qDebug("passwords match");
@@ -73,13 +75,14 @@ void SignupWindow::validateData(Usuario& usuario, QString rSenha){
   }
   qDebug("Valid Number");
   if(usuario.getCartao().getNumSeguranca()<100){
-      numSecEdit->setText("");
-      numSecEdit->setPlaceholderText("Número de Segurança Inválido!");
-      numSecEdit->setStyleSheet("color:red; font:bold;");
-      qDebug("Invalid Security Number");
-      validData=false;
+    numSecEdit->setText("");
+    numSecEdit->setPlaceholderText("Número de Segurança Inválido!");
+    numSecEdit->setStyleSheet("color:red; font:bold;");
+    qDebug("Invalid Security Number");
+    validData=false;
   }
   if(validData){
+    qDebug("Valid Data");
     emit validSignupData(usuario);
   }
 }

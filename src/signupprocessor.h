@@ -17,6 +17,8 @@ public:
 signals:
   void userDoesntExist(Usuario&);
   void userExist();
+  void userRegistered();
+  void registrationError();
 
 public slots:
   void verifyExistingUser(Usuario&);
