@@ -42,7 +42,7 @@ void TesteUsuarioDAO::testeGetUser(){
   QFETCH(int, codigoSeguranca);
   Cartao c(static_cast<unsigned long>(numeroCartao), static_cast<unsigned int>(codigoSeguranca));
   Usuario user(cpf.toStdString(), senha.toStdString(), c);
-  QCOMPARE(compararUsuarios(udao->get(cpf.toStdString()), user), true);
+  QCOMPARE(Usuario::compararUsuarios(udao->get(cpf.toStdString()), user), true);
 
 }
 
@@ -60,7 +60,7 @@ void TesteUsuarioDAO::testeSaveUser(){
   Usuario u("081.556.680-88", "1234", c);
   UsuarioDAO* udao = UsuarioDAO::getInstance();
   udao->save(u);
-  QCOMPARE(compararUsuarios(udao->get(u.getCPF()), u), true);
+  QCOMPARE(Usuario::compararUsuarios(udao->get(u.getCPF()), u), true);
 }
 
 void TesteUsuarioDAO::testeUpdateUser(){
