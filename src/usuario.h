@@ -9,7 +9,10 @@ class Usuario{
 
   public:
     /** Construtor padrão */
-    Usuario(std::string cpf, std::string senha, Cartao& cartao): cpf(cpf), senha(senha), cartao(cartao){};
+    Usuario(std::string cpf, std::string senha, Cartao& cartao): cpf(cpf), senha(senha), cartao(cartao){}
+
+    /** Construtor sem cartão */
+    Usuario(std::string cpf, std::string senha):cpf(cpf), senha(senha), cartao(Cartao(0,0)){}
 
     /** Destrutor padrão */
     virtual ~Usuario();
