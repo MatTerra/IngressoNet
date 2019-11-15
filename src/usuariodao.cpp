@@ -35,7 +35,7 @@ Usuario UsuarioDAO::get(std::string cpf){
 std::vector<Usuario> UsuarioDAO::getByProperty(std::string property, std::string value){
   std::vector<Usuario> usuarios;
   try {
-    std::string query = "SELECT cpf FROM usuario_t WHERE ("+property+" = "+value+");";
+    std::string query = "SELECT cpf FROM usuario_t WHERE ("+property+" = '"+value+"');";
     MYSQL_RES* res = mysqlHelper->query(query);
     MYSQL_ROW row = mysql_fetch_row(res);
 
