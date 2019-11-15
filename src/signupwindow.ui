@@ -80,6 +80,9 @@
        <property name="echoMode">
         <enum>QLineEdit::PasswordEchoOnEdit</enum>
        </property>
+       <property name="placeholderText">
+        <string>&gt;6 números</string>
+       </property>
       </widget>
      </item>
      <item row="3" column="1">
@@ -109,7 +112,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="signupBtn">
      <property name="font">
       <font>
        <pointsize>15</pointsize>

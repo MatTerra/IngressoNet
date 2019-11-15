@@ -5,21 +5,37 @@ SignupWindow::SignupWindow(QWidget *parent) :
   QWidget(parent),
   ui(new Ui::SignupWindow){
   ui->setupUi(this);
-  cardEdit = this->findChild<QLineEdit *>("cardEdit");
-  cpfEdit = this->findChild<QLineEdit *>("cpfEdit");
-  senhaEdit = this->findChild<QLineEdit *>("senhaEdit");
-  rSenhaEdit = this->findChild<QLineEdit *>("rSenhaEdit");
-  numSecEdit = this->findChild<QLineEdit *>("numSecEdit");
+
   processor = new SignupProcessor(nullptr);
 
-  QRegExp re("^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$");
-  QRegExpValidator *validator = new QRegExpValidator(re, this);
-  cpfEdit->setValidator(validator);
+  setupValidators();
+  connectSignals();
+}
 
+void SignupWindow::setupValidators(){
+  QRegExp reCpf("^[0-9]{3}\\.[0-9]{3}\\.[0-9]{3}-[0-9]{2}$");
+  QRegExpValidator *validatorCpf = new QRegExpValidator(reCpf, this);
+  ui->cpfEdit->setValidator(validatorCpf);
+
+  QRegExp reCartao("^[0-9]{14,16}$");
+  QRegExpValidator *validatorCartao = new QRegExpValidator(reCartao, this);
+  ui->cardEdit->setValidator(validatorCartao);
+
+  QRegExp reNumSec("^[0-9]{3,4}$");
+  QRegExpValidator *validatorNumSec= new QRegExpValidator(reNumSec, this);
+  ui->numSecEdit->setValidator(validatorNumSec);
+
+  QRegExp reSenha("^[0-9]{6,}$");
+  QRegExpValidator *validatorSenha = new QRegExpValidator(reSenha, this);
+  ui->senhaEdit->setValidator(validatorSenha);
+  ui->rSenhaEdit->setValidator(validatorSenha);
+}
+
+void SignupWindow::connectSignals(){
   connect(this, SIGNAL(validSignupData(Usuario&)), processor, SLOT(verifyExistingUser(Usuario&)));
-  connect(processor, SIGNAL(userExist()), this, SLOT(existingUser()));
-  connect(processor, SIGNAL(registrationError()), this, SLOT(failedToRegister()));
+  connect(processor, SIGNAL(registrationError(QString)), this, SLOT(failedToRegister(QString)));
   connect(this,SIGNAL(validationNeeded(Usuario&, QString)), this, SLOT(validateData(Usuario&, QString)));
+  connect(processor, SIGNAL(userRegistered()), this, SLOT(signupEnded()));
 }
 
 SignupWindow::~SignupWindow(){
@@ -30,33 +46,23 @@ SignupWindow::~SignupWindow(){
 void SignupWindow::validateData(Usuario& usuario, QString rSenha){
   bool validData=true;
   if(usuario.getSenha() != rSenha.toStdString()){
-    rSenhaEdit->setText("");
-    rSenhaEdit->setPlaceholderText("As senhas não são iguais!");
-    rSenhaEdit->setStyleSheet("color:red;font:bold;");
+    setErrorMessage(ui->rSenhaEdit, "As senhas não são iguais!");
     validData=false;
   }
   if(!Usuario::isValidCPF(usuario.getCPF())){
-    cpfEdit->setText("");
-    cpfEdit->setPlaceholderText("CPF Inválido!");
-    cpfEdit->setStyleSheet("color:red;font:bold;");
+    setErrorMessage(ui->cpfEdit, "CPF Inválido!");
     validData=false;
   }
-  if(usuario.getSenha().length()<6){
-    senhaEdit->setText("");
-    senhaEdit->setPlaceholderText("A senha deve ter ao menos 6 dígitos!");
-    senhaEdit->setStyleSheet("color:red;font:bold;");
+  if(usuario.getSenha().length() < 6){
+    setErrorMessage(ui->senhaEdit, "A senha deve ter ao menos 6 dígitos!");
     validData=false;
   }
   if(!Cartao::isValidNumber(usuario.getCartao().getNumero())){
-    cardEdit->setText("");
-    cardEdit->setPlaceholderText("Cartão Inválido!");
-    cardEdit->setStyleSheet("color:red; font:bold;");
+    setErrorMessage(ui->cardEdit, "Cartão Inválido!");
     validData=false;
   }
-  if(usuario.getCartao().getNumSeguranca()<100){
-    numSecEdit->setText("");
-    numSecEdit->setPlaceholderText("Número de Segurança Inválido!");
-    numSecEdit->setStyleSheet("color:red; font:bold;");
+  if(usuario.getCartao().getNumSeguranca() < 100 || usuario.getCartao().getNumSeguranca() > 9999){
+    setErrorMessage(ui->numSecEdit, "Número de Segurança Inválido!");
     validData=false;
   }
   if(validData){
@@ -64,60 +70,73 @@ void SignupWindow::validateData(Usuario& usuario, QString rSenha){
   }
 }
 
-void SignupWindow::existingUser(){
-  // TODO Mostrar dialog "Usuário existe"
+void SignupWindow::setErrorMessage(QLineEdit* lEdit, QString message){
+  lEdit->setText("");
+  lEdit->setPlaceholderText(message);
+  lEdit->setStyleSheet("color:red; font:bold;");
 }
 
-void SignupWindow::failedToRegister(){
-  // TODO Mostrar dialog "Erro ao registrar"
+void SignupWindow::failedToRegister(QString message){
+  QMessageBox msgBox;
+  msgBox.setText(message);
+  msgBox.exec();
 }
 
-void SignupWindow::on_pushButton_clicked(){
+void SignupWindow::signupEnded(){
+  QMessageBox msgBox;
+  msgBox.setText("Cadastro efetuado com sucesso!");
+  msgBox.exec();
+  QMainWindow* mw = dynamic_cast<QMainWindow *>(parent());
+  mw->setCentralWidget(new LoginWindow(mw));
+  this->destroy();
+}
 
-  QString cardNumber = cardEdit->text();
-  QString cpf = cpfEdit->text();
-  QString senha = senhaEdit->text();
-  QString rSenha = rSenhaEdit->text();
-  QString numSec = numSecEdit->text();
+void SignupWindow::on_signupBtn_clicked(){
+
+  QString cardNumber = ui->cardEdit->text();
+  QString cpf = ui->cpfEdit->text();
+  QString senha = ui->senhaEdit->text();
+  QString rSenha = ui->rSenhaEdit->text();
+  QString numSec = ui->numSecEdit->text();
 
   Cartao cartao(cardNumber.toULong(), numSec.toUInt());
   Usuario user(cpf.toStdString(),senha.toStdString(),cartao);
-  qDebug("Asking validation");
   emit validationNeeded(user, rSenha);
 }
 
+void SignupWindow::validate(QLineEdit* lEdit, QString placeholder){
+  QString text = lEdit->text();
+  int pos;
+  if(lEdit->validator()->validate(text, pos) != QValidator::Acceptable){
+      lEdit->setStyleSheet("color:red;");
+  } else{
+      lEdit->setStyleSheet("color:white; font:regular;");
+      lEdit->setPlaceholderText(placeholder);
+  }
+}
+
 void SignupWindow::on_cardEdit_textEdited(const QString &arg1){
-  qDebug("%s", arg1.toStdString().c_str());
-  cardEdit->setStyleSheet("color:white; font:regular;");
-  cardEdit->setPlaceholderText("(Somente números)");
+  validate(ui->cardEdit, "(Somente números)");
 }
 
 void SignupWindow::on_cpfEdit_textEdited(const QString &arg1){
-  qDebug("%s", arg1.toStdString().c_str());
-  QString text = arg1;
-  int pos;
-  if(cpfEdit->validator()->validate(text, pos)!=QValidator::Acceptable){
-      cpfEdit->setStyleSheet("color:red;");
-    } else{
-      cpfEdit->setStyleSheet("color:white; font:regular;");
-      cpfEdit->setPlaceholderText("xxx.xxx.xxx-xx");
-    }
+  validate(ui->cpfEdit, "xxx.xxx.xxx-xx");
+  if(arg1.length() == 3 || arg1.length() == 7){
+    ui->cpfEdit->insert(".");
+  }
+  if(arg1.length() == 11){
+    ui->cpfEdit->insert("-");
+  }
 }
 
 void SignupWindow::on_rSenhaEdit_textEdited(const QString &arg1){
-  qDebug("%s", arg1.toStdString().c_str());
-  rSenhaEdit->setStyleSheet("color:white; font:regular;");
-  rSenhaEdit->setPlaceholderText("");
+  validate(ui->rSenhaEdit, "");
 }
 
 void SignupWindow::on_senhaEdit_textEdited(const QString &arg1){
-  qDebug("%s", arg1.toStdString().c_str());
-  senhaEdit->setStyleSheet("color:white; font:regular;");
-  senhaEdit->setPlaceholderText("");
+  validate(ui->senhaEdit, ">6 números");
 }
 
 void SignupWindow::on_numSecEdit_textEdited(const QString &arg1){
-  qDebug("%s", arg1.toStdString().c_str());
-  numSecEdit->setStyleSheet("color:white; font:regular;");
-  numSecEdit->setPlaceholderText("");
+  validate(ui->numSecEdit, "");
 }
