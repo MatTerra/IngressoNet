@@ -3,6 +3,7 @@
 
 #include "persistancehelper.h"
 #include "notabletoconnectexception.h"
+#include "failedqueryexception.h"
 #include <QDebug>
 #include <mysql/mysql.h>
 

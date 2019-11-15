@@ -14,9 +14,7 @@ MYSQL_RES* MySQLHelper::query(std::string query){
       if(!qstate){
           res = mysql_store_result(MySQLHelper::dbconn);
         } else {
-          // TODO add exception for failed query
-          // Some error on query
-          qDebug("Deu erro na query");
+          throw FailedQueryException();
           return nullptr;
         }
       return res;
