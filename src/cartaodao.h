@@ -6,6 +6,7 @@
 #include "cartao.h"
 #include "notabletoconnectexception.h"
 #include "propertynotfoundexception.h"
+#include "failedqueryexception.h"
 
 
 class CartaoDAO : public GenericDAO<Cartao>{
@@ -19,6 +20,13 @@ class CartaoDAO : public GenericDAO<Cartao>{
      *  \return Cartão encontrado com o Número ou Cartão com Número 0 caso não seja encontrado nenhum registro
      */
     Cartao get(std::string) override;
+
+    /** Método para busca de todos os registros que possuem um valor específico em uma coluna
+      * \param property Coluna base da busca
+      * \param value Valor da coluna para filtrar os resultados
+      * \return Vetor de T com todos os objetos cujo valor da coluna coincide com value
+      */
+     std::vector<Cartao> getByProperty(std::string, std::string) override;
 
     /** Busca todos os registros de Cartões no banco de dados MySQL.
      * \return Vetor de Cartões do banco de dados MySQL

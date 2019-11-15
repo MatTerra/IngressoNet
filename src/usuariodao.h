@@ -4,9 +4,9 @@
 #include "mysqlhelper.h"
 #include "genericdao.h"
 #include "usuario.h"
-#include "cartao.h"
-#include "cartaodao.h"
 #include "notabletoconnectexception.h"
+#include "propertynotfoundexception.h"
+#include "failedqueryexception.h"
 #include <mysql/mysql.h>
 
 
@@ -22,8 +22,15 @@ class UsuarioDAO : public GenericDAO<Usuario>{
      */
     Usuario get(std::string) override;
 
+    /** Método para busca de todos os Usuários que possuem um valor específico em uma coluna
+      * \param property Coluna base da busca
+      * \param value Valor da coluna para filtrar os resultados
+      * \return Vetor de todos os Usuários cujo valor da coluna coincide com value. Não é selecionada a senha e os usuários retornados tem senha vazia.
+      */
+    std::vector<Usuario> getByProperty(std::string, std::string) override;
+
     /** Busca todos os registros de Usuários no banco de dados MySQL.
-     * \return Vetor de Usuários do banco de dados MySQL
+     * \return Vetor de Usuários do banco de dados MySQL. Não é selecionada a senha e os usuários retornados tem senha vazia.
      */
     std::vector<Usuario> getAll() override;
 

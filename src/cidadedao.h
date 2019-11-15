@@ -20,6 +20,13 @@ class CidadeDAO : public GenericDAO<Cidade>{
      */
     Cidade get(std::string) override;
 
+    /** Método para busca de todos os registros que possuem um valor específico em uma coluna
+      * \param property Coluna base da busca
+      * \param value Valor da coluna para filtrar os resultados
+      * \return Vetor de T com todos os objetos cujo valor da coluna coincide com value
+      */
+     std::vector<Cidade> getByProperty(std::string, std::string) override;
+
     /** Busca todos os registros de Cidades no banco de dados MySQL.
      * \return Vetor de Cidades do banco de dados MySQL
      */
