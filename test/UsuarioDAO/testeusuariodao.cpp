@@ -38,11 +38,11 @@ void TesteUsuarioDAO::testeGetUser(){
   UsuarioDAO* udao = UsuarioDAO::getInstance();
   QFETCH(QString, cpf);
   QFETCH(QString, senha);
-  QFETCH(long, numeroCartao);
-  QFETCH(int, codigoSeguranca);
-  Cartao c(static_cast<unsigned long>(numeroCartao), static_cast<unsigned int>(codigoSeguranca));
-  Usuario user(cpf.toStdString(), senha.toStdString(), c);
-  QCOMPARE(Usuario::compararUsuarios(udao->get(cpf.toStdString()), user), true);
+  Usuario user(cpf.toStdString(), senha.toStdString());
+  qDebug("%s\t%s", cpf.toStdString().c_str(), senha.toStdString().c_str());
+  Usuario userDB = udao->get(cpf.toStdString());
+  qDebug("%s\t%s", userDB.getCPF().c_str(), userDB.getSenha().c_str());
+  QCOMPARE(Usuario::compararUsuarios(userDB, user), true);
 
 }
 
@@ -50,14 +50,11 @@ void TesteUsuarioDAO::testeGetUser(){
 void TesteUsuarioDAO::testeGetUser_data(){
   QTest::addColumn<QString>("cpf");
   QTest::addColumn<QString>("senha");
-  QTest::addColumn<long>("numeroCartao");
-  QTest::addColumn<int>("codigoSeguranca");
-  QTest::newRow("testUser") << "326.688.371-38" << "1234" << 5555666677778884 << 1234;
+  QTest::newRow("testUser") << "326.688.371-38" << "1234";
 }
 
 void TesteUsuarioDAO::testeSaveUser(){
-  Cartao c(36490102462661, 1234);
-  Usuario u("081.556.680-88", "1234", c);
+  Usuario u("081.556.680-88", "1234");
   UsuarioDAO* udao = UsuarioDAO::getInstance();
   udao->save(u);
   QCOMPARE(Usuario::compararUsuarios(udao->get(u.getCPF()), u), true);
@@ -65,17 +62,16 @@ void TesteUsuarioDAO::testeSaveUser(){
 
 void TesteUsuarioDAO::testeUpdateUser(){
   UsuarioDAO* udao = UsuarioDAO::getInstance();
-  Cartao c(36490102462661, 1234);
-  Usuario u("081.556.680-88", "1234", c);
-  udao->update(u, "senha", "123456");
+  Usuario u("081.556.680-88", "1234");
+  std::string novaSenha = "123456";
+  udao->update(u, "senha", novaSenha);
   Usuario a = udao->get(u.getCPF());
-  QCOMPARE(a.getSenha(), "123456");
+  QCOMPARE(a.getSenha(), novaSenha);
 }
 
 void TesteUsuarioDAO::testeRemoveUser(){
   UsuarioDAO* udao = UsuarioDAO::getInstance();
-  Cartao c(36490102462661, 1234);
-  Usuario u("081.556.680-88", "1234", c);
+  Usuario u("081.556.680-88", "1234");
   udao->remove(u);
   QCOMPARE(udao->get(u.getCPF()).getCPF().c_str(), "000.000.000-00");
 }

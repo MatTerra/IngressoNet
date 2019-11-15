@@ -15,6 +15,7 @@ private slots:
   void cleanupTestCase();
   void testeGetCartao();
   void testeGetCartao_data();
+  void testeGetCartaoByProperty();
   void testeSaveCartao();
   void testeUpdateCartao();
   void testeRemoveCartao();
@@ -44,6 +45,13 @@ void TesteCartaoDAO::testeGetCartao_data(){
   QTest::newRow("testCard") << 5555666677778884 << 1234;
 }
 
+void TesteCartaoDAO::testeGetCartaoByProperty(){
+  Cartao card(376449047333005, 123);
+  CartaoDAO* cdao = CartaoDAO::getInstance();
+  Cartao c = cdao->getByProperty("cpf", "932.613.760-07")[0];
+  QCOMPARE(Cartao::compararCartoes(card, cdao->get(std::to_string(c.getNumero()))), true);
+}
+
 void TesteCartaoDAO::testeSaveCartao(){
   Cartao c(36490102462661, 1234);
   CartaoDAO* cdao = CartaoDAO::getInstance();
@@ -54,9 +62,9 @@ void TesteCartaoDAO::testeSaveCartao(){
 void TesteCartaoDAO::testeUpdateCartao(){
   Cartao c(36490102462661, 1234);
   CartaoDAO* cdao = CartaoDAO::getInstance();
-  UsuarioDAO* udao = UsuarioDAO::getInstance();
   cdao->update(c, "cpf", "000.000.000-01");
-  QCOMPARE(Cartao::compararCartoes(udao->get("000.000.000-01").getCartao(), c), true);
+  Cartao updated = cdao->getByProperty("cpf", "000.000.000-01")[0];
+  QCOMPARE(Cartao::compararCartoes(cdao->get(std::to_string(updated.getNumero())), c), true);
 }
 
 void TesteCartaoDAO::testeRemoveCartao(){
