@@ -10,6 +10,10 @@ LoginWindow::LoginWindow(QWidget *parent) :
   QRegExpValidator *validatorCpf = new QRegExpValidator(reCpf, this);
   ui->cpfEdit->setValidator(validatorCpf);
 
+  QRegExp reSenha("^[0-9]{6,}$");
+  QRegExpValidator *validatorSenha = new QRegExpValidator(reSenha, this);
+  ui->senhaEdit->setValidator(validatorSenha);
+
   ui->errorLabel->setStyleSheet("color:red;");
 
   connect(this, SIGNAL(loginDataValidationNeeded(QString, QString)), this, SLOT(validateData(QString, QString)));
