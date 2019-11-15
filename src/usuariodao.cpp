@@ -9,7 +9,7 @@ UsuarioDAO::~UsuarioDAO(){
 
 Usuario UsuarioDAO::get(std::string cpf){
   try {
-    std::string query = "SELECT * FROM usuario_t WHERE cpf = '"+cpf+"';";
+    std::string query = "SELECT cpf, senha FROM usuario_t WHERE cpf = '"+cpf+"';";
     MYSQL_RES* res = mysqlHelper->query(query);
 
     MYSQL_ROW row;
@@ -22,7 +22,7 @@ Usuario UsuarioDAO::get(std::string cpf){
       return user;
     }
     else{
-      Usuario user("000.000.000-00", "0");
+      Usuario user("000.000.000-00", "");
       return user;
     }
   } catch (NotAbleToConnectException& e) {

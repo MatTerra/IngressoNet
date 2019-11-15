@@ -35,14 +35,13 @@ Cartao CartaoDAO::get(std::string numero){
 std::vector<Cartao> CartaoDAO::getByProperty(std::string property, std::string value){
   std::vector<Cartao> cartoes;
   try {
-    std::string query = "SELECT * FROM cartao_t WHERE ("+property+" = "+value+");";
+    std::string query = "SELECT numero FROM cartao_t WHERE ("+property+" = '"+value+"');";
     MYSQL_RES* res = mysqlHelper->query(query);
     MYSQL_ROW row = mysql_fetch_row(res);
     do{
       unsigned long numero = strtoul(row[0], nullptr, 10);
-      unsigned int numSeguranca = static_cast<unsigned int>(atoi(row[1]));
 
-      Cartao card(numero, numSeguranca);
+      Cartao card(numero, 0);
       cartoes.push_back(card);
     }while((row= mysql_fetch_row(res)));
     mysql_free_result(res);
@@ -57,14 +56,13 @@ std::vector<Cartao> CartaoDAO::getByProperty(std::string property, std::string v
 std::vector<Cartao> CartaoDAO::getAll(){
   std::vector<Cartao> cartoes;
   try {
-    std::string query = "SELECT * FROM cartao_t;";
+    std::string query = "SELECT numero FROM cartao_t;";
     MYSQL_RES* res = mysqlHelper->query(query);
     MYSQL_ROW row = mysql_fetch_row(res);
     do{
       unsigned long numero = strtoul(row[0], nullptr, 10);
-      unsigned int numSeguranca = static_cast<unsigned int>(atoi(row[1]));
 
-      Cartao card(numero, numSeguranca);
+      Cartao card(numero, 0);
       cartoes.push_back(card);
     }while((row= mysql_fetch_row(res)));
     mysql_free_result(res);
@@ -77,12 +75,16 @@ std::vector<Cartao> CartaoDAO::getAll(){
 }
 
 void CartaoDAO::save(Cartao cartao){
+  qDebug("%lu\t%u", cartao.getNumero(), cartao.getNumSeguranca());
   try {
     std::string query = "INSERT INTO cartao_t (numero, cpf, codigoDeSeguranca) VALUES ("+std::to_string(cartao.getNumero())+", '000.000.000-00', "+std::to_string(cartao.getNumSeguranca())+");";
+    qDebug("%s", query.c_str());
     mysql_free_result(mysqlHelper->query(query));
   } catch (NotAbleToConnectException& e) {
+    qDebug("no conn");
     throw e;
   } catch (FailedQueryException& e){
+    qDebug("failed query");
     throw e;
   }
 }
@@ -92,7 +94,6 @@ void CartaoDAO::update(Cartao cartao, std::string field, std::string value){
     std::string query;
     if(field.compare("cpf")==0){
       query="UPDATE cartao_t SET cpf = '"+value+"' WHERE (numero = "+std::to_string(cartao.getNumero())+");";
-      qDebug("%s", query.c_str());
     } else {
       throw PropertyNotFoundException();
     }

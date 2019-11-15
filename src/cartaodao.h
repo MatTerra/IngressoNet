@@ -21,15 +21,15 @@ class CartaoDAO : public GenericDAO<Cartao>{
      */
     Cartao get(std::string) override;
 
-    /** Método para busca de todos os registros que possuem um valor específico em uma coluna
+    /** Método para busca de todos os Cartões que possuem um valor específico em uma coluna
       * \param property Coluna base da busca
       * \param value Valor da coluna para filtrar os resultados
-      * \return Vetor de T com todos os objetos cujo valor da coluna coincide com value
+      * \return Vetor de todos os Cartões cujo valor da coluna coincide com value. Não recupera o número de segurança dos cartões.
       */
      std::vector<Cartao> getByProperty(std::string, std::string) override;
 
     /** Busca todos os registros de Cartões no banco de dados MySQL.
-     * \return Vetor de Cartões do banco de dados MySQL
+     * \return Vetor de Cartões do banco de dados MySQL. Não recupera o número de segurança dos cartões.
      */
     std::vector<Cartao> getAll() override;
 
