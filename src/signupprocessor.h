@@ -24,17 +24,14 @@ class SignupProcessor : public QObject
      */
     void userDoesntExist(Usuario&);
 
-    /** Sinal emitido após verificação de existência do Usuário no banco de dados caso ele exista.
-     */
-    void userExist();
-
     /** Sinal emitido após registro do Usuário no banco de dados.
      */
     void userRegistered();
 
     /** Sinal emitido quando ocorre um erro no registro do Usuário.
+     * \param Descrição do erro no cadastro
      */
-    void registrationError();
+    void registrationError(QString);
 
 
   public slots:

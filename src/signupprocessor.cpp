@@ -10,16 +10,15 @@ void SignupProcessor::verifyExistingUser(Usuario& usuario){
     UsuarioDAO* udao = UsuarioDAO::getInstance();
     Usuario existant = udao->get(usuario.getCPF());
     if(existant.getCPF() == usuario.getCPF()){
-      qDebug("Existing user");
-      emit userExist();
+      emit registrationError("O usuário já está cadastro em nosso banco de dados.");
       return;
     }
-    qDebug("Registering");
     emit userDoesntExist(usuario);
     return;
-  }  catch (NotAbleToConnectException& e) {
-    qDebug("Failed to verify existance");
-    emit registrationError();
+  } catch (NotAbleToConnectException&) {
+    emit registrationError("Não foi possível realizar o cadastro no momento. Tente novamente mais tarde.\nErro 01 - No Connection to DB");
+  } catch (FailedQueryException&){
+    emit registrationError("Não foi possível realizar o cadastro no momento. Tente novamente mais tarde.\nErro 02 - Query Error");
   }
 }
 
@@ -31,11 +30,11 @@ void SignupProcessor::signupUser(Usuario& usuario){
     udao->save(usuario);
     cdao->save(usuario.getCartao());
     cdao->update(usuario.getCartao(), "cpf", usuario.getCPF());
-    qDebug("Registered");
     emit userRegistered();
-  }  catch (NotAbleToConnectException& e) {
-    qDebug("Connection Error");
-    emit registrationError();
+  }  catch (NotAbleToConnectException&) {
+    emit registrationError("Não foi possível realizar o cadastro no momento. Tente novamente mais tarde.\nErro 01 - No Connection to DB");
+  } catch (FailedQueryException&){
+    emit registrationError("Não foi possível realizar o cadastro no momento. Tente novamente mais tarde.\nErro 02 - Query Error");
   }
 }
 
