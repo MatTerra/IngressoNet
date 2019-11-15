@@ -19,9 +19,11 @@ class LoginProcessor : public QObject
 
 
   signals:
-
+    void loginError(QString);
+    void loginSuccessful(Usuario&);
 
   public slots:
+    void loginUser(QString, QString);
 
 };
 
