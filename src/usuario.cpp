@@ -53,5 +53,5 @@ bool Usuario::compararUsuarios(Usuario a, Usuario b){
   if(a.getSenha().compare(b.getSenha()) != 0){
       return false;
   }
-  return Cartao::compararCartoes(a.getCartao(), b.getCartao());
+  return true;
 }
