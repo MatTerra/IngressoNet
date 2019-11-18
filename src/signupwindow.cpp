@@ -115,7 +115,7 @@ void SignupWindow::validate(QLineEdit* lEdit, QString placeholder){
   }
 }
 
-void SignupWindow::on_cardEdit_textEdited(const QString &arg1){
+void SignupWindow::on_cardEdit_textEdited(const QString&){
   validate(ui->cardEdit, "(Somente números)");
 }
 
@@ -129,14 +129,14 @@ void SignupWindow::on_cpfEdit_textEdited(const QString &arg1){
   }
 }
 
-void SignupWindow::on_rSenhaEdit_textEdited(const QString &arg1){
+void SignupWindow::on_rSenhaEdit_textEdited(const QString&){
   validate(ui->rSenhaEdit, "");
 }
 
-void SignupWindow::on_senhaEdit_textEdited(const QString &arg1){
+void SignupWindow::on_senhaEdit_textEdited(const QString&){
   validate(ui->senhaEdit, ">6 números");
 }
 
-void SignupWindow::on_numSecEdit_textEdited(const QString &arg1){
+void SignupWindow::on_numSecEdit_textEdited(const QString&){
   validate(ui->numSecEdit, "");
 }
