@@ -16,7 +16,7 @@ class Cidade{
     Cidade(int id, std::string nome, Estado& estado):id(id), nome(nome), estado(estado){}
 
     /** Destrutor Padrão */
-    virtual ~Cidade();
+    ~Cidade(){}
 
     /** Método de acesso a nome.
      * \return O valor atual de nome
@@ -50,9 +50,9 @@ class Cidade{
 
 
   private:
+    int id; //!< Atributo de instância "id". Representa o id da cidade.
     std::string nome; //!< Atributo de instância "nome". Representa o nome da cidade.
     Estado estado; //!< Atributo de instância "estado". Representa o estado da cidade.
-    int id; //!< Atributo de instância "id". Representa o id da cidade.
 };
 
 #endif // CIDADE_H

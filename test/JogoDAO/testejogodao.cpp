@@ -9,17 +9,24 @@ class TesteJogoDAO : public QObject{
 
 private slots:
   void initTestCase();
-  void test_case1();
+  void testeGetJogo();
 
 };
 
 void TesteJogoDAO::initTestCase(){
-  QSKIP("Not implemented yet!");
+  MYSQL* dbconn = mysql_init(nullptr);
+  dbconn = mysql_real_connect(dbconn, IP, USER, PASSWORD, DB, 0, nullptr, 0);
+  if (!dbconn) {
+    QSKIP("No database running");
+  }
+  mysql_close(dbconn);
 }
 
-void TesteJogoDAO::test_case1()
-{
-
+void TesteJogoDAO::testeGetJogo(){
+  JogoDAO* jdao = JogoDAO::getInstance();
+  Jogo jdb = jdao->get("0");
+  Jogo j(0, "FlaFlu", Jogo::Nacional);
+  QCOMPARE((jdb.getNome().compare(j.getNome()) == 0 && jdb.getTipo() == j.getTipo()), true);
 }
 
 QTEST_APPLESS_MAIN(TesteJogoDAO)

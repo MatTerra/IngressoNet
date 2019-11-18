@@ -14,7 +14,6 @@ private slots:
   void initTestCase();
   void cleanupTestCase();
   void testeGetCartao();
-  void testeGetCartao_data();
   void testeGetCartaoByProperty();
   void testeSaveCartao();
   void testeUpdateCartao();
@@ -33,16 +32,8 @@ void TesteCartaoDAO::initTestCase(){
 
 void TesteCartaoDAO::testeGetCartao(){
   CartaoDAO* cdao = CartaoDAO::getInstance();
-  QFETCH(long, numeroCartao);
-  QFETCH(int, codigoSeguranca);
-  Cartao c(static_cast<unsigned long>(numeroCartao), static_cast<unsigned int>(codigoSeguranca));
-  QCOMPARE(Cartao::compararCartoes(cdao->get(std::to_string(static_cast<unsigned long>(numeroCartao))), c), true);
-}
-
-void TesteCartaoDAO::testeGetCartao_data(){
-  QTest::addColumn<long>("numeroCartao");
-  QTest::addColumn<int>("codigoSeguranca");
-  QTest::newRow("testCard") << 5555666677778884 << 1234;
+  Cartao c(5555666677778884, 1234);
+  QCOMPARE(Cartao::compararCartoes(cdao->get(std::to_string(c.getNumero())), c), true);
 }
 
 void TesteCartaoDAO::testeGetCartaoByProperty(){
