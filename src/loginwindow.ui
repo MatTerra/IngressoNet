@@ -197,6 +197,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="loginBtn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="font">
         <font>
          <pointsize>15</pointsize>

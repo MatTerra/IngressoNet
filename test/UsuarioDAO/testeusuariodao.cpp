@@ -14,7 +14,7 @@ private:
 private slots:
   void initTestCase();
   void testeGetUser();
-  void testeGetUser_data();
+  void testeGetUserByProperty();
   void testeSaveUser();
   void testeUpdateUser();
   void testeRemoveUser();
@@ -36,21 +36,17 @@ void TesteUsuarioDAO::initTestCase(){
 
 void TesteUsuarioDAO::testeGetUser(){
   UsuarioDAO* udao = UsuarioDAO::getInstance();
-  QFETCH(QString, cpf);
-  QFETCH(QString, senha);
-  Usuario user(cpf.toStdString(), senha.toStdString());
-  qDebug("%s\t%s", cpf.toStdString().c_str(), senha.toStdString().c_str());
-  Usuario userDB = udao->get(cpf.toStdString());
-  qDebug("%s\t%s", userDB.getCPF().c_str(), userDB.getSenha().c_str());
+  Usuario user("326.688.371-38", "1234");
+  Usuario userDB = udao->get("326.688.371-38");
   QCOMPARE(Usuario::compararUsuarios(userDB, user), true);
 
 }
 
-
-void TesteUsuarioDAO::testeGetUser_data(){
-  QTest::addColumn<QString>("cpf");
-  QTest::addColumn<QString>("senha");
-  QTest::newRow("testUser") << "326.688.371-38" << "1234";
+void TesteUsuarioDAO::testeGetUserByProperty(){
+ UsuarioDAO* udao = UsuarioDAO::getInstance();
+ Usuario user("326.688.371-38", "");
+ Usuario userDB = udao->getByProperty("cpf", user.getCPF())[0];
+ QCOMPARE(Usuario::compararUsuarios(user, userDB), true);
 }
 
 void TesteUsuarioDAO::testeSaveUser(){

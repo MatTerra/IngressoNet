@@ -11,3 +11,4 @@ SUBDIRS += Cartao \
            MySQLHelper \
            UsuarioDAO \
            Partida \
+           EstadoDAO \

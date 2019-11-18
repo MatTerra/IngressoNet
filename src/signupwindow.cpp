@@ -33,7 +33,7 @@ void SignupWindow::setupValidators(){
 
 void SignupWindow::connectSignals(){
   connect(this, SIGNAL(validSignupData(Usuario&)), processor, SLOT(verifyExistingUser(Usuario&)));
-  connect(processor, SIGNAL(registrationError(QString)), this, SLOT(failedToRegister(QString)));
+  connect(processor, SIGNAL(registrationError(QString)), this, SLOT(onSignupError(QString)));
   connect(this,SIGNAL(validationNeeded(Usuario&, QString)), this, SLOT(validateData(Usuario&, QString)));
   connect(processor, SIGNAL(userRegistered()), this, SLOT(signupEnded()));
 }
@@ -76,7 +76,7 @@ void SignupWindow::setErrorMessage(QLineEdit* lEdit, QString message){
   lEdit->setStyleSheet("color:red; font:bold;");
 }
 
-void SignupWindow::failedToRegister(QString message){
+void SignupWindow::onSignupError(QString message){
   QMessageBox msgBox;
   msgBox.setText(message);
   msgBox.exec();

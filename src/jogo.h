@@ -1,5 +1,6 @@
 #ifndef JOGO_H
 #define JOGO_H
+
 #include <string>
 
 class Jogo{

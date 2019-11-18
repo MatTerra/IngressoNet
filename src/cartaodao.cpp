@@ -34,16 +34,22 @@ Cartao CartaoDAO::get(std::string numero){
 
 std::vector<Cartao> CartaoDAO::getByProperty(std::string property, std::string value){
   std::vector<Cartao> cartoes;
+  if(property.compare("numero") != 0 && property.compare("cpf") != 0 && property.compare("codigoDeSeguranca") != 0){
+    throw new PropertyNotFoundException();
+  }
   try {
     std::string query = "SELECT numero FROM cartao_t WHERE ("+property+" = '"+value+"');";
     MYSQL_RES* res = mysqlHelper->query(query);
-    MYSQL_ROW row = mysql_fetch_row(res);
-    do{
+    MYSQL_ROW row;
+    while((row= mysql_fetch_row(res))){
       unsigned long numero = strtoul(row[0], nullptr, 10);
 
       Cartao card(numero, 0);
       cartoes.push_back(card);
-    }while((row= mysql_fetch_row(res)));
+    }
+    if(cartoes.size()==0){
+      cartoes.push_back(Cartao(0,0));
+    }
     mysql_free_result(res);
     return cartoes;
   } catch (NotAbleToConnectException& e) {

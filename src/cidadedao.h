@@ -3,9 +3,11 @@
 
 #include "cidade.h"
 #include "genericdao.h"
+#include "estado.h"
 #include "mysqlhelper.h"
 #include "notabletoconnectexception.h"
 #include "propertynotfoundexception.h"
+#include "failedqueryexception.h"
 
 
 class CidadeDAO : public GenericDAO<Cidade>{

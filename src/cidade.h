@@ -3,12 +3,17 @@
 
 #include <string>
 
+#include "estado.h"
+
 
 class Cidade{
 
   public:
     /** Construtor Padrão */
-    Cidade(std::string nome, std::string estado):nome(nome), estado(estado){}
+    Cidade(std::string nome, Estado& estado): id(-1), nome(nome), estado(estado){}
+
+    /** Construtor Com Id */
+    Cidade(int id, std::string nome, Estado& estado):id(id), nome(nome), estado(estado){}
 
     /** Destrutor Padrão */
     virtual ~Cidade();
@@ -23,20 +28,31 @@ class Cidade{
      */
     void setNome (std::string nome) { this->nome = nome; }
 
+    /** Método de acesso a id.
+     * \return O valor atual de id
+     */
+    int getId() const { return id; }
+
+    /** Método de alteração de id.
+     * \param id Novo id da cidade
+     */
+    void setId (int id) { this->id = id; }
+
     /** Método de acesso a estado.
      * \return O valor atual de estado
      */
-    std::string getEstado() const { return estado; }
+    Estado getEstado() const { return estado; }
 
     /** Método de alteração de estado.
      * \param estado O novo valor de estado
      */
-    void setEstado(std::string estado) { this->estado = estado; }
+    void setEstado(Estado& estado) { this->estado = estado; }
 
 
   private:
     std::string nome; //!< Atributo de instância "nome". Representa o nome da cidade.
-    std::string estado; //!< Atributo de instância "estado". Representa o estado da cidade.
+    Estado estado; //!< Atributo de instância "estado". Representa o estado da cidade.
+    int id; //!< Atributo de instância "id". Representa o id da cidade.
 };
 
 #endif // CIDADE_H

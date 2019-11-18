@@ -8,13 +8,25 @@ class Session : public QObject{
   Q_OBJECT
 
 
-  private slots:
-    /**
-     * @brief authenticate
-     * @return
-     */
-    bool authenticate(QString, QString){return true;}
+  public:
+    ~Session();
 
+    static Session* getInstance();
+
+    static void setInstance(Usuario&);
+
+    Usuario getUsuario(){return usuario;}
+
+ signals:
+    void logoutDone();
+
+  private slots:
+    /** Slot de reação à finalização de login
+     * \param usuario Usuário logado
+     */
+    void loginDone(Usuario&);
+
+    void logout();
 
   private:
     /** Construtor privado para garantir a arquitetura Singleton da classe

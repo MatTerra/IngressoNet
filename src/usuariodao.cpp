@@ -34,18 +34,24 @@ Usuario UsuarioDAO::get(std::string cpf){
 
 std::vector<Usuario> UsuarioDAO::getByProperty(std::string property, std::string value){
   std::vector<Usuario> usuarios;
+  if(property.compare("cpf") != 0 && property.compare("senha") != 0){
+    throw new PropertyNotFoundException();
+  }
   try {
     std::string query = "SELECT cpf FROM usuario_t WHERE ("+property+" = '"+value+"');";
     MYSQL_RES* res = mysqlHelper->query(query);
-    MYSQL_ROW row = mysql_fetch_row(res);
+    MYSQL_ROW row;
+    while((row = mysql_fetch_row(res))){
 
-    do{
         std::string cpf = row[0];
 
         Usuario user(cpf, "");
 
         usuarios.push_back(user);
-    }while((row = mysql_fetch_row(res)));
+    }
+    if(usuarios.size()==0){
+      usuarios.push_back(Usuario("000.000.000-00", ""));
+    }
     mysql_free_result(res);
     return usuarios;
   } catch (NotAbleToConnectException& e) {

@@ -52,7 +52,7 @@ class SignupWindow : public QWidget
 
     /** Slot de reação à falha de cadastro. Mostra um diálogo com a mensagem de erro.
      */
-    void failedToRegister(QString);
+    void onSignupError(QString);
 
     /** Slot de finalização de cadastro
      */

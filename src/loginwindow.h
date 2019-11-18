@@ -5,9 +5,13 @@
 #include <QMainWindow>
 #include <QRegExp>
 #include <QRegExpValidator>
+#include <QMessageBox>
 
 #include "signupwindow.h"
 #include "usuario.h"
+#include "loginprocessor.h"
+#include "session.h"
+#include "dashboardwindow.h"
 
 namespace Ui {
   class LoginWindow;
@@ -56,15 +60,36 @@ class LoginWindow : public QWidget
     void validateData(QString, QString);
 
     /** Slot para inserção automática de '.' e '-' e ajuste do errorLabel
-     * @param arg1 Texto do input
+     * \param arg1 Texto do input
      */
     void on_cpfEdit_textEdited(const QString &arg1);
 
-
+    /** Slot para ajuste do errorLabel
+     * \param arg1
+     */
     void on_senhaEdit_textEdited(const QString &arg1);
 
-private:
+    /** Slot para reação ao erro de login
+     * \param message Mensagem descritiva do erro
+     */
+    void onLoginError(QString);
+
+    /** Slot para finalização de login.
+     */
+    void finishLogin(Usuario&);
+
+  private:
     Ui::LoginWindow *ui; //!< Atributo de instância "ui". Representa a interface gráfica da tela de login.
+    LoginProcessor* processor; //!< Atributo de instância "processor". Representa a instância da classe de processamento de login.
+    Session* session; //!< Atributo de instância "session". Representa a sessão de usuário.
+
+    /** Função de configuração dos pré-validadores dos dados de entrada.
+     */
+    void setupValidators();
+
+    /** Conecta os Sinais e Slots necessários.
+     */
+    void connectSignals();
 };
 
 #endif // LOGINWINDOW_H
