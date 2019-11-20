@@ -56,13 +56,6 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Cidade:</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="2">
       <widget class="QLabel" name="label_3">
        <property name="text">
@@ -70,16 +63,13 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="3">
+     <item row="1" column="2">
       <widget class="QComboBox" name="cidadeBox"/>
      </item>
      <item row="1" column="1">
-      <widget class="QDateTimeEdit" name="finalDateTime"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Final</string>
+        <string>Cidade:</string>
        </property>
       </widget>
      </item>

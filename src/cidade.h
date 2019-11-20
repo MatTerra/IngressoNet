@@ -10,9 +10,6 @@ class Cidade{
 
   public:
     /** Construtor Padrão */
-    Cidade(std::string nome, Estado& estado): id(-1), nome(nome), estado(estado){}
-
-    /** Construtor Com Id */
     Cidade(int id, std::string nome, Estado& estado):id(id), nome(nome), estado(estado){}
 
     /** Destrutor Padrão */

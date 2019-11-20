@@ -1,9 +1,17 @@
 #ifndef PARTIDADAO_H
 #define PARTIDADAO_H
 
+#include <QDateTime>
+
 #include "genericdao.h"
+#include "cidade.h"
+#include "estado.h"
+#include "usuario.h"
 #include "partida.h"
 #include "mysqlhelper.h"
+#include "notabletoconnectexception.h"
+#include "propertynotfoundexception.h"
+#include "failedqueryexception.h"
 
 
 class PartidaDAO : public GenericDAO<Partida>{

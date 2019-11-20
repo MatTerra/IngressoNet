@@ -1,18 +1,19 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 
+#include <QDateTime>
+
 #include "jogo.h"
 #include "cidade.h"
 #include "usuario.h"
-#include <time.h>
 
 
 class Partida{
 
   public:
     /** Construtor padrão */
-    Partida(Cidade& cidade, float preco, int disponibilidade, Usuario& responsavel, time_t data, Jogo jogo):
-    cidade(cidade), preco(preco), disponibilidade(disponibilidade), responsavel(responsavel), data(data), jogo(jogo){}
+    Partida(int codigo, Cidade& cidade, int preco, int disponibilidade, Usuario& responsavel, QDateTime data, Jogo jogo):
+    codigo(codigo), cidade(cidade), preco(preco), disponibilidade(disponibilidade), responsavel(responsavel), data(data), jogo(jogo){}
 
     /** Vende um ingresso da partida a um usuário.
      * \param usuario Usuario que esta comprando ingresso
@@ -33,12 +34,12 @@ class Partida{
     /** Método de acesso a preco.
     * \return O valor atual de preco
     */
-    float getPreco() const { return preco; }
+    int getPreco() const { return preco; }
 
     /** Método de alteração de preco.
     * \param preco Novo valor de preco
     */
-    void setPreco(float preco) { this->preco = preco; }
+    void setPreco(int preco) { this->preco = preco; }
 
     /** Método de acesso a disponibilidade.
     * \return O valor atual de disponibilidade
@@ -73,12 +74,12 @@ class Partida{
     /** Método de acesso a data
      * \return O valor atual de data
      */
-    time_t getData(){ return data; }
+    QDateTime getData(){ return data; }
 
     /** Método de alteração de data
      * \param data Novo valor de data
      */
-    void setData(time_t data) { this->data = data; }
+    void setData(QDateTime data) { this->data = data; }
 
     /** Método de acesso a jogo
      * \return Valor atual de jogo
@@ -94,10 +95,10 @@ class Partida{
   private:
     int codigo; //!< Atributo de instância "codigo". Representa o codigo da partida
     Cidade cidade; //!< Atributo de instância "cidade". Representa a cidade da partida
-    float preco; //!< Atributo de instância "preco". Representa o preco da partida
+    int preco; //!< Atributo de instância "preco". Representa o preco da partida
     int disponibilidade; //!< Atributo de instância "disponibilidade". Representa a disponibilidade de ingressos da partida
     Usuario responsavel; //!< Atributo de instância "responsavel". Representa o Usuário responsável pela partida
-    time_t data; //!< Atributo de instância "data". Representa a data de realização da partida
+    QDateTime data; //!< Atributo de instância "data". Representa a data de realização da partida
     Jogo jogo; //!< Atributo de instância "jogo". Representa o jogo desta partida
 };
 
