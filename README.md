@@ -14,13 +14,13 @@ O código foi desenvolvido utilizando o framework Qt 5, para instalá-lo no linu
 
 Baixe o instalador
 ```bash
-wget http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run
+wget http://download.qt.io/official_releases/qt/5.13/5.13.2/qt-opensource-linux-x64-5.13.2.run
 ```
 
 Forneça permissão para execução, execute o instalador e siga os passos para concluir a instalação
 ```bash
-chmod +x qt-opensource-linux-x64-5.7.0.run
-./qt-opensource-linux-x64-5.7.0.run
+chmod +x qt-opensource-linux-x64-5.13.2.run
+./qt-opensource-linux-x64-5.13.2.run
 ```
 
 Instale o compilador g++
