@@ -8,16 +8,35 @@ ManterPerfilWindow::ManterPerfilWindow(QWidget *parent) :
   ui->setupUi(this);
   session = Session::getInstance();
   processor = new ManterPerfilProcessor(session);
-  ui->title->setText(session->getUsuario().getCPF().c_str());
-  ui->numCardEdit->setText(std::to_string(session->getUsuario().getCartao().getNumero()).c_str());
-  ui->numSegEdit->setText(std::to_string(session->getUsuario().getCartao().getNumSeguranca()).c_str());
+  setupLayout();
+  setupValidators();
+  connectSignals();
+  }
+
+void ManterPerfilWindow::connectSignals(){
+  connect(this, SIGNAL(changeSenhaValidationNeeded(QString, QString, QString)), this, SLOT(validateChangeSenhaData(QString,QString,QString)));
+  connect(this, SIGNAL(changeSenhaValidData(QString)), processor, SLOT(changeSenhaRequested(QString)));
+  connect(processor, SIGNAL(maintenanceError(QString)), this, SLOT(onMaintenanceError(QString)));
+  connect(processor, SIGNAL(changeOperationDone(QString)), this, SLOT(onChangeDone(QString)));
+  connect(this, SIGNAL(changeCardValid(unsigned long, unsigned int)), processor, SLOT(changeCardRequested(unsigned long, unsigned int)));
+}
+
+void ManterPerfilWindow::setupValidators(){
   QRegExp reSenha("^[0-9]{6,}$");
   QRegExpValidator *validatorSenha = new QRegExpValidator(reSenha, this);
   ui->oldSenhaEdit->setValidator(validatorSenha);
   ui->senhaEdit->setValidator(validatorSenha);
   ui->confSenhaEdit->setValidator(validatorSenha);
-  connect(this, SIGNAL(changeSenhaValidationNeeded(QString, QString, QString)), this, SLOT(validateChangeSenhaData(QString,QString,QString)));
-  connect(this, SIGNAL(changeSenhaValidData(QString)), processor, SLOT(changeSenhaRequested(QString)));
+
+  QRegExp reCartao("^[0-9]{14,16}$");
+  QRegExpValidator *validatorCartao = new QRegExpValidator(reCartao, this);
+  ui->numCardEdit->setValidator(validatorCartao);
+}
+
+void ManterPerfilWindow::setupLayout(){
+  ui->title->setText(session->getUsuario().getCPF().c_str());
+  ui->numCardEdit->setText(std::to_string(session->getUsuario().getCartao().getNumero()).c_str());
+  ui->numSegEdit->setText(std::to_string(session->getUsuario().getCartao().getNumSeguranca()).c_str());
 }
 
 ManterPerfilWindow::~ManterPerfilWindow()
@@ -69,7 +88,7 @@ void ManterPerfilWindow::on_changeSenhaBtn_clicked(){
 }
 
 void ManterPerfilWindow::checkSenhaLen(){
-  if(ui->senhaEdit->text() < 6 | ui->oldSenhaEdit->text() < 6 | ui->confSenhaEdit->text() < 6){
+  if(ui->senhaEdit->text() < 6 || ui->oldSenhaEdit->text() < 6 || ui->confSenhaEdit->text() < 6){
     ui->changeSenhaBtn->setEnabled(false);
   } else {
     ui->changeSenhaBtn->setEnabled(true);
@@ -86,4 +105,21 @@ void ManterPerfilWindow::on_senhaEdit_textEdited(const QString &){
 
 void ManterPerfilWindow::on_confSenhaEdit_textEdited(const QString &){
     checkSenhaLen();
+}
+
+void ManterPerfilWindow::onMaintenanceError(QString message){
+  QMessageBox::warning(this, "Erro na operação", message);
+}
+
+void ManterPerfilWindow::onChangeDone(QString message){
+  QMessageBox::warning(this, "Alteração realizada", message);
+}
+
+void ManterPerfilWindow::on_salvarBtn_clicked(){
+  ui->salvarBtn->setEnabled(false);
+  if(Cartao::isValidNumber(ui->numCardEdit->text().toULong()) && ui->numSegEdit->text().toUInt() > 99 && ui->numSegEdit->text().toUInt() < 10000){
+    emit changeCardValid(ui->numCardEdit->text().toULong(), ui->numSegEdit->text().toUInt());
+  } else {
+    QMessageBox::warning(this, "Erro", "Número de cartão inválido!");
+  }
 }

@@ -111,6 +111,17 @@ void CartaoDAO::update(Cartao cartao, std::string field, std::string value){
   }
 }
 
+void CartaoDAO::updateByCpf(Cartao cartao, std::string cpf){
+  try {
+    std::string query = "UPDATE cartao_t SET numero = '"+std::to_string(cartao.getNumero())+"', codigoDeSeguranca = '"+std::to_string(cartao.getNumSeguranca())+"' WHERE (cpf = '"+cpf+"');";
+    mysql_free_result(mysqlHelper->query(query));
+  } catch (NotAbleToConnectException& e) {
+    throw e;
+  } catch (FailedQueryException& e){
+    throw e;
+  }
+}
+
 void CartaoDAO::remove(Cartao cartao){
   std::string query = "DELETE FROM cartao_t WHERE (numero = '"+std::to_string(cartao.getNumero())+"');";
   mysql_free_result(mysqlHelper->query(query));

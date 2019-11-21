@@ -50,6 +50,12 @@ class CartaoDAO : public GenericDAO<Cartao>{
      */
     void remove(Cartao) override;
 
+    /** Atualiza a instância do Cartão com o cpf indicado no banco de dados MySQL de acordo com os dados da instância fornecida
+     * \param cartao Cartao com os dados
+     * \param cpf CPF para localizar o cartão
+     */
+    void updateByCpf(Cartao, std::string);
+
     /** Retorna a instância da classe CartaoDAO(Singleton) ou, caso necessário, cria a instância.
      *  \return Instância válida atual
      */

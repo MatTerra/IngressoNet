@@ -17,6 +17,10 @@ class Session : public QObject{
 
     Usuario getUsuario(){return usuario;}
 
+    void updateSenhaUsuario(QString);
+
+    void updateCartaoUsuario(Cartao);
+
  signals:
     void logoutDone();
 

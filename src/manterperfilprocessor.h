@@ -5,6 +5,7 @@
 
 #include "session.h"
 #include "usuariodao.h"
+#include "cartaodao.h"
 
 class ManterPerfilProcessor:public QObject
 {
@@ -14,10 +15,12 @@ public:
   explicit ManterPerfilProcessor(Session* session, QObject * = nullptr):session(session){}
 
 signals:
-  void maintenanceFailed(QString);
+  void maintenanceError(QString);
+  void changeOperationDone(QString);
 
 public slots:
   void changeSenhaRequested(QString);
+  void changeCardRequested(unsigned long, unsigned int);
 
 private:
   Session* session;

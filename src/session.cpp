@@ -27,3 +27,11 @@ void Session::logout(){
 void Session::setInstance(Usuario& usuario){
   Session::instance = new Session(usuario);
 }
+
+void Session::updateSenhaUsuario(QString senha){
+  usuario.setSenha(senha.toStdString());
+}
+
+void Session::updateCartaoUsuario(Cartao c){
+  usuario.setCartao(c);
+}
