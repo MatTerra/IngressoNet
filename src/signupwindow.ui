@@ -123,6 +123,18 @@
      </property>
     </widget>
    </item>
+   <item>
+    <widget class="QPushButton" name="voltarBtn">
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Cancelar</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>

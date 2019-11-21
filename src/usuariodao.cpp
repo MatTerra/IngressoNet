@@ -22,7 +22,7 @@ Usuario UsuarioDAO::get(std::string cpf){
       return user;
     }
     else{
-      Usuario user("000.000.000-00", "");
+      Usuario user("", "");
       return user;
     }
   } catch (NotAbleToConnectException& e) {
@@ -50,7 +50,7 @@ std::vector<Usuario> UsuarioDAO::getByProperty(std::string property, std::string
         usuarios.push_back(user);
     }
     if(usuarios.size()==0){
-      usuarios.push_back(Usuario("000.000.000-00", ""));
+      usuarios.push_back(Usuario("", ""));
     }
     mysql_free_result(res);
     return usuarios;

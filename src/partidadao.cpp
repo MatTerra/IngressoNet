@@ -40,7 +40,7 @@ Partida PartidaDAO::get(std::string id){
     else{
       Estado e(-1,"");
       Cidade c(-1,"",e);
-      Usuario u("000.000.000-00","");
+      Usuario u("","");
       Jogo j(-1,"",Jogo::Tipo(0));
 
       Partida partida(-1,c,0,0,u,QDateTime(),j);
@@ -93,7 +93,7 @@ std::vector<Partida> PartidaDAO::getByProperty(std::string property, std::string
     if(partidas.size()==0){
         Estado e(-1,"");
         Cidade c(-1,"",e);
-        Usuario u("000.000.000-00","");
+        Usuario u("","");
         Jogo j(-1,"",Jogo::Tipo(0));
 
         Partida partida(-1,c,0,0,u,QDateTime(),j);
@@ -141,7 +141,7 @@ std::vector<Partida> PartidaDAO::getAll(){
     if(partidas.size()==0){
         Estado e(-1,"");
         Cidade c(-1,"",e);
-        Usuario u("000.000.000-00","");
+        Usuario u("","");
         Jogo j(-1,"",Jogo::Tipo(0));
 
         Partida partida(-1,c,0,0,u,QDateTime(),j);

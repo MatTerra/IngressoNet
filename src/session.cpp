@@ -4,7 +4,7 @@ Session* Session::instance = nullptr;
 
 Session* Session::getInstance(){
   if(Session::instance==nullptr){
-    return new Session(Usuario("000.000.000-00",""));
+    return new Session(Usuario("",""));
   }
   return Session::instance;
 }
@@ -14,13 +14,14 @@ Session::~Session(){
 }
 
 void Session::loginDone(Usuario& usuario){
-  if(Session::getInstance()->getUsuario().getCPF()=="000.000.000-00"){
+  if(Session::getInstance()->getUsuario().getCPF()==""){
+    qDebug(usuario.getCartao().getCPF().c_str());
     Session::setInstance(usuario);
   }
 }
 
 void Session::logout(){
-  Session::instance->usuario=Usuario("000.000.000-00","");
+  Session::instance->usuario=Usuario("","");
   emit logoutDone();
 }
 

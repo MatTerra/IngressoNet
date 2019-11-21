@@ -69,7 +69,7 @@ void TesteUsuarioDAO::testeRemoveUser(){
   UsuarioDAO* udao = UsuarioDAO::getInstance();
   Usuario u("081.556.680-88", "1234");
   udao->remove(u);
-  QCOMPARE(udao->get(u.getCPF()).getCPF().c_str(), "000.000.000-00");
+  QCOMPARE(udao->get(u.getCPF()).getCPF().c_str(), "");
 }
 
 

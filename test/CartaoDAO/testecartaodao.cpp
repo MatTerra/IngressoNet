@@ -32,34 +32,34 @@ void TesteCartaoDAO::initTestCase(){
 
 void TesteCartaoDAO::testeGetCartao(){
   CartaoDAO* cdao = CartaoDAO::getInstance();
-  Cartao c(5555666677778884, 1234);
-  QCOMPARE(Cartao::compararCartoes(cdao->get(std::to_string(c.getNumero())), c), true);
+  Cartao c(5555666677778884, 1234, "326.688.371-38");
+  QCOMPARE(Cartao::compararCartoes(cdao->get(c.getCPF()), c), true);
 }
 
 void TesteCartaoDAO::testeGetCartaoByProperty(){
   Cartao card(376449047333005, 123);
   CartaoDAO* cdao = CartaoDAO::getInstance();
-  Cartao c = cdao->getByProperty("cpf", "932.613.760-07")[0];
-  QCOMPARE(Cartao::compararCartoes(card, cdao->get(std::to_string(c.getNumero()))), true);
+  Cartao c = cdao->getByProperty("numero", std::to_string(card.getNumero()).c_str())[0];
+  QCOMPARE(Cartao::compararCartoes(card, cdao->get(c.getCPF())), true);
 }
 
 void TesteCartaoDAO::testeSaveCartao(){
-  Cartao c(36490102462661, 1234);
+  Cartao c(36490102462661, 1234, "000.000.000-01");
   CartaoDAO* cdao = CartaoDAO::getInstance();
   cdao->save(c);
-  QCOMPARE(Cartao::compararCartoes(cdao->get(std::to_string(c.getNumero())), c), true);
+  QCOMPARE(Cartao::compararCartoes(cdao->get(c.getCPF()), c), true);
 }
 
 void TesteCartaoDAO::testeUpdateCartao(){
-  Cartao c(36490102462661, 1234);
+  Cartao c(36490102462661, 1234, "000.000.000-01");
   CartaoDAO* cdao = CartaoDAO::getInstance();
-  cdao->update(c, "cpf", "000.000.000-01");
-  Cartao updated = cdao->getByProperty("cpf", "000.000.000-01")[0];
-  QCOMPARE(Cartao::compararCartoes(cdao->get(std::to_string(updated.getNumero())), c), true);
+  cdao->update(c, "cpf", "000.000.000-00");
+  Cartao updated = cdao->getByProperty("cpf", "000.000.000-00")[0];
+  QCOMPARE(Cartao::compararCartoes(cdao->get(updated.getCPF()), c), true);
 }
 
 void TesteCartaoDAO::testeRemoveCartao(){
-  Cartao c(36490102462661, 1234);
+  Cartao c(36490102462661, 1234, "000.000.000-00");
   CartaoDAO* cdao = CartaoDAO::getInstance();
   cdao->remove(c);
   QCOMPARE(cdao->get(std::to_string(c.getNumero())).getNumero(), 0);

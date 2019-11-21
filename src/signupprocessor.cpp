@@ -29,7 +29,6 @@ void SignupProcessor::signupUser(Usuario& usuario){
   try {
     udao->save(usuario);
     cdao->save(usuario.getCartao());
-    cdao->update(usuario.getCartao(), "cpf", usuario.getCPF());
     emit userRegistered();
   }  catch (NotAbleToConnectException&) {
     emit registrationError("Não foi possível realizar o cadastro no momento. Tente novamente mais tarde.\nErro 01 - No Connection to DB");

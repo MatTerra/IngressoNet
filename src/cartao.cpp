@@ -1,7 +1,13 @@
 #include "cartao.h"
+Cartao::Cartao(unsigned long numero, unsigned int numSeguranca, std::string cpf){
+  this->cpf=cpf;
+  this->numero = numero;
+  this->numSeguranca = numSeguranca;
+}
 
 Cartao::Cartao(unsigned long numero, unsigned int numSeguranca){
   //ctor
+  this->cpf="000.000.000-01";
   this->numero = numero;
   this->numSeguranca = numSeguranca;
 }
@@ -50,6 +56,7 @@ bool Cartao::cobrar(float value, unsigned int numSeguranca){
 }
 
 bool Cartao::compararCartoes(Cartao a, Cartao b){
+  qDebug("%lu", a.getNumero());
   if(a.getNumero() != b.getNumero()){
       return false;
   }

@@ -81,9 +81,7 @@ void SignupWindow::onSignupError(QString message){
 }
 
 void SignupWindow::signupEnded(){
-  QMessageBox msgBox;
-  msgBox.setText("Cadastro efetuado com sucesso!");
-  msgBox.exec();
+  QMessageBox::warning(this, "Cadastro efetuado", "Cadastro efetuado com sucesso!");
   QMainWindow* mw = dynamic_cast<QMainWindow *>(parent());
   mw->setCentralWidget(new LoginWindow(mw));
   this->destroy();
@@ -97,7 +95,7 @@ void SignupWindow::on_signupBtn_clicked(){
   QString rSenha = ui->rSenhaEdit->text();
   QString numSec = ui->numSecEdit->text();
 
-  Cartao cartao(cardNumber.toULong(), numSec.toUInt());
+  Cartao cartao(cardNumber.toULong(), numSec.toUInt(), cpf.toStdString());
   Usuario user(cpf.toStdString(),senha.toStdString(),cartao);
   emit validationNeeded(user, rSenha);
 }
@@ -137,4 +135,10 @@ void SignupWindow::on_senhaEdit_textEdited(const QString&){
 
 void SignupWindow::on_numSecEdit_textEdited(const QString&){
   validate(ui->numSecEdit, "");
+}
+
+void SignupWindow::on_voltarBtn_clicked(){
+  QMainWindow* mw = dynamic_cast<QMainWindow *>(parent());
+  mw->setCentralWidget(new LoginWindow(mw));
+  this->destroy();
 }

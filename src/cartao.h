@@ -8,6 +8,9 @@ class Cartao{
 
   public:
     /** Construtor padrão */
+    Cartao(unsigned long, unsigned int, std::string);
+
+    /** Construtor simplificado */
     Cartao(unsigned long, unsigned int);
 
     /** Destrutor padrão */
@@ -51,10 +54,21 @@ class Cartao{
      */
     static bool compararCartoes(Cartao, Cartao);
 
+    /** Método de acesso a cpf.
+    * \return O valor atual de cpf
+    */
+    std::string getCPF() const { return cpf; }
+
+    /** Método de alteração de cpf.
+    * \param cpf Novo valor do cpf
+    */
+    void setCartao(std::string cpf){this->cpf = cpf;}
+
 
   private:
     unsigned long numero; //!< Atributo de instância "numero". Representa o numero do cartão.
     unsigned int numSeguranca; //!< Atributo de instância "numSeguranca". Representa o código de Segurança do cartão.
+    std::string cpf; //!< Atributo de instância "cpf". Representa o cpf do dono
 };
 
 #endif // CARTAO_H

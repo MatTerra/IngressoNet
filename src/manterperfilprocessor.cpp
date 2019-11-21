@@ -15,10 +15,11 @@ void ManterPerfilProcessor::changeSenhaRequested(QString senha){
 }
 
 void ManterPerfilProcessor::changeCardRequested(unsigned long numero, unsigned int codigoDeSeguranca){
-  Cartao c(numero, codigoDeSeguranca);
+  Cartao c(numero, codigoDeSeguranca, session->getUsuario().getCPF());
   try {
     CartaoDAO* cdao = CartaoDAO::getInstance();
-    cdao->updateByCpf(c, session->getUsuario().getCPF());
+    cdao->update(c, "numero", std::to_string(c.getNumero()));
+    cdao->update(c, "codigoDeSeguranca",std::to_string(c.getNumSeguranca()));
     session->updateCartaoUsuario(c);
     emit changeOperationDone("Cartão alterado com sucesso!");
   } catch (NotAbleToConnectException&) {

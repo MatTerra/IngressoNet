@@ -8,7 +8,7 @@ void LoginProcessor::loginUser(QString cpf, QString senha){
   try {
     UsuarioDAO* udao = UsuarioDAO::getInstance();
     Usuario user = udao->get(cpf.toStdString());
-    if(user.getCPF().compare("000.000.000-00")==0){
+    if(user.getCPF().compare("")==0){
       emit loginError("Usuário não cadastrado");
       return;
     }
@@ -17,8 +17,7 @@ void LoginProcessor::loginUser(QString cpf, QString senha){
       return;
     }
     CartaoDAO* cdao = CartaoDAO::getInstance();
-    Cartao c = cdao->getByProperty("cpf",user.getCPF())[0];
-    c = cdao->get(std::to_string(c.getNumero()));
+    Cartao c = cdao->get(user.getCPF());
     user.setCartao(c);
     emit loginSuccessful(user);
   }  catch (NotAbleToConnectException&) {

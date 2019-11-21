@@ -88,7 +88,9 @@ class SignupWindow : public QWidget
     void on_numSecEdit_textEdited(const QString &arg1);
 
 
-  private:
+    void on_voltarBtn_clicked();
+
+private:
     Ui::SignupWindow *ui; //!< Atributo de instância "ui". Representa a interface gráfica da tela de cadastro.
     SignupProcessor* processor; //!< Atributo de instância "processor". Representa a instância da classe de processamento de cadastro.
 
