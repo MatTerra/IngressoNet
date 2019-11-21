@@ -19,6 +19,9 @@ void ManterPerfilWindow::connectSignals(){
   connect(processor, SIGNAL(maintenanceError(QString)), this, SLOT(onMaintenanceError(QString)));
   connect(processor, SIGNAL(changeOperationDone(QString)), this, SLOT(onChangeDone(QString)));
   connect(this, SIGNAL(changeCardValid(unsigned long, unsigned int)), processor, SLOT(changeCardRequested(unsigned long, unsigned int)));
+  connect(this, SIGNAL(deleteRequested()), processor, SLOT(onDeleteRequested()));
+  connect(processor, SIGNAL(deleteDone()), session, SLOT(logout()));
+  connect(session, SIGNAL(logoutDone()), this, SLOT(onDeleteDone()));
 }
 
 void ManterPerfilWindow::setupValidators(){
@@ -122,4 +125,20 @@ void ManterPerfilWindow::on_salvarBtn_clicked(){
   } else {
     QMessageBox::warning(this, "Erro", "Número de cartão inválido!");
   }
+}
+
+void ManterPerfilWindow::on_deleteBtn_clicked(){
+  QMessageBox::StandardButton reply;
+  reply = QMessageBox::question(this, "Confirmação", "Sua conta será deletada e todos os seus ingressos serão perdidos.\nTem certeza que deseja continuar?.",
+                                QMessageBox::Yes|QMessageBox::Cancel, QMessageBox::Cancel);
+  if (reply == QMessageBox::Yes) {
+    emit deleteRequested();
+  }
+}
+
+void ManterPerfilWindow::onDeleteDone(){
+  QMessageBox::warning(this, "Perfil apagado", "Seu perfil foi apagado com sucesso!");
+  QMainWindow* mw = dynamic_cast<QMainWindow *>(parent());
+  mw->setCentralWidget(new LoginWindow(mw));
+  this->destroy();
 }

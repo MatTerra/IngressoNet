@@ -3,10 +3,12 @@
 
 #include <QWidget>
 #include <QMainWindow>
+#include <QMessageBox>
 
 #include "session.h"
 #include "dashboardwindow.h"
 #include "manterperfilprocessor.h"
+#include "loginwindow.h"
 
 namespace Ui {
   class ManterPerfilWindow;
@@ -28,6 +30,8 @@ signals:
   void maintenanceError(QString);
 
   void changeCardValid(unsigned long, unsigned int);
+
+  void deleteRequested();
 
 private slots:
   void validateChangeSenhaData(QString,QString,QString);
@@ -51,6 +55,10 @@ private slots:
   void onChangeDone(QString);
 
   void on_salvarBtn_clicked();
+
+  void on_deleteBtn_clicked();
+
+  void onDeleteDone();
 
 private:
   Ui::ManterPerfilWindow *ui;

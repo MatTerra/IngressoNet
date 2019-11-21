@@ -17,10 +17,12 @@ public:
 signals:
   void maintenanceError(QString);
   void changeOperationDone(QString);
+  void deleteDone();
 
 public slots:
   void changeSenhaRequested(QString);
   void changeCardRequested(unsigned long, unsigned int);
+  void onDeleteRequested();
 
 private:
   Session* session;

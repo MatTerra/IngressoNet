@@ -15,7 +15,6 @@ Session::~Session(){
 
 void Session::loginDone(Usuario& usuario){
   if(Session::getInstance()->getUsuario().getCPF()==""){
-    qDebug(usuario.getCartao().getCPF().c_str());
     Session::setInstance(usuario);
   }
 }

@@ -29,3 +29,17 @@ void ManterPerfilProcessor::changeCardRequested(unsigned long numero, unsigned i
   }
 }
 
+void ManterPerfilProcessor::onDeleteRequested(){
+ try{
+    UsuarioDAO* udao = UsuarioDAO::getInstance();
+    CartaoDAO* cdao = CartaoDAO::getInstance();
+    cdao->remove(session->getUsuario().getCartao());
+    udao->remove(session->getUsuario());
+    emit deleteDone();
+  } catch (NotAbleToConnectException&) {
+    emit maintenanceError("Nao foi possível executar a alteração no momento. Tente novamente mais tarde.\nErro 01 - NotAbleToConnect");
+  } catch (FailedQueryException&) {
+    emit maintenanceError("Nao foi possível executar a alteração no momento. Tente novamente mais tarde.\nErro 02 - FailedQuery");
+  }
+}
+
