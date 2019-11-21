@@ -13,8 +13,6 @@ LoginWindow::LoginWindow(QWidget *parent) :
 
   setupValidators();
   connectSignals();
-
-
 }
 
 LoginWindow::~LoginWindow()
@@ -50,6 +48,7 @@ void LoginWindow::validateData(QString cpf, QString senha){
 }
 
 void LoginWindow::on_cpfEdit_textEdited(const QString &arg1){
+  controlButtonEnablement(arg1.length(), ui->senhaEdit->text().length());
   if(ui->errorLabel->text() == "CPF inválido!"){
     ui->errorLabel->setText("");
   }
@@ -62,20 +61,22 @@ void LoginWindow::on_cpfEdit_textEdited(const QString &arg1){
 }
 
 void LoginWindow::on_senhaEdit_textEdited(const QString &arg1){
-  if(arg1.length()<6){
-      ui->loginBtn->setEnabled(false);
-  } else {
-      ui->loginBtn->setEnabled(true);
-  }
+  controlButtonEnablement(ui->cpfEdit->text().length(), arg1.length());
   if(ui->errorLabel->text() == "Senha inválida!"){
     ui->errorLabel->setText("");
   }
 }
 
+void LoginWindow::controlButtonEnablement(int cpfLen, int senhaLen){
+  if(senhaLen<6 || cpfLen!=14){
+      ui->loginBtn->setEnabled(false);
+  } else {
+      ui->loginBtn->setEnabled(true);
+  }
+}
+
 void LoginWindow::onLoginError(QString message){
-  QMessageBox msgBox;
-  msgBox.setText(message);
-  msgBox.exec();
+  QMessageBox::warning(this, "Erro no Login", message);
 }
 
 void LoginWindow::finishLogin(Usuario&){

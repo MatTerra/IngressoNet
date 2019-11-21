@@ -77,9 +77,7 @@ void SignupWindow::setErrorMessage(QLineEdit* lEdit, QString message){
 }
 
 void SignupWindow::onSignupError(QString message){
-  QMessageBox msgBox;
-  msgBox.setText(message);
-  msgBox.exec();
+  QMessageBox::warning(this, "Erro no Cadastro", message);
 }
 
 void SignupWindow::signupEnded(){

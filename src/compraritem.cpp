@@ -1,0 +1,2 @@
+#include "compraritem.h"
+

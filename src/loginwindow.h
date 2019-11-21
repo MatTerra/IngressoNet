@@ -90,6 +90,12 @@ class LoginWindow : public QWidget
     /** Conecta os Sinais e Slots necessários.
      */
     void connectSignals();
+
+    /** Verifica se cpf e senha estão preenchidos e ativa ou desativa o botão de login
+     * \param cpfLen Comprimento do cpf inserido
+     * \param senhaLen Comprimento da senha inserida
+     */
+    void controlButtonEnablement(int, int);
 };
 
 #endif // LOGINWINDOW_H
