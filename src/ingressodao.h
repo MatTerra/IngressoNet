@@ -4,6 +4,8 @@
 #include "mysqlhelper.h"
 #include "genericdao.h"
 #include "ingresso.h"
+#include "usuariodao.h"
+#include "partidadao.h"
 #include "notabletoconnectexception.h"
 #include "propertynotfoundexception.h"
 
