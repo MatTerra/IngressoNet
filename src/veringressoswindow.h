@@ -6,6 +6,8 @@
 
 #include "session.h"
 #include "dashboardwindow.h"
+#include "ingresso.h"
+#include "ingressodao.h"
 
 namespace Ui {
   class VerIngressosWindow;
@@ -27,6 +29,8 @@ private:
   Session* session;
   QStandardItemModel* model;
   void setupTable();
+  void fillTable();
+  QList<QStandardItem*> createRow(Ingresso&);
 };
 
 #endif // VERINGRESSOSWINDOW_H

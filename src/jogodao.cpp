@@ -88,7 +88,8 @@ std::vector<Jogo> JogoDAO::getAll(){
 
 void JogoDAO::save(Jogo jogo){
   try {
-    std::string query = "INSERT INTO jogo_t (idJogo, idTipo, nomeJogo) VALUES ('"+std::to_string(jogo.getCodigo())+"', '"+std::to_string(jogo.getTipo())+"', '"+jogo.getNome()+"');";
+    std::string query = "INSERT INTO jogo_t (idTipo, nomeJogo) VALUES ('"+std::to_string(jogo.getTipo())+"', '"+jogo.getNome()+"');";
+    qDebug("%s", query.c_str());
     mysql_free_result(mysqlHelper->query(query));
   }  catch (NotAbleToConnectException& e) {
     throw e;

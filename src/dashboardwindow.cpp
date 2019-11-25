@@ -46,3 +46,9 @@ void DashboardWindow::on_configButton_clicked(){
   mw->setCentralWidget(new ManterPerfilWindow(mw));
   this->destroy();
 }
+
+void DashboardWindow::on_cadastrarPartidaBtn_clicked(){
+  QMainWindow* mw = dynamic_cast<QMainWindow *>(parent());
+  mw->setCentralWidget(new CadastrarPartidaWindow(mw));
+  this->destroy();
+}

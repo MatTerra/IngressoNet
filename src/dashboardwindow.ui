@@ -90,6 +90,13 @@
     </widget>
    </item>
    <item>
+    <widget class="QPushButton" name="cadastrarPartidaBtn">
+     <property name="text">
+      <string>Cadastrar Nova Partida</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>

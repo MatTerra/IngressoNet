@@ -9,6 +9,7 @@
 #include "searchjogowindow.h"
 #include "veringressoswindow.h"
 #include "manterperfilwindow.h"
+#include "cadastrarpartidawindow.h"
 
 namespace Ui {
   class DashboardWindow;
@@ -41,6 +42,8 @@ private slots:
   void on_verIngressosBtn_clicked();
 
   void on_configButton_clicked();
+
+  void on_cadastrarPartidaBtn_clicked();
 
 private:
   Ui::DashboardWindow *ui; //!< Atributo de instância "ui". Representa a interface gráfica da tela de dashboard.

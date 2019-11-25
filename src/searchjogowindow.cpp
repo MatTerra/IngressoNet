@@ -126,7 +126,9 @@ void SearchJogoWindow::setupLayout(){
 
 QList<QStandardItem*> SearchJogoWindow::createRow(Partida& partida){
   QList<QStandardItem*> columns;
-
+  if(partida.getCodigo() == -1){
+      return columns;
+  }
   columns << new QStandardItem(std::to_string(partida.getCodigo()).c_str());
   columns << new QStandardItem(partida.getJogo().getNome().c_str());
   columns << new QStandardItem(partida.getData().toString("dd/MM/yyyy"));

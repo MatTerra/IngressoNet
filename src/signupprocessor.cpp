@@ -23,10 +23,9 @@ void SignupProcessor::verifyExistingUser(Usuario& usuario){
 }
 
 void SignupProcessor::signupUser(Usuario& usuario){
-  qDebug("Registration Started");
-  UsuarioDAO* udao = UsuarioDAO::getInstance();
-  CartaoDAO* cdao = CartaoDAO::getInstance();
   try {
+    UsuarioDAO* udao = UsuarioDAO::getInstance();
+    CartaoDAO* cdao = CartaoDAO::getInstance();
     udao->save(usuario);
     cdao->save(usuario.getCartao());
     emit userRegistered();

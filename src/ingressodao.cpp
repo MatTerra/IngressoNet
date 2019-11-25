@@ -108,7 +108,8 @@ std::vector<Ingresso> IngressoDAO::getAll(){
 
 void IngressoDAO::save(Ingresso ingresso){
 	try {
-		std::string query = "INSERT INTO ingresso_t (idIngresso, cpf, idPartida) VALUES ('"+std::to_string(ingresso.getCodigo())+"', '"+ingresso.getUsuario().getCPF()+"', '"+std::to_string(ingresso.getPartida().getCodigo())+"';";
+		std::string query = "INSERT INTO ingresso_t (cpf, idPartida) VALUES ('"+ingresso.getUsuario().getCPF()+"', '"+std::to_string(ingresso.getPartida().getCodigo())+"');";
+		qDebug("%s", query.c_str());
 		mysql_free_result(mysqlHelper->query(query));
 	} catch (NotAbleToConnectException& e) {
 		throw e;
