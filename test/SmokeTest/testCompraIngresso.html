@@ -1,0 +1,172 @@
+<html>
+<head>
+    <title>Test case p&aacute;gina de compras</title>
+    <style>
+    <!--
+        H5 { text-decoration: underline }
+    -->
+    </style>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+    
+    <!-- add test title here - Second -->
+    <H1 ALIGN=CENTER><U>Test Name: <B>Pesquisar</B></U></H1>    
+    <!-- ++++++++++++++++++++++++++++++++ -->        
+    <HR>
+    <TABLE WIDTH=100% BORDER=1 CELLSPACING=0>
+      <COL WIDTH=30%>
+      <COL WIDTH=40%>
+      <COL WIDTH=30%>
+           <TR>
+               <TD>
+            <!-- Your name should be written here -->
+                <P><FONT STYLE="font-size: 8pt"><B>Document Owner:</B><BR></FONT><SPAN STYLE="font-weight: medium">Bruno Murta, Mateus Berardo e Thiago Cardoso</SPAN></P>
+            </TD>
+               <TD>
+            <!-- Date has to be written in form like this: 10. Nov. 2005 -->
+                <P><FONT STYLE="font-size: 8pt"><B>Last Document Change:</B><BR></FONT><SPAN STYLE="font-weight: medium">25. 11. 2019</SPAN></P>
+            </TD>
+               <TD>
+            <!-- Status of this document can be: Preliminary, Standard, Obsolete -->
+                <P><FONT STYLE="font-size: 8pt"><B>Status of Document:</B><BR></FONT><SPAN STYLE="font-weight: medium">Standard</SPAN></P>
+            </TD>
+         </TR>
+   </TABLE>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <!-- add test purpose here -->
+    <H3>Test purpose</H3>
+    <P>Verificar o funcionamento da fun&ccedil;&atilde;o de compras.</P>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>    
+    <!-- add major known issues here -->
+    <h3>Known issues:</h3>
+    <ul>
+        <li>O bot&atilde;o de decrementar n&atilde;o funciona.
+    </ul>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <hr>
+    <!-- add Preconditions here -->
+    <H3>Preconditions of the test:</H3>
+    <UL>
+        <LI>O banco de dados deve estar rodando com o IP local 172.18.0.2 ou o IP do banco deve ser atualizado na classe MySQLHelper.
+        <LI>Rodar o programa e fazer login com o usu&aacute;rio 052.327.931-01 senha 123456.
+        <LI>Clicar em "Pesquisar jogos" para abrir a p&aacute;gina de pesquisa.
+        <LI>Selecione "DF" no campo "Estado".
+        <LI>Selecione "Todos" no campo "Cidade".
+        <LI>Preencha a "01/11/2019" no campo "In&iacute;cio".
+        <LI>Clique em "Pesquisar".
+        <LI>Clique no bot&atilde;o "Comprar" em algum jogo dispon&iacute;vel.
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test documents here if needed -->
+    <H3>Test documents</H3>
+    <UL>
+        <LI> Nenhum documento &eacute; necess&aacute;rio.
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test cases here -->
+    <H3>Test cases</H3>
+  
+    <!-- Botao "+" -->
+    <H5>Test case do bot&atilde;o "+"</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "+".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Incrementar quantidade de ingressos.
+    </UL>
+
+    <!-- Botao "-" -->
+    <H5>Test case do bot&atilde;o "-"</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "-".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Decrementar quantidade de ingressos.
+    </UL>
+
+    <!-- Botao "Cancelar" -->
+    <H5>Test case do bot&atilde;o "Cancelar"</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "Cancelar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Uma janela de aviso aparecer&aacute; com a mensagem "Sua compra ser&aacute; cancelada e você voltar&aacute; para a tela de Pesquisa.".
+    </UL>
+
+    <!-- Botao "Voltar" -->
+    <H5>Test case do bot&atilde;o "Voltar"</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "Voltar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Uma janela de aviso aparecer&aacute; com a mensagem "Sua compra ser&aacute; cancelada e você voltar&aacute; para a tela de Pesquisa.".
+    </UL>
+
+    <!-- Botao "Cancel" da tela de avisos -->
+    <H5>Test case do bot&atilde;o "Cancel" da tela de avisos</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "Cancelar".
+        <LI>Clicar no bot&atilde;o "Cancel" da janela de avisos.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Fecha a janela de avisos e volta &agrave; p&aacute;gina de compras.
+    </UL>
+
+    <!-- Botao "x" da tela de avisos -->
+    <H5>Test case do bot&atilde;o "x" da tela de avisos</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "Cancelar".
+        <LI>Clicar no bot&atilde;o "x" da janela de avisos.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Fecha a janela de avisos e volta &agrave; p&aacute;gina de compras.
+    </UL>
+
+    <!-- Botao "Ok" da tela de avisos -->
+    <H5>Test case do bot&atilde;o "Ok" da tela de avisos</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "Cancelar".
+        <LI>Clicar no bot&atilde;o "Ok" da janela de avisos.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Volta &agrave; p&aacute;gina de pesquisa.
+    </UL>
+
+    <!-- Botao "Comprar"-->
+    <H5>Test case do bot&atilde;o "Ok" da tela de avisos</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher quantidade com 1.
+        <LI>Clicar no bot&atilde;o "Comprar".
+        <LI>Confirmar a compra no di&aacute;logo aberto.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O programa abre a p&aacute;gina de visualiza&ccedil;&atilde;o de ingressos. O novo ingresso deve estar dispon&iacute;vel.
+    </UL>
+
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <hr><!-- add link to specification here -->
+    <h3>References:</h3>
+    <ul>
+    </ul>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+</body>
+</html>

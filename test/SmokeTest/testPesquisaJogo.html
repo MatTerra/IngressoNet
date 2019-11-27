@@ -1,0 +1,180 @@
+<html>
+<head>
+    <title>Test case p&aacute;gina de pesquisa</title>
+    <style>
+    <!--
+        H5 { text-decoration: underline }
+    -->
+    </style>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+    
+    <!-- add test title here - Second -->
+    <H1 ALIGN=CENTER><U>Test Name: <B>Pesquisa por Partida</B></U></H1>    
+    <!-- ++++++++++++++++++++++++++++++++ -->        
+    <HR>
+    <TABLE WIDTH=100% BORDER=1 CELLSPACING=0>
+      <COL WIDTH=30%>
+      <COL WIDTH=40%>
+      <COL WIDTH=30%>
+           <TR>
+               <TD>
+            <!-- Your name should be written here -->
+                <P><FONT STYLE="font-size: 8pt"><B>Document Owner:</B><BR></FONT><SPAN STYLE="font-weight: medium">Bruno Murta, Mateus Berardo e Thiago Cardoso</SPAN></P>
+            </TD>
+               <TD>
+            <!-- Date has to be written in form like this: 10. Nov. 2005 -->
+                <P><FONT STYLE="font-size: 8pt"><B>Last Document Change:</B><BR></FONT><SPAN STYLE="font-weight: medium">26. 11. 2019</SPAN></P>
+            </TD>
+               <TD>
+            <!-- Status of this document can be: Preliminary, Standard, Obsolete -->
+                <P><FONT STYLE="font-size: 8pt"><B>Status of Document:</B><BR></FONT><SPAN STYLE="font-weight: medium">Standard</SPAN></P>
+            </TD>
+         </TR>
+   </TABLE>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <!-- add test purpose here -->
+    <H3>Test purpose</H3>
+    <P>Verificar o funcionamento da fun&ccedil;&atilde;o de pesquisa.</P>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>    
+    <!-- add major known issues here -->
+    <h3>Known issues:</h3>
+    <ul>
+        <li>N&atilde;o existem problemas conhecidos
+    </ul>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <hr>
+    <!-- add Preconditions here -->
+    <H3>Preconditions of the test:</H3>
+    <UL>
+        <LI>O banco de dados deve estar rodando com o IP local 172.18.0.2 ou o IP do banco deve ser atualizado na classe MySQLHelper.
+        <LI>Rodar o programa e fazer login com o usu&aacute;rio 052.327.931-01 senha 123456.
+        <LI>Clicar em "Pesquisar jogos" para abrir a p&aacute;gina de pesquisa.
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test documents here if needed -->
+    <H3>Test documents</H3>
+    <UL>
+        <LI> Nenhum documento é necess&aacute;rio.
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test cases here -->
+    <H3>Test cases</H3>
+  
+    <!-- Pesquisar todos  a partir de hoje -->
+    <H5>Test case todas as partidas a partir de hoje</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clique em pesquisar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Lista de jogos ap&oacute;s a data atual. ID's 6 e 7.
+    </UL>
+
+    <!-- Pesquisar todos  a partir de hoje -->
+    <H5>Test case todas as partidas a partir de 1/11/2019</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Altere a data para 1/11/2019 00:00.
+        <LI>Clique em pesquisar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Lista de jogos ap&oacute;s a data 1/11/2019. ID's 3 a 7.
+    </UL>
+    
+    <!-- Selecao de estado -->
+    <H5>Test case op&ccedil;&atilde;o de cidades para estados diferentes de DF</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Abra a lista suspensa de estados clicando no campo "Estado".
+        <LI>Selecione qualquer op&ccedil;&atilde;o.
+        <LI>Clique para espandir a lista de "Cidade".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Op&ccedil;&atilde;o "Todos" e a capital do estado devem aparecer. No DF h&aacute; a Ceil&acirc;ndia al&eacute;m da capital.
+    </UL>
+    
+    <!-- Pesquisa de jogos -->
+    <H5>Test case pesquisa de jogos por estado</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>        
+        <LI>Altere a data para 1/11/2019 00:00.
+        <LI>Selecione "DF" no campo "Estado".
+        <LI>Selecione "Todos" no campo "Cidade".
+        <LI>Clique em "Pesquisar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Lista de jogos ap&oacute;s a data 1/11/2019 no DF devem aparecer. ID's 3 e 4.
+    </UL>
+
+    <!-- pesquisa de jogos por cidade e estado -->
+    <H5>Test case pesquisa de jogos por cidade e estado</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>        
+        <LI>Altere a data para 1/11/2019 00:00.
+        <LI>Selecione "DF" no campo "Estado".
+        <LI>Selecione "Bras&iacute;lia" no campo "Cidade".
+        <LI>Clique em "Pesquisar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Lista de jogos ap&oacute;s a data 1/11/2019 no DF devem aparecer. ID 3.
+    </UL>
+
+    <!-- pesquisa de jogos por cidade e estado -->
+    <H5>Test case pesquisa de jogos por cidade</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>        
+        <LI>Altere a data para 1/11/2019 00:00.
+        <LI>Selecione "Todos" no campo "Estado".
+        <LI>Selecione "Ceil&acirc;ndia" no campo "Cidade".
+        <LI>Clique em "Pesquisar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Lista de jogos ap&oacute;s a data 1/11/2019 em Ceil&acirc;ndia devem aparecer. ID 4.
+    </UL>
+
+    <!-- Bot&atilde;o voltar -->
+    <H5>Test case "Voltar"</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clique no bot&atilde;o "Voltar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Volta para a janela "Dashboard".
+    </UL>
+
+    <!-- Bot&atilde;o comprar -->
+    <H5>Test case para "Comprar"</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Selecione "DF" no campo "Estado".
+        <LI>Selecione "Todos" no campo "Cidade".
+        <LI>Preencha a data "01/11/2019" no campo "In&iacute;cio".
+        <LI>Clique em "Pesquisar".
+        <LI>Clique no bot&atilde;o "Indispon&iacute;vel" em algum jogo.
+        <LI>Clique no bot&atilde;o "Comprar" em algum jogo dispon&iacute;vel.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O bot&atilde;o "Indispon&iacute;vel" n&atilde;o deve reagir.
+        <LI>Ir para a janela de compras ap&oacute;s clicar em comprar.
+    </UL>
+
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <hr><!-- add link to specification here -->
+    <h3>References:</h3>
+    <ul>
+    </ul>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+</body>
+</html>

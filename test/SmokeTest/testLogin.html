@@ -1,0 +1,166 @@
+<html>
+<head>
+    <title>Test case specification document</title>
+    <style>
+    <!--
+        H5 { text-decoration: underline }
+    -->
+    </style>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+    
+    <!-- add test title here - Second -->
+    <H1 ALIGN=CENTER><U>Test Name: <B>Login no Sistema</B></U></H1>    
+    <!-- ++++++++++++++++++++++++++++++++ -->        
+    <HR>
+    <TABLE WIDTH=100% BORDER=1 CELLSPACING=0>
+      <COL WIDTH=30%>
+      <COL WIDTH=40%>
+      <COL WIDTH=30%>
+		   <TR>
+			   <TD>
+            <!-- Your name should be written here -->
+				<P><FONT STYLE="font-size: 8pt"><B>Document Owner:</B><BR></FONT><SPAN STYLE="font-weight: medium">Bruno Murta, Mateus Berardo, Thiago Cardoso</SPAN></P>
+            </TD>
+			   <TD>
+            <!-- Date has to be written in form like this: 10. Nov. 2005 -->
+				<P><FONT STYLE="font-size: 8pt"><B>Last Document Change:</B><BR></FONT><SPAN STYLE="font-weight: medium">26. 11. 2019</SPAN></P>
+            </TD>
+			   <TD>
+            <!-- Status of this document can be: Preliminary, Standard, Obsolete -->
+				<P><FONT STYLE="font-size: 8pt"><B>Status of Document:</B><BR></FONT><SPAN STYLE="font-weight: medium">Standard</SPAN></P>
+            </TD>
+         </TR>
+   </TABLE>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <!-- add test purpose here -->
+    <H3>Test purpose</H3>
+    <P>Verificar o funcionamento da p&aacute;gina de login.</P>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>    
+    <!-- add major known issues here -->
+    <h3>Known issues:</h3>
+    <ul>
+        <li>N&atilde;o existem problemas conhecidos
+    </ul>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <hr>
+    <!-- add Preconditions here -->
+    <H3>Preconditions of the test:</H3>
+    <UL>
+        <LI>O banco de dados deve estar configurado com o IP local 172.18.0.2 ou o IP do banco deve ser atualizado na classe MySQLHelper.       
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test documents here if needed -->
+    <H3>Test documents</H3>
+    <UL>
+        <li> Nenhum documento necess&aacute;rio
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test cases here -->
+    <H3>Test cases</H3>
+
+    <!-- banco nao iniciado -->
+    <H5>Test case banco de dados n&atilde;o iniciado</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Garanta que o programa n&atilde;o tem acesso ao banco de dados.
+        <LI>Preencha o CPF com o valor 052.327.931-01
+        <LI>Digite "123456" no campo senha
+        <LI>Clique em "Entrar".
+        <LI>Inicialize o banco de dados
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Um di&aacute;logo avisando que houve um erro ser&aacute; exibido. Erro 01 - No Connection to DB.
+    </UL>
+    
+    <!-- senha incorreta -->
+    <H5>Test case senha incorreta</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher o cpf com 052.327.931-01.
+        <LI>Preencher a senha com 123455.
+        <LI>Clicar no bot&atilde;o "Entrar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem de Senha incorreta.
+    </UL>
+
+    <!-- usuario inexistente-->
+    <H5>Test case usu&aacute;rio inexistente</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher o cpf com 726.899.300-56.
+        <LI>Preencher a senha com 123456.
+        <LI>Clicar no bot&atilde;o "Entrar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem de Usu&aacute;rio n&atilde;o adastrado.
+    </UL>
+
+    
+    <!-- pre-validacao cpf senha-->
+    <H5>Test case pr&eacute;-valida&ccedil;&atilde;o cpf e senha</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher o cpf com 052.327.931-01.
+        <LI>Preencher a senha com 123456.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Bot&atilde;o deve estar inativo at&eacute; a inser&ccedil;&atilde;o do &uacute;ltimo caractere da senha.
+    </UL>
+
+    <!-- login bem sucedido -->
+    <H5>Test case login bem sucedido</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher o cpf com 052.327.931-01.
+        <LI>Preencher a senha com 123456.
+        <LI>Clicar no bot&atilde;o "Entrar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Programa abre a p&aacute;gina de Dashboard.
+    </UL>
+
+    <!-- banco caiu -->
+    <H5>Test case banco de dados ca&iacute;do</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Encerre o banco de dados
+        <LI>Preencha o CPF com o valor 000.000.000-00
+        <LI>Digite "123456" no campo senha
+        <LI>Clique em "Entrar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Um di&aacute;logo avisando que houve um erro ser&aacute; exibido. 
+        <LI>Caso os outros testes tenham sido executados na mesma inst&acirc;ncia do programa, o erro ser&aacute; Erro 02 - Erro na Query. 
+        <LI>Caso nenhum acesso a banco de dados tenha sido feito antes, o erro ser&aacute; Erro 01 - No Connection to DB.
+    </UL>
+
+    <!-- Acesso a pagina de cadastro-->
+    <H5>Test case acesso &agrave; p&aacute;gina de cadastro</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "N&atilde;o possuo cadastro".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O programa abre a p&aacute;gina de cadastro.
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add link to specification here -->
+    <h3>References:</h3>
+    <ul>
+    </ul>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+</body>
+</html>

@@ -14,3 +14,7 @@ moc_*
 *.o
 ui_*
 *.moc
+
+test/SmokeTest/pdfs
+db/ingresso_net_dbDATA.sql
+*.zip

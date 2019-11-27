@@ -32,7 +32,7 @@ QVector<Partida> SearchProcessor::filterByCidade(QVector<Partida> partidas, QStr
   QVector<Partida> partidasFiltradas;
   CidadeDAO* cdao = CidadeDAO::getInstance();
   if (estado == "Todos"){
-    Cidade c = cdao->get(cidade.toStdString());
+    Cidade c = cdao->getByProperty("nomeCidade", cidade.toStdString())[0];
     foreach(Partida p, partidas){
       if(p.getCidade().getId() == c.getId()){
         partidasFiltradas.append(p);

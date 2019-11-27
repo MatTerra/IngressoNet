@@ -1,0 +1,197 @@
+<html>
+<head>
+    <title>Test case specification document</title>
+    <style>
+    <!--
+        H5 { text-decoration: underline }
+    -->
+    </style>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+    
+    <!-- add test title here - Second -->
+    <H1 ALIGN=CENTER><U>Test Name: <B>Manter Usu&aacute;rio</B></U></H1>    
+    <!-- ++++++++++++++++++++++++++++++++ -->        
+    <HR>
+    <TABLE WIDTH=100% BORDER=1 CELLSPACING=0>
+      <COL WIDTH=30%>
+      <COL WIDTH=40%>
+      <COL WIDTH=30%>
+		   <TR>
+			   <TD>
+            <!-- Your name should be written here -->
+				<P><FONT STYLE="font-size: 8pt"><B>Document Owner:</B><BR></FONT><SPAN STYLE="font-weight: medium">Bruno Murta, Mateus Berardo, Thiago Cardoso</SPAN></P>
+            </TD>
+			   <TD>
+            <!-- Date has to be written in form like this: 10. Nov. 2005 -->
+				<P><FONT STYLE="font-size: 8pt"><B>Last Document Change:</B><BR></FONT><SPAN STYLE="font-weight: medium">26. 11. 2019</SPAN></P>
+            </TD>
+			   <TD>
+            <!-- Status of this document can be: Preliminary, Standard, Obsolete -->
+				<P><FONT STYLE="font-size: 8pt"><B>Status of Document:</B><BR></FONT><SPAN STYLE="font-weight: medium">Standard</SPAN></P>
+            </TD>
+         </TR>
+   </TABLE>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <!-- add test purpose here -->
+    <H3>Test purpose</H3>
+    <P>Verificar o funcionamento da p&aacute;gina de manuten&ccedil;&atilde;o do perfil.</P>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>    
+    <!-- add major known issues here -->
+    <h3>Known issues:</h3>
+    <ul>
+        <li>Caso o usu&aacute;rio seja respons&aacute;vel por uma partida e pe&ccedil;a pra deletar seu perfil, seu cart&atilde;o ser&aacute; apagado, mas o usu&aacute;rio n&atilde;o.
+    </ul>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <hr>
+    <!-- add Preconditions here -->
+    <H3>Preconditions of the test:</H3>
+    <UL>
+        <LI>O banco de dados deve estar rodando com o IP local 172.18.0.2 ou o IP do banco deve ser atualizado na classe MySQLHelper.
+        <LI>Rodar o programa e fazer login com o usu&aacute;rio 052.327.931-01 senha 123456. 
+        <LI>Clicar no bot&atilde;o "Configurar" localizado ao lado do CPF com 3 linhas horizontais paralelas.        
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test documents here if needed -->
+    <H3>Test documents</H3>
+    <UL>
+        <li> Nenhum documento necess&aacute;rio
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test cases here -->
+    <H3>Test cases</H3>
+
+    <!-- salvar sem alteracao -->
+    <H5>Test case salvar sem altera&ccedil;&atilde;o</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "Salvar" antes de alterar n&uacute;mero do cart&atilde;o e n&uacute;mero de seguran&ccedil;a.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O bot&atilde;o deve estar desativado, n&atilde;o permitindo cliques.
+    </UL>
+
+    <!-- cartao invalido -->
+    <H5>Test case alterar incorretamente cart&atilde;o</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Alterar n&uacute;mero do cart&atilde;o para n&uacute;mero inv&aacute;lido (exemplo: 123 456 789 987.)
+        <LI>Clicar no bot&atilde;o "Salvar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem de N&uacute;mero de cart&atilde;o inv&aacute;lido.
+    </UL>
+
+    <!-- numero de seguranca invalido -->
+    <H5>Test case alterar incorretamente CVV</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Alterar CVV para n&uacute;mero inv&aacute;lido, ou seja, menor que 100.
+        <LI>Clicar no bot&atilde;o "Salvar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Bot&atilde;o deve estar desativado.
+    </UL>
+
+    <!-- alterar corretamente -->
+    <H5>Test case alterar corretamente</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Alterar n&uacute;mero do cart&atilde;o para n&uacute;mero v&aacute;lido (exemplo: 5106 4186 3286 1791.)
+        <LI>Alterar cvv para qualquer n&uacute;mero entre 100 e 9999.
+        <LI>Clicar no bot&atilde;o salvar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem de Cart&atilde;o alterado com sucesso.
+    </UL>
+
+    <!-- Senha antiga incorreta-->
+    <H5>Test case senha antiga incorreta</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher o campo "Antiga senha" com 123455.
+        <LI>Preencher os campos da nova senha com 123456.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem de Senha incorreta.
+    </UL>
+
+    <!-- Senha nova igual-->
+    <H5>Test case senha nova igual antiga</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher o campo "Antiga senha" com 123456.
+        <LI>Preencher os campos da nova senha com 123456.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem de Senha Nova igual à antiga.
+    </UL>
+
+    <!-- nova senha diferente de confirmacao -->
+    <H5>Test case senha nova e confirma&ccedil;&atilde;o diferentes</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher o campo "Antiga senha" com 123456.
+        <LI>Preencher o campo da nova senha com 1234567.
+        <LI>Preencher o campo de confirma&ccedil;&atilde;o da senha com 1234568.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem As senhas fornecidas n&atilde;o s&atilde;o iguais.
+    </UL>
+
+    <!-- alterar senha -->
+    <H5>Test case alterar senha corretamente</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencher o campo "Antiga senha" com 123456.
+        <LI>Preencher os campos da nova senha com 1234567.
+        <LI>Alterar novamente a senha para 123456.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem de Senha alterada com sucesso.
+    </UL>
+
+    <!-- voltar -->
+    <H5>Test case voltar</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clicar no bot&atilde;o "Voltar".
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O programa retorna para o Dashboard.
+    </UL>
+
+    <!-- apagar -->
+    <H5>Test case apagar</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>ATEN&Ccedil;&Atilde;O: Para este caso de teste, deslogue do usu&aacute;rio 052.327.931-01 e acesso o usu&aacute;rio: 726.899.300-56 senha: 123456
+        <LI>Clicar no bot&atilde;o "Apagar Perfil".
+        <LI>Confirmar a exclus&atilde;o no di&aacute;logo apresentado.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Mensagem de perfil apagado.
+        <LI>O programa retorna para a p&aacute;gina de login.
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add link to specification here -->
+    <h3>References:</h3>
+    <ul>
+    </ul>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+</body>
+</html>

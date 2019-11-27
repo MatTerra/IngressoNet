@@ -1,0 +1,293 @@
+<html>
+<head>
+    <title>Test case specification document</title>
+    <style>
+    <!--
+        H5 { text-decoration: underline }
+    -->
+    </style>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+    
+    <!-- add test title here - Second -->
+    <H1 ALIGN=CENTER><U>Test Name: <B>Cadastrar Usu&aacute;rio</B></U></H1>    
+    <!-- ++++++++++++++++++++++++++++++++ -->        
+    <HR>
+    <TABLE WIDTH=100% BORDER=1 CELLSPACING=0>
+      <COL WIDTH=30%>
+      <COL WIDTH=40%>
+      <COL WIDTH=30%>
+		   <TR>
+			   <TD>
+            <!-- Your name should be written here -->
+				<P><FONT STYLE="font-size: 8pt"><B>Document Owner:</B><BR></FONT><SPAN STYLE="font-weight: medium">Bruno Murta, Mateus Berardo, Thiago Cardoso</SPAN></P>
+            </TD>
+			   <TD>
+            <!-- Date has to be written in form like this: 10. Nov. 2005 -->
+				<P><FONT STYLE="font-size: 8pt"><B>Last Document Change:</B><BR></FONT><SPAN STYLE="font-weight: medium">21. 11. 2019</SPAN></P>
+            </TD>
+			   <TD>
+            <!-- Status of this document can be: Preliminary, Standard, Obsolete -->
+				<P><FONT STYLE="font-size: 8pt"><B>Status of Document:</B><BR></FONT><SPAN STYLE="font-weight: medium">Standard</SPAN></P>
+            </TD>
+         </TR>
+   </TABLE>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <!-- add test purpose here -->
+    <H3>Test purpose</H3>
+    <P>Verificar o funcionamento do cadastro de us&aacute;rio.</P>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>    
+    <!-- add major known issues here -->
+    <H3>Known issues:</H3>
+    <UL>
+        <LI>N&atilde;o existem problemas conhecidos
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <hr>
+    <!-- add Preconditions here -->
+    <H3>Preconditions of the test:</H3>
+    <UL>
+        <LI>O banco de dados deve estar configurado com o IP local 172.18.0.2 ou o IP do banco deve ser atualizado na classe MySQLHelper.
+        <LI> Rodar o programa e clicar em "N&atilde;o possuo cadastro" para abrir a tela de cadastro.
+        <LI> N&atilde;o inicie o banco de dados enquanto n&atilde;o for solicitado.
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test documents here if needed -->
+    <H3>Test documents</H3>
+    <UL>
+        <LI> Nenhum documento &eacute; necess&aacute;rio.
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <HR>
+    <!-- add test cases here -->
+    <H3>Test cases</H3>
+
+    <!-- banco nao iniciado -->
+    <H5>Test case banco de dados n&atilde;o iniciado</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Garanta que o programa n&atilde;o tem acesso ao banco de dados.
+        <LI>Preencha o CPF com o valor 000.000.000-00
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778884
+        <LI>Preencha o n&uacute;mero de seguran&ccedil;a com 123
+        <LI>Digite "123456" no campo senha
+        <LI>Digite "123456" no campo repita a senha
+        <LI>Clique em cadastrar.
+        <LI>Inicialize o banco de dados
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Um di&aacute;logo avisando que houve um erro ser&aacute; exibido. Erro 01 - No Connection to DB.
+    </UL>
+  
+    <!-- mensagens de erro -->
+    <H5>Test case mensagens de erro</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Clique em cadastrar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL>
+        <LI>Texto "CPF Inv&aacute;lido" em vermelho substitui o CPF. 
+        <LI>Texto "A senha deve ter ao menos 6 d&iacute;gitos!" em vermelho substitui a senha.
+        <LI>Texto "Cart&atilde;o Inv&aacute;lido" em vermelho substitui o n&uacute; do cart&atilde;o.
+        <LI>Texto "N&uacute;mero de Seguran&ccedil;a Inv&aacute;lido" em vermelho substitui o n&uacute;mero de seguran&ccedil;a.       
+    </UL>
+
+    <!-- pre validacao cpf -->
+    <H5>Test case pr&eacute;-valida&ccedil;&atilde;o CPF</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Digite "abc.!" no campo CPF
+        <LI>Digite 11 0's no campo CPF
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O texto do campo CPF deve estar vermelho durante a inser&ccedil;&atilde;o dos caracteres.
+        <LI>O campo CPF n&atilde;o deve aceitar a inser&ccedil;&atilde;o de letras ou caracteres especiais.
+        <LI>O texto final deve ser "000.000.000-00" em branco
+    </UL>
+    
+    <!-- validacao cpf -->
+    <H5>Test case CPF inv&aacute;lido</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencha o CPF com o valor 000.000.000-01
+        <LI>Preencha a senha e a repeti&ccedil;&atilde;o da senha com 123456
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778884
+        <LI>Preencha o n&uacute;mero de seguran&ccedil;a com 123
+        <LI>Clique em cadastrar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL>
+        <LI>Texto "CPF Inv&aacute;lido" em vermelho substitui o CPF.
+    </UL>
+
+    <!-- pre validacao senha -->
+    <H5>Test case pr&eacute;-valida&ccedil;&atilde;o senha</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Digite "abc.!" no campo senha
+        <LI>Digite "123456" no campo senha
+        <LI>Deselecione o campo senha clicando em qualquer outro campo
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O texto do campo senha deve estar vermelho at&eacute; a inser&ccedil;&atilde;o do n&uacute;mero 6.
+        <LI>O texto final deve estar em branco
+        <LI>O campo n&atilde;o deve permitir a inser&ccedil;&atilde;o de letras ou caracteres especiais.
+        <LI>Ao deselecionar o campo, o texto deve ser ocultado.
+    </UL>
+
+    <!-- senhas diferentes -->
+    <H5>Test case senhas diferentes</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencha o CPF com o valor 000.000.000-00
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778884
+        <LI>Preencha o n&uacute;mero de seguran&ccedil;a com 123
+        <LI>Preencha a senha com "123456"
+        <LI>Preencha a repeti&ccedil;&atilde;o da senha com "123455"
+        <LI>Clique em cadastrar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Texto "As senhas n&atilde;o s&atilde;o iguais" em vermelho substitui a repeti&ccedil;&atilde;o da senha.
+    </UL>
+
+    <!-- tamanho minimo da senha -->
+    <H5>Test case tamanho m&iacute;nimo da senha</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencha o CPF com o valor 000.000.000-00
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778884
+        <LI>Preencha o n&uacute;mero de seguran&ccedil;a com 123
+        <LI>Digite "12345" no campo senha
+        <LI>Digite "12345" no campo repita a senha
+        <LI>Clique em cadastrar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Texto "A senha deve ter ao menos 6 d&iacute;gitos!" em vermelho substitui a senha.
+    </UL>
+
+    <!-- pre-validacao cartao -->
+    <H5>Test case pre&eacute;-valida&ccedil;&atilde;o cart&atilde;o</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778884
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O texto do campo cart&atilde; deve estar vermelho at&eacute; a inser&ccedil;&atilde;o do segundo n&uacute;mero 8.
+        <LI>O texto final deve estar em branco.
+        <LI>O campo n&atilde;o deve permitir a inser&ccedil;&atilde;o de letras ou caracteres especiais.
+    </UL>
+
+    <!-- cartao invalido -->
+    <H5>Test case valida&ccedil;&atilde;o cart&atilde;o</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencha o CPF com o valor 000.000.000-00
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778883
+        <LI>Preencha o n&uacute;mero de seguran&ccedil;a com 123
+        <LI>Digite "123456" no campo senha
+        <LI>Digite "123456" no campo repita a senha
+        <LI>Clique em cadastrar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Texto "Cart&atilde;o Inv&aacute;lido!" em vermelho substitui o n&uacute;mero do cart&atilde;o.
+    </UL>
+
+    <!-- pre-validacao numseg -->
+    <H5>Test case pre&eacute;-valida&ccedil;&atilde; n&uacute;mero de seguran&ccedil;a</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Digite "abc.!" no campo senha
+        <LI>Digite "12345" no campo n&uacute;mero de seguran&ccedil;a
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>O texto do campo cart&atilde; deve estar vermelho at&eacute; a inser&ccedil;&atilde;o do n&uacute;mero 3.
+        <LI>O texto final deve ser 1234.
+        <LI>O texto final deve estar em branco.
+        <LI>O campo n&atilde;o deve permitir a inser&ccedil;&atilde;o de letras ou caracteres especiais.
+    </UL>
+
+    <!-- numseg invalido -->
+    <H5>Test case n&uacute;mero de seguran&ccedil;a inv&aacute;lido</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Digite "12" no campo n&uacute;mero de seguran&ccedil;a
+        <LI>Clique em cadastrar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Texto "N&uacute;mero de Seguran&ccedil;a Inv&aacute;lido!" em vermelho substitui o n&uacute;mero do cart&atilde;o.
+    </UL>
+
+    <!-- usuario existente -->
+    <H5>Test case usu&aacute;rio existente</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Preencha o CPF com o valor 000.000.000-00
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778884
+        <LI>Preencha o n&uacute;mero de seguran&ccedil;a com 123
+        <LI>Digite "123456" no campo senha
+        <LI>Digite "123456" no campo repita a senha
+        <LI>Clique em cadastrar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Um di&aacute;logo avisando da exist&egrave;ncia do usu&aacute;rio &eacute; exibido.
+    </UL>
+
+    <!-- Cadastro bem sucedido -->
+    <H5>Test case cadastro bem sucedido</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Garanta que o banco de dados est&aacute; acess&iacute;vel.
+        <LI>Preencha o CPF com o valor 726.899.300-56
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778884
+        <LI>Preencha o n&uacute;mero de seguran&ccedil;a com 123
+        <LI>Digite "123456" no campo senha
+        <LI>Digite "123456" no campo repita a senha
+        <LI>Clique em cadastrar.
+        <LI>Acesse a tela de manuten&ccedil;&atilde;o do perfil e apague o usu&aacute;rio ap&oacute;s o teste.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Um di&aacute;logo avisando que o cadastro foi efetuado com sucesso ser&aacute; exibido.
+        <LI>Ap&oacute;s confirma&ccedil;&atilde;o no di&aacute;logo, o programa retorna para a tela de login.
+    </UL>
+
+    <!-- banco caiu -->
+    <H5>Test case banco de dados ca&iacute;do</H5>
+    <H6>Entrada/Procedimento</H6>
+    <OL>
+        <LI>Encerre o banco de dados
+        <LI>Preencha o CPF com o valor 000.000.000-00
+        <LI>Preencha o n&uacute;mero do cart&atilde;o com 5555666677778884
+        <LI>Preencha o n&uacute;mero de seguran&ccedil;a com 123
+        <LI>Digite "123456" no campo senha
+        <LI>Digite "123456" no campo repita a senha
+        <LI>Clique em cadastrar.
+    </OL>
+    <H6> Sa&iacute;da </H6>
+    <UL> 
+        <LI>Um di&aacute;logo avisando que houve um erro ser&aacute; exibido. 
+        <LI>Caso os outros testes tenham sido executados na mesma inst&acirc;ncia do programa, o erro ser&aacute; Erro 02 - Erro na Query. 
+        <LI>Caso nenhum acesso a banco de dados tenha sido feito antes, o erro ser&aacute; Erro 01 - No Connection to DB.
+    </UL>
+
+    <!-- ++++++++++++++++++++++++++++++++ -->
+    <hr><!-- add link to specification here -->
+    <H3>References:</H3>
+    <UL>
+    </UL>
+    <!-- ++++++++++++++++++++++++++++++++ -->
+</body>
+</html>

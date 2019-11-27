@@ -64,7 +64,7 @@ void SearchJogoWindow::on_pesquisarBtn_clicked(){
   if(ui->estadoBox->currentIndex()!=0){
     emit requestSearchResults(ui->incioDateTime->dateTime(), ui->cidadeBox->currentText(), ui->estadoBox->currentText());
   } else {
-    emit requestSearchResults(ui->incioDateTime->dateTime(), std::to_string(ui->cidadeBox->currentIndex()).c_str(), ui->estadoBox->currentText());
+    emit requestSearchResults(ui->incioDateTime->dateTime(), ui->cidadeBox->currentText(), ui->estadoBox->currentText());
   }
 }
 
